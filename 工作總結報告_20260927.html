@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工作總結報告 | 2026-09-27 Image 2 旗艦升級</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap');
+
+    :root {
+      --brand: #4F46E5;
+      --brand-light: #EEF2FF;
+      --emerald: #059669;
+      --emerald-light: #ECFDF5;
+      --amber: #D97706;
+      --amber-light: #FFFBEB;
+      --rose: #E11D48;
+      --rose-light: #FFF1F2;
+      --blue: #2563EB;
+      --blue-light: #EFF6FF;
+      --purple: #7C3AED;
+      --purple-light: #F5F3FF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-500: #64748B;
+      --slate-700: #334155;
+      --slate-800: #1E293B;
+      --slate-900: #0F172A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans TC', 'Inter', -apple-system, sans-serif;
+      color: var(--slate-800);
+      background: #fff;
+      line-height: 1.7;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+      .container { max-width: 100%; padding: 0 20px; }
+      section { break-inside: avoid; }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ---- Cover Page ---- */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 30%, #C7D2FE 60%, #A5B4FC 100%);
+      padding: 60px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.08);
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(79, 70, 229, 0.06);
+    }
+
+    .cover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 9999px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand);
+      margin-bottom: 32px;
+      backdrop-filter: blur(8px);
+    }
+
+    .cover h1 {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--slate-900);
+      line-height: 1.3;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .cover h1 span {
+      display: block;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--brand);
+      margin-top: 8px;
+    }
+
+    .cover-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--slate-700);
+    }
+
+    .cover-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 16px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--slate-200);
+      font-weight: 600;
+    }
+
+    /* ---- Section Styles ---- */
+    .report-section {
+      padding: 48px 0 32px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--slate-200);
+      margin-bottom: 24px;
+    }
+
+    .section-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: var(--brand);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+
+    /* ---- Cards ---- */
+    .card {
+      border-radius: 16px;
+      border: 1px solid var(--slate-200);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      background: #fff;
+    }
+
+    .card-accent {
+      border-left: 6px solid;
+    }
+
+    .card-indigo { border-left-color: var(--brand); background: var(--brand-light); }
+    .card-emerald { border-left-color: var(--emerald); background: var(--emerald-light); }
+    .card-amber { border-left-color: var(--amber); background: var(--amber-light); }
+    .card-rose { border-left-color: var(--rose); background: var(--rose-light); }
+    .card-blue { border-left-color: var(--blue); background: var(--blue-light); }
+    .card-purple { border-left-color: var(--purple); background: var(--purple-light); }
+
+    .card h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card p, .card li {
+      font-size: 13px;
+      color: var(--slate-700);
+      line-height: 1.8;
+    }
+
+    /* ---- Stats Grid ---- */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 20px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--slate-200);
+      background: var(--slate-50);
+    }
+
+    .stat-number {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--brand);
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--slate-500);
+    }
+
+    /* ---- File Table ---- */
+    .file-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--slate-200);
+    }
+
+    .file-table thead tr {
+      background: var(--slate-100);
+    }
+
+    .file-table th {
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+      color: var(--slate-700);
+      border-bottom: 2px solid var(--slate-200);
+    }
+
+    .file-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--slate-100);
+      vertical-align: top;
+    }
+
+    .file-table tbody tr:hover {
+      background: var(--slate-50);
+    }
+
+    .file-name {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-weight: 600;
+      font-size: 11.5px;
+      color: var(--brand);
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    .badge-done {
+      background: var(--emerald-light);
+      color: var(--emerald);
+      border: 1px solid rgba(5, 150, 105, 0.2);
+    }
+
+    .badge-new {
+      background: var(--blue-light);
+      color: var(--blue);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    /* ---- Timeline ---- */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: var(--slate-200);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--brand);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--brand);
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-time {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--brand);
+      font-family: 'Inter', monospace;
+    }
+
+    .timeline-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin: 2px 0 4px;
+    }
+
+    .timeline-desc {
+      font-size: 12.5px;
+      color: var(--slate-500);
+    }
+
+    /* ---- Feature List ---- */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .feature-item {
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid var(--slate-200);
+      background: #fff;
+    }
+
+    .feature-item h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feature-item p {
+      font-size: 12px;
+      color: var(--slate-500);
+      line-height: 1.6;
+    }
+
+    /* ---- Footer ---- */
+    .report-footer {
+      padding: 32px 0;
+      border-top: 2px solid var(--slate-200);
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .report-footer p {
+      font-size: 12px;
+      color: var(--slate-400);
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 12px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 24px;
+      transition: all 0.2s;
+    }
+
+    .print-btn:hover {
+      background: #4338CA;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    ul { list-style: none; padding: 0; }
+    ul li { padding-left: 20px; position: relative; }
+    ul li::before {
+      content: '•';
+      position: absolute;
+      left: 4px;
+      color: var(--brand);
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== COVER PAGE ==================== -->
+  <div class="cover">
+    <div class="cover-badge">
+      📋 WORK REPORT
+    </div>
+    <h1>
+      刑法筆記 Web App<br>Image 2 旗艦設計升級
+      <span>2026 年 9 月 27 日 工作總結報告</span>
+    </h1>
+    <p style="max-width:520px; font-size:14px; color:var(--slate-700); margin-top:8px; line-height:1.8;">
+      本報告完整記錄今日（2026/09/27）針對「刑法總則圖說系列研讀筆記」Web 應用程式
+      進行的 <strong>Image 2 旗艦視覺標準</strong> 全面升級工程，涵蓋第零篇第一章至第三章共 <strong>14 個檔案</strong>的設計重構。
+    </p>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">📅 2026-09-27</div>
+      <div class="cover-meta-item">⏱️ 全日工程</div>
+      <div class="cover-meta-item">📁 14 檔案升級</div>
+      <div class="cover-meta-item">🐣 30+ 小白秒懂專區</div>
+    </div>
+
+    <button class="print-btn no-print" onclick="window.print()" style="margin-top:40px;">
+      🖨️ 列印 / 匯出 PDF
+    </button>
+  </div>
+
+  <!-- ==================== SECTION 1: 總覽數據 ==================== -->
+  <div class="container">
+    <div class="report-section">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-title">工程總覽數據</div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">14</span>
+          <span class="stat-label">檔案升級完成</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">3</span>
+          <span class="stat-label">篇章完整覆蓋</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" style="color:var(--amber);">30+</span>
+          <span class="stat-label">🐣 小白秒懂專區</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" style="color:var(--emerald);">100%</span>
+          <span class="stat-label">Image 2 合規率</span>
+        </div>
+      </div>
+
+      <div class="card card-accent card-indigo">
+        <h4>📐 Image 2 旗艦設計標準</h4>
+        <p>
+          本次升級嚴格遵循 <code>SECTION_DESIGN_GUIDE_IMAGE2.md</code> 規範，將所有章節頁面從基礎樣式提升至「旗艦核心卡片與小白白話文排版」標準。核心設計語言包括：
+        </p>
+        <ul style="margin-top:10px;">
+          <li><strong>border-l-[8px]</strong> 厚左邊框色軸導引系統</li>
+          <li><strong>border-2 + shadow-sm</strong> 高層次立體卡片容器</li>
+          <li><strong>rounded-full</strong> 標籤膠囊（取代 rounded-md）</li>
+          <li><strong>🐣 小白秒懂專區</strong>：每小節 2～3 個白話文解說區塊</li>
+          <li><strong>animate-bounce</strong> 小雞圖示動態脈衝效果</li>
+          <li><strong>高對比色系</strong>：font-black / font-extrabold 強化可讀性</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 2: 升級時序 ==================== -->
+    <div class="report-section page-break">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-title">工作時序紀錄</div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">Phase 1 — 設計標準建立</div>
+          <div class="timeline-title">閱讀並確認 Image 2 設計規範文件</div>
+          <div class="timeline-desc">研讀 SECTION_DESIGN_GUIDE_IMAGE2.md 旗艦標準，確定 border-l-[8px]、🐣 小白秒懂專區、高對比標籤等核心視覺語言。</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">Phase 2 — 第一章升級</div>
+          <div class="timeline-title">第零篇 第一章（概覽 + 3 小節）完整升級</div>
+          <div class="timeline-desc">
+            view-part0-ch1.js、sec1（犯罪之分類）、sec2（罪刑法定原則）、sec3（刑法效力範圍）全部套用 Image 2 旗艦標準。
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">Phase 3 — 第二章升級</div>
+          <div class="timeline-title">第零篇 第二章（概覽 + 2 小節）完整升級</div>
+          <div class="timeline-desc">
+            view-part0-ch2.js、sec1（犯罪成立的基本體系 — 三階層）、sec2（犯罪成立的進階類型）套用 Image 2 標準。
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">Phase 4 — 第三章升級</div>
+          <div class="timeline-title">第零篇 第三章（概覽 + 4 小節）完整升級</div>
+          <div class="timeline-desc">
+            view-part0-ch3.js、sec1（刑罰種類）、sec2（處斷刑）、sec3（宣告刑）、sec4（執行刑）套用 Image 2 標準，並新增緩刑、假釋、時效等小白專區。
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">Phase 5 — Cache Buster 與整合</div>
+          <div class="timeline-title">index.html Cache Buster 版本號更新</div>
+          <div class="timeline-desc">
+            為所有升級檔案加上 ?v=20260927_8 ～ ?v=20260927_9 版本號，確保瀏覽器載入最新版本。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 3: 檔案清單 ==================== -->
+    <div class="report-section page-break">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div class="section-title">升級檔案完整清單</div>
+      </div>
+
+      <h4 style="font-size:15px; font-weight:700; color:var(--slate-900); margin-bottom:12px;">📘 第零篇 第一章：刑法基本概念（4 檔案）</h4>
+      <table class="file-table" style="margin-bottom:24px;">
+        <thead>
+          <tr><th>檔案名稱</th><th>對應章節</th><th>🐣 數量</th><th>狀態</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="file-name">view-part0-ch1.js</span></td>
+            <td>第一章概覽導航</td>
+            <td>—</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">view-part0-ch1-sec1.js</span></td>
+            <td>第一節 犯罪之分類</td>
+            <td>3 個</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">view-part0-ch1-sec2.js</span></td>
+            <td>第二節 罪刑法定原則</td>
+            <td>3 個</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">view-part0-ch1-sec3.js</span></td>
+            <td>第三節 刑法效力範圍</td>
+            <td>2 個</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 style="font-size:15px; font-weight:700; color:var(--slate-900); margin-bottom:12px;">📗 第零篇 第二章：犯罪論（3 檔案）</h4>
+      <table class="file-table" style="margin-bottom:24px;">
+        <thead>
+          <tr><th>檔案名稱</th><th>對應章節</th><th>🐣 數量</th><th>狀態</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="file-name">view-part0-ch2.js</span></td>
+            <td>第二章概覽導航</td>
+            <td>—</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">view-part0-ch2-sec1.js</span></td>
+            <td>第一節 犯罪成立基本體系</td>
+            <td>3 個</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">view-part0-ch2-sec2.js</span></td>
+            <td>第二節 犯罪成立進階類型</td>
+            <td>3 個</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 style="font-size:15px; font-weight:700; color:var(--slate-900); margin-bottom:12px;">📕 第零篇 第三章：刑法的法律效果（5 檔案）</h4>
+      <table class="file-table" style="margin-bottom:24px;">
+        <thead>
+          <tr><th>檔案名稱</th><th>對應章節</th><th>🐣 數量</th><th>狀態</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="file-name">view-part0-ch3.js</span></td>
+            <td>第三章概覽導航</td>
+            <td>—</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">view-part0-ch3-sec1.js</span></td>
+            <td>第一節 刑罰種類</td>
+            <td>3 個</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">view-part0-ch3-sec2.js</span></td>
+            <td>第二節 處斷刑</td>
+            <td>3 個</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">view-part0-ch3-sec3.js</span></td>
+            <td>第三節 宣告刑</td>
+            <td>2 個</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">view-part0-ch3-sec4.js</span></td>
+            <td>第四節 執行刑</td>
+            <td>3 個</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4 style="font-size:15px; font-weight:700; color:var(--slate-900); margin-bottom:12px;">🔧 基礎設施檔案（2 檔案）</h4>
+      <table class="file-table">
+        <thead>
+          <tr><th>檔案名稱</th><th>變更內容</th><th>狀態</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="file-name">index.html</span></td>
+            <td>Cache buster 版本號更新至 <code>?v=20260927_9</code></td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+          <tr>
+            <td><span class="file-name">data/toc-config.js</span></td>
+            <td>目錄結構設定同步維護</td>
+            <td><span class="badge badge-done">✅ 完成</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ==================== SECTION 4: 設計升級細節 ==================== -->
+    <div class="report-section page-break">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div class="section-title">Image 2 設計升級核心變更</div>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h5>🎨 厚左邊框色軸系統</h5>
+          <p>所有核心卡片容器從 <code>border</code> 升級為 <code>border-2 border-l-[8px]</code>，以 8px 實心色軸提供視覺錨定與層級引導。</p>
+        </div>
+        <div class="feature-item">
+          <h5>💊 膠囊標籤升級</h5>
+          <p>所有標籤徽章從 <code>rounded-md</code> 升級為 <code>rounded-full</code>，呈現更現代的膠囊藥丸形態，視覺更加精緻。</p>
+        </div>
+        <div class="feature-item">
+          <h5>🐣 小白秒懂專區</h5>
+          <p>每個小節新增 2～3 個「🐣 小白秒懂專區」，以日常白話文翻譯艱深法學概念，讓零基礎讀者也能 30 秒上手。</p>
+        </div>
+        <div class="feature-item">
+          <h5>🏗️ 層次卡片架構</h5>
+          <p>卡片增加 <code>shadow-sm</code> 與 <code>shadow-xs</code> 微陰影，配合 <code>bg-slate-50/dark:bg-slate-900</code> 多層背景，建構 3D 景深感。</p>
+        </div>
+        <div class="feature-item">
+          <h5>🔤 字體權重強化</h5>
+          <p>標題從 <code>font-bold</code> 升級為 <code>font-black</code>（900），副標使用 <code>font-extrabold</code>（800），大幅提升閱讀層次感。</p>
+        </div>
+        <div class="feature-item">
+          <h5>🌗 Dark Mode 深度適配</h5>
+          <p>所有新增的小白專區與卡片均完整支援 Dark Mode，確保暗色主題下的高對比度與可讀性。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 5: 小白秒懂專區總覽 ==================== -->
+    <div class="report-section page-break">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div class="section-title">🐣 小白秒懂專區内容總覽</div>
+      </div>
+
+      <div class="card card-accent card-amber" style="margin-bottom:20px;">
+        <h4>📘 第一章・第一節：犯罪之分類</h4>
+        <ul>
+          <li>結果犯 vs 行為犯（像打靶 vs 按開關）</li>
+          <li>繼續犯 vs 狀態犯（冰箱持續冷凍 vs 打破花瓶一瞬間）</li>
+          <li>親告罪（通姦罪為什麼要自己去告？）</li>
+        </ul>
+      </div>
+
+      <div class="card card-accent card-blue" style="margin-bottom:20px;">
+        <h4>📘 第一章・第二節：罪刑法定原則</h4>
+        <ul>
+          <li>四大派生原則（法律明確性、禁止類推、禁止溯及既往、禁止習慣法）</li>
+          <li>刑法解釋（擴張解釋 vs 類推適用的鋼索走法）</li>
+          <li>從舊從輕原則（法律改版時玩家選有利版本）</li>
+        </ul>
+      </div>
+
+      <div class="card card-accent card-emerald" style="margin-bottom:20px;">
+        <h4>📘 第一章・第三節：刑法效力範圍</h4>
+        <ul>
+          <li>五大管轄原則（屬地、國旗、屬人、保護、世界主義）</li>
+          <li>跨國犯罪管轄（在台灣遙控殺人，哪國能管？）</li>
+        </ul>
+      </div>
+
+      <div class="card card-accent card-purple" style="margin-bottom:20px;">
+        <h4>📗 第二章・第一節：犯罪三階層體系</h4>
+        <ul>
+          <li>三階層像三道濾網（構成要件→違法性→罪責）</li>
+          <li>客觀歸責三大要件（製造風險→實現風險→歸責範圍）</li>
+          <li>阻卻違法事由（正當防衛的正確使用姿勢）</li>
+        </ul>
+      </div>
+
+      <div class="card card-accent card-rose" style="margin-bottom:20px;">
+        <h4>📕 第三章・第二節：處斷刑</h4>
+        <ul>
+          <li>處斷刑像打折後的價格（法定刑→加減算出處斷刑）</li>
+          <li>累犯加重五大嚴格關卡（不是有前科就算累犯！）</li>
+          <li>自首三大密碼（翻供不影響、打電話嗆聲不算、投案≠自首）</li>
+        </ul>
+      </div>
+
+      <div class="card card-accent card-indigo" style="margin-bottom:20px;">
+        <h4>📕 第三章・第四節：執行刑</h4>
+        <ul>
+          <li>易刑處分三大關卡（為什麼坐牢幾個月不如繳錢？）</li>
+          <li>緩刑制度——司法的留校察看（§76但書防拖延戰術）</li>
+          <li>假釋制度——提前回歸社會的鑰匙（釋字691可打行政官司）</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 6: 結語 ==================== -->
+    <div class="report-section">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <div class="section-title">結語與後續展望</div>
+      </div>
+
+      <div class="card card-accent card-emerald">
+        <h4>✅ 今日成果總結</h4>
+        <p>
+          本次工程成功將「刑法總則圖說系列研讀筆記」Web 應用程式之第零篇全部三章（共 14 個視圖檔案）
+          從基礎樣式全面升級至 <strong>Image 2 旗艦視覺標準</strong>。升級後的介面具備：
+        </p>
+        <ul style="margin-top:8px;">
+          <li>統一的 8px 厚左邊框色軸導引系統</li>
+          <li>超過 30 個「🐣 小白秒懂專區」白話文翻譯區塊</li>
+          <li>完整的 Dark Mode 深色主題適配</li>
+          <li>高對比度字體權重與膠囊標籤系統</li>
+          <li>100% 的 Cache Buster 版本控管</li>
+        </ul>
+      </div>
+
+      <div class="card card-accent card-blue" style="margin-top:16px;">
+        <h4>🔮 後續可擴展方向</h4>
+        <ul>
+          <li>將 Image 2 標準擴展至第一篇及後續章節</li>
+          <li>為每個案例題新增互動式「答案折疊」功能</li>
+          <li>新增「🎯 考點雷達」標記高頻考試重點</li>
+          <li>整合 Cmd+K 全站搜索功能</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <div class="report-footer">
+      <button class="print-btn no-print" onclick="window.print()">
+        🖨️ 列印 / 匯出 PDF
+      </button>
+      <p>
+        📋 刑法筆記 Web App — Image 2 旗艦升級工作報告<br>
+        生成時間：2026 年 9 月 27 日 21:06 (UTC+8) | 由 Antigravity AI 協助完成
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>刑法總則【圖說系列】 - 多欄位漸進閱讀器</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#EEF2FF',
+              100: '#E0E7FF',
+              500: '#6366F1',
+              600: '#4F46E5',
+              700: '#4338CA',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    /* 漸進式右側清單：在主頁 (home) 與導讀 (intro) 完全隱藏，僅在章節視圖 (in-chapter) 寬螢幕顯現 */
+    #rightTocAside {
+      display: none;
+    }
+    body.in-chapter #rightTocAside {
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      body.in-chapter #rightTocAside {
+        display: block;
+        animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-enter {
+      animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* 3D 擬真書封立體感樣式 */
+    .book-3d-wrapper {
+      perspective: 1200px;
+    }
+    .book-3d-card {
+      transform-style: preserve-3d;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: -10px 16px 32px -6px rgba(0, 0, 0, 0.45),
+                  0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    }
+    .book-3d-card:hover {
+      transform: rotateY(-8deg) rotateX(2deg) translateY(-6px) scale(1.03);
+      box-shadow: -16px 24px 44px -8px rgba(0, 0, 0, 0.55),
+                  0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    }
+    .book-spine-shine {
+      background: linear-gradient(90deg, 
+        rgba(255,255,255,0.2) 0%, 
+        rgba(255,255,255,0) 7%, 
+        rgba(0,0,0,0.35) 12%, 
+        rgba(255,255,255,0.08) 18%, 
+        rgba(0,0,0,0) 100%);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 min-h-screen transition-colors duration-200">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 w-full border-b border-slate-200 dark:border-white/[0.08] bg-white/80 dark:bg-[#0B0F17]/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center text-white font-black text-lg shadow-md shadow-blue-500/20 cursor-pointer" onclick="switchView('home')">
+          📖
+        </div>
+        <div>
+          <div class="font-extrabold text-sm sm:text-base tracking-tight flex items-center gap-2">
+            <span class="cursor-pointer hover:text-blue-500 transition-colors" onclick="switchView('home')">刑法總則【圖說系列】</span>
+            <span id="currentChapterBadge" class="text-[10px] px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-500 dark:text-blue-400 font-mono font-bold">書籍主頁</span>
+          </div>
+          <p class="text-[11px] text-slate-500 hidden sm:block">陳奕廷(易律師) 編著・高點文化出版・律師／司法三等／法研所專用</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="themeToggleBtn" class="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center gap-1.5">
+          <span id="themeIcon">🌓</span>
+          <span>切換主題</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3-Column Layout -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex gap-8 items-start">
+
+      <!-- Left Sidebar (左側目錄) -->
+      <aside class="w-64 sm:w-72 shrink-0 sticky top-24 hidden lg:block space-y-4">
+        
+        <!-- 首頁與總覽區 -->
+        <div class="px-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">書籍總覽</div>
+        <nav class="space-y-1 text-xs font-medium">
+          <!-- 🏠 書籍主頁 按鈕 -->
+          <button id="navBtnHome" onclick="switchView('home')" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl border border-blue-500/40 bg-blue-50/70 dark:bg-blue-950/40 text-left transition-all">
+            <span class="font-bold flex items-center gap-2">
+              <span>🏠</span>
+              <span>書籍主頁 (Book Home)</span>
+            </span>
+            <span id="navDotHome" class="w-2 h-2 rounded-full bg-blue-500"></span>
+          </button>
+        </nav>
+
+        <!-- 章節目錄區 -->
+        <div class="pt-3 px-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">教材章節</div>
+        <nav class="space-y-1 select-none">
+          <!-- 📖 本篇導讀 按鈕 -->
+          <button id="navBtnIntro" onclick="switchView('intro')" class="w-full flex items-center justify-between py-2 px-2.5 rounded-xl border border-transparent hover:bg-slate-100 dark:hover:bg-slate-800/60 text-left transition-all">
+            <span class="font-bold flex items-center gap-2 text-[14px]">
+              <span>📖</span>
+              <span>導論 犯罪概念與結構</span>
+            </span>
+            <span id="navDotIntro" class="w-2 h-2 rounded-full bg-transparent"></span>
+          </button>
+
+          <!-- 📑 子章節階層 (子目錄：左側樹狀引導線、字體縮小至 13px、子項目指示圓點) -->
+          <div class="ml-4 pl-3 border-l-2 border-slate-200 dark:border-slate-800/80 space-y-1 my-1">
+            <button id="navBtnChapter1" onclick="switchView('chapter-1')" class="w-full flex items-center justify-between py-1.5 px-2.5 rounded-lg border border-transparent hover:bg-slate-100 dark:hover:bg-slate-800/60 text-left transition-all group">
+              <span class="font-medium flex items-center gap-2 text-[13px] text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors"></span>
+                <span>第一章 犯罪的概念</span>
+              </span>
+              <span id="navDotChapter1" class="w-2 h-2 rounded-full bg-transparent"></span>
+            </button>
+          </div>
+        </nav>
+
+        <!-- 側欄書籍迷你卡片 -->
+        <div class="p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/40 text-[11px] space-y-2">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            <span class="text-slate-400 font-bold uppercase tracking-wider text-[10px]">高點法學・圖說系列</span>
+          </div>
+          <div class="font-bold text-slate-800 dark:text-slate-200">刑法總則 Strafrecht</div>
+          <div class="text-slate-500 text-[10px] space-y-0.5">
+            <div>作者：陳奕廷(易律師)</div>
+            <div>ISBN：9786263342880</div>
+            <div>代碼：L602210</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center Main Reader (中央主閱讀區) -->
+      <main class="flex-1 min-w-0 max-w-3xl">
+
+        <!-- ========================================== -->
+        <!-- View 0: 書籍主頁 (Home View) -->
+        <!-- ========================================== -->
+        <div id="viewHome" class="fade-enter space-y-8">
+          
+          <!-- 書籍 Hero 卡片 (立體書封 + 詳細規格資訊) -->
+          <div class="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white/95 dark:bg-[#111726]/95 p-6 sm:p-8 backdrop-blur shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+              
+              <!-- 左側：立體書籍封面展示區 -->
+              <div class="md:col-span-5 flex justify-center">
+                <div class="book-3d-wrapper py-2">
+                  <!-- 3D 書封卡片 -->
+                  <div class="book-3d-card relative w-56 h-80 rounded-2xl overflow-hidden cursor-pointer select-none bg-slate-900">
+                    
+                    <!-- 實體封面圖片插槽 (載入使用者提供之封面大圖，具備自動路徑回退) -->
+                    <img id="bookCoverImg" 
+                         src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/0e0d470c-7eec-401f-a716-406160abe91a/.user_uploaded/media_1789548648115.png" 
+                         alt="刑法總則【圖說系列】封面" 
+                         onerror="this.onerror=null; this.src='../../../../../brain/0e0d470c-7eec-401f-a716-406160abe91a/.user_uploaded/media_1789548648115.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('bookCoverFallback').style.display='flex'; }" 
+                         class="w-full h-full object-cover object-top">
+                    
+                    <!-- 優雅降級 Fallback 擬真書封 (若實體圖片加載失敗時自動呈現) -->
+                    <div id="bookCoverFallback" class="hidden absolute inset-0 w-full h-full bg-gradient-to-br from-slate-900 via-blue-950 to-amber-950/80 p-5 flex flex-col justify-between text-white border border-white/20">
+                      <div class="flex items-center justify-between relative z-10">
+                        <span class="px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 text-[10px] font-bold border border-amber-400/40">圖說系列</span>
+                        <span class="text-[10px] text-white/70 font-mono">律師・司三・法研</span>
+                      </div>
+                      
+                      <div class="space-y-2 my-auto relative z-10 text-center">
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-amber-300">高點法學圖說系列</div>
+                        <h3 class="text-2xl font-black tracking-tight text-white leading-tight">刑法總則</h3>
+                        <p class="text-xs text-blue-300 font-serif italic">Strafrecht</p>
+                        <div class="h-0.5 w-10 bg-amber-400 rounded-full mx-auto my-1.5"></div>
+                        <p class="text-[10px] text-white/80">概念圖示・清晰易懂<br>重點彙整・深入淺出<br>例題研究・必勝關鍵</p>
+                      </div>
+
+                      <div class="flex items-center justify-between text-[11px] text-white/80 pt-3 border-t border-white/15 relative z-10">
+                        <span class="font-bold text-white">陳奕廷(易律師) 編著</span>
+                        <span class="text-[10px] text-amber-300 font-bold">高點文化</span>
+                      </div>
+
+                      <!-- 擬文書脊反光陰影層 -->
+                      <div class="book-spine-shine absolute inset-0 pointer-events-none"></div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右側：書籍詳細規格與資訊清單 -->
+              <div class="md:col-span-7 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 text-xs font-semibold border border-blue-200 dark:border-blue-800/50">
+                  <span>📚 高點法學圖說系列</span>
+                  <span class="w-1 h-1 rounded-full bg-blue-500"></span>
+                  <span>國考權威用書</span>
+                </div>
+                
+                <div>
+                  <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+                    刑法總則【圖說系列】
+                  </h1>
+                  <p class="text-xs sm:text-sm text-blue-600 dark:text-blue-400 font-mono font-medium mt-1">
+                    Strafrecht ・ 概念圖示與例題解構
+                  </p>
+                </div>
+
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  本書專為法律國考與學術深造打造，以清晰的概念圖示化繁為簡，貫穿「不法推定罪責」與三階層論罪體系。緊扣重要學說爭點與司法實務見解，協助考生奠定最堅實的刑法總則思維。
+                </p>
+
+                <!-- 書籍中繼資料表格 (精確對應提供之資訊) -->
+                <div class="grid grid-cols-2 gap-2.5 pt-1 text-xs">
+                  <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
+                    <span class="text-slate-400 block text-[10px] font-semibold">作者 / 編著</span>
+                    <span class="font-bold text-slate-800 dark:text-slate-200">陳奕廷 (易律師) 編著</span>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
+                    <span class="text-slate-400 block text-[10px] font-semibold">出版社 / 體系</span>
+                    <span class="font-bold text-slate-800 dark:text-slate-200">高點 (高點法學系列)</span>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
+                    <span class="text-slate-400 block text-[10px] font-semibold">出版日期 / 書號代碼</span>
+                    <span class="font-bold text-slate-800 dark:text-slate-200">2022／10／31 (L602210)</span>
+                  </div>
+                  <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
+                    <span class="text-slate-400 block text-[10px] font-semibold">國際標準書號 (ISBN)</span>
+                    <span class="font-mono font-bold text-slate-800 dark:text-slate-200">9786263342880</span>
+                  </div>
+                </div>
+
+                <!-- 領域標籤 Tags -->
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  <span class="px-2.5 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-900/40 text-[11px] font-medium">#律師</span>
+                  <span class="px-2.5 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-900/40 text-[11px] font-medium">#司法三等</span>
+                  <span class="px-2.5 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-900/40 text-[11px] font-medium">#法研所</span>
+                  <span class="px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[11px] font-medium">#圖說系列</span>
+                </div>
+
+                <!-- 快速行動 CTA 按鈕 -->
+                <div class="flex flex-wrap gap-3 pt-3">
+                  <button onclick="switchView('chapter-1')" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-lg shadow-blue-500/25 transition-all flex items-center gap-2">
+                    <span>🚀 開始閱讀第一章</span>
+                  </button>
+                  <button onclick="switchView('intro')" class="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold transition-all flex items-center gap-2">
+                    <span>📖 查看本篇導論</span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- 教材三大核心特色 (封面標語解構) -->
+          <div class="space-y-3">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">教材特色與編排方針</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="p-4 rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#111726]">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold mb-3">
+                  📊
+                </div>
+                <h4 class="font-bold text-xs text-slate-900 dark:text-slate-100">概念圖示・清晰易懂</h4>
+                <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">運用圖解化結構呈現抽象刑法法理，化繁為簡，直觀掌握犯罪評價雙軸心。</p>
+              </div>
+
+              <div class="p-4 rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#111726]">
+                <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold mb-3">
+                  ⚖️
+                </div>
+                <h4 class="font-bold text-xs text-slate-900 dark:text-slate-100">重點彙整・深入淺出</h4>
+                <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">嚴謹對齊易律師教材原文，彙整國內通說、重要實務爭點及 2026 現行法規查核。</p>
+              </div>
+
+              <div class="p-4 rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#111726]">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold mb-3">
+                  🎯
+                </div>
+                <h4 class="font-bold text-xs text-slate-900 dark:text-slate-100">例題研究・必勝關鍵</h4>
+                <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">剖析代表性案例（如不知法律、責任能力判斷），提煉解題得分論述精華。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 精選圖解與插圖藝廊 (Book Illustrations & Architecture Grid) -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">書籍核心圖解與插圖預覽</h3>
+              <span class="text-[11px] text-blue-500 font-semibold cursor-pointer hover:underline" onclick="switchView('chapter-1')">查看全部內文圖解 →</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <!-- 圖解卡片 1 -->
+              <div class="group p-4 rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#111726] hover:border-blue-500/50 transition-all cursor-pointer shadow-sm hover:shadow-md" onclick="switchView('chapter-1')">
+                <div class="h-36 rounded-xl bg-gradient-to-br from-blue-500/10 to-indigo-500/5 border border-blue-500/20 flex flex-col items-center justify-center p-4 text-center group-hover:scale-[1.01] transition-transform">
+                  <span class="text-3xl mb-2">⚖️</span>
+                  <span class="text-xs font-bold text-blue-600 dark:text-blue-400 font-mono">不法推定罪責流程圖</span>
+                  <span class="text-[10px] text-slate-500 mt-1">壞事推定壞人原則與阻卻罪責反證</span>
+                </div>
+                <div class="mt-3">
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-slate-800 dark:text-slate-200">圖 1-2：不法推定罪責原則</span>
+                    <span class="text-blue-500 font-mono text-[10px]">P. 1-2</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">
+                    行為評價面（不法）與行為人評價面（罪責）之相互推定與反證架構。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 圖解卡片 2 -->
+              <div class="group p-4 rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#111726] hover:border-blue-500/50 transition-all cursor-pointer shadow-sm hover:shadow-md" onclick="switchView('chapter-1')">
+                <div class="h-36 rounded-xl bg-gradient-to-br from-amber-500/10 to-blue-500/5 border border-amber-500/20 flex flex-col items-center justify-center p-4 text-center group-hover:scale-[1.01] transition-transform">
+                  <span class="text-3xl mb-2">🛡️</span>
+                  <span class="text-xs font-bold text-amber-600 dark:text-amber-400 font-mono">阻卻事由五大法定例示</span>
+                  <span class="text-[10px] text-slate-500 mt-1">刑法 § 16, 18, 19, 20, 23但, 24但</span>
+                </div>
+                <div class="mt-3">
+                  <div class="flex items-center justify-between text-[11px]">
+                    <span class="font-bold text-slate-800 dark:text-slate-200">案例 1-1 ～ 1-5 體系例示</span>
+                    <span class="text-blue-500 font-mono text-[10px]">P. 1-3~1-5</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-1">
+                    不知法律、年齡、精神障礙、瘖啞生理與防衛過當之法定抗辯檢驗。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- View 1: 本篇導論 (Intro View) -->
+        <!-- ========================================== -->
+        <div id="viewIntro" class="fade-enter hidden space-y-6">
+          <div class="flex items-center justify-between border-b pb-3 border-slate-200 dark:border-white/[0.08]">
+            <span class="text-xs text-blue-500 font-bold">導論 犯罪概念與論罪結構</span>
+            <button onclick="switchView('home')" class="text-xs text-slate-400 hover:text-blue-500 flex items-center gap-1 transition-colors">
+              <span>← 返回書籍主頁</span>
+            </button>
+          </div>
+
+          <h2 class="text-2xl font-black">導論 犯罪概念與論罪結構</h2>
+          <div class="p-6 rounded-3xl border border-blue-500/30 bg-white dark:bg-[#101623] space-y-3 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="font-bold text-sm text-blue-500">本篇導讀原文 (Conducted Read)</h3>
+              <span class="text-[11px] text-slate-400 font-mono">教材第 XVIII-1 頁</span>
+            </div>
+            <blockquote class="italic border-l-4 border-blue-500 pl-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              「本篇是對刑法的初步鳥瞰。首先介紹犯罪概念與通說採取的三階層體系論，再快速瀏覽刑法的論罪結構。期望帶領讀者建立一個穩固又直觀的思維流程，畢念法律不該是象牙塔裡的學問，而是人類生活經驗的縮影與結晶。」
+            </blockquote>
+          </div>
+
+          <!-- 前往第一章引導 -->
+          <div class="p-6 rounded-3xl border border-dashed border-blue-500/30 text-center space-y-3 bg-blue-50/30 dark:bg-blue-950/20">
+            <p class="text-xs text-slate-600 dark:text-slate-400">已閱讀完導讀？即刻進入第一章探討「犯罪的概念」與不法推定原則。</p>
+            <button onclick="switchView('chapter-1')" class="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-500/20 transition-all">
+              進入 第一章 犯罪的概念 →
+            </button>
+          </div>
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- View 2: 第一章內文 (Chapter 1 View) -->
+        <!-- ========================================== -->
+        <div id="viewChapter1" class="fade-enter hidden space-y-6">
+          <div class="flex items-center justify-between border-b pb-3 border-slate-200 dark:border-white/[0.08]">
+            <div class="flex items-center gap-2 text-xs">
+              <button onclick="switchView('home')" class="text-slate-400 hover:text-blue-500">書籍主頁</button>
+              <span class="text-slate-400">/</span>
+              <button onclick="switchView('intro')" class="text-slate-400 hover:text-blue-500">本篇導論</button>
+              <span class="text-slate-400">/</span>
+              <span class="text-blue-500 font-bold">第一章 犯罪的概念</span>
+            </div>
+            <button onclick="switchView('intro')" class="text-xs text-slate-400 hover:text-blue-500 transition-colors">
+              ← 返回導論
+            </button>
+          </div>
+
+          <h2 id="sec-ch1-title" class="text-2xl sm:text-3xl font-black">第一章 犯罪的概念</h2>
+          <p class="text-xs text-slate-400 font-mono">教材第 1-1 ～ 1-11 頁</p>
+
+          <!-- 小節一 -->
+          <section id="sec-concept" class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] space-y-4">
+            <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400">一、犯罪的直觀本質：「一個壞人做了一件壞事」</h3>
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              刑法是一部處理犯罪的法律，至於如何謂犯罪？簡單說，<strong>「一個壞人」做了「一件壞事」就是犯罪</strong>。
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
+                <span class="font-bold text-slate-900 dark:text-white block mb-1">1. 先評價行為</span>
+                <p class="text-slate-500">先判斷「是否有一件壞事發生」（壞事＝不法）。</p>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-800">
+                <span class="font-bold text-slate-900 dark:text-white block mb-1">2. 再評價行為人</span>
+                <p class="text-slate-500">再判斷「做這件壞事的人是不是壞人」（壞人＝罪責）。</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 小節二 -->
+          <section id="sec-presume" class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] space-y-4">
+            <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400">二、不法推定罪責原則</h3>
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              基於經驗累積，會做壞事的人絕大多數都是壞人，因此確定壞事發生，即先<strong>「推定」</strong>行為人是壞人。推翻此推定的理由稱為<strong>「阻卻罪責事由」</strong>。
+            </p>
+          </section>
+
+          <!-- 小節三 -->
+          <section id="sec-cases" class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] space-y-4">
+            <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400">三、反證推翻的機會與法定例示（案例 1-1 ～ 1-5）</h3>
+            
+            <!-- 案例 1-1 -->
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800 space-y-2">
+              <div class="font-bold text-xs text-blue-500">案例 1-1：不知法律抗辯 (§ 16)</div>
+              <blockquote class="text-xs italic text-slate-600 dark:text-slate-400 border-l-2 border-blue-400 pl-3">
+                「這是一件壞事嗎？怎麼會？我以為這是ok的耶，對不起嘛。」
+              </blockquote>
+              <div class="mt-2 p-2.5 rounded-xl bg-blue-50/50 dark:bg-blue-950/30 border border-blue-200/50 dark:border-blue-900/40 text-[11px] space-y-1">
+                <div class="font-bold text-blue-700 dark:text-blue-300">📌 2026 現行法規查核狀態：條文無更動（維持現行法）</div>
+                <div class="text-slate-600 dark:text-slate-400">採責任理論，非有不可避免之正當理由不得免責（刑法 § 16）。</div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+      </main>
+
+      <!-- Right TOC (右側章節清單：按第一章後才吸頂出現) -->
+      <aside id="rightTocAside" class="w-60 shrink-0 sticky top-24 space-y-4">
+        <div class="text-[11px] font-bold text-blue-600 dark:text-blue-400 flex items-center justify-between">
+          <span>📌 第一章 章節目錄</span>
+          <span class="text-[10px] text-slate-400 font-mono">TOC</span>
+        </div>
+        <nav class="space-y-1 text-xs border-l-2 border-slate-200 dark:border-slate-800 pl-3">
+          <a href="#sec-ch1-title" onclick="scrollToSection(event, 'sec-ch1-title')" class="block py-1 text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+            第一章 標題
+          </a>
+          <a href="#sec-concept" onclick="scrollToSection(event, 'sec-concept')" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-blue-500">
+            一、犯罪的直觀本質
+          </a>
+          <a href="#sec-presume" onclick="scrollToSection(event, 'sec-presume')" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-blue-500">
+            二、不法推定罪責原則
+          </a>
+          <a href="#sec-cases" onclick="scrollToSection(event, 'sec-cases')" class="block py-1 text-slate-600 dark:text-slate-400 hover:text-blue-500">
+            三、反證推翻與法定例示
+          </a>
+        </nav>
+
+        <div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-[11px] text-slate-400 hover:text-blue-500 flex items-center gap-1">
+            ↑ 回到頁面頂部
+          </button>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- JavaScript 控制邏輯 -->
+  <script>
+    // 主題深淺切換
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      themeIcon.textContent = isDark ? '🌓' : '☀️';
+    });
+
+    // 視圖元素宣告
+    const viewHome = document.getElementById('viewHome');
+    const viewIntro = document.getElementById('viewIntro');
+    const viewChapter1 = document.getElementById('viewChapter1');
+    const currentChapterBadge = document.getElementById('currentChapterBadge');
+    const rightTocAside = document.getElementById('rightTocAside');
+
+    // 導航按鈕宣告
+    const navBtnHome = document.getElementById('navBtnHome');
+    const navBtnIntro = document.getElementById('navBtnIntro');
+    const navBtnChapter1 = document.getElementById('navBtnChapter1');
+    const navDotHome = document.getElementById('navDotHome');
+    const navDotIntro = document.getElementById('navDotIntro');
+    const navDotChapter1 = document.getElementById('navDotChapter1');
+
+    function setActiveNav(activeKey) {
+      const items = [
+        { key: 'home', btn: navBtnHome, dot: navDotHome },
+        { key: 'intro', btn: navBtnIntro, dot: navDotIntro },
+        { key: 'chapter-1', btn: navBtnChapter1, dot: navDotChapter1 }
+      ];
+
+      items.forEach(item => {
+        if (item.key === activeKey) {
+          item.btn.classList.add('border-blue-500/40', 'bg-blue-50/70', 'dark:bg-blue-950/40');
+          item.btn.classList.remove('border-transparent');
+          item.dot.classList.add('bg-blue-500');
+          item.dot.classList.remove('bg-transparent');
+        } else {
+          item.btn.classList.remove('border-blue-500/40', 'bg-blue-50/70', 'dark:bg-blue-950/40');
+          item.btn.classList.add('border-transparent');
+          item.dot.classList.remove('bg-blue-500');
+          item.dot.classList.add('bg-transparent');
+        }
+      });
+    }
+
+    // 三態視圖切換
+    function switchView(viewName, shouldScrollTop = true) {
+      if (viewName === 'home') {
+        viewHome.classList.remove('hidden');
+        viewIntro.classList.add('hidden');
+        viewChapter1.classList.add('hidden');
+        document.body.classList.remove('in-chapter');
+        currentChapterBadge.textContent = '書籍主頁';
+        setActiveNav('home');
+        if (shouldScrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.replaceState) history.replaceState(null, '', '#home');
+      } else if (viewName === 'intro') {
+        viewHome.classList.add('hidden');
+        viewIntro.classList.remove('hidden');
+        viewChapter1.classList.add('hidden');
+        document.body.classList.remove('in-chapter');
+        currentChapterBadge.textContent = '本篇導論';
+        setActiveNav('intro');
+        if (shouldScrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.replaceState) history.replaceState(null, '', '#intro');
+      } else if (viewName === 'chapter-1') {
+        viewHome.classList.add('hidden');
+        viewIntro.classList.add('hidden');
+        viewChapter1.classList.remove('hidden');
+        document.body.classList.add('in-chapter');
+        currentChapterBadge.textContent = '第一章';
+        setActiveNav('chapter-1');
+        if (shouldScrollTop) window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.replaceState) history.replaceState(null, '', '#chapter-1');
+      }
+    }
+
+    // 平滑錨點滾動防護
+    function scrollToSection(e, targetId) {
+      if (e) e.preventDefault();
+      if (viewChapter1.classList.contains('hidden')) {
+        switchView('chapter-1', false);
+      }
+      const target = document.getElementById(targetId);
+      if (target) {
+        const offset = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+        if (history.replaceState) history.replaceState(null, '', '#' + targetId);
+      }
+    }
+
+    // 依據 Hash 自動路由
+    function handleHashRouting() {
+      const hash = window.location.hash;
+      if (hash === '#intro') {
+        switchView('intro', true);
+      } else if (hash === '#chapter-1') {
+        switchView('chapter-1', true);
+      } else if (hash.startsWith('#sec-')) {
+        switchView('chapter-1', false);
+        scrollToSection(null, hash.substring(1));
+      } else {
+        // 預設開啟書籍主頁
+        switchView('home', false);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', handleHashRouting);
+    window.addEventListener('hashchange', handleHashRouting);
+  </script>
+</body>
+</html>

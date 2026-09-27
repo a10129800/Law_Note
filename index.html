@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <title>刑法總則【圖說系列】研讀筆記 | 書籍主頁</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#EEF2FF',
+              100: '#E0E7FF',
+              500: '#6366F1',
+              600: '#4F46E5',
+              700: '#4338CA',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 外部核心樣式表 (已抽離 1025 行自定義樣式，支援 3D書封、極光動效、爭點矩陣與三欄自適應排版) -->
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body
+  class="in-home bg-slate-50 text-slate-900 dark:bg-[#0B0F17] dark:text-slate-100 min-h-screen transition-colors duration-200 selection:bg-blue-500 selection:text-white">
+
+  <!-- ==================== HEADER ==================== -->
+  <header
+    class="sticky top-0 z-40 w-full border-b border-slate-200 dark:border-white/[0.08] bg-white/80 dark:bg-[#0B0F17]/80 backdrop-blur-md">
+    <div class="max-w-[92rem] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+
+      <!-- Brand Title -->
+      <div class="flex items-center gap-3">
+        <button id="mobileMenuBtn" onclick="toggleMobileDrawer()"
+          class="lg:hidden flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-blue-600 transition-colors shadow-sm"
+          title="開啟教材章節目錄與書籍資訊">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <span class="text-xs font-bold">目錄</span>
+        </button>
+        <div
+          class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-blue-800 flex items-center justify-center text-white font-black text-lg shadow-md shadow-blue-900/20 cursor-pointer"
+          onclick="switchView('home')">
+          📖
+        </div>
+        <div>
+          <div class="font-extrabold text-sm sm:text-base tracking-tight flex items-center gap-2">
+            <span class="cursor-pointer hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
+              onclick="switchView('home')">刑法總則【圖說系列】</span>
+            <span id="currentChapterBadge"
+              class="text-[10px] px-2.5 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 font-mono font-bold border border-blue-200/60 dark:border-blue-800/50">書籍主頁</span>
+          </div>
+          <p class="text-[11px] text-slate-500 hidden sm:block">陳奕廷(易律師) 編著・高點文化出版・律師／司法三等／法研所</p>
+        </div>
+      </div>
+
+      <!-- Middle Search Trigger Bar (桌面版全域快捷搜尋框 - Ctrl+K) -->
+      <div class="flex-1 max-w-sm lg:max-w-md mx-2 sm:mx-4 hidden md:block">
+        <button id="searchTriggerBtn" type="button" onclick="openSearchModal()"
+          class="w-full flex items-center justify-between gap-3 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-white/[0.1] bg-slate-100/80 hover:bg-slate-100 dark:bg-slate-900/60 dark:hover:bg-slate-800/80 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all shadow-2xs group cursor-pointer"
+          title="開啟全域快速搜尋 (Ctrl+K)">
+          <div class="flex items-center gap-2.5 truncate">
+            <svg
+              class="w-4 h-4 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors shrink-0"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <span
+              class="text-xs font-medium text-slate-500 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-200 truncate">搜尋案例、法條、爭點概念...</span>
+          </div>
+          <div class="flex items-center gap-1 shrink-0">
+            <kbd
+              class="px-1.5 py-0.5 text-[10px] font-mono font-bold bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700/80 rounded-md shadow-2xs">Ctrl</kbd>
+            <kbd
+              class="px-1.5 py-0.5 text-[10px] font-mono font-bold bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700/80 rounded-md shadow-2xs">K</kbd>
+          </div>
+        </button>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2">
+        <!-- 手機版快速搜尋按鈕 -->
+        <button id="mobileSearchBtn" type="button" onclick="openSearchModal()"
+          class="md:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-blue-600 text-xs font-semibold flex items-center transition-all shadow-sm"
+          title="快速搜尋 (Ctrl+K)">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+
+        <button id="mobileTocBtn" onclick="toggleMobileTocModal()"
+          class="lg:hidden items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-blue-500/30 bg-blue-50/50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 text-xs font-bold transition-all">
+          <span>📑</span>
+          <span>章節清單</span>
+        </button>
+
+        <!-- 字體大小調整 (Aa Popover 面板) -->
+        <div class="relative" id="fontSettingsContainer">
+          <button id="fontSettingsBtn" onclick="toggleFontMenu(event)"
+            class="p-2 sm:px-2.5 sm:py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-500/40 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm"
+            title="閱讀字體大小偏好設定" aria-haspopup="true" aria-expanded="false">
+            <span class="text-sm font-serif font-black leading-none">Aa</span>
+            <span id="fontScaleBadge"
+              class="text-[10px] font-mono text-slate-400 dark:text-slate-400 font-semibold hidden sm:inline">100%</span>
+          </button>
+
+          <!-- 浮動毛玻璃 Popover 面板 -->
+          <div id="fontSettingsMenu"
+            class="hidden absolute right-0 mt-2 w-80 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#111726]/95 backdrop-blur-xl shadow-2xl z-50 space-y-3.5 fade-enter text-slate-800 dark:text-slate-200">
+            <!-- 標題與重設按鈕 -->
+            <div class="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-white/[0.08]">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold flex items-center gap-1.5 text-slate-900 dark:text-white">
+                  <span>📖</span> 閱讀偏好設定
+                </span>
+                <span id="fontScaleIndicator"
+                  class="text-[10px] font-mono px-1.5 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-bold">100%</span>
+              </div>
+              <button type="button" onclick="resetReaderPreferences()"
+                class="text-[11px] text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                title="重設為預設模式">
+                重設
+              </button>
+            </div>
+
+            <!-- 1. 深淺外觀風格 (Light / Dark) -->
+            <div>
+              <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">深淺外觀風格</div>
+              <div
+                class="grid grid-cols-2 gap-1 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl text-xs font-medium text-center">
+                <button type="button" onclick="setTheme('light')" id="themeBtn-light"
+                  class="py-1.5 rounded-lg transition-all flex items-center justify-center gap-1.5">
+                  <span>☀️</span><span>明亮模式</span>
+                </button>
+                <button type="button" onclick="setTheme('dark')" id="themeBtn-dark"
+                  class="py-1.5 rounded-lg transition-all flex items-center justify-center gap-1.5">
+                  <span>🌙</span><span>暗夜模式</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. 字級快速預設級別 -->
+            <div>
+              <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">字體大小</div>
+              <div
+                class="grid grid-cols-4 gap-1 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl text-xs font-medium text-center">
+                <button type="button" onclick="setFontScalePreset('sm')" id="fontPresetBtn-sm"
+                  class="py-1.5 rounded-lg transition-all text-slate-600 dark:text-slate-300 hover:text-blue-600">小</button>
+                <button type="button" onclick="setFontScalePreset('md')" id="fontPresetBtn-md"
+                  class="py-1.5 rounded-lg transition-all bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 font-bold shadow-xs">標準</button>
+                <button type="button" onclick="setFontScalePreset('lg')" id="fontPresetBtn-lg"
+                  class="py-1.5 rounded-lg transition-all text-slate-600 dark:text-slate-300 hover:text-blue-600">大</button>
+                <button type="button" onclick="setFontScalePreset('xl')" id="fontPresetBtn-xl"
+                  class="py-1.5 rounded-lg transition-all text-slate-600 dark:text-slate-300 hover:text-blue-600">特大</button>
+              </div>
+            </div>
+
+            <!-- 3. 字級微調步進控制 -->
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <button type="button" onclick="adjustFontSize(-5)"
+                  class="flex-1 py-1.5 px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-all"
+                  title="縮小 5%">
+                  <span class="text-xs font-serif font-black">A-</span>
+                  <span class="text-[10px] text-slate-400">-5%</span>
+                </button>
+                <button type="button" onclick="adjustFontSize(5)"
+                  class="flex-1 py-1.5 px-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-all"
+                  title="放大 5%">
+                  <span class="text-sm font-serif font-black">A+</span>
+                  <span class="text-[10px] text-slate-400">+5%</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 4. 正文行距呼吸感 -->
+            <div>
+              <div
+                class="flex items-center justify-between text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">
+                <span>行距呼吸感</span>
+                <span id="lineHeightLabel" class="text-slate-500 font-mono">舒適 (1.88)</span>
+              </div>
+              <div
+                class="grid grid-cols-3 gap-1 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl text-xs font-medium text-center">
+                <button type="button" onclick="setLineHeightPreset('compact')" id="lineHeightBtn-compact"
+                  class="py-1.5 rounded-lg transition-all text-slate-600 dark:text-slate-300">緊湊</button>
+                <button type="button" onclick="setLineHeightPreset('comfortable')" id="lineHeightBtn-comfortable"
+                  class="py-1.5 rounded-lg transition-all bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 font-bold shadow-xs">舒適
+                  (預設)</button>
+                <button type="button" onclick="setLineHeightPreset('spacious')" id="lineHeightBtn-spacious"
+                  class="py-1.5 rounded-lg transition-all text-slate-600 dark:text-slate-300">寬鬆</button>
+              </div>
+            </div>
+
+            <!-- 提示說明 -->
+            <div class="pt-2 border-t border-slate-100 dark:border-white/[0.08] text-center">
+              <p class="text-[11px] text-slate-400 dark:text-slate-400">
+                自由縮放文字大小與行距呼吸感，閱讀更舒適
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 頂部深淺模式切換鈕 -->
+        <button id="themeToggleBtn" onclick="toggleTheme()"
+          class="p-2 sm:px-2.5 sm:py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm"
+          title="切換深淺模式 (明亮 / 暗夜)">
+          <span id="themeHeaderIcon" class="text-sm leading-none">☀️</span>
+          <span id="themeHeaderLabel"
+            class="text-[10px] text-slate-400 dark:text-slate-400 hidden sm:inline font-medium">明亮</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Reading Scroll Progress Bar (頂部研讀滾動進度條) -->
+    <div
+      class="absolute bottom-0 left-0 right-0 h-[2.5px] bg-slate-200/40 dark:bg-white/[0.06] overflow-hidden pointer-events-none">
+      <div id="readingProgressBar"
+        class="h-full w-0 bg-gradient-to-r from-blue-600 via-indigo-500 to-amber-500 transition-all duration-75"></div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN 3-COLUMN LAYOUT ==================== -->
+  <div class="app-layout-container">
+
+    <!-- ==================== 1. LEFT SIDEBAR (左側目錄導航) ==================== -->
+    <aside id="sidebar" class="hidden lg:block space-y-2.5">
+
+      <!-- 首頁總覽導航 -->
+      <div class="space-y-1 text-sm select-none">
+        <button id="navBtnHome" onclick="switchView('home')"
+          class="w-full text-left py-2.5 px-3 rounded-xl font-semibold transition-all flex items-center justify-between group border border-blue-500/40 bg-[#EBF3FE] dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 shadow-2xs">
+          <span class="flex items-center gap-2 text-[14px]">
+            <span>🏠</span>
+            <span class="truncate">書籍主頁 (Book Home)</span>
+          </span>
+          <span id="navDotHome" class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+        </button>
+      </div>
+
+      <!-- Navigation Tree -->
+      <div class="pt-2 px-1 text-[11px] font-bold uppercase tracking-wider text-slate-400">教材章節</div>
+      <nav class="space-y-1 select-none text-xs">
+
+        <!-- Parent Group: 導論 犯罪概念與論罪結構 -->
+        <button id="navBtnIntro" onclick="switchView('intro')"
+          class="w-full text-left py-2 px-2.5 rounded-xl font-bold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/40 transition-colors flex items-center justify-between group">
+          <span class="flex items-center gap-2 text-[13.5px] font-bold tracking-tight truncate">
+            <span class="text-xs text-blue-500/80 dark:text-blue-400 shrink-0">📖</span>
+            <span class="truncate">導論 犯罪概念與論罪結構</span>
+          </span>
+        </button>
+
+        <!-- Nested Sub-Chapters -->
+        <div class="ml-2.5 pl-2.5 border-l-2 border-slate-200 dark:border-slate-800/80 space-y-1 my-1">
+          <button id="navBtnChapter1" onclick="switchView('chapter-1')"
+            class="w-full text-left py-1.5 px-2 rounded-lg text-[12.5px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white flex items-center gap-2 group">
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors shrink-0"></span>
+            <span class="truncate">第一章 犯罪的概念</span>
+          </button>
+
+          <button id="navBtnChapter2" onclick="switchView('chapter-2')"
+            class="w-full text-left py-1.5 px-2 rounded-lg text-[12.5px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white flex items-center gap-2 group">
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors shrink-0"></span>
+            <span class="truncate">第二章 刑法的論罪結構</span>
+          </button>
+        </div>
+
+        <!-- Parent Group 2: 第零篇 刑法的運作、操作原理與法律效果 -->
+        <div class="pt-2">
+          <button id="navBtnPart0" onclick="switchView('part-0')"
+            class="w-full text-left py-2 px-2.5 rounded-xl font-bold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/40 transition-colors flex items-center justify-between group"
+            title="第零篇 刑法的運作、操作原理與法律效果">
+            <span class="flex items-center gap-2 text-[13.5px] font-bold tracking-tight truncate">
+              <span class="text-xs text-indigo-500/80 dark:text-indigo-400 shrink-0">⚖️</span>
+              <span class="truncate">第零篇 刑法的運作與效果</span>
+            </span>
+          </button>
+
+          <!-- Nested Sub-Chapters -->
+          <div id="part0SubTree"
+            class="ml-2.5 pl-2.5 border-l-2 border-slate-200 dark:border-slate-800/80 space-y-1.5 my-1">
+            <button id="navBtnPart0Intro" onclick="switchView('part-0')"
+              class="w-full text-left py-1.5 px-2 rounded-lg text-[12.5px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-white flex items-center gap-2 group">
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+              <span class="truncate">本篇導讀 (Conducted read)</span>
+            </button>
+
+            <div class="space-y-1">
+              <!-- 第一章 刑法的運作原理 -->
+              <div>
+                <div
+                  class="flex items-center justify-between rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">
+                  <button id="navBtnPart0Ch1" onclick="switchView('part0-chapter-1')"
+                    class="flex-1 text-left py-1.5 px-2 rounded-lg text-[12.5px] font-bold transition-all text-slate-700 dark:text-slate-300 flex items-center gap-2 group">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors shrink-0"></span>
+                    <span class="truncate">第一章 刑法的運作原理</span>
+                  </button>
+                  <button type="button" onclick="toggleSubTree('part0Ch1SubTree', event)"
+                    class="p-1.5 text-slate-400 hover:text-blue-500 transition-colors text-[10px]" title="展開/收合小節清單">
+                    <span id="chevron-part0Ch1">▼</span>
+                  </button>
+                </div>
+
+                <div id="part0Ch1SubTree"
+                  class="ml-2.5 pl-2 border-l border-indigo-200/90 dark:border-indigo-900/60 space-y-0.5 my-1">
+                  <button id="navBtnPart0Ch1Sec1" onclick="switchView('part0-ch1-sec1')"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-2 group"
+                    title="第一節 法益保護原則">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+                    <span class="truncate">第一節 法益保護原則</span>
+                  </button>
+                  <button id="navBtnPart0Ch1Sec2" onclick="switchView('part0-ch1-sec2')"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-2 group"
+                    title="第二節 罪刑法定原則">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+                    <span class="truncate">第二節 罪刑法定原則</span>
+                  </button>
+                  <button id="navBtnPart0Ch1Sec3" onclick="switchView('part0-ch1-sec3')"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-2 group"
+                    title="第三節 罪責原則">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+                    <span class="truncate">第三節 罪責原則</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 第零篇 第二章 刑法的操作原理 -->
+              <div>
+                <div
+                  class="flex items-center justify-between rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">
+                  <button id="navBtnPart0Ch2" onclick="switchView('part0-chapter-2')"
+                    class="flex-1 text-left py-1.5 px-2 rounded-lg text-[12.5px] font-bold transition-all text-slate-700 dark:text-slate-300 flex items-center gap-2 group">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-indigo-500 transition-colors shrink-0"></span>
+                    <span class="truncate">第二章 刑法的操作原理</span>
+                  </button>
+                  <button type="button" onclick="toggleSubTree('part0Ch2SubTree', event)"
+                    class="p-1.5 text-slate-400 hover:text-blue-500 transition-colors text-[10px]" title="展開/收合小節清單">
+                    <span id="chevron-part0Ch2">▶</span>
+                  </button>
+                </div>
+
+                <div id="part0Ch2SubTree"
+                  class="ml-2.5 pl-2 border-l border-indigo-200/90 dark:border-indigo-900/60 space-y-0.5 my-1 hidden">
+                  <button id="navBtnPart0Ch2Sec1" onclick="switchView('part0-ch2-sec1')"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-2 group"
+                    title="第一節 刑法的適用效力">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+                    <span class="truncate">第一節 刑法的適用效力</span>
+                  </button>
+                  <button id="navBtnPart0Ch2Sec2" onclick="switchView('part0-ch2-sec2')"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-2 group"
+                    title="第二節 刑法之解釋方法">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+                    <span class="truncate">第二節 刑法之解釋方法</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 第零篇 第三章 刑法的法律效果 -->
+              <div>
+                <div
+                  class="flex items-center justify-between rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">
+                  <button id="navBtnPart0Ch3" onclick="switchView('part0-chapter-3')"
+                    class="flex-1 text-left py-1.5 px-2 rounded-lg text-[12.5px] font-bold transition-all text-slate-700 dark:text-slate-300 flex items-center gap-2 group">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-indigo-500 transition-colors shrink-0"></span>
+                    <span class="truncate">第三章 刑法的法律效果</span>
+                  </button>
+                  <button type="button" onclick="toggleSubTree('part0Ch3SubTree', event)"
+                    class="p-1.5 text-slate-400 hover:text-blue-500 transition-colors text-[10px]" title="展開/收合小節清單">
+                    <span id="chevron-part0Ch3">▶</span>
+                  </button>
+                </div>
+
+                <div id="part0Ch3SubTree"
+                  class="ml-2.5 pl-2 border-l border-indigo-200/90 dark:border-indigo-900/60 space-y-0.5 my-1 hidden">
+                  <button id="navBtnPart0Ch3Sec1" onclick="switchView('part0-ch3-sec1')"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-2 group"
+                    title="第一節 刑罰的種類——兼談法定刑">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+                    <span class="truncate">第一節 刑罰種類・法定刑</span>
+                  </button>
+                  <button id="navBtnPart0Ch3Sec2" onclick="switchView('part0-ch3-sec2')"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-2 group"
+                    title="第二節 刑罰的調整——兼談處斷刑">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+                    <span class="truncate">第二節 刑罰調整・處斷刑</span>
+                  </button>
+                  <button id="navBtnPart0Ch3Sec3" onclick="switchView('part0-ch3-sec3')"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-2 group"
+                    title="第三節 刑罰的量定——兼談宣告刑">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+                    <span class="truncate">第三節 刑罰量定・宣告刑</span>
+                  </button>
+                  <button id="navBtnPart0Ch3Sec4" onclick="switchView('part0-ch3-sec4')"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-2 group"
+                    title="第四節 刑罰的執行——兼談執行刑">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full bg-indigo-400 group-hover:bg-indigo-600 transition-colors shrink-0"></span>
+                    <span class="truncate">第四節 刑罰執行・執行刑</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Book Meta Box -->
+      <div
+        class="p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-900/40 space-y-2 text-xs mt-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span class="text-slate-400 font-bold uppercase tracking-wider text-[10px]">高點法學・圖說系列</span>
+        </div>
+        <div class="font-bold text-slate-800 dark:text-slate-200">刑法總則 Strafrecht</div>
+        <div class="text-slate-500 text-[10px] space-y-0.5">
+          <div>作者：陳奕廷(易律師) 編著</div>
+          <div>出版社：高點 (2022/10/31)</div>
+          <div>ISBN：9786263342880</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ==================== 2. CENTER MAIN READER (中央主閱讀容器) ==================== -->
+    <main id="mainContentContainer" class="flex-1 min-w-0 w-full">
+      <!-- 各章節視圖 (viewHome, viewIntro, viewChapter1, viewChapter2, viewPart0...) 由 content/view-*.js 與 js/app.js 動態精準注入 -->
+    </main>
+
+    <!-- ==================== 3. RIGHT TABLE OF CONTENTS (TOC - 右側章節清單) ==================== -->
+    <aside id="rightTocAside" style="display: none;"
+      class="p-3.5 rounded-2xl border border-blue-500/30 bg-white/95 dark:bg-[#101623] shadow-md space-y-3">
+
+      <!-- Header with Close/Collapse Button -->
+      <div class="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-white/[0.08]">
+        <span
+          class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1 truncate">
+          <span id="tocTitle" class="truncate">📌 章節清單</span>
+        </span>
+        <div class="flex items-center gap-1.5 shrink-0">
+          <span id="tocChapterBadge"
+            class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-500 dark:text-blue-400 font-bold">教材</span>
+          <button type="button" onclick="toggleRightToc(false)"
+            class="p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors"
+            title="收合右側欄，釋放最大閱讀空間">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Links (由 renderToc 動態計算並注入) -->
+      <nav id="tocNav" class="space-y-0.5 text-xs border-l border-slate-200 dark:border-slate-800">
+        <!-- 動態 TOC 內容 -->
+      </nav>
+
+      <!-- Quick Actions (Note 3 Column 必備功能) -->
+      <div
+        class="pt-2.5 border-t border-slate-200 dark:border-white/[0.08] space-y-1.5 text-xs text-slate-500 dark:text-slate-400">
+        <button onclick="copyPageUrl()"
+          class="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors w-full text-left py-0.5 group">
+          <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-500" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+            </path>
+          </svg>
+          <span id="copyUrlText">複製本頁連結</span>
+        </button>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+          class="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors w-full text-left py-0.5 group">
+          <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-500" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+          </svg>
+          <span>回到頂部</span>
+        </button>
+      </div>
+
+      <!-- 研讀小幫手 (消除大片空白、充實右側欄實用度) -->
+      <div class="pt-2.5 border-t border-slate-200 dark:border-white/[0.08] space-y-2.5">
+        <!-- 閱讀掌握度進度條 -->
+        <div class="space-y-1">
+          <div class="flex items-center justify-between text-[11px] text-slate-400 font-medium">
+            <span class="flex items-center gap-1"><span>📊</span><span>研讀進度</span></span>
+            <span id="tocProgressPercent" class="font-mono font-bold text-blue-600 dark:text-blue-400">0%</span>
+          </div>
+          <div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+            <div id="tocProgressBarFill"
+              class="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-150"
+              style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- 本章核心法條速覽 -->
+        <div class="space-y-1">
+          <div class="text-[10.5px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+            <span>⚖️</span><span>核心法條索引</span>
+          </div>
+          <div class="flex flex-wrap gap-1 text-[10.5px]">
+            <span
+              class="px-1.5 py-0.5 rounded bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-mono font-bold border border-blue-200/60 dark:border-blue-800/40 cursor-default"
+              title="第 1 條：罪刑法定原則">§ 1 罪刑法定</span>
+            <span
+              class="px-1.5 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-mono font-bold border border-indigo-200/60 dark:border-indigo-800/40 cursor-default"
+              title="第 12 條：故意與過失">§ 12 故意過失</span>
+            <span
+              class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono"
+              title="第 19 條：責任能力與阻卻罪責">§ 19 責任能力</span>
+            <span
+              class="px-1.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 font-mono font-bold border border-emerald-200/60 dark:border-emerald-800/40 cursor-default"
+              title="第 23 條：正當防衛">§ 23 正當防衛</span>
+            <span
+              class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono"
+              title="第 24 條：緊急避難">§ 24 緊急避難</span>
+          </div>
+        </div>
+
+        <!-- 收合按鈕 -->
+        <button type="button" onclick="toggleRightToc(false)"
+          class="w-full py-1.5 px-2 rounded-xl border border-dashed border-slate-300 dark:border-slate-700/80 text-[11px] text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400 flex items-center justify-center gap-1.5 transition-all">
+          <span>⇥</span>
+          <span>收合側欄・釋放寬敞閱讀</span>
+        </button>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- 浮動展開目錄按鈕 (當右側欄收合時於右下角便利展開) -->
+  <button id="floatingTocRestoreBtn" onclick="toggleRightToc(true)"
+    class="fixed bottom-6 right-6 z-40 hidden px-3.5 py-2 rounded-2xl bg-white/95 dark:bg-[#111726]/95 border border-blue-500/40 shadow-xl text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center gap-2 hover:scale-105 transition-all backdrop-blur-md cursor-pointer"
+    title="展開右側章節目錄清單">
+    <span>📑</span>
+    <span>展開目錄清單</span>
+  </button>
+
+  <!-- ==================== MOBILE DRAWER (手機版左側目錄抽屜) ==================== -->
+  <div id="mobileDrawer" class="fixed inset-0 z-50 hidden">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="toggleMobileDrawer()"></div>
+
+    <div
+      class="mobile-drawer-content fixed inset-y-0 left-0 w-80 max-w-[88vw] bg-white dark:bg-[#0E131F] border-r border-slate-200 dark:border-white/[0.08] p-5 shadow-2xl flex flex-col justify-between overflow-y-auto z-10 space-y-4">
+
+      <div class="mobile-drawer-section space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-white/[0.06]">
+          <div class="flex items-center gap-2 font-bold text-slate-800 dark:text-white">
+            <span class="text-base">📖</span>
+            <span class="text-sm">教材目錄導航</span>
+          </div>
+          <button onclick="toggleMobileDrawer()"
+            class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            title="關閉目錄">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="space-y-1 text-sm select-none">
+          <button onclick="switchView('home'); toggleMobileDrawer();"
+            class="w-full text-left py-2.5 px-3 rounded-xl font-semibold transition-all flex items-center justify-between group border border-blue-500/40 bg-[#EBF3FE] dark:bg-blue-950/60 text-blue-600 dark:text-blue-400">
+            <span class="flex items-center gap-2 text-[14px]">
+              <span>🏠</span>
+              <span>書籍主頁 (Book Home)</span>
+            </span>
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+          </button>
+        </div>
+
+        <div class="pt-1 px-1 text-[11px] font-bold uppercase tracking-wider text-slate-400">教材章節</div>
+        <nav class="space-y-1 select-none">
+          <button onclick="switchView('intro'); toggleMobileDrawer();"
+            class="w-full text-left py-2 px-2.5 rounded-xl font-bold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/40 transition-colors flex items-center gap-2">
+            <span class="text-xs text-blue-500">📖</span>
+            <span class="text-[13.5px]">導論 犯罪概念與論罪結構</span>
+          </button>
+
+          <div class="ml-4 pl-3 border-l-2 border-slate-200 dark:border-slate-800/80 space-y-1 my-1">
+            <button onclick="switchView('chapter-1'); toggleMobileDrawer();"
+              class="w-full text-left py-1.5 px-2.5 rounded-lg text-[13px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-blue-500 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+              <span>第一章 犯罪的概念</span>
+            </button>
+            <button onclick="switchView('chapter-2'); toggleMobileDrawer();"
+              class="w-full text-left py-1.5 px-2.5 rounded-lg text-[13px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-blue-500 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+              <span>第二章 刑法的論罪結構</span>
+            </button>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="switchView('part-0'); toggleMobileDrawer();"
+              class="w-full text-left py-2 px-2.5 rounded-xl font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/40 transition-colors flex items-center gap-2">
+              <span class="text-xs text-indigo-500">⚖️</span>
+              <span class="text-[13.5px]">第零篇 刑法的運作、操作原理與法律效果</span>
+            </button>
+
+            <div
+              class="mobile-drawer-section ml-4 pl-3 border-l-2 border-slate-200 dark:border-slate-800/80 space-y-1 my-1">
+              <button onclick="switchView('part-0'); toggleMobileDrawer();"
+                class="w-full text-left py-1.5 px-2.5 rounded-lg text-[13px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                <span>本篇導讀 (Conducted read)</span>
+              </button>
+              <div>
+                <button onclick="switchView('part0-chapter-1'); toggleMobileDrawer();"
+                  class="w-full text-left py-1.5 px-2.5 rounded-lg text-[13px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                  <span class="font-bold">第一章 刑法的運作原理</span>
+                </button>
+                <div class="ml-3.5 pl-2.5 border-l-2 border-indigo-200 dark:border-indigo-900/60 space-y-0.5 my-0.5">
+                  <button onclick="switchView('part0-ch1-sec1'); toggleMobileDrawer();"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                    <span>第一節 法益保護原則</span>
+                  </button>
+                  <button onclick="switchView('part0-ch1-sec2'); toggleMobileDrawer();"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                    <span>第二節 罪刑法定原則</span>
+                  </button>
+                  <button onclick="switchView('part0-ch1-sec3'); toggleMobileDrawer();"
+                    class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                    <span>第三節 罪責原則</span>
+                  </button>
+                </div>
+                <div class="pt-1">
+                  <button onclick="switchView('part0-chapter-2'); toggleMobileDrawer();"
+                    class="w-full text-left py-1.5 px-2.5 rounded-lg text-[13px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    <span class="font-bold">第二章 刑法的操作原理</span>
+                  </button>
+                  <div class="ml-3.5 pl-2.5 border-l-2 border-indigo-200 dark:border-indigo-900/60 space-y-0.5 my-0.5">
+                    <button onclick="switchView('part0-ch2-sec1'); toggleMobileDrawer();"
+                      class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                      <span>第一節 刑法的適用效力</span>
+                    </button>
+                    <button onclick="switchView('part0-ch2-sec2'); toggleMobileDrawer();"
+                      class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                      <span>第二節 刑法之解釋方法</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="pt-1">
+                  <button onclick="switchView('part0-chapter-3'); toggleMobileDrawer();"
+                    class="w-full text-left py-1.5 px-2.5 rounded-lg text-[13px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
+                    <span class="font-bold">第三章 刑法的法律效果</span>
+                  </button>
+                  <div class="ml-3.5 pl-2.5 border-l-2 border-indigo-200 dark:border-indigo-900/60 space-y-0.5 my-0.5">
+                    <button onclick="switchView('part0-ch3-sec1'); toggleMobileDrawer();"
+                      class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                      <span>第一節 刑罰的種類——兼談法定刑</span>
+                    </button>
+                    <button onclick="switchView('part0-ch3-sec2'); toggleMobileDrawer();"
+                      class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                      <span>第二節 刑罰的調整——兼談處斷刑</span>
+                    </button>
+                    <button onclick="switchView('part0-ch3-sec3'); toggleMobileDrawer();"
+                      class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                      <span>第三節 刑罰的量定——兼談宣告刑</span>
+                    </button>
+                    <button onclick="switchView('part0-ch3-sec4'); toggleMobileDrawer();"
+                      class="w-full text-left py-1 px-2 rounded-lg text-[12px] font-medium transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-indigo-500 flex items-center gap-2">
+                      <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                      <span>第四節 刑罰的執行——兼談執行刑</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- 抽屜底部：書籍規格資訊卡 -->
+      <div
+        class="mobile-drawer-meta p-3.5 rounded-2xl border border-slate-200 dark:border-slate-800/80 bg-slate-50/90 dark:bg-slate-900/60 space-y-2 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span class="text-slate-400 font-bold uppercase tracking-wider text-[10px]">高點法學・圖說系列</span>
+        </div>
+        <div class="font-bold text-slate-800 dark:text-slate-200">刑法總則 Strafrecht</div>
+        <div class="text-slate-500 text-[10px] space-y-0.5">
+          <div>作者：陳奕廷(易律師) 編著</div>
+          <div>出版社：高點 (2022/10/31)</div>
+          <div>ISBN：9786263342880</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== MOBILE TOC MODAL ==================== -->
+  <div id="mobileTocModal" class="fixed inset-0 z-50 hidden">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleMobileTocModal()"></div>
+    <div
+      class="fixed inset-x-4 bottom-6 max-h-[70vh] rounded-3xl bg-white dark:bg-[#101623] border border-slate-200 dark:border-slate-800 p-5 shadow-2xl overflow-y-auto space-y-3">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-white/[0.06]">
+        <div class="font-bold text-sm text-blue-500">📌 章節清單</div>
+        <button onclick="toggleMobileTocModal()" class="p-1 rounded-lg text-slate-400">✕</button>
+      </div>
+      <nav class="space-y-2 text-xs">
+        <!-- 由 JS 動態注入 -->
+      </nav>
+    </div>
+  </div>
+
+  <!-- ==================== GLOBAL SEARCH MODAL (Ctrl+K 全域快速搜尋) ==================== -->
+  <div id="searchModal" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="全域快速搜尋">
+    <div class="fixed inset-0 bg-slate-950/70 search-modal-backdrop transition-opacity" onclick="closeSearchModal()">
+    </div>
+
+    <div class="fixed inset-0 flex items-start justify-center pt-14 sm:pt-20 p-3 sm:p-4 pointer-events-none">
+      <div
+        class="pointer-events-auto w-full max-w-2xl bg-white dark:bg-[#111726] rounded-2xl border border-slate-200/90 dark:border-white/[0.12] shadow-2xl overflow-hidden flex flex-col max-h-[82vh] fade-enter">
+
+        <!-- 頂部輸入列 -->
+        <div class="p-3.5 sm:p-4 border-b border-slate-100 dark:border-white/[0.08] flex items-center gap-3">
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input id="globalSearchInput" type="text" autocomplete="off"
+            placeholder="搜尋案例 (如 西瓜刀、挑唆防衛)、法條 (§ 12, § 23) 或爭點..."
+            class="w-full bg-transparent text-sm sm:text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-hidden"
+            oninput="handleSearchInput(this.value)">
+          <button type="button" onclick="closeSearchModal()"
+            class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white text-xs font-mono font-bold transition-colors">
+            ESC
+          </button>
+        </div>
+
+        <!-- 分類標籤快速篩選 -->
+        <div
+          class="px-3.5 sm:px-4 py-2 bg-slate-50 dark:bg-slate-900/40 border-b border-slate-100 dark:border-white/[0.06] flex items-center gap-1.5 overflow-x-auto text-xs">
+          <button type="button" onclick="setSearchFilter('all')" id="searchChip-all"
+            class="px-2.5 py-1 rounded-lg font-semibold transition-all bg-blue-600 text-white shadow-2xs">全部</button>
+          <button type="button" onclick="setSearchFilter('case')" id="searchChip-case"
+            class="px-2.5 py-1 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-200/80 dark:hover:bg-slate-800 transition-all">⚖️
+            案例</button>
+          <button type="button" onclick="setSearchFilter('article')" id="searchChip-article"
+            class="px-2.5 py-1 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-200/80 dark:hover:bg-slate-800 transition-all">📜
+            法條</button>
+          <button type="button" onclick="setSearchFilter('concept')" id="searchChip-concept"
+            class="px-2.5 py-1 rounded-lg font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-200/80 dark:hover:bg-slate-800 transition-all">💡
+            核心學說</button>
+          <span id="searchResultCount" class="ml-auto text-[11px] text-slate-400 font-mono">0 個結果</span>
+        </div>
+
+        <!-- 搜尋結果動態清單 -->
+        <div id="searchResultsList"
+          class="flex-1 overflow-y-auto p-2 sm:p-3 space-y-1 divide-y divide-slate-100 dark:divide-white/[0.04]">
+          <!-- 由 JS 動態注入 -->
+        </div>
+
+        <!-- 底部快捷鍵提示 -->
+        <div
+          class="p-3 bg-slate-50/90 dark:bg-slate-900/60 border-t border-slate-100 dark:border-white/[0.08] flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1"><kbd
+                class="px-1 py-0.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-[10px]">↑</kbd><kbd
+                class="px-1 py-0.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-[10px]">↓</kbd>
+              選擇</span>
+            <span class="flex items-center gap-1"><kbd
+                class="px-1.5 py-0.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-[10px]">Enter</kbd>
+              跳轉</span>
+            <span class="flex items-center gap-1"><kbd
+                class="px-1.5 py-0.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded font-mono text-[10px]">Esc</kbd>
+              關閉</span>
+          </div>
+          <span class="font-mono text-[10px] text-slate-400 hidden sm:inline">刑法總則【圖說系列】知識庫</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== STATUTE HOVER POPOVER (法條原地即時懸浮卡片) ==================== -->
+  <div id="statutePopoverBackdrop" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 hidden transition-opacity"
+    onclick="hideStatutePopover(true)"></div>
+
+  <div id="statutePopover"
+    class="popover-hidden fixed z-60 bg-white/95 dark:bg-[#111726]/95 backdrop-blur-xl border border-slate-200/90 dark:border-white/[0.14] shadow-2xl shadow-blue-900/20 text-slate-800 dark:text-slate-100 font-sans space-y-3 p-4"
+    role="tooltip" aria-hidden="true">
+    <div class="border-b border-slate-100 dark:border-white/[0.08] pb-3 space-y-2">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <span class="text-base" id="statutePopIcon">📜</span>
+          <span id="statutePopBadge"
+            class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 border border-blue-200/60 dark:border-blue-800/60">
+            構成要件
+          </span>
+        </div>
+        <button type="button" onclick="hideStatutePopover(true)"
+          class="p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors cursor-pointer"
+          title="關閉卡片" aria-label="關閉卡片">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <h4 id="statutePopTitle"
+        class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white leading-snug break-words">
+        刑法第 12 條
+      </h4>
+    </div>
+
+    <div class="space-y-1.5">
+      <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">現行條文內容</div>
+      <div id="statutePopBody"
+        class="text-xs leading-relaxed text-slate-700 dark:text-slate-200 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-white/[0.04] max-h-40 overflow-y-auto font-sans whitespace-pre-line">
+        條文載入中...
+      </div>
+    </div>
+
+    <div class="space-y-1 pt-1 border-t border-slate-100 dark:border-white/[0.06]">
+      <div class="flex items-center justify-between text-[10.5px] font-bold text-amber-600 dark:text-amber-400">
+        <span class="flex items-center gap-1">
+          <span>💡</span>
+          <span>體系審查與核心爭點</span>
+        </span>
+        <span id="statutePopSub" class="text-[10px] font-mono text-slate-400 font-normal">三階層體系</span>
+      </div>
+      <p id="statutePopRole" class="text-[11.5px] leading-relaxed text-slate-600 dark:text-slate-300">
+        爭點指引載入中...
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== FLOATING BACK TO TOP WITH SVG PROGRESS RING ==================== -->
+  <button id="floatingBackToTop" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    class="btn-hidden fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-white/95 dark:bg-[#111726]/95 backdrop-blur-md border border-slate-200 dark:border-white/[0.12] shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 flex items-center justify-center group cursor-pointer transition-all duration-200 focus:outline-hidden"
+    aria-label="回到頁面頂部" title="回到頂部 (點擊滑順滾動)">
+    <svg class="absolute inset-0 w-full h-full -rotate-90 pointer-events-none p-0.5" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="20" class="stroke-slate-200/80 dark:stroke-slate-700/50 fill-none" stroke-width="3">
+      </circle>
+      <circle id="backToTopCircle" cx="24" cy="24" r="20"
+        class="stroke-blue-600 dark:stroke-blue-400 fill-none transition-all duration-100 ease-out" stroke-width="3"
+        stroke-linecap="round" stroke-dasharray="125.66" stroke-dashoffset="125.66"></circle>
+    </svg>
+    <div class="relative z-10 flex flex-col items-center justify-center pointer-events-none">
+      <svg
+        class="w-4 h-4 text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:-translate-y-0.5 transition-all"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+      </svg>
+      <span id="backToTopPercent"
+        class="text-[9px] font-mono font-bold text-blue-600 dark:text-blue-400 scale-0 group-hover:scale-100 transition-transform absolute -bottom-3 hidden sm:block">0%</span>
+    </div>
+  </button>
+
+  <!-- ==================== TOAST NOTIFICATION (微提示反饋) ==================== -->
+  <div id="toastNotification"
+    class="toast-hidden fixed bottom-20 sm:bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-slate-900/95 dark:bg-white/95 text-white dark:text-slate-900 shadow-2xl backdrop-blur-md border border-slate-700/40 dark:border-slate-200/50 text-xs font-semibold">
+    <span id="toastIcon" class="text-emerald-400 dark:text-emerald-600 text-sm">✓</span>
+    <span id="toastMessage" class="tracking-wide">已成功複製爭點筆記格式！</span>
+  </div>
+
+  <!-- ==================== DIAGRAM LIGHTBOX MODAL (核心架構圖燈箱無損放大鏡) ==================== -->
+  <div id="diagramLightbox"
+    class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md transition-opacity duration-200 select-none"
+    style="display: none;">
+    <div id="lightboxBackdrop" class="absolute inset-0 -z-10 cursor-pointer" onclick="closeDiagramLightbox()"></div>
+
+    <div
+      class="relative w-full max-w-5xl max-h-[92vh] mx-4 my-auto flex flex-col rounded-3xl bg-white/95 dark:bg-[#0f172a]/95 border border-slate-200 dark:border-slate-700/80 shadow-2xl overflow-hidden">
+
+      <!-- 頂部工具列 -->
+      <div
+        class="flex items-center justify-between px-5 py-3.5 border-b border-slate-200/80 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/90 backdrop-blur shrink-0">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <span class="text-base shrink-0">🔍</span>
+          <h3 id="lightboxTitle" class="text-sm sm:text-base font-bold text-slate-900 dark:text-white truncate">
+            架構圖全螢幕檢視
+          </h3>
+          <span id="lightboxPageBadge"
+            class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 font-bold border border-blue-200/60 dark:border-blue-700/40 shrink-0">
+            原書圖解
+          </span>
+        </div>
+
+        <div class="flex items-center gap-1.5 shrink-0">
+          <button type="button" onclick="lightboxZoom(-0.25)"
+            class="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 text-xs font-bold transition-colors cursor-pointer"
+            title="縮小 (滾輪向下)">
+            ➖
+          </button>
+          <span id="lightboxScaleDisplay"
+            class="text-[11px] font-mono font-bold text-slate-600 dark:text-slate-300 w-11 text-center select-none">
+            100%
+          </span>
+          <button type="button" onclick="lightboxZoom(0.25)"
+            class="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 text-xs font-bold transition-colors cursor-pointer"
+            title="放大 (滾輪向上)">
+            ➕
+          </button>
+          <button type="button" onclick="lightboxResetZoom()"
+            class="px-2 py-1 rounded-lg text-[11px] font-semibold text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            title="重設縮放">
+            重設
+          </button>
+          <div class="h-4 w-px bg-slate-200 dark:bg-slate-700 mx-1"></div>
+          <button type="button" onclick="closeDiagramLightbox()"
+            class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-800 dark:hover:text-white hover:bg-slate-200/80 dark:hover:bg-slate-800 text-base font-bold transition-colors cursor-pointer"
+            title="關閉 (Esc)">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- 畫布滾動/漫遊容器 -->
+      <div id="lightboxCanvasContainer"
+        class="relative flex-1 overflow-auto p-4 sm:p-8 flex items-center justify-center bg-slate-100/60 dark:bg-slate-950/60 cursor-grab">
+        <div id="lightboxCanvas" class="transition-transform duration-75 origin-center max-w-full">
+        </div>
+      </div>
+
+      <!-- 底部操作提示 -->
+      <div
+        class="px-5 py-2 border-t border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-900 text-[11px] text-slate-400 flex items-center justify-between">
+        <span>💡 提示：支援滾輪縮放、按住滑鼠拖曳，按 <kbd
+            class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 font-mono text-[10px]">Esc</kbd> 退出</span>
+        <span class="text-blue-500 font-medium hidden sm:inline">雙擊切換放大 / 重設</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 模組化載入層 (Zero-CORS：雙擊 file:/// 即可直開) ==================== -->
+  <!-- 1. 資料層 (Data Layer) -->
+  <script src="data/toc-config.js?v=20260927_8"></script>
+  <script src="data/search-db.js"></script>
+  <script src="data/statute-db.js"></script>
+
+  <!-- 2. 視圖層 (Content Layer) -->
+  <script src="content/view-home.js"></script>
+  <script src="content/view-intro.js"></script>
+  <script src="content/view-chapter1.js"></script>
+  <script src="content/view-chapter2.js?v=20260927_7"></script>
+  <script src="content/view-part0.js"></script>
+  <script src="content/view-part0-ch1.js"></script>
+  <script src="content/view-part0-ch1-sec1.js?v=20260927_8"></script>
+  <script src="content/view-part0-ch1-sec2.js?v=20260927_8"></script>
+  <script src="content/view-part0-ch1-sec3.js?v=20260927_8"></script>
+  <script src="content/view-part0-ch2.js?v=20260927_8"></script>
+  <script src="content/view-part0-ch2-sec1.js?v=20260927_8"></script>
+  <script src="content/view-part0-ch2-sec2.js?v=20260927_8"></script>
+  <script src="content/view-part0-ch3.js?v=20260927_9"></script>
+  <script src="content/view-part0-ch3-sec1.js?v=20260927_9"></script>
+  <script src="content/view-part0-ch3-sec2.js?v=20260927_9"></script>
+  <script src="content/view-part0-ch3-sec3.js?v=20260927_9"></script>
+  <script src="content/view-part0-ch3-sec4.js?v=20260927_9"></script>
+
+  <!-- 3. 控制器層 (Controller Layer) -->
+  <script src="js/app.js"></script>
+  >>>>>>> 596d695 (Forza Horizon style 3D Car Game)
+</body>
+
+</html>

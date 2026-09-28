@@ -1049,3 +1049,779 @@ main blockquote {
     max-width: 100% !important;
   }
 }
+
+/* ===================================================
+   全方位手機自適應版面系統 (Comprehensive Mobile Responsive System)
+   1. 觸控友善化 (Touch-friendly tap targets ≥ 44px)
+   2. 文字自動斷行防溢出 (word-break & overflow-wrap)
+   3. 表格水平捲動容器 (Horizontal scroll for tables)
+   4. 卡片堆疊排版 (Stacked card layouts)
+   5. 安全區域邊距 (Safe area insets for notched devices)
+   6. 底部浮動按鈕位置修正
+   =================================================== */
+
+/* ---------- 全域基礎防溢出 ---------- */
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* ---------- 平板斷點 (max-width: 1023px) ---------- */
+@media (max-width: 1023px) {
+  /* 3D 書封在平板縮小 */
+  .book-3d-card {
+    width: 13rem !important;
+    height: 18.5rem !important;
+  }
+  .book-pedestal-shadow {
+    width: 140px !important;
+  }
+
+  /* 燈箱更貼合螢幕 */
+  #diagramLightbox > div:nth-child(2) {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    max-width: calc(100vw - 2rem) !important;
+  }
+}
+
+/* ---------- 手機主斷點 (max-width: 767px) ---------- */
+@media (max-width: 767px) {
+
+  /* === 全域文字防溢出 === */
+  body {
+    overflow-x: hidden !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* === Header 響應化 === */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+
+  header > div {
+    height: auto !important;
+    min-height: 3.25rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-left: 0.625rem !important;
+    padding-right: 0.625rem !important;
+    gap: 0.35rem !important;
+  }
+
+  /* 品牌圖示縮小 */
+  header > div > div:first-child > div:first-child {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: 0.875rem !important;
+    border-radius: 0.625rem !important;
+  }
+
+  /* 標題文字自動截斷 */
+  header > div > div:first-child > div:last-child {
+    min-width: 0 !important;
+    flex: 1 !important;
+  }
+
+  header > div > div:first-child > div:last-child > div:first-child {
+    font-size: 0.75rem !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* 章節 badge 在極窄裝置隱藏 */
+  #currentChapterBadge {
+    max-width: 5.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* 頂部右側按鈕群緊湊 */
+  header > div > div:last-child {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+  }
+
+  header > div > div:last-child > button,
+  header > div > div:last-child > div > button {
+    padding: 0.35rem 0.45rem !important;
+    min-width: 2rem;
+    min-height: 2rem;
+  }
+
+  /* 章節清單按鈕精簡化 */
+  #mobileTocBtn {
+    display: inline-flex !important;
+    padding: 0.35rem 0.5rem !important;
+    font-size: 0.65rem !important;
+  }
+
+  #mobileTocBtn > span:last-child {
+    display: none !important;
+  }
+
+  /* === 主版面佈局 === */
+  .app-layout-container {
+    display: block !important;
+    padding: 0.75rem 0.5rem !important;
+  }
+
+  #sidebar {
+    display: none !important;
+  }
+
+  main {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  #rightTocAside {
+    display: none !important;
+  }
+
+  main > div {
+    max-width: none !important;
+  }
+
+  /* === 字級設定面板 === */
+  #fontSettingsMenu {
+    position: fixed !important;
+    top: 3.5rem !important;
+    left: 0.5rem !important;
+    right: 0.5rem !important;
+    width: auto !important;
+    max-width: none !important;
+    z-index: 60 !important;
+    border-radius: 1.25rem !important;
+  }
+
+  /* === 書籍 Hero 區手機堆疊排版 === */
+  main .grid.grid-cols-1.md\\:grid-cols-12 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+  }
+
+  main .md\\:col-span-4,
+  main .lg\\:col-span-4 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  main .md\\:col-span-8,
+  main .lg\\:col-span-8 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 3D 書封手機端適度縮小 */
+  .book-3d-card {
+    width: 11rem !important;
+    height: 15.5rem !important;
+  }
+
+  .book-pedestal-shadow {
+    width: 120px !important;
+    height: 14px !important;
+  }
+
+  /* Hero 區外框收緊 padding */
+  main > div > div > .relative.overflow-hidden.rounded-3xl {
+    padding: 1.25rem !important;
+    border-radius: 1.25rem !important;
+  }
+
+  /* 量化晶片 2 列→2 列更緊湊 */
+  main .grid.grid-cols-2.sm\\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+
+  /* 量化晶片 padding 緊湊 */
+  main .metric-chip {
+    padding: 0.625rem !important;
+    border-radius: 1rem !important;
+  }
+
+  main .metric-chip .text-base,
+  main .metric-chip .sm\\:text-lg {
+    font-size: 0.9rem !important;
+  }
+
+  /* === 正文標題層級手機適配 === */
+  main h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+
+  main h2 {
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+  }
+
+  main h3 {
+    font-size: 1.05rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* === 圓角卡片統一窄邊距 === */
+  main .rounded-3xl {
+    border-radius: 1.125rem !important;
+  }
+
+  main section > .rounded-3xl,
+  main .space-y-10 > section > .rounded-3xl {
+    padding-left: 0.875rem !important;
+    padding-right: 0.875rem !important;
+  }
+
+  /* === 看板標題列手機排版 === */
+  main .flex.items-center.justify-between.flex-wrap {
+    gap: 0.5rem !important;
+    padding-left: 0.875rem !important;
+    padding-right: 0.875rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  /* === 表格水平捲動容器 === */
+  main table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  main .overflow-x-auto {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 矩陣表格手機適配 */
+  .matrix-table {
+    font-size: 0.72rem !important;
+    min-width: 600px;
+  }
+
+  .matrix-table th,
+  .matrix-table td {
+    padding: 0.625rem 0.75rem !important;
+    white-space: normal !important;
+    min-width: 100px;
+  }
+
+  /* === 多欄內容網格手機堆疊 === */
+  main .grid.grid-cols-3,
+  main .sm\\:grid-cols-3,
+  main .md\\:grid-cols-3,
+  main .lg\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  main .grid.grid-cols-4,
+  main .sm\\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  main .grid.grid-cols-5,
+  main .grid.grid-cols-6 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* === 案例卡片手機適配 === */
+  .case-card {
+    border-radius: 1rem !important;
+    padding: 0.875rem !important;
+  }
+
+  .case-card-header {
+    gap: 0.375rem !important;
+  }
+
+  /* 案例卡片內的 flex 佈局堆疊 */
+  .case-card .flex.items-start.gap-4,
+  .case-card .flex.items-start.gap-5 {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  /* === 法學卡片 (box-legal-*) 手機 padding === */
+  .box-legal-navy,
+  .box-legal-gold,
+  .box-legal-emerald {
+    padding: 0.875rem !important;
+    border-radius: 1rem !important;
+  }
+
+  /* === 爭點矩陣盒子手機適配 === */
+  .mega-matrix-box {
+    padding: 0.875rem !important;
+    border-radius: 1rem !important;
+    border-left-width: 5px !important;
+  }
+
+  /* 矩陣頁籤水平捲動 */
+  .mega-matrix-box > div > .flex.flex-wrap {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.375rem !important;
+    padding-bottom: 0.25rem;
+  }
+
+  .matrix-tab-btn {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    font-size: 0.7rem !important;
+    padding: 0.375rem 0.625rem !important;
+  }
+
+  /* === 膠囊按鈕水平捲動 === */
+  .just-pill-btn {
+    font-size: 0.68rem !important;
+    padding: 0.35rem 0.6rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* === Tab 按鈕組水平捲動 === */
+  .just-tab-btn {
+    font-size: 0.7rem !important;
+    padding: 0.375rem 0.5rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Tab 容器滑動化 */
+  main > div .flex.flex-wrap.gap-2 {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+    scrollbar-width: none;
+  }
+
+  main > div .flex.flex-wrap.gap-2::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* === 案例導航控制台手機適配 === */
+  .nav-console-emerald,
+  .nav-console-indigo {
+    padding: 0.875rem !important;
+    border-radius: 1rem !important;
+    border-left-width: 5px !important;
+  }
+
+  /* === 閱讀進度條加粗提升可見度 === */
+  #readingProgressBar {
+    height: 3px !important;
+  }
+
+  /* === Pre / Code 塊防溢出 === */
+  main pre,
+  main code {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    word-break: break-all !important;
+  }
+
+  main pre {
+    padding: 0.75rem !important;
+    border-radius: 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* === 引用塊手機間距 === */
+  main blockquote {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 0.75rem !important;
+    border-radius: 0.75rem !important;
+  }
+
+  /* === 浮動按鈕安全區域 === */
+  #floatingBackToTop {
+    bottom: 1.25rem !important;
+    right: 1rem !important;
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+  }
+
+  #floatingTocRestoreBtn {
+    bottom: 4.5rem !important;
+    right: 1rem !important;
+  }
+
+  /* === Toast 通知位置 === */
+  #toastNotification {
+    bottom: 5.5rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    transform: none !important;
+    max-width: none !important;
+    border-radius: 0.75rem !important;
+    justify-content: center;
+  }
+
+  #toastNotification.toast-visible {
+    transform: none !important;
+  }
+
+  #toastNotification.toast-hidden {
+    transform: translateY(14px) !important;
+  }
+
+  /* === Mobile Drawer 優化 === */
+  #mobileDrawer > div:last-child {
+    width: 85vw !important;
+    max-width: 22rem !important;
+    padding: 1.25rem !important;
+  }
+
+  /* === Mobile TOC Modal 全屏底部 Sheet === */
+  #mobileTocModal > div:last-child {
+    inset: auto 0.625rem 0 0.625rem !important;
+    max-height: 75vh !important;
+    border-radius: 1.5rem 1.5rem 0 0 !important;
+    padding: 1.25rem !important;
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* === 搜尋彈窗手機全屏化 === */
+  #searchModal > div:last-child > div {
+    margin-top: 0.5rem !important;
+    border-radius: 1.25rem !important;
+    max-height: 88vh !important;
+  }
+
+  #searchModal .flex.items-start.justify-center {
+    padding: 0.5rem !important;
+    padding-top: 0.5rem !important;
+  }
+
+  #globalSearchInput {
+    font-size: 1rem !important;
+  }
+
+  /* === 燈箱手機適配 === */
+  #diagramLightbox > div:nth-child(2) {
+    margin: 0.5rem !important;
+    max-width: calc(100vw - 1rem) !important;
+    border-radius: 1.25rem !important;
+  }
+
+  #diagramLightbox .flex.items-center.gap-2\\.5 h3 {
+    font-size: 0.8rem !important;
+  }
+
+  /* === 法條懸浮卡片 → 底部 Sheet === */
+  #statutePopover {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 1.25rem 1.25rem 0 0 !important;
+    padding: 1.25rem !important;
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)) !important;
+    max-height: 65vh !important;
+    overflow-y: auto !important;
+  }
+
+  /* === 圖解藝廊 Grid 手機 === */
+  main .grid.grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  /* === Breadcrumb 手機斷行 === */
+  main nav.flex.items-center.gap-2 {
+    flex-wrap: wrap !important;
+  }
+
+  /* === 章節間距收緊 === */
+  main .space-y-8 > *:not(:last-child) {
+    margin-bottom: 1.5rem !important;
+  }
+
+  main .space-y-10 > *:not(:last-child) {
+    margin-bottom: 1.75rem !important;
+  }
+
+  /* === 圖片 100% 寬度 === */
+  main img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* === SVG 架構圖寬度限制 === */
+  main svg {
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible;
+  }
+
+  /* === 觸控友善：所有可點擊元素最小 44px === */
+  main button,
+  main a,
+  main [role="button"] {
+    min-height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* 排除行內小標籤的最小高度 */
+  main .legal-tag-blue,
+  main .legal-tag-amber,
+  main .legal-tag-rose,
+  main .statute-trigger,
+  main .case-jump-btn {
+    min-height: unset;
+    display: inline-flex;
+  }
+
+  /* === 法條標籤膠囊排版 === */
+  main .flex.flex-wrap.gap-1,
+  main .flex.flex-wrap.gap-1\\.5 {
+    gap: 0.375rem !important;
+  }
+
+  main .font-mono[title] {
+    font-size: 0.65rem !important;
+    padding: 0.15rem 0.375rem !important;
+  }
+}
+
+/* ---------- 小螢幕手機斷點 (max-width: 480px) ---------- */
+@media (max-width: 480px) {
+
+  /* Header 更極限壓縮 */
+  header > div {
+    padding-left: 0.375rem !important;
+    padding-right: 0.375rem !important;
+    gap: 0.25rem !important;
+  }
+
+  /* 書本 emoji 圖示縮小 */
+  header > div > div:first-child > div:first-child {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* 品牌標題進一步截短 */
+  header > div > div:first-child > div:last-child > div:first-child > span:first-child {
+    max-width: 6.5rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+
+  #currentChapterBadge {
+    display: none !important;
+  }
+
+  /* 主版面收緊 */
+  .app-layout-container {
+    padding: 0.5rem 0.375rem !important;
+  }
+
+  /* 標題進一步縮小 */
+  main h1 {
+    font-size: 1.25rem !important;
+  }
+
+  main h2 {
+    font-size: 1.1rem !important;
+  }
+
+  main h3 {
+    font-size: 0.95rem !important;
+  }
+
+  /* 量化晶片堆疊 */
+  main .grid.grid-cols-2.sm\\:grid-cols-4 {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.375rem !important;
+  }
+
+  /* 3D 書封再縮小 */
+  .book-3d-card {
+    width: 9.5rem !important;
+    height: 13.5rem !important;
+  }
+
+  .book-pedestal-shadow {
+    width: 100px !important;
+    height: 12px !important;
+  }
+
+  /* 卡片 padding 收緊 */
+  main .rounded-3xl,
+  main section > .rounded-3xl {
+    padding: 0.75rem !important;
+  }
+
+  /* Mobile Drawer 極窄適配 */
+  #mobileDrawer > div:last-child {
+    width: 90vw !important;
+    max-width: 19rem !important;
+    padding: 1rem !important;
+  }
+}
+
+/* ---------- 安全區域支持 (iPhone 瀏海/藥丸螢幕) ---------- */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  @media (max-width: 767px) {
+    body {
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    #floatingBackToTop {
+      bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)) !important;
+    }
+
+    #floatingTocRestoreBtn {
+      bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px)) !important;
+    }
+  }
+}
+
+/* ---------- 橫向手機修正 (Landscape Phone) ---------- */
+@media (max-height: 480px) and (orientation: landscape) {
+  header > div {
+    min-height: 2.75rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+
+  /* 橫向模式搜尋彈窗高度受限 */
+  #searchModal > div:last-child > div {
+    max-height: 80vh !important;
+  }
+
+  #mobileTocModal > div:last-child {
+    max-height: 85vh !important;
+  }
+
+  /* 法條底部 Sheet 高度受限 */
+  #statutePopover {
+    max-height: 55vh !important;
+  }
+}
+
+/* ---------- 觸控裝置懸停取消 (Hover fix for touch) ---------- */
+@media (hover: none) and (pointer: coarse) {
+  /* 取消桌面版的 hover 放大效果避免觸控誤觸 */
+  .book-3d-card.float-breathing:hover {
+    animation-play-state: running !important;
+    transform: none !important;
+  }
+
+  .metric-chip:hover {
+    transform: none !important;
+  }
+
+  .just-pill-btn:hover,
+  .matrix-tab-btn:hover,
+  .just-tab-btn:hover {
+    transform: none !important;
+  }
+
+  .case-jump-btn:hover {
+    transform: none !important;
+  }
+
+  /* 觸控捲動提示：表格等水平捲動區域 */
+  main .overflow-x-auto {
+    position: relative;
+  }
+
+  main .overflow-x-auto::after {
+    content: '← 滑動查看 →';
+    display: block;
+    text-align: center;
+    font-size: 0.65rem;
+    color: rgba(148, 163, 184, 0.6);
+    padding: 0.25rem 0;
+    pointer-events: none;
+  }
+}
+
+/* ==================== Draw.io 格式體系流程圖專用樣式 (Image 1 Standard) ==================== */
+.drawio-grid {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.dark .drawio-grid {
+  background-color: #0f172a;
+  background-image: 
+    linear-gradient(to right, rgba(51, 65, 85, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(51, 65, 85, 0.4) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.node-blue {
+  background: #dae8fc;
+  border: 1.5px solid #6c8ebf;
+  color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+.node-yellow {
+  background: #fff2cc;
+  border: 1.5px solid #d6b656;
+  color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+.node-red {
+  background: #f8cecc;
+  border: 1.5px solid #b85450;
+  color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+.node-purple {
+  background: #e1d5e7;
+  border: 1.5px solid #9673a6;
+  color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+.node-green {
+  background: #d5e8d4;
+  border: 1.5px solid #82b366;
+  color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+.node-amber {
+  background: #ffe6cc;
+  border: 1.5px solid #d79b00;
+  color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+.flow-node {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.flow-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  filter: brightness(1.02);
+}
+

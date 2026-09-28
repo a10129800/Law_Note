@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 690" width="100%" height="100%">
+  <defs>
+    <!-- Draw.io 經典背景網格 -->
+    <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e2e8f0" stroke-width="0.8" />
+    </pattern>
+
+    <!-- 節點立體柔和陰影 -->
+    <filter id="shadowFilter" x="-3%" y="-3%" width="106%" height="108%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+
+    <!-- 連接箭頭 -->
+    <marker id="mArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#475569" />
+    </marker>
+    <marker id="mArrowPurple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#7c3aed" />
+    </marker>
+    <marker id="mArrowAmber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#d97706" />
+    </marker>
+  </defs>
+
+  <style>
+    .t-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif; font-weight: 800; }
+    .t-header { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif; font-weight: 700; }
+    .t-bold { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif; font-weight: 700; }
+    .t-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Microsoft JhengHei", sans-serif; font-weight: 600; }
+  </style>
+
+  <!-- 畫布背景 -->
+  <rect width="1060" height="690" fill="#ffffff" rx="16" />
+  <rect width="1060" height="690" fill="url(#gridPattern)" rx="16" />
+  <rect width="1060" height="690" fill="none" stroke="#cbd5e1" stroke-width="2" rx="16" />
+
+  <!-- 頂部頁籤標註 -->
+  <g transform="translate(30, 18)">
+    <rect width="250" height="30" rx="15" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.2" />
+    <text x="125" y="20" text-anchor="middle" fill="#334155" font-size="13" class="t-bold">
+      高點法學・圖說刑法總則 (易律師)
+    </text>
+  </g>
+  <g transform="translate(780, 18)">
+    <rect width="250" height="30" rx="15" fill="#faf5ff" stroke="#c084fc" stroke-width="1.2" />
+    <text x="125" y="20" text-anchor="middle" fill="#7e22ce" font-size="13" class="t-bold">
+      教材第 2-27 頁 原書圖解標準復刻
+    </text>
+  </g>
+
+  <!-- 頂部主標題節點 -->
+  <g id="top-title" filter="url(#shadowFilter)">
+    <rect x="290" y="55" width="480" height="52" rx="12" fill="#f3e8ff" stroke="#9333ea" stroke-width="2.2" />
+    <text x="530" y="88" text-anchor="middle" fill="#581c87" font-size="21" class="t-title">
+      刑罰理論的思考四大步驟體系全景圖
+    </text>
+  </g>
+
+  <!-- ==================== 第一大階段：量定刑罰 (710px) ==================== -->
+  <g id="stage-1-group">
+    <!-- 外框大容器 -->
+    <rect x="25" y="125" width="715" height="475" rx="16" fill="#faf5ff" stroke="#a855f7" stroke-width="2.2" filter="url(#shadowFilter)" />
+    
+    <!-- 階段大標題 -->
+    <rect x="40" y="140" width="685" height="38" rx="8" fill="#7e22ce" />
+    <text x="55" y="165" fill="#ffffff" font-size="16" class="t-title">
+      第一大階段：量定刑罰（司法審判核心・法院量刑職權）
+    </text>
+    <text x="705" y="165" text-anchor="end" fill="#e9d5ff" font-size="13" class="t-bold">
+      步驟 ① ～ ③ • 審判階段
+    </text>
+
+    <!-- 子容器：【確定範圍】 (435px) -->
+    <rect x="42" y="190" width="435" height="395" rx="12" fill="#ffffff" stroke="#c084fc" stroke-width="1.6" />
+    <rect x="42" y="190" width="435" height="34" rx="12" fill="#ede9fe" />
+    <text x="55" y="213" fill="#6b21a8" font-size="14.5" class="t-title">
+      【確定範圍】STEP 1 ➔ 2（浮動範圍之劃定與調整）
+    </text>
+
+    <!-- 步驟 1: 法定刑 (找尋基本範圍) -->
+    <g id="box-step1">
+      <rect x="58" y="234" width="403" height="150" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.8" filter="url(#shadowFilter)" />
+      <rect x="70" y="244" width="130" height="24" rx="6" fill="#e2e8f0" />
+      <text x="135" y="261" text-anchor="middle" fill="#475569" font-size="11.5" class="t-bold">步驟 ① 找尋基本範圍</text>
+      
+      <text x="210" y="263" fill="#1e293b" font-size="18" class="t-title">法定刑</text>
+      <text x="275" y="262" fill="#64748b" font-size="11.5" class="t-bold">（立法院立法明定）</text>
+
+      <line x1="70" y1="276" x2="445" y2="276" stroke="#cbd5e1" stroke-width="1" />
+      
+      <text x="72" y="298" fill="#334155" font-size="13.5" class="t-body">• 立法者預先制定於刑法各分則條文之抽象刑罰範圍。</text>
+      <text x="72" y="322" fill="#334155" font-size="13.5" class="t-body">• <tspan fill="#b91c1c" class="t-bold">例：</tspan>殺人罪 § 271「死刑、無期徒刑或十年以上有期徒刑」。</text>
+      <text x="72" y="346" fill="#334155" font-size="13.5" class="t-body">• <tspan fill="#047857" class="t-bold">法理：</tspan>罪刑法定原則、法律保留原則（所有量刑思考之起點）。</text>
+      
+      <rect x="72" y="358" width="375" height="18" rx="4" fill="#f1f5f9" />
+      <text x="260" y="371" text-anchor="middle" fill="#64748b" font-size="11" class="t-bold">
+        尚未考量具體個案之加重或減輕事由
+      </text>
+    </g>
+
+    <!-- 步驟 1 到步驟 2 垂直連接箭頭 -->
+    <path d="M 260 384 L 260 398" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#mArrowPurple)" />
+
+    <!-- 步驟 2: 處斷刑 (調整處斷範圍) -->
+    <g id="box-step2">
+      <rect x="58" y="403" width="403" height="168" rx="10" fill="#fdf4ff" stroke="#d946ef" stroke-width="1.8" filter="url(#shadowFilter)" />
+      <rect x="70" y="413" width="130" height="24" rx="6" fill="#fae8ff" />
+      <text x="135" y="430" text-anchor="middle" fill="#a21caf" font-size="11.5" class="t-bold">步驟 ② 調整處斷範圍</text>
+      
+      <text x="210" y="432" fill="#86198f" font-size="18" class="t-title">處斷刑</text>
+      <text x="275" y="431" fill="#c026d3" font-size="11.5" class="t-bold">（總則加減後新範圍）</text>
+
+      <line x1="70" y1="445" x2="445" y2="445" stroke="#f0abfc" stroke-width="1" />
+      
+      <text x="72" y="467" fill="#334155" font-size="13.5" class="t-body">• 依刑法總則法定事由加重或減輕，算出<tspan fill="#86198f" class="t-bold">全新浮動區間</tspan>。</text>
+      <text x="72" y="491" fill="#334155" font-size="13.5" class="t-body">• <tspan fill="#b91c1c" class="t-bold">法定加重：</tspan>累犯（§ 47 加重本刑至 1/2，如 10 年 ➔ 15 年）。</text>
+      <text x="72" y="515" fill="#334155" font-size="13.5" class="t-body">• <tspan fill="#047857" class="t-bold">法定減輕：</tspan>未遂（§ 25）、自首（§ 62）、中止（§ 27 得減其刑）。</text>
+      
+      <rect x="72" y="530" width="375" height="22" rx="4" fill="#f5d0fe" />
+      <text x="260" y="546" text-anchor="middle" fill="#701a75" font-size="11.5" class="t-bold">
+        法官在此新範圍內，才擁有實質自由量刑裁量權
+      </text>
+    </g>
+
+    <!-- 步驟 2 到步驟 3 橫向轉折連接箭頭 -->
+    <path d="M 461 487 L 488 487" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#mArrowPurple)" />
+
+    <!-- 子容器：【選定刑罰】 (250px) -->
+    <rect x="492" y="190" width="233" height="395" rx="12" fill="#ffffff" stroke="#9333ea" stroke-width="1.8" />
+    <rect x="492" y="190" width="233" height="34" rx="12" fill="#f3e8ff" />
+    <text x="608" y="213" text-anchor="middle" fill="#581c87" font-size="14.5" class="t-title">
+      【選定刑罰】STEP 3
+    </text>
+
+    <!-- 步驟 3: 宣告刑 -->
+    <g id="box-step3">
+      <rect x="506" y="234" width="205" height="337" rx="10" fill="#7c3aed" stroke="#6d28d9" stroke-width="2" filter="url(#shadowFilter)" />
+      
+      <rect x="520" y="246" width="177" height="26" rx="6" fill="#6d28d9" />
+      <text x="608" y="264" text-anchor="middle" fill="#ede9fe" font-size="12" class="t-bold">步驟 ③ 範圍內選定刑罰</text>
+
+      <text x="608" y="303" text-anchor="middle" fill="#ffffff" font-size="24" class="t-title">宣告刑</text>
+      <text x="608" y="324" text-anchor="middle" fill="#ddd6fe" font-size="12" class="t-bold">（法官敲槌確定點）</text>
+
+      <line x1="520" y1="337" x2="697" y2="337" stroke="#a78bfa" stroke-width="1" />
+
+      <text x="520" y="360" fill="#ffffff" font-size="13" class="t-body">• 法官在處斷刑範圍內</text>
+      <text x="520" y="380" fill="#ffffff" font-size="13" class="t-body">  依 <tspan fill="#fef08a" class="t-bold">§ 57 量刑基準</tspan></text>
+      <text x="520" y="400" fill="#ffffff" font-size="13" class="t-body">  審酌犯人動機、態度。</text>
+      
+      <text x="520" y="430" fill="#ffffff" font-size="13" class="t-body">• 具體敲定一個固定數值</text>
+      <text x="520" y="450" fill="#ffffff" font-size="13" class="t-body">  例：<tspan fill="#fef08a" class="t-bold">「處有期徒刑12年」</tspan></text>
+
+      <rect x="518" y="475" width="181" height="42" rx="8" fill="#5b21b6" stroke="#c4b5fd" stroke-width="1.2" />
+      <text x="608" y="494" text-anchor="middle" fill="#f5f3ff" font-size="12" class="t-bold">印在判決主文宣告</text>
+      <text x="608" y="509" text-anchor="middle" fill="#c4b5fd" font-size="10.5" class="t-body">宣告確定 ➔ 移送執行</text>
+
+      <rect x="518" y="530" width="181" height="28" rx="6" fill="#4c1d95" />
+      <text x="608" y="549" text-anchor="middle" fill="#fef08a" font-size="11.5" class="t-bold">
+        法官自由量刑權之終點
+      </text>
+    </g>
+  </g>
+
+  <!-- 階段 1 到階段 2 主幹過渡箭頭 (跨階段) -->
+  <g id="trans-arrow">
+    <path d="M 740 372 L 776 372" fill="none" stroke="#d97706" stroke-width="3.5" marker-end="url(#mArrowAmber)" />
+    <rect x="740" y="338" width="36" height="24" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" />
+    <text x="758" y="354" text-anchor="middle" fill="#b45309" font-size="10" class="t-bold">判決</text>
+  </g>
+
+  <!-- ==================== 第二大階段：執行刑罰 (265px) ==================== -->
+  <g id="stage-2-group">
+    <!-- 外框大容器 -->
+    <rect x="780" y="125" width="255" height="475" rx="16" fill="#f8fafc" stroke="#64748b" stroke-width="2.2" filter="url(#shadowFilter)" />
+
+    <!-- 階段大標題 -->
+    <rect x="795" y="140" width="225" height="38" rx="8" fill="#334155" />
+    <text x="907" y="165" text-anchor="middle" fill="#ffffff" font-size="15" class="t-title">
+      第二大階段：執行刑罰
+    </text>
+
+    <!-- 步驟 4: 執行刑 內部卡片 -->
+    <g id="box-step4">
+      <rect x="795" y="190" width="225" height="395" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.8" />
+      
+      <rect x="807" y="202" width="201" height="26" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+      <text x="907" y="219" text-anchor="middle" fill="#475569" font-size="12" class="t-bold">步驟 ④ 執行刑罰</text>
+
+      <text x="907" y="260" text-anchor="middle" fill="#0f172a" font-size="24" class="t-title">執行刑</text>
+      <text x="907" y="280" text-anchor="middle" fill="#64748b" font-size="12" class="t-bold">（檢察官指揮執行）</text>
+
+      <line x1="810" y1="294" x2="1005" y2="294" stroke="#e2e8f0" stroke-width="1.2" />
+
+      <text x="812" y="320" fill="#1e293b" font-size="13" class="t-body">• <tspan class="t-bold" fill="#0f172a">數罪併罰定應執行刑：</tspan></text>
+      <text x="812" y="340" fill="#475569" font-size="12" class="t-body">  依 § 51 規定定執行刑期。</text>
+
+      <text x="812" y="372" fill="#1e293b" font-size="13" class="t-body">• <tspan class="t-bold" fill="#047857">易刑處分機制：</tspan></text>
+      <text x="812" y="392" fill="#475569" font-size="12" class="t-body">  易科罰金、易服社會勞動。</text>
+
+      <text x="812" y="424" fill="#1e293b" font-size="13" class="t-body">• <tspan class="t-bold" fill="#2563eb">緩刑之宣告：</tspan></text>
+      <text x="812" y="444" fill="#475569" font-size="12" class="t-body">  依 § 74 暫緩執行不進監獄。</text>
+
+      <text x="812" y="476" fill="#1e293b" font-size="13" class="t-body">• <tspan class="t-bold" fill="#7c3aed">實質服刑與假釋：</tspan></text>
+      <text x="812" y="496" fill="#475569" font-size="12" class="t-body">  入監服刑、報請假釋（§ 77）。</text>
+
+      <rect x="809" y="530" width="197" height="42" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.2" />
+      <text x="907" y="548" text-anchor="middle" fill="#0f172a" font-size="12" class="t-bold">檢察官負責具體落實</text>
+      <text x="907" y="563" text-anchor="middle" fill="#64748b" font-size="11" class="t-body">刑罰落實於現實生活之中</text>
+    </g>
+  </g>
+
+  <!-- ==================== 底部四步驟精華橫幅比對列 ==================== -->
+  <g transform="translate(25, 615)">
+    <rect width="1010" height="58" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    
+    <g transform="translate(20, 15)">
+      <text x="0" y="16" fill="#6d28d9" font-size="14" class="t-bold">① 法定刑</text>
+      <text x="0" y="32" fill="#64748b" font-size="11.5" class="t-body">條文抽象範圍（立院）</text>
+    </g>
+    <path d="M 220 29 L 240 29" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#mArrow)" />
+
+    <g transform="translate(260, 15)">
+      <text x="0" y="16" fill="#c026d3" font-size="14" class="t-bold">② 處斷刑</text>
+      <text x="0" y="32" fill="#64748b" font-size="11.5" class="t-body">總則加減後新浮動區間</text>
+    </g>
+    <path d="M 470 29 L 490 29" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#mArrow)" />
+
+    <g transform="translate(510, 15)">
+      <text x="0" y="16" fill="#7c3aed" font-size="14" class="t-bold">③ 宣告刑</text>
+      <text x="0" y="32" fill="#64748b" font-size="11.5" class="t-body">法官敲定判決主文數字</text>
+    </g>
+    <path d="M 725 29 L 745 29" fill="none" stroke="#d97706" stroke-width="2" marker-end="url(#mArrowAmber)" />
+
+    <g transform="translate(765, 15)">
+      <text x="0" y="16" fill="#0f172a" font-size="14" class="t-bold">④ 執行刑</text>
+      <text x="0" y="32" fill="#64748b" font-size="11.5" class="t-body">數罪定刑／易科／服刑</text>
+    </g>
+  </g>
+</svg>

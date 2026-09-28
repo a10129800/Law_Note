@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第零篇第三章 刑法的法律效果 | Draw.io 體系流程架構圖 (預覽版)</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#EEF2FF',
+              100: '#E0E7FF',
+              500: '#6366F1',
+              600: '#4F46E5',
+              700: '#4338CA',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    code, pre {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Draw.io 經典網格背景 */
+    .drawio-grid {
+      background-color: #ffffff;
+      background-image: 
+        linear-gradient(to right, rgba(203, 213, 225, 0.45) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(203, 213, 225, 0.45) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .dark .drawio-grid {
+      background-color: #0f172a;
+      background-image: 
+        linear-gradient(to right, rgba(51, 65, 85, 0.4) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(51, 65, 85, 0.4) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* 圖 1 標準配色規範 (Draw.io Classic Nodes) */
+    .node-blue {
+      background: #dae8fc;
+      border: 1.5px solid #6c8ebf;
+      color: #000000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
+    .node-yellow {
+      background: #fff2cc;
+      border: 1.5px solid #d6b656;
+      color: #000000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
+    .node-red {
+      background: #f8cecc;
+      border: 1.5px solid #b85450;
+      color: #000000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
+    .node-purple {
+      background: #e1d5e7;
+      border: 1.5px solid #9673a6;
+      color: #000000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
+    .node-green {
+      background: #d5e8d4;
+      border: 1.5px solid #82b366;
+      color: #000000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
+    .node-amber {
+      background: #ffe6cc;
+      border: 1.5px solid #d79b00;
+      color: #000000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    }
+
+    /* 節點懸停微動效 */
+    .flow-node {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .flow-node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+      filter: brightness(1.02);
+    }
+
+    /* 滾動條美化 */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.4);
+      border-radius: 9999px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: rgba(71, 85, 105, 0.6);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col antialiased">
+
+  <!-- ==================== 頂部導航與控制列 (Toolbar) ==================== -->
+  <header class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 sm:px-6 py-3 flex items-center justify-between shadow-xs">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-sm">
+        ⚖️
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-900">
+            第零篇 第三章 前言
+          </span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold border border-emerald-200 dark:border-emerald-900">
+            P. 2-25 ～ 2-27 原書整理
+          </span>
+        </div>
+        <h1 class="text-sm sm:text-base font-black text-slate-900 dark:text-white tracking-tight">
+          刑法的法律效果 ── Draw.io 體系流程圖與教材完整對照
+        </h1>
+      </div>
+    </div>
+
+    <!-- 控制功能按鈕 -->
+    <div class="flex items-center gap-2">
+      <!-- 視角切換器 -->
+      <div class="flex items-center bg-slate-200/80 dark:bg-slate-800 p-0.5 rounded-xl text-xs font-medium">
+        <button id="btnViewImage" onclick="switchMainTab('image')" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 font-bold shadow-xs transition-all">
+          🖼️ 流程圖 (SVG固定圖檔)
+        </button>
+        <button id="btnViewDiagram" onclick="switchMainTab('diagram')" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+          📊 圖 1 流程架構圖 (DOM)
+        </button>
+        <button id="btnViewSteps" onclick="switchMainTab('steps')" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+          🔢 圖 4 思考步驟
+        </button>
+        <button id="btnViewCards" onclick="switchMainTab('cards')" class="px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">
+          📖 課本原文對照
+        </button>
+      </div>
+
+      <!-- 深淺色切換 -->
+      <button onclick="toggleDarkMode()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors" title="切換深淺色模式">
+        <span class="dark:hidden">🌙</span>
+        <span class="hidden dark:inline">☀️</span>
+      </button>
+
+      <!-- 全螢幕切換 -->
+      <button onclick="toggleFullScreen()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors" title="全螢幕切換">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- 浮動提示 Banner -->
+  <div class="bg-blue-600 text-white text-xs px-4 py-2 flex items-center justify-between shadow-xs">
+    <div class="flex items-center gap-2">
+      <span class="font-bold">💡 獨立驗收模式：</span>
+      <span>本頁面為依據圖 1 的 draw.io 格式完整整合圖 2~4 的獨立成品。您可在確認版型與架構無誤後，通知我將其直接合併至 <code>index.html</code> 中！</span>
+    </div>
+    <span class="font-mono text-[11px] bg-blue-700/60 px-2 py-0.5 rounded">STANDALONE PREVIEW</span>
+  </div>
+
+  <!-- 主內容區 -->
+  <main class="flex-1 flex flex-col relative overflow-hidden">
+
+    <!-- ========================================================================= -->
+    <!-- 視角 0：SVG 獨立向量圖檔 (固定不隨意拖動、100% 向量銳利清晰) -->
+    <!-- ========================================================================= -->
+    <div id="tabImage" class="flex-1 overflow-auto p-4 sm:p-8 bg-slate-100/70 dark:bg-slate-950 flex flex-col items-center">
+      <div class="max-w-6xl w-full space-y-4">
+        
+        <!-- 說明提示卡 -->
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🖼️</span>
+            <div>
+              <h2 class="text-sm font-bold text-slate-800 dark:text-slate-200">
+                固定式向量高清流程圖（images/part0-ch3-flowchart.svg）
+              </h2>
+              <p class="text-xs text-slate-500">
+                固定圖檔呈現，排版穩定、不隨意滑動位移、零模糊高解析
+              </p>
+            </div>
+          </div>
+          <a href="images/part0-ch3-flowchart.svg" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 font-bold text-xs hover:bg-blue-100 transition-colors flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
+            <span>在新分頁開啟圖檔</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <!-- 圖片容器 (完全固定、禁止拖拽) -->
+        <div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-2 sm:p-4 shadow-sm overflow-hidden">
+          <img 
+            src="images/part0-ch3-flowchart.svg" 
+            alt="刑罰目的理論體系全景流程圖 (教材第 2-25 ～ 2-27 頁)" 
+            draggable="false"
+            class="w-full h-auto block select-none pointer-events-auto cursor-default rounded-2xl"
+            style="-webkit-user-drag: none; user-select: none;"
+          />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- 視角 1：Draw.io 格式體系流程圖 (完全依據圖 1 規格與配色繪製，補全全部學說) -->
+    <!-- ========================================================================= -->
+    <div id="tabDiagram" class="hidden flex-1 flex-col relative overflow-hidden">
+
+      <!-- 畫布操控懸浮面板 (Zoom & Pan Controls) -->
+      <div class="absolute top-4 left-4 z-20 flex items-center gap-1.5 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md p-1.5 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-lg text-xs">
+        <button onclick="zoomCanvas(0.1)" class="w-7 h-7 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-blue-900/40 hover:text-blue-600 font-bold transition-colors" title="放大 (+)">
+          ＋
+        </button>
+        <span id="zoomLevelDisplay" class="font-mono text-[11px] font-bold px-2 text-slate-600 dark:text-slate-300 select-none">
+          100%
+        </span>
+        <button onclick="zoomCanvas(-0.1)" class="w-7 h-7 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-blue-50 dark:hover:bg-blue-900/40 hover:text-blue-600 font-bold transition-colors" title="縮小 (-)">
+          －
+        </button>
+        <button onclick="resetZoom()" class="px-2.5 py-1 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-300 font-medium transition-colors" title="重設縮放">
+          重置
+        </button>
+        <button onclick="fitToWidth()" class="px-2.5 py-1 rounded-xl bg-blue-50 dark:bg-blue-950/60 hover:bg-blue-100 text-blue-600 dark:text-blue-400 font-bold transition-colors" title="最適寬度">
+          適配
+        </button>
+        <div class="w-px h-4 bg-slate-200 dark:bg-slate-700 mx-1"></div>
+        <span class="text-[11px] text-slate-400 px-1 hidden sm:inline">可直接滾輪縮放或按住拖曳畫布</span>
+      </div>
+
+      <!-- 圖例標籤 (Legend) -->
+      <div class="absolute top-4 right-4 z-20 hidden md:flex items-center gap-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 py-1.5 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-lg text-[11px]">
+        <span class="font-bold text-slate-400">圖例說明：</span>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded node-blue"></span><span>根節點</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded node-yellow"></span><span>兩大面向/內文</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded node-red"></span><span>核心學說名</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded node-purple"></span><span>優點/缺點</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded node-green"></span><span>結合理論</span></div>
+        <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded node-amber"></span><span>歷史典故</span></div>
+      </div>
+
+      <!-- 漫遊滾動可縮放視口 -->
+      <div id="diagramContainer" class="flex-1 overflow-auto drawio-grid relative cursor-grab active:cursor-grabbing p-6 sm:p-12 select-none">
+        
+        <!-- 畫布主體 (可縮放容器) -->
+        <div id="diagramCanvas" class="transition-transform duration-75 origin-top-center min-w-[1360px] mx-auto py-8 flex flex-col items-center">
+
+          <!-- ==================== 1. 頂部根節點 (Root Node) ==================== -->
+          <div class="flex flex-col items-center">
+            <div onclick="showNodeDetail('root')" class="flow-node node-blue px-8 py-3.5 rounded-xl font-bold text-base tracking-wide text-center min-w-[240px]">
+              刑法的法律效果
+            </div>
+            
+            <!-- 垂直連接柱 -->
+            <div class="w-0.5 h-10 bg-slate-500"></div>
+            
+            <!-- 橫向分歧樑 (橫貫左右兩大面向) -->
+            <div class="w-[840px] h-0.5 bg-slate-500 relative">
+              <!-- 左分支垂直下垂點 -->
+              <div class="absolute -left-0.5 top-0 w-0.5 h-8 bg-slate-500">
+                <div class="absolute -bottom-1 -left-[3px] border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+              </div>
+              <!-- 右分支垂直下垂點 -->
+              <div class="absolute -right-0.5 top-0 w-0.5 h-8 bg-slate-500">
+                <div class="absolute -bottom-1 -left-[3px] border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== 2. 左右兩大面向網格 (Branch Columns) ==================== -->
+          <div class="w-[1320px] grid grid-cols-2 gap-12 mt-8 pt-2">
+
+            <!-- ----------------------------------------------------------- -->
+            <!-- 【左半部】：懲罰過去的法益侵害行為 ➔ 應報理論 (完全符合圖 1) -->
+            <!-- ----------------------------------------------------------- -->
+            <div class="flex flex-col items-center">
+              
+              <!-- 面向節點 -->
+              <div onclick="showNodeDetail('retribution-title')" class="flow-node node-yellow px-6 py-2.5 rounded-lg font-bold text-sm text-center w-[300px]">
+                懲罰過去的法益侵害行為
+              </div>
+
+              <!-- 下箭頭 -->
+              <div class="flex flex-col items-center my-1.5">
+                <div class="w-0.5 h-6 bg-slate-500"></div>
+                <div class="border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+              </div>
+
+              <!-- 應報理論核心方塊 -->
+              <div onclick="showNodeDetail('retribution')" class="flow-node node-red px-8 py-3 rounded-xl font-bold text-base text-center w-[220px]">
+                應報理論
+              </div>
+
+              <!-- 下箭頭 -->
+              <div class="flex flex-col items-center my-1.5">
+                <div class="w-0.5 h-6 bg-slate-500"></div>
+                <div class="border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+              </div>
+
+              <!-- 思想起源節點 (圖 1 原版文句) -->
+              <div onclick="showNodeDetail('retribution-origin')" class="flow-node node-yellow px-5 py-2.5 rounded-lg text-xs leading-relaxed text-center w-[360px]">
+                源於原始社會中「以眼還眼、以牙還牙」的復仇思想
+              </div>
+
+              <!-- 下箭頭 -->
+              <div class="flex flex-col items-center my-1.5">
+                <div class="w-0.5 h-6 bg-slate-500"></div>
+                <div class="border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+              </div>
+
+              <!-- 近代應報理論核心定義 (圖 1 原版文句) -->
+              <div onclick="showNodeDetail('retribution-modern')" class="flow-node node-yellow px-5 py-3 rounded-lg text-xs leading-relaxed text-center w-[380px]">
+                近代應報理論認為刑事制裁乃是公正地應報犯罪，藉以衡平犯罪所引起的惡害
+              </div>
+
+              <!-- 下分流至「優點」與「缺點」樑線 -->
+              <div class="flex flex-col items-center mt-2 mb-2">
+                <div class="w-0.5 h-5 bg-slate-500"></div>
+                <div class="w-[300px] h-0.5 bg-slate-500 relative">
+                  <!-- 左優點垂直下垂箭頭 -->
+                  <div class="absolute -left-0.5 top-0 w-0.5 h-5 bg-slate-500">
+                    <div class="absolute -bottom-1 -left-[3px] border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+                  </div>
+                  <!-- 右缺點垂直下垂箭頭 -->
+                  <div class="absolute -right-0.5 top-0 w-0.5 h-5 bg-slate-500">
+                    <div class="absolute -bottom-1 -left-[3px] border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 優缺點雙欄 (完全符合圖 1 的紫框樣式) -->
+              <div class="w-[480px] grid grid-cols-2 gap-6 mt-4">
+                
+                <!-- 優點欄 -->
+                <div class="flex flex-col items-center space-y-2.5">
+                  <div class="flow-node node-purple px-4 py-1.5 rounded-md font-bold text-xs text-center w-[120px]">
+                    優點
+                  </div>
+                  <div class="w-0.5 h-4 bg-slate-500"></div>
+                  <div class="flow-node node-purple px-4 py-2.5 rounded-lg text-xs leading-snug text-center w-[210px]">
+                    限定國家發動刑罰權的界限
+                  </div>
+                  <div class="w-0.5 h-4 bg-slate-500"></div>
+                  <div class="flow-node node-purple px-4 py-2.5 rounded-lg text-xs leading-snug text-center w-[210px] font-medium">
+                    刑罰不能超過行為人所製造的惡害
+                  </div>
+                </div>
+
+                <!-- 缺點欄 -->
+                <div class="flex flex-col items-center space-y-2.5">
+                  <div class="flow-node node-purple px-4 py-1.5 rounded-md font-bold text-xs text-center w-[120px]">
+                    缺點
+                  </div>
+                  <div class="w-0.5 h-4 bg-slate-500"></div>
+                  <div class="flow-node node-purple px-4 py-3 rounded-lg text-xs leading-snug text-center w-[210px]">
+                    無助於犯人受刑後脫離犯罪，更增添再犯率
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- 課本作者叮嚀典故卡 (圖 3 補強) -->
+              <div class="mt-6 flex flex-col items-center">
+                <div class="w-0.5 h-5 bg-amber-400"></div>
+                <div onclick="showNodeDetail('story-hammurabi')" class="flow-node node-amber px-4 py-2.5 rounded-xl text-xs w-[420px] text-center space-y-1">
+                  <div class="font-bold flex items-center justify-center gap-1">
+                    <span>📜</span>
+                    <span>【作者叮嚀・生動典故】巴比倫《漢摩拉比法典》</span>
+                  </div>
+                  <div class="text-[11px] text-amber-900 leading-normal">
+                    通篇充斥「以牙還牙」的應報思想。但第 23 條規定國家賠償的無過失責任（抓不到強盜由地方官賠償），屬先進立法！
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- ----------------------------------------------------------- -->
+            <!-- 【右半部】：預防未來的法益侵害行為 ➔ 預防理論 (補全圖 1 待續部分) -->
+            <!-- ----------------------------------------------------------- -->
+            <div class="flex flex-col items-center">
+              
+              <!-- 面向節點 (圖 1 原作有右側框，但尚未展開) -->
+              <div onclick="showNodeDetail('prevention-title')" class="flow-node node-yellow px-6 py-2.5 rounded-lg font-bold text-sm text-center w-[300px]">
+                預防未來的法益侵害行為
+              </div>
+
+              <!-- 下箭頭 -->
+              <div class="flex flex-col items-center my-1.5">
+                <div class="w-0.5 h-6 bg-slate-500"></div>
+                <div class="border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+              </div>
+
+              <!-- 預防理論核心方塊 -->
+              <div onclick="showNodeDetail('prevention')" class="flow-node node-red px-8 py-3 rounded-xl font-bold text-base text-center w-[220px]">
+                預防理論
+              </div>
+
+              <!-- 下箭頭 -->
+              <div class="flex flex-col items-center my-1.5">
+                <div class="w-0.5 h-6 bg-slate-500"></div>
+                <div class="border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+              </div>
+
+              <!-- 核心思想說明方塊 (圖 3 課本內文) -->
+              <div onclick="showNodeDetail('prevention-core')" class="flow-node node-yellow px-5 py-3 rounded-lg text-xs leading-relaxed text-center w-[400px]">
+                認為刑罰的存在應該是針對尚未發生的犯罪，亦即預防犯罪行為的再次發生
+              </div>
+
+              <!-- 下分流至「一般預防」與「特別預防」橫樑 -->
+              <div class="flex flex-col items-center mt-2 mb-2">
+                <div class="w-0.5 h-5 bg-slate-500"></div>
+                <div class="w-[440px] h-0.5 bg-slate-500 relative">
+                  <!-- 左：一般預防下垂點 -->
+                  <div class="absolute -left-0.5 top-0 w-0.5 h-5 bg-slate-500">
+                    <div class="absolute -bottom-1 -left-[3px] border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+                  </div>
+                  <!-- 右：特別預防下垂點 -->
+                  <div class="absolute -right-0.5 top-0 w-0.5 h-5 bg-slate-500">
+                    <div class="absolute -bottom-1 -left-[3px] border-solid border-t-slate-500 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 一般預防 vs 特別預防 雙分支 (完全比照圖 1 的優美階層) -->
+              <div class="w-[600px] grid grid-cols-2 gap-6 mt-4">
+                
+                <!-- 【分支 1】：一般預防理論 -->
+                <div class="flex flex-col items-center space-y-2.5">
+                  <div onclick="showNodeDetail('general-prev')" class="flow-node node-red px-4 py-2 rounded-lg font-bold text-xs text-center w-[180px]">
+                    (一) 一般預防理論
+                  </div>
+                  <div class="w-0.5 h-3 bg-slate-500"></div>
+                  <div class="flow-node node-yellow px-3 py-2 rounded-md text-[11.5px] leading-snug text-center w-[240px]">
+                    藉由刑事制裁的痛苦性威嚇一般大眾，產生嚇阻預防功能
+                  </div>
+
+                  <!-- 優缺點微型橫樑 -->
+                  <div class="w-[200px] h-0.5 bg-slate-400 relative mt-1">
+                    <div class="absolute left-0 top-0 w-0.5 h-3 bg-slate-400"></div>
+                    <div class="absolute right-0 top-0 w-0.5 h-3 bg-slate-400"></div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                    <div class="flow-node node-purple p-2 rounded-lg text-[11px] leading-tight text-center">
+                      <span class="font-bold block mb-1">【優點】</span>
+                      從社會大眾切入，維護秩序
+                    </div>
+                    <div class="flow-node node-purple p-2 rounded-lg text-[11px] leading-tight text-center">
+                      <span class="font-bold block mb-1">【缺點】</span>
+                      背離犯罪學（犯人多自認不被抓）；易生殘酷刑罰
+                    </div>
+                  </div>
+
+                  <!-- 典故 -->
+                  <div onclick="showNodeDetail('story-sunwu')" class="flow-node node-amber p-2 rounded-lg text-[11px] leading-tight text-center w-full">
+                    <span class="font-bold block">⚔️【典故】孫武斬愛妾</span>
+                    殺雞儆猴雖立竿見影，但實在太過分殘忍。
+                  </div>
+                </div>
+
+                <!-- 【分支 2】：特別預防理論 -->
+                <div class="flex flex-col items-center space-y-2.5">
+                  <div onclick="showNodeDetail('special-prev')" class="flow-node node-red px-4 py-2 rounded-lg font-bold text-xs text-center w-[180px]">
+                    (二) 特別預防理論
+                  </div>
+                  <div class="w-0.5 h-3 bg-slate-500"></div>
+                  <div class="flow-node node-yellow px-3 py-2 rounded-md text-[11.5px] leading-snug text-center w-[240px]">
+                    目的在矯治犯罪人，除去犯罪因子，使其能適應社會不再犯罪
+                  </div>
+
+                  <!-- 優缺點微型橫樑 -->
+                  <div class="w-[200px] h-0.5 bg-slate-400 relative mt-1">
+                    <div class="absolute left-0 top-0 w-0.5 h-3 bg-slate-400"></div>
+                    <div class="absolute right-0 top-0 w-0.5 h-3 bg-slate-400"></div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-2 w-full pt-1">
+                    <div class="flow-node node-purple p-2 rounded-lg text-[11px] leading-tight text-center">
+                      <span class="font-bold block mb-1">【優點】</span>
+                      有助於社會化與防範再犯
+                    </div>
+                    <div class="flow-node node-purple p-2 rounded-lg text-[11px] leading-tight text-center">
+                      <span class="font-bold block mb-1">【缺點】</span>
+                      若有再犯風險，貫徹本說將得出無限期刑罰結論
+                    </div>
+                  </div>
+
+                  <!-- 典故 -->
+                  <div onclick="showNodeDetail('story-cuckoo')" class="flow-node node-amber p-2 rounded-lg text-[11px] leading-tight text-center w-full">
+                    <span class="font-bold block">🧠【典故】飛越杜鵑窩</span>
+                    腦前葉切開術視為治療矯治，相當於保安處分。
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ==================== 3. 匯流總結：現代學說「結合理論」與雙軌制裁體系 ==================== -->
+          <div class="mt-14 flex flex-col items-center w-full">
+            
+            <!-- 匯流導引雙折線標示 -->
+            <div class="flex items-center gap-3 text-xs font-mono font-bold text-slate-400 dark:text-slate-500 mb-2">
+              <span>▲ 應報理論（上限）</span>
+              <span class="text-emerald-500">＋</span>
+              <span>一般預防（威嚇）</span>
+              <span class="text-emerald-500">＋</span>
+              <span>特別預防（矯治） ▲</span>
+            </div>
+
+            <div class="w-[840px] h-0.5 bg-emerald-500 relative mb-3">
+              <div class="absolute left-1/2 -translate-x-1/2 -top-2 w-0.5 h-4 bg-emerald-500"></div>
+              <div class="absolute left-1/2 -translate-x-1/2 top-2 border-solid border-t-emerald-600 border-t-[7px] border-x-transparent border-x-[5px] border-b-0"></div>
+            </div>
+
+            <!-- 結合理論核心卡 -->
+            <div onclick="showNodeDetail('combination')" class="flow-node node-green px-8 py-3.5 rounded-2xl font-bold text-base text-center w-[420px] shadow-sm">
+              <div class="text-xs font-mono text-emerald-800 tracking-wider uppercase mb-0.5">MODERN SYNTHESIS • 現代通說</div>
+              結合理論（折衷理論）
+            </div>
+
+            <!-- 結合理論三大內涵三格橫排 -->
+            <div class="grid grid-cols-3 gap-4 mt-3 w-[780px]">
+              <div class="flow-node node-yellow p-2.5 rounded-xl text-center text-xs">
+                <span class="font-bold text-rose-700 block mb-0.5">① 製造惡害為上限</span>
+                <span class="text-[11px] text-slate-600">（取自應報理論，罪刑相當）</span>
+              </div>
+              <div class="flow-node node-yellow p-2.5 rounded-xl text-center text-xs">
+                <span class="font-bold text-blue-700 block mb-0.5">② 考量社會威嚇</span>
+                <span class="text-[11px] text-slate-600">（取自一般預防，防範大眾）</span>
+              </div>
+              <div class="flow-node node-yellow p-2.5 rounded-xl text-center text-xs">
+                <span class="font-bold text-indigo-700 block mb-0.5">③ 考量再社會化</span>
+                <span class="text-[11px] text-slate-600">（取自特別預防，矯治犯人）</span>
+              </div>
+            </div>
+
+            <!-- 下拉箭頭到我國雙軌體系 -->
+            <div class="flex flex-col items-center my-3">
+              <div class="w-0.5 h-6 bg-emerald-500"></div>
+              <div class="border-solid border-t-emerald-600 border-t-[6px] border-x-transparent border-x-[4px] border-b-0"></div>
+            </div>
+
+            <!-- 我國雙軌制裁體系旗艦方塊 (刑罰 vs 保安處分) -->
+            <div class="node-blue p-5 rounded-3xl w-[780px] border-2 border-blue-400 space-y-3">
+              <div class="flex items-center justify-between border-b border-blue-200 pb-2">
+                <div class="font-black text-sm text-blue-950 flex items-center gap-2">
+                  <span>🛤️</span>
+                  <span>我國刑法「雙軌制裁體系」：刑罰 vs 保安處分（可並行發動）</span>
+                </div>
+                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-600 text-white">DUAL TRACK SYSTEM</span>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <!-- 刑罰軌道 -->
+                <div class="bg-white/95 dark:bg-slate-900/95 p-3.5 rounded-2xl border border-indigo-300 space-y-1.5">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-indigo-900 text-xs flex items-center gap-1"><span>⚖️</span> 刑罰（懲戒過去責任）</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-indigo-100 text-indigo-800 font-bold">TB + R + S</span>
+                  </div>
+                  <p class="text-[11.5px] text-slate-600 leading-normal">
+                    <strong>必須三階完全成立（犯罪成立）才能發動！</strong>若欠缺罪責（如 § 19 Ⅰ 精神障礙不罰），即絕對不能科處刑罰。
+                  </p>
+                </div>
+
+                <!-- 保安處分軌道 -->
+                <div class="bg-white/95 dark:bg-slate-900/95 p-3.5 rounded-2xl border border-emerald-300 space-y-1.5">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-emerald-900 text-xs flex items-center gap-1"><span>🛡️</span> 保安處分（防衛未來危險）</span>
+                    <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 font-bold">TB + R</span>
+                  </div>
+                  <p class="text-[11.5px] text-slate-600 leading-normal">
+                    <strong>只要具備不法（行為該當且違法）便可發動！</strong>不在制裁，而重在矯治治療（如無罪責仍可判監護、禁戒）。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- 視角 2：原書圖 4「刑罰理論的思考步驟」四階流程與嵌套模型 (Image 4 精確復原) -->
+    <!-- ========================================================================= -->
+    <div id="tabSteps" class="hidden flex-1 overflow-auto p-6 sm:p-10 max-w-5xl mx-auto w-full space-y-8">
+      
+      <!-- 標題列 -->
+      <div class="text-center space-y-2">
+        <span class="px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-mono text-xs font-bold border border-purple-200 dark:border-purple-800">
+          教材第 2-27 頁 原書圖解標準復原
+        </span>
+        <h2 class="text-2xl font-black text-slate-900 dark:text-white">
+          刑罰理論的思考步驟（四大階段嵌套結構）
+        </h2>
+        <p class="text-xs text-slate-500 max-w-xl mx-auto">
+          刑罰的產生過程可拆解成四大步驟：「找尋基本範圍」、「調整處斷範圍」、「範圍內選定刑罰」以及「執行刑罰」，分別對應四大刑罰概念。
+        </p>
+      </div>
+
+      <!-- 原書圖 4 嵌套圖形化容器 -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+        
+        <div class="text-xs font-bold text-slate-400 font-mono flex items-center justify-between">
+          <span>ORIGINAL TEXTBOOK FIGURE 4 STRUCTURE</span>
+          <span class="text-blue-500">點擊卡片可查看各步驟法學操作機制</span>
+        </div>
+
+        <!-- 外層橫向流程網格 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
+          
+          <!-- 大方塊 A：量定刑罰 (佔 9 欄) -->
+          <div class="lg:col-span-9 p-5 rounded-2xl border-2 border-blue-500/80 bg-blue-50/30 dark:bg-blue-950/20 space-y-4 flex flex-col justify-between">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded bg-blue-600 text-white font-bold text-xs">第一大階段</span>
+              <h3 class="font-black text-slate-900 dark:text-white text-base">量定刑罰（宣告前之司法裁量）</h3>
+              <span class="text-xs text-blue-600 dark:text-blue-400 font-mono font-bold">§ 57～§ 59 審酌</span>
+            </div>
+
+            <!-- 內部兩大子階段：確定範圍 ➔ 選定刑罰 -->
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+              
+              <!-- 子方塊 1：確定範圍 (佔 8 欄) -->
+              <div class="sm:col-span-8 p-3.5 rounded-xl border border-blue-300 dark:border-blue-800 bg-white dark:bg-slate-800 space-y-2.5">
+                <div class="flex items-center justify-between text-xs font-bold text-blue-900 dark:text-blue-200">
+                  <span>確定範圍（量定區間之劃定）</span>
+                  <span class="text-[10px] font-mono text-slate-400">Step 1 & 2</span>
+                </div>
+
+                <!-- 內部雙核：基本範圍 ➔ 調整範圍 -->
+                <div class="flex items-center gap-2">
+                  <div onclick="showStepModal('step1')" class="flex-1 p-2.5 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-center cursor-pointer hover:border-blue-500 transition-colors">
+                    <div class="text-[11px] text-slate-400 font-mono">第 1 步</div>
+                    <div class="font-bold text-xs text-slate-900 dark:text-white">基本範圍</div>
+                    <div class="text-[11px] text-blue-600 dark:text-blue-400 font-bold">（法定刑）</div>
+                  </div>
+
+                  <!-- 右箭頭 -->
+                  <div class="text-slate-400 font-bold text-sm">➔</div>
+
+                  <div onclick="showStepModal('step2')" class="flex-1 p-2.5 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-center cursor-pointer hover:border-blue-500 transition-colors">
+                    <div class="text-[11px] text-slate-400 font-mono">第 2 步</div>
+                    <div class="font-bold text-xs text-slate-900 dark:text-white">調整範圍</div>
+                    <div class="text-[11px] text-purple-600 dark:text-purple-400 font-bold">（處斷刑）</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 右大箭頭 -->
+              <div class="hidden sm:flex sm:col-span-1 justify-center items-center">
+                <span class="text-2xl text-blue-500 font-black">➔</span>
+              </div>
+
+              <!-- 子方塊 2：選定刑罰 (佔 3 欄) -->
+              <div onclick="showStepModal('step3')" class="sm:col-span-3 p-3.5 rounded-xl border border-emerald-300 dark:border-emerald-800 bg-white dark:bg-slate-800 text-center cursor-pointer hover:border-emerald-500 transition-colors space-y-1 h-full flex flex-col justify-center">
+                <div class="text-[11px] text-slate-400 font-mono">第 3 步</div>
+                <div class="font-bold text-xs text-slate-900 dark:text-white">選定刑罰</div>
+                <div class="text-[11px] text-emerald-600 dark:text-emerald-400 font-bold">（宣告刑）</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 右轉接箭頭 -->
+          <div class="hidden lg:flex lg:col-span-1 justify-center items-center">
+            <span class="text-3xl text-slate-400 font-black">➔</span>
+          </div>
+
+          <!-- 大方塊 B：執行刑罰 (佔 2 欄) -->
+          <div onclick="showStepModal('step4')" class="lg:col-span-2 p-5 rounded-2xl border-2 border-amber-500/80 bg-amber-50/40 dark:bg-amber-950/20 flex flex-col justify-center items-center text-center cursor-pointer hover:border-amber-600 transition-colors space-y-1">
+            <span class="px-2.5 py-0.5 rounded bg-amber-600 text-white font-bold text-xs mb-1">第二大階段</span>
+            <div class="text-[11px] text-slate-400 font-mono">第 4 步</div>
+            <h3 class="font-black text-slate-900 dark:text-white text-sm">執行刑罰</h3>
+            <div class="text-xs text-amber-600 dark:text-amber-400 font-bold">（執行刑）</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 四大步驟白話對照表 (大賣場購物比喻法) -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold flex items-center justify-center text-xs">1</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">法定刑</span>
+          </div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white">找尋基本範圍</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            條文直接明定的死數字（例如刑法 § 271Ⅰ「死刑、無期徒刑或十年以上有期徒刑」）。猶如架上<strong>原價標籤</strong>。
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 font-bold flex items-center justify-center text-xs">2</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">處斷刑</span>
+          </div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white">調整處斷範圍</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            依法定事由（累犯加重、未遂減輕、自首減輕等）調整後的新上下限。猶如折扣季<strong>加價或打折後的結帳區間</strong>。
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold flex items-center justify-center text-xs">3</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">宣告刑</span>
+          </div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white">範圍內選定刑罰</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            法官依 § 57 量刑十款審酌後，在判決主文敲定的具體點數（如「處有期徒刑七年」）。猶如<strong>收銀機開出之確定發票</strong>。
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-bold flex items-center justify-center text-xs">4</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500">執行刑</span>
+          </div>
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white">執行刑罰</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            定應執行刑、易科罰金、緩刑或假釋，受刑人實際要坐幾年牢的最終執行處分。猶如<strong>實際刷卡付帳與分期付款</strong>。
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- 視角 3：課本原文全貌與作者叮嚀 (圖 2～4 逐字忠實對照) -->
+    <!-- ========================================================================= -->
+    <div id="tabCards" class="hidden flex-1 overflow-auto p-6 sm:p-10 max-w-4xl mx-auto w-full space-y-8">
+      
+      <!-- 前言開篇核心引言 -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-blue-500/30 shadow-sm space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400">教材第 2-25 頁 原文</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 text-[11px] font-bold">第三章 前言導讀</span>
+        </div>
+
+        <h3 class="text-xl font-black text-slate-900 dark:text-white">
+          第三章 刑法的法律效果
+        </h3>
+
+        <blockquote class="border-l-4 border-blue-500 pl-4 py-1 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed italic">
+          「正式進入刑法學習之前，我們先來談談犯罪成立後的法律效果，如果不能對法律效果有初步理解，那麼大言不慚地說『某某人會成立本罪！』就猶如小孩子在玩扮家家酒般，距離現實非常遙遠，當然也沒辦法體會手段（刑罰）與目的（法益保護原則）之間的比例關係。」
+        </blockquote>
+      </div>
+
+      <!-- 作者叮嚀 1 -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 space-y-2.5">
+        <div class="flex items-center gap-2 text-amber-900 dark:text-amber-200 font-bold text-sm">
+          <span>📢</span>
+          <span>【作者叮嚀】為何將「刑罰理論」放在最前頭？</span>
+        </div>
+        <p class="text-xs sm:text-sm text-amber-900/90 dark:text-amber-200/90 leading-relaxed">
+          這部分涉及到「刑罰理論」，多數書籍都是放在最後一個篇章說明，除了內容較枯燥乏味外，<strong>考試的投資報酬率也極低</strong>。筆者將刑罰理論拉到前頭來，是要讓大家知道<strong>往後的種種討論都是通往這個最終效果</strong>，理解我們究竟要付出什麼代價後，才能更審慎地研究法學問題，期待我們共勉之。<br>
+          <span class="text-amber-700 dark:text-amber-400 font-semibold block pt-1">
+            （第一次接觸刑法的同學們可以輕鬆愉快地翻閱本章，看不懂也沒關係，只要看過去有個印象就足夠了）
+          </span>
+        </p>
+      </div>
+
+      <!-- 核心論述：兩大面向與三大理論 -->
+      <div class="space-y-4">
+        <h4 class="font-bold text-base text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-2">
+          刑罰目的理論之課本原文摘錄（教材第 2-25 ～ 2-26 頁）
+        </h4>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+            <div class="font-bold text-rose-600">一、懲罰過去的法益侵害行為 ➔ 應報理論</div>
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+              源自於原始社會中「以眼還眼、以牙還牙」的復仇思想，近代應報理論認為刑事制裁乃是公正地應報犯罪，藉以衡平犯罪所引起的惡害。<br>
+              <strong>優點：</strong>在於設定國家發動刑罰權的界限，刑罰不能超過行為人所製造的惡害。<br>
+              <strong>缺點：</strong>無助於犯人受刑後脫離犯罪，更增添再犯率。
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
+            <div class="font-bold text-blue-600">二、預防未來的法益侵害行為 ➔ 預防理論</div>
+            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+              認為刑罰的存在應該是針對尚未發生的犯罪，亦即預防犯罪行為的再次發生，又可再依不同訴求對象分為兩種：<br>
+              <strong>(一) 一般預防：</strong>威嚇一般大眾以嚇阻犯罪。優點是維護社會秩序；缺點是背離犯罪學（犯人多自認不會被抓）且產生「越殘酷越好」之偏差。<br>
+              <strong>(二) 特別預防：</strong>矯治犯罪人除去犯罪因子。優點是有助社會化防範再犯；缺點是若有再犯風險將得出「無限期刑罰」之結論。
+            </p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800 space-y-2 text-xs sm:text-sm">
+          <div class="font-bold text-emerald-800 dark:text-emerald-300">三、現代通說：結合理論與雙軌制裁體系</div>
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+            現代學說多採取「結合理論」，以行為人所製造的惡害為上限（取自應報理論），而在此範圍內考量社會威嚇（取自一般預防理論）與再社會化（取自特別預防理論）。<br>
+            我國刑法採取結合理論，因而有「刑罰」與「保安處分」的雙軌制裁體系。必須成立犯罪（TB+R+S）才能發動刑罰，但保安處分只要具備不法（TB+R）便可發動，因為保安處分不在制裁而在矯治，二者可以並行。
+          </p>
+        </div>
+      </div>
+
+      <!-- 作者叮嚀 2：三大生動典故 -->
+      <div class="p-5 sm:p-6 rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 space-y-3">
+        <div class="flex items-center gap-2 text-amber-900 dark:text-amber-200 font-bold text-sm">
+          <span>📢</span>
+          <span>【作者叮嚀】三大刑罰理論生動歷史典故（教材第 2-26 頁）</span>
+        </div>
+        
+        <div class="space-y-2 text-xs sm:text-sm text-amber-950 dark:text-amber-100">
+          <p>
+            <strong>1. 漢摩拉比法典（應報思想）：</strong>巴比倫人所遵從的漢摩拉比法典，就是通篇充滿應報思想的最佳典範（不過其中第 23 條規定了國家賠償的無過失責任，算是非常先進的立法）。
+          </p>
+          <p>
+            <strong>2. 孫武練娘子軍（一般預防）：</strong>兵聖孫武為吳王闔閭訓練女子軍的小故事，孫武將嬉笑的嬪妃斬首立威，使眾娘子嚇得肝膽俱裂而莫敢不從，雖然立馬見效，卻也實在太過份了（竟然斬正妹……）。
+          </p>
+          <p>
+            <strong>3. 電影《飛越杜鵑窩》（特別預防）：</strong>兇手雖然殺了這麼多人，最後卻沒有受到刑罰的處罰，反而是送往醫院進行所謂的腦前葉切開術，這在當時被認為是對犯罪者的治療，相當於現下的保安處分（這應該不算暴雷吧？！）。
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== 節點點擊細節彈窗 (Modal Drawer) ==================== -->
+  <div id="nodeDetailModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <div class="p-5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span id="modalIcon" class="text-xl">🔍</span>
+          <h3 id="modalTitle" class="font-black text-slate-900 dark:text-white text-base">節點法學詳解</h3>
+        </div>
+        <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-500 font-bold flex items-center justify-center transition-colors">
+          ✕
+        </button>
+      </div>
+
+      <div id="modalBody" class="p-6 space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-h-[70vh] overflow-y-auto">
+        <!-- 內容由 JS 動態填充 -->
+      </div>
+
+      <div class="p-4 bg-slate-50 dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+        <span class="text-[11px] text-slate-400 font-mono">TEXTBOOK NOTE FIDELITY</span>
+        <button onclick="closeModal()" class="px-4 py-1.5 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 transition-colors">
+          我知道了
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 頁面互動腳本 (Zero CORS) ==================== -->
+  <script>
+    // 1. 深淺色模式控制
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+
+    // 2. 視角切換控制
+    function switchMainTab(tab) {
+      const tabs = ['image', 'diagram', 'steps', 'cards'];
+      tabs.forEach(t => {
+        const el = document.getElementById('tab' + t.charAt(0).toUpperCase() + t.slice(1));
+        const btn = document.getElementById('btnView' + t.charAt(0).toUpperCase() + t.slice(1));
+        if (!el || !btn) return;
+        if (t === tab) {
+          el.classList.remove('hidden');
+          if (t === 'diagram' || t === 'image') el.classList.add('flex');
+          btn.className = 'px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 font-bold shadow-xs transition-all';
+        } else {
+          el.classList.add('hidden');
+          if (t === 'diagram' || t === 'image') el.classList.remove('flex');
+          btn.className = 'px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all';
+        }
+      });
+    }
+
+    // 3. 畫布縮放與拖曳 (Canvas Zoom & Drag)
+    let currentScale = 1.0;
+    const canvas = document.getElementById('diagramCanvas');
+    const container = document.getElementById('diagramContainer');
+    const display = document.getElementById('zoomLevelDisplay');
+
+    function updateTransform() {
+      canvas.style.transform = `scale(${currentScale})`;
+      display.textContent = `${Math.round(currentScale * 100)}%`;
+    }
+
+    function zoomCanvas(delta) {
+      currentScale = Math.min(Math.max(0.4, currentScale + delta), 2.2);
+      updateTransform();
+    }
+
+    function resetZoom() {
+      currentScale = 1.0;
+      updateTransform();
+      container.scrollTo({
+        left: (canvas.scrollWidth - container.clientWidth) / 2,
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    function fitToWidth() {
+      const availableWidth = container.clientWidth - 48;
+      const contentWidth = 1360;
+      currentScale = Math.max(0.45, Math.min(1.0, availableWidth / contentWidth));
+      updateTransform();
+    }
+
+    // 支援滑鼠滾輪縮放 (Ctrl + Wheel 或一般滾輪)
+    container.addEventListener('wheel', (e) => {
+      if (e.ctrlKey) {
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 0.08 : -0.08;
+        zoomCanvas(delta);
+      }
+    }, { passive: false });
+
+    // 支援按住滑鼠拖曳漫遊
+    let isDown = false;
+    let startX, startY, scrollLeft, scrollTop;
+
+    container.addEventListener('mousedown', (e) => {
+      // 避免點擊節點時觸發拖曳中斷
+      if (e.target.closest('.flow-node') || e.target.closest('button')) return;
+      isDown = true;
+      container.classList.add('cursor-grabbing');
+      startX = e.pageX - container.offsetLeft;
+      startY = e.pageY - container.offsetTop;
+      scrollLeft = container.scrollLeft;
+      scrollTop = container.scrollTop;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      isDown = false;
+      container.classList.remove('cursor-grabbing');
+    });
+
+    container.addEventListener('mouseup', () => {
+      isDown = false;
+      container.classList.remove('cursor-grabbing');
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const y = e.pageY - container.offsetTop;
+      const walkX = (x - startX) * 1.2;
+      const walkY = (y - startY) * 1.2;
+      container.scrollLeft = scrollLeft - walkX;
+      container.scrollTop = scrollTop - walkY;
+    });
+
+    // 4. 節點點擊細節資料庫 (100% 依據圖 2～4 課本原文)
+    const nodeDetails = {
+      'root': {
+        icon: '⚖️',
+        title: '刑法的法律效果（手段與目的比例關係）',
+        body: `
+          <p><strong>【教材 P. 2-25 原文要旨】</strong></p>
+          <p>正式進入刑法學習之前，必須先理解犯罪成立後的法律效果。如果不懂法律效果，大言不慚地說「某某人會成立本罪」猶如小孩子玩扮家家酒，無法體會<strong>手段（刑罰）與目的（法益保護原則）之間的比例關係</strong>。</p>
+          <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-blue-900 dark:text-blue-300">
+            <strong>核心命題：</strong>刑罰是以法益保護為終極目標，學理上分為「懲罰過去（應報）」與「預防未來（預防）」兩大基本面向。
+          </div>
+        `
+      },
+      'retribution-title': {
+        icon: '⏳',
+        title: '懲罰過去的法益侵害行為',
+        body: `
+          <p>此面向著眼於「已經發生」的不法惡害。國家發動刑罰權，是為了使行為人為其過去所製造的違法行為承擔責任，貫徹罪責原則。</p>
+        `
+      },
+      'retribution': {
+        icon: '⚔️',
+        title: '應報理論（絕對理論・Retribution）',
+        body: `
+          <p><strong>淵源：</strong>源自原始社會「以眼還眼、以牙還牙」的同態復仇思想。</p>
+          <p><strong>近代學說：</strong>認為刑事制裁乃是公正地應報犯罪，藉以衡平犯罪所引起的惡害。</p>
+          <div class="space-y-1.5 pt-2">
+            <div class="p-2 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300">
+              <strong>✅ 優點：</strong>設定國家發動刑罰權的嚴格界限，刑罰絕對不能超過行為人製造的惡害（限制國家刑罰權上限）。
+            </div>
+            <div class="p-2 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300">
+              <strong>❌ 缺點：</strong>無助於犯人受刑後脫離犯罪、重返社會，更增添再犯率。
+            </div>
+          </div>
+        `
+      },
+      'retribution-origin': {
+        icon: '📜',
+        title: '復仇思想起源',
+        body: `
+          <p>人類最原始的正義感：「傷人者受傷、殺人者償命」。同態復仇限制了無限尋仇，是近代刑罰走向對等衡平的萌芽階段。</p>
+        `
+      },
+      'retribution-modern': {
+        icon: '⚖️',
+        title: '近代應報理論之衡平本質',
+        body: `
+          <p>近代刑法拋棄野蠻肉刑，改以自由刑與罰金刑衡平惡害。刑罰的本質即是「惡的報應」，唯有給予犯人實質的不利益，才能撫平被害人受創的法益與社會公義。</p>
+        `
+      },
+      'story-hammurabi': {
+        icon: '📜',
+        title: '【作者叮嚀典故】巴比倫《漢摩拉比法典》',
+        body: `
+          <p>巴比倫人所遵從的漢摩拉比法典，就是通篇充滿應報思想的最佳典範（以眼還眼、以牙還牙）。</p>
+          <div class="p-3 rounded-xl bg-amber-100/70 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800 text-amber-950 dark:text-amber-200">
+            <strong>💡 超先進立法：</strong>法典第 23 條規定了<strong>國家賠償的無過失責任</strong>（若抓不到強盜犯，地方長官必須由公庫如實賠償被害人損失），在遠古時代實屬驚人的先進立法！
+          </div>
+        `
+      },
+      'prevention-title': {
+        icon: '🛡️',
+        title: '預防未來的法益侵害行為',
+        body: `
+          <p>此面向著眼於「尚未發生」的危險。刑罰的存在是為了避免犯罪再次發生，以維護未來社會的安全與秩序。</p>
+        `
+      },
+      'prevention': {
+        icon: '🔮',
+        title: '預防理論（相對理論・Prevention）',
+        body: `
+          <p>認為刑罰的存在應該是針對尚未發生的犯罪，亦即預防犯罪行為的再次發生。依據訴求對象不同，細分為「一般預防（大眾）」與「特別預防（犯人）」。</p>
+        `
+      },
+      'prevention-core': {
+        icon: '🎯',
+        title: '預防犯罪行為之再次發生',
+        body: `
+          <p>「懲前毖後、防範未然」。刑罰不再只是單純向後看的報復，而是向前看的社會防衛手段。</p>
+        `
+      },
+      'general-prev': {
+        icon: '👥',
+        title: '一般預防理論（General Prevention）',
+        body: `
+          <p><strong>訴求對象：</strong>社會一般大眾（潛在犯罪人）。</p>
+          <p><strong>機制：</strong>藉由刑事制裁的痛苦性威嚇大眾，從而產生嚇阻犯罪的預防功能（殺雞儆猴）。</p>
+          <div class="space-y-1.5 pt-2">
+            <div class="p-2 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300">
+              <strong>✅ 優點：</strong>從社會大眾的角度切入，得以維護社會秩序與法威信。
+            </div>
+            <div class="p-2 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300">
+              <strong>❌ 缺點：</strong>與犯罪學理論相背離（多數犯人是自認不會被抓才去犯，不計算惡害）；且容易走向「刑罰越殘酷越好」的重刑化偏差。
+            </div>
+          </div>
+        `
+      },
+      'special-prev': {
+        icon: '👤',
+        title: '特別預防理論（Special Prevention）',
+        body: `
+          <p><strong>訴求對象：</strong>已經犯罪的受刑人個別本身。</p>
+          <p><strong>機制：</strong>刑罰目的在於矯治犯罪人，除去行為人的犯罪因子，使其能適應社會而不再犯罪。</p>
+          <div class="space-y-1.5 pt-2">
+            <div class="p-2 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300">
+              <strong>✅ 優點：</strong>有助於再社會化與防範個別再犯，發展出「保安處分」之配套。
+            </div>
+            <div class="p-2 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300">
+              <strong>❌ 缺點：</strong>若行為人有高度再犯風險且無法矯治，貫徹本說將得出「無限期關押刑罰」的極端恐怖結論。
+            </div>
+          </div>
+        `
+      },
+      'story-sunwu': {
+        icon: '⚔️',
+        title: '【作者叮嚀典故】孫武斬愛妾練娘子軍',
+        body: `
+          <p>春秋時期兵聖孫武為吳王闔閭訓練女子軍，眾嬪妃嬉笑不聽軍令。孫武當場將帶頭的兩位吳王愛妾斬首立威。</p>
+          <div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-blue-900 dark:text-blue-300">
+            <strong>⚠️ 殺雞儆猴的反思：</strong>使眾娘子們嚇得肝膽俱裂、莫敢不從，雖然立馬見效（威嚇嚇阻），但「實在太過分了（竟然斬正妹……）」，正是刑罰過度殘酷之寫照。
+          </div>
+        `
+      },
+      'story-cuckoo': {
+        icon: '🧠',
+        title: '【作者叮嚀典故】《飛越杜鵑窩》腦前葉切開術',
+        body: `
+          <p>電影中兇手殺了人，最後卻沒有受刑罰處罰，而是送往醫院進行所謂的「腦前葉切開術」。</p>
+          <div class="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-900 text-indigo-900 dark:text-indigo-300">
+            <strong>🏥 保安處分的前身：</strong>當時被認為是對犯罪者的醫療治療以除去犯罪因子，概念正相當於現代的<strong>保安處分</strong>（非制裁，而重矯治！）。
+          </div>
+        `
+      },
+      'combination': {
+        icon: '🧬',
+        title: '結合理論（折衷理論・Vereinigungstheorie）',
+        body: `
+          <p><strong>核心地位：</strong>現代學說通說與我國刑法實務採取的立場！</p>
+          <p><strong>截長補短公式：</strong></p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>上限：</strong>以行為人所製造的惡害為上限（取自<strong>應報理論</strong>，絕不能判超過罪責）。</li>
+            <li><strong>威嚇：</strong>在上限範圍內，考量社會威嚇（取自<strong>一般預防理論</strong>）。</li>
+            <li><strong>矯治：</strong>在上限範圍內，考量矯治受刑人（取自<strong>特別預防理論</strong>）。</li>
+          </ul>
+        `
+      }
+    };
+
+    function showNodeDetail(key) {
+      const data = nodeDetails[key];
+      if (!data) return;
+      document.getElementById('modalIcon').textContent = data.icon;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalBody').innerHTML = data.body;
+      document.getElementById('nodeDetailModal').classList.remove('hidden');
+    }
+
+    function showStepModal(stepKey) {
+      const stepData = {
+        'step1': {
+          icon: '1️⃣',
+          title: '第一步：找尋基本範圍（法定刑）',
+          body: '<p><strong>定義：</strong>由刑法分則或其他特別刑法法條明文規定的刑種與刑度。</p><p>例如：刑法 § 271 Ⅰ 普通殺人罪之法定刑為「死刑、無期徒刑或十年以上有期徒刑」。</p>'
+        },
+        'step2': {
+          icon: '2️⃣',
+          title: '第二步：調整處斷範圍（處斷刑）',
+          body: '<p><strong>定義：</strong>依據總則各項法定的刑罰加重或減輕事由，就法定刑進行計算調整後的刑度範圍。</p><p>例如：累犯加重（§ 47）、自首減輕（§ 62）、未遂犯減輕（§ 25 Ⅱ）。原則遵循「先加後減」法則。</p>'
+        },
+        'step3': {
+          icon: '3️⃣',
+          title: '第三步：範圍內選定刑罰（宣告刑）',
+          body: '<p><strong>定義：</strong>法官在處斷刑的法定區間內，審酌刑法第 57 條量刑十款（犯罪動機、目的、手段、犯罪後態度等），於判決主文所最終宣示的具體刑度。</p><p>例如：判決主文宣告「處有期徒刑八年」。</p>'
+        },
+        'step4': {
+          icon: '4️⃣',
+          title: '第四步：執行刑罰（執行刑）',
+          body: '<p><strong>定義：</strong>判決確定後，進入具體執行程序的刑罰處分。包含數罪併罰定應執行刑（§ 51）、易刑處分（易科罰金、易服社會勞動）、緩刑與假釋之實際考量。</p>'
+        }
+      };
+      const d = stepData[stepKey];
+      if (!d) return;
+      document.getElementById('modalIcon').textContent = d.icon;
+      document.getElementById('modalTitle').textContent = d.title;
+      document.getElementById('modalBody').innerHTML = d.body;
+      document.getElementById('nodeDetailModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('nodeDetailModal').classList.add('hidden');
+    }
+
+    // 全螢幕切換
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    // 初始化置中
+    window.addEventListener('load', () => {
+      resetZoom();
+    });
+  </script>
+
+</body>
+
+</html>

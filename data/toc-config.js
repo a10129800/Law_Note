@@ -16,7 +16,8 @@ window.TOC_CONFIG = {
       { action: "switchView('part0-ch1-sec1')", label: '💎 第一節 法益保護原則 (第 2-1 ~ 2-4 頁)' },
       { action: "switchView('part0-ch1-sec2')", label: '📜 第二節 罪刑法定原則 (第 2-5 ~ 2-7 頁)' },
       { action: "switchView('part0-ch1-sec3')", label: '⚖️ 第三節 罪責原則 (第 2-7 ~ 2-8 頁)' },
-      { action: "switchView('part0-chapter-2')", label: '📑 第零篇 第二章 刑法的操作原理 (插槽)' }
+      { action: "switchView('part0-chapter-2')", label: '📑 第零篇 第二章 刑法的操作原理 (P. 2-9 ~ 2-24)' },
+      { action: "switchView('part0-chapter-3')", label: '⚖️ 第零篇 第三章 刑法的法律效果 (P. 2-25 ~ 2-27)' }
     ]
   },
   'intro': {
@@ -32,7 +33,8 @@ window.TOC_CONFIG = {
       { action: "switchView('part0-ch1-sec1')", label: '💎 第一節 法益保護原則 (第 2-1 ~ 2-4 頁)' },
       { action: "switchView('part0-ch1-sec2')", label: '📜 第二節 罪刑法定原則 (第 2-5 ~ 2-7 頁)' },
       { action: "switchView('part0-ch1-sec3')", label: '⚖️ 第三節 罪責原則 (第 2-7 ~ 2-8 頁)' },
-      { action: "switchView('part0-chapter-2')", label: '📑 第零篇 第二章 刑法的操作原理 (插槽)' }
+      { action: "switchView('part0-chapter-2')", label: '📑 第零篇 第二章 刑法的操作原理 (P. 2-9 ~ 2-24)' },
+      { action: "switchView('part0-chapter-3')", label: '⚖️ 第零篇 第三章 刑法的法律效果 (P. 2-25 ~ 2-27)' }
     ]
   },
   'part-0': {
@@ -45,7 +47,8 @@ window.TOC_CONFIG = {
       { action: "switchView('part0-ch1-sec1')", label: '💎 第一節 法益保護原則 (第 2-1 ~ 2-4 頁)' },
       { action: "switchView('part0-ch1-sec2')", label: '📜 第二節 罪刑法定原則 (第 2-5 ~ 2-7 頁)' },
       { action: "switchView('part0-ch1-sec3')", label: '⚖️ 第三節 罪責原則 (第 2-7 ~ 2-8 頁)' },
-      { action: "switchView('part0-chapter-2')", label: '📑 第二章 刑法的操作原理 (待填入插槽)' },
+      { action: "switchView('part0-chapter-2')", label: '📑 第二章 刑法的操作原理 (P. 2-9 ~ 2-24)' },
+      { action: "switchView('part0-chapter-3')", label: '⚖️ 第三章 刑法的法律效果 (P. 2-25 ~ 2-27)' },
       { action: "switchView('intro')", label: '📖 導論 犯罪概念與論罪結構' },
       { action: "switchView('chapter-1')", label: '📑 第一章 犯罪的概念' },
       { action: "switchView('chapter-2')", label: '📄 第二章 刑法的論罪結構' }
@@ -112,7 +115,6 @@ window.TOC_CONFIG = {
       { id: 'sec-p0ch2-statutes-matrix', label: '三、第二章 重要法條與概念速查矩陣' },
       { action: "switchView('part0-ch2-sec1')", label: '🚀 第一節 刑法的適用效力 (第 2-9～2-14 頁) →' },
       { action: "switchView('part0-ch2-sec2')", label: '🚀 第二節 刑法之解釋方法 (第 2-15～2-24 頁) →' },
-      { action: "switchView('part0-chapter-3')", label: '📑 前往第三章 刑法的法律效果 →' },
       { action: "switchView('part0-ch1-sec3')", label: '← 返回第一章第三節 (罪責原則)' },
       { action: "switchView('part-0')", label: '📖 返回第零篇導讀' },
       { action: "switchView('home')", label: '🏠 回到書籍主頁' }
@@ -155,83 +157,81 @@ window.TOC_CONFIG = {
       { id: 'sec-p0ch2-sec2-individualized', label: '　└ 個別化公務員概念（案例 2-9～2-11）' },
       { id: 'sec-p0ch2-sec2-grievous-bodily-harm', label: '八、重傷之立法解釋（§ 10 Ⅳ，案例 2-12～2-15）' },
       { id: 'sec-p0ch2-sec2-sexual-intercourse', label: '九、性交之立法解釋（§ 10 Ⅴ 三大要件）' },
-      { action: "switchView('part0-chapter-3')", label: '👉 下一單元：第三章 刑法的法律效果 (第 2-25～2-27 頁) →' },
+      { action: "switchView('part0-chapter-2')", label: '📑 本章研讀完結・返回第二章總覽 →' },
       { action: "switchView('part0-ch2-sec1')", label: '← 返回第一節 刑法的適用效力' },
-      { action: "switchView('part0-chapter-2')", label: '← 返回第二章總覽' },
       { action: "switchView('home')", label: '🏠 回到書籍主頁' }
     ]
   },
   'part0-chapter-3': {
     badge: '教材第 2-25 ～ 2-27 頁',
-    title: '📌 第三章 法律效果',
+    title: '📌 第三章 法律效果 清單',
     items: [
-      { id: 'sec-p0ch3-intro', label: '一、手段與目的之比例關係（拒玩扮家家酒）' },
-      { id: 'sec-p0ch3-author-advice-1', label: '　└ 【作者叮嚀】為何提前探討刑罰理論？' },
-      { id: 'sec-p0ch3-theories', label: '二、刑罰目的理論兩大面向（應報 vs 預防）' },
-      { id: 'sec-p0ch3-combination', label: '三、現代通說：結合理論與雙軌體系（TB+R+S vs TB+R）' },
-      { id: 'sec-p0ch3-author-stories', label: '四、作者叮嚀：三大理論歷史與影劇典故' },
-      { id: 'sec-p0ch3-steps-diagram', label: '五、原書圖解：刑罰思考四大步驟（法定刑至執行刑）' },
-      { action: "switchView('part0-ch3-sec1')", label: '👉 下一單元：第一節 刑罰的種類——兼談法定刑 →' },
-      { action: "switchView('part0-ch2-sec2')", label: '← 返回第二章第二節 (解釋方法)' },
+      { id: 'sec-p0ch3-intro', label: '一、犯罪成立後的最終考驗' },
+      { id: 'sec-p0ch3-author-advice-1', label: '　├ 【作者叮嚀】為何提前探討' },
+      { id: 'sec-p0ch3-theories', label: '二、刑罰目的理論體系全景' },
+      { id: 'sec-p0ch3-drawio-diagram', label: '　├ 📊 體系流程圖 (Draw.io)' },
+      { id: 'sec-p0ch3-flowchart-guide', label: '　└ 💡 流程圖白話文速讀專區' },
+      { id: 'sec-p0ch3-steps-diagram', label: '三、刑罰思考四大步驟 (原書圖解)' },
+      { id: 'sec-p0ch3-steps-flowchart', label: '　├ 📊 思考步驟流程圖 (Draw.io)' },
+      { id: 'sec-p0ch3-steps-guide', label: '　└ 💡 四大步驟白話文專區' },
+      { action: "switchView('part0-ch3-sec1')", label: '👉 第一節 刑罰種類・法定刑 →' },
+      { action: "switchView('part0-ch3-sec2')", label: '👉 第二節 刑罰調整・處斷刑 →' },
+      { action: "switchView('part0-ch3-sec3')", label: '👉 第三節 刑罰量定・宣告刑 →' },
+      { action: "switchView('part0-ch3-sec4')", label: '👉 第四節 刑罰執行・執行刑 →' },
       { action: "switchView('part-0')", label: '📖 返回第零篇導讀' },
       { action: "switchView('home')", label: '🏠 回到書籍主頁' }
     ]
   },
   'part0-ch3-sec1': {
-    badge: '教材第 2-27 ～ 2-29 頁',
-    title: '📌 第一節 刑罰種類 清單',
+    badge: '教材第 2-28 ～ 2-35 頁',
+    title: '📌 第一節 法定刑 清單',
     items: [
-      { id: 'sec-p0ch3-sec1-statutory-penalty', label: '一、法定刑與完全性法條（成立要件＋效果）' },
-      { id: 'sec-p0ch3-sec1-principal-penalties', label: '二、主刑三大體系（死刑、自由刑、罰金刑）' },
-      { id: 'sec-p0ch3-sec1-accessory-penalties', label: '三、從刑三大體系與沒收新制變革' },
-      { id: 'sec-p0ch3-sec1-penalty-patterns', label: '四、法定刑之四大主刑配置模式（選科 vs 併科）' },
-      { action: "switchView('part0-ch3-sec2')", label: '👉 下一單元：第二節 刑罰的調整——兼談處斷刑 →' },
-      { action: "switchView('part0-chapter-3')", label: '← 返回第三章導論' },
-      { action: "switchView('part-0')", label: '📖 返回第零篇導讀' },
+      { id: 'sec-p0ch3-sec1-statutory-penalty', label: '一、法定刑之意義與法律保留' },
+      { id: 'sec-p0ch3-sec1-principal-penalties', label: '二、主刑種類體系展開（§ 33）' },
+      { id: 'sec-p0ch3-sec1-accessory-penalties', label: '三、從刑與沒收之法律定位（§ 34、§ 36）' },
+      { id: 'sec-p0ch3-sec1-penalty-patterns', label: '四、法定刑立法模式分析' },
+      { action: "switchView('part0-ch3-sec2')", label: '👉 下一單元：第二節 處斷刑 →' },
+      { action: "switchView('part0-chapter-3')", label: '← 返回第三章總覽' },
       { action: "switchView('home')", label: '🏠 回到書籍主頁' }
     ]
   },
   'part0-ch3-sec2': {
-    badge: '教材第 2-29 ～ 2-31 頁',
-    title: '📌 第二節 刑罰調整 清單',
+    badge: '教材第 2-36 ～ 2-45 頁',
+    title: '📌 第二節 處斷刑 清單',
     items: [
-      { id: 'sec-p0ch3-sec2-concept', label: '一、處斷刑與完全法條調整（先加後減法則）' },
-      { id: 'sec-p0ch3-sec2-recidivism', label: '二、刑罰加重事由：累犯五大要件與釋字775' },
-      { id: 'sec-p0ch3-sec2-surrender', label: '三、刑罰減輕事由：自首三大要件（99台上7333）' },
-      { id: 'sec-p0ch3-sec2-surrender-vs-confession', label: '四、自首 vs 投案 vs 自白 三者嚴格辨析' },
-      { action: "switchView('part0-ch3-sec3')", label: '👉 下一單元：第三節 刑罰的量定——兼談宣告刑 →' },
-      { action: "switchView('part0-ch3-sec1')", label: '← 返回第一節 刑罰的種類' },
-      { action: "switchView('part0-chapter-3')", label: '📖 返回第三章導論' },
-      { action: "switchView('home')", label: '🏠 回到書籍主頁' }
+      { id: 'sec-p0ch3-sec2-concept', label: '一、處斷刑之意義與加減法則' },
+      { id: 'sec-p0ch3-sec2-recidivism', label: '二、累犯之加重條件與釋字 775 號' },
+      { id: 'sec-p0ch3-sec2-surrender', label: '三、自首與投案之辨析與減輕' },
+      { action: "switchView('part0-ch3-sec3')", label: '👉 下一單元：第三節 宣告刑 →' },
+      { action: "switchView('part0-ch3-sec1')", label: '← 返回第一節 法定刑' },
+      { action: "switchView('part0-chapter-3')", label: '← 返回第三章總覽' }
     ]
   },
   'part0-ch3-sec3': {
-    badge: '教材第 2-31 ～ 2-32 頁',
-    title: '📌 第三節 刑罰量定 清單',
+    badge: '教材第 2-46 ～ 2-55 頁',
+    title: '📌 第三節 宣告刑 清單',
     items: [
-      { id: 'sec-p0ch3-sec3-concept', label: '一、罪刑相當原則與宣告刑（合理與公平）' },
-      { id: 'sec-p0ch3-sec3-sentencing-factors', label: '二、處斷刑內量刑考量標的（§ 57 與四大法理）' },
-      { id: 'sec-p0ch3-sec3-supplementary-rules', label: '三、超出處斷刑之量刑補充規則（§ 58 酌加 / § 59 酌減 / § 61 酌免）' },
-      { id: 'sec-p0ch3-sec3-comparison-matrix', label: '四、刑罰四階段思考與處斷刑內外量刑總結' },
-      { action: "switchView('part0-ch3-sec4')", label: '👉 下一單元：第四節 刑罰的執行——兼談執行刑 →' },
-      { action: "switchView('part0-ch3-sec2')", label: '← 返回第二節 刑罰的調整' },
-      { action: "switchView('part0-chapter-3')", label: '📖 返回第三章導論' },
-      { action: "switchView('home')", label: '🏠 回到書籍主頁' }
+      { id: 'sec-p0ch3-sec3-concept', label: '一、宣告刑之意義與自由裁量' },
+      { id: 'sec-p0ch3-sec3-sentencing-factors', label: '二、量刑審酌事由（§ 57、§ 58）' },
+      { id: 'sec-p0ch3-sec3-supplementary-rules', label: '三、酌量減輕與特殊寬典（§ 59～61）' },
+      { id: 'sec-p0ch3-sec3-comparison-matrix', label: '四、量刑條款綜合比較矩陣' },
+      { action: "switchView('part0-ch3-sec4')", label: '👉 下一單元：第四節 執行刑 →' },
+      { action: "switchView('part0-ch3-sec2')", label: '← 返回第二節 處斷刑' },
+      { action: "switchView('part0-chapter-3')", label: '← 返回第三章總覽' }
     ]
   },
   'part0-ch3-sec4': {
-    badge: '教材第 2-32 ～ 2-37 頁',
-    title: '📌 第四節 刑罰執行 清單',
+    badge: '教材第 2-56 ～ 2-70 頁',
+    title: '📌 第四節 執行刑 清單',
     items: [
-      { id: 'sec-p0ch3-sec4-concept', label: '一、執行刑之概念與案例 3-1 四階推導' },
-      { id: 'sec-p0ch3-sec4-substitute', label: '二、易刑處分四大形態與案例 3-2 釋字662' },
-      { id: 'sec-p0ch3-sec4-probation', label: '三、暫緩刑罰執行之寬典：緩刑體系與案例 3-3' },
-      { id: 'sec-p0ch3-sec4-parole', label: '四、提前回歸社會之寬恕：假釋制度與案例 3-4 釋字691' },
-      { id: 'sec-p0ch3-sec4-summary-matrix', label: '五、刑罰執行三大調節制度對比總表' },
-      { id: 'sec-p0ch3-sec4-statute-of-limitations', label: '六、刑法時效制度：追訴權時效 vs 行刑權時效' },
-      { action: "switchView('part0-ch3-sec3')", label: '← 返回第三節 刑罰的量定' },
-      { action: "switchView('part0-chapter-3')", label: '📖 返回第三章導論' },
-      { action: "switchView('part-0')", label: '⚖️ 返回第零篇導讀' },
+      { id: 'sec-p0ch3-sec4-concept', label: '一、執行刑之核心意義與數罪併罰' },
+      { id: 'sec-p0ch3-sec4-substitute', label: '二、易刑處分之體系展開（§ 41～43）' },
+      { id: 'sec-p0ch3-sec4-probation', label: '三、緩刑制度與附條件緩刑（§ 74）' },
+      { id: 'sec-p0ch3-sec4-parole', label: '四、假釋要件與撤銷規定（§ 77～79）' },
+      { id: 'sec-p0ch3-sec4-summary-matrix', label: '五、執行與寬典機制對照矩陣' },
+      { id: 'sec-p0ch3-sec4-statute-of-limitations', label: '六、時效制度（追訴權 vs 刑罰執行時效）' },
+      { action: "switchView('part0-chapter-3')", label: '📑 本章完結・返回第三章總覽 →' },
+      { action: "switchView('part-0')", label: '📖 返回第零篇導讀' },
       { action: "switchView('home')", label: '🏠 回到書籍主頁' }
     ]
   },

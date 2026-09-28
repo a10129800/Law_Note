@@ -1230,7 +1230,7 @@ if (hash.startsWith('#sec-p0ch1-sec1-')) {
 - [ ] **案例爭點一鍵導出筆記**：點擊「📋 複製筆記」後是否生成規範的 Markdown 內容並彈出微型 Toast 通知？
 - [ ] **模組化掛載名稱雙向相容**：視圖檔案（`content/*.js`）是否宣告雙向別名（全稱與簡寫），控制器 `mountAllViews()` 是否具備動態保底遍歷與 DOM 重新綁定（`refreshViewElements()`），杜絕內文空白？
 - [ ] **變數宣告頂置與全域控制器導出 (TDZ 防護)**：控制器 `app.js` 中的 DOM 快取變數與樣式常數是否 100% 置於腳本最頂端宣告？核心互動函式（如 `switchView`, `toggleTheme`）是否顯式掛載至 `window`，並在切換前調用 JIT 自癒刷新，杜絕 TDZ `ReferenceError` 與按鈕失靈？
-- [ ] **環形進度回到頂部按鈕**：頁面滾動超過 300px 時是否平滑浮現？動態周長（125.66px）與懸停百分比是否正確反映研讀進度？
+- [ ] **全景流程圖與白話專區標準**：依據 [`NOTE_READER_SPECIFICATION.md`](../../NOTE_READER_SPECIFICATION.md) 規範，流程圖需為靜態圖檔禁止拖曳、字體清晰大於 14.5px，圖下附專屬「白話文速讀專區」，杜絕零碎重複卡片！
 
 
 

@@ -18,11 +18,6 @@ let viewPart0Ch1Sec3 = null;
 let viewPart0Chapter2 = null;
 let viewPart0Ch2Sec1 = null;
 let viewPart0Ch2Sec2 = null;
-let viewPart0Chapter3 = null;
-let viewPart0Ch3Sec1 = null;
-let viewPart0Ch3Sec2 = null;
-let viewPart0Ch3Sec3 = null;
-let viewPart0Ch3Sec4 = null;
 
 let rightTocAside = null;
 let currentChapterBadge = null;
@@ -46,6 +41,11 @@ let navBtnPart0Ch3Sec1 = null;
 let navBtnPart0Ch3Sec2 = null;
 let navBtnPart0Ch3Sec3 = null;
 let navBtnPart0Ch3Sec4 = null;
+let viewPart0Chapter3 = null;
+let viewPart0Ch3Sec1 = null;
+let viewPart0Ch3Sec2 = null;
+let viewPart0Ch3Sec3 = null;
+let viewPart0Ch3Sec4 = null;
 
 function refreshViewElements() {
   viewHome = document.getElementById('viewHome');
@@ -60,7 +60,7 @@ function refreshViewElements() {
   viewPart0Chapter2 = document.getElementById('viewPart0Chapter2');
   viewPart0Ch2Sec1 = document.getElementById('viewPart0Ch2Sec1');
   viewPart0Ch2Sec2 = document.getElementById('viewPart0Ch2Sec2');
-  viewPart0Chapter3 = document.getElementById('viewPart0Chapter3');
+  viewPart0Chapter3 = document.getElementById('viewPart0Chapter3') || document.getElementById('viewPart0Ch3');
   viewPart0Ch3Sec1 = document.getElementById('viewPart0Ch3Sec1');
   viewPart0Ch3Sec2 = document.getElementById('viewPart0Ch3Sec2');
   viewPart0Ch3Sec3 = document.getElementById('viewPart0Ch3Sec3');
@@ -516,7 +516,7 @@ function updateSidebarSubtrees(viewName) {
   const chev2 = document.getElementById('chevron-part0Ch2');
   const chev3 = document.getElementById('chevron-part0Ch3');
 
-  if (!ch1Tree || !ch2Tree || !ch3Tree) return;
+  if (!ch1Tree || !ch2Tree) return;
 
   const isCh1 = viewName.startsWith('part0-ch1') || viewName === 'part0-chapter-1';
   const isCh2 = viewName.startsWith('part0-ch2') || viewName === 'part0-chapter-2';
@@ -525,28 +525,28 @@ function updateSidebarSubtrees(viewName) {
   if (isCh1) {
     ch1Tree.classList.remove('hidden');
     ch2Tree.classList.add('hidden');
-    ch3Tree.classList.add('hidden');
+    if (ch3Tree) ch3Tree.classList.add('hidden');
     if (chev1) chev1.textContent = '▼';
     if (chev2) chev2.textContent = '▶';
     if (chev3) chev3.textContent = '▶';
   } else if (isCh2) {
     ch1Tree.classList.add('hidden');
     ch2Tree.classList.remove('hidden');
-    ch3Tree.classList.add('hidden');
+    if (ch3Tree) ch3Tree.classList.add('hidden');
     if (chev1) chev1.textContent = '▶';
     if (chev2) chev2.textContent = '▼';
     if (chev3) chev3.textContent = '▶';
   } else if (isCh3) {
     ch1Tree.classList.add('hidden');
     ch2Tree.classList.add('hidden');
-    ch3Tree.classList.remove('hidden');
+    if (ch3Tree) ch3Tree.classList.remove('hidden');
     if (chev1) chev1.textContent = '▶';
     if (chev2) chev2.textContent = '▶';
     if (chev3) chev3.textContent = '▼';
   } else if (viewName === 'part-0') {
     ch1Tree.classList.remove('hidden');
     ch2Tree.classList.add('hidden');
-    ch3Tree.classList.add('hidden');
+    if (ch3Tree) ch3Tree.classList.add('hidden');
     if (chev1) chev1.textContent = '▼';
     if (chev2) chev2.textContent = '▶';
     if (chev3) chev3.textContent = '▶';
@@ -589,8 +589,8 @@ function switchView(viewName, shouldScrollTop = true) {
   const allViews = [
     viewHome, viewIntro, viewChapter1, viewChapter2, 
     viewPart0, viewPart0Chapter1, viewPart0Ch1Sec1, viewPart0Ch1Sec2, viewPart0Ch1Sec3,
-    viewPart0Chapter2, viewPart0Ch2Sec1, viewPart0Ch2Sec2, viewPart0Chapter3, 
-    viewPart0Ch3Sec1, viewPart0Ch3Sec2, viewPart0Ch3Sec3, viewPart0Ch3Sec4
+    viewPart0Chapter2, viewPart0Ch2Sec1, viewPart0Ch2Sec2,
+    viewPart0Chapter3, viewPart0Ch3Sec1, viewPart0Ch3Sec2, viewPart0Ch3Sec3, viewPart0Ch3Sec4
   ];
 
   // 隱藏全部
@@ -842,7 +842,7 @@ function switchView(viewName, shouldScrollTop = true) {
       if (window.history && window.history.replaceState) history.replaceState(null, '', '#part0-ch2-sec2');
     }
 
-  } else if (viewName === 'part0-chapter-3') {
+  } else if (viewName === 'part0-chapter-3' || viewName === 'part0-ch3' || viewName === 'part0Ch3') {
     if (viewPart0Chapter3) viewPart0Chapter3.classList.remove('hidden');
     document.body.classList.remove('in-chapter-1', 'intro-active', 'in-home');
     document.body.classList.add('in-chapter');
@@ -856,7 +856,7 @@ function switchView(viewName, shouldScrollTop = true) {
     }
 
     if (currentChapterBadge) currentChapterBadge.textContent = '第零篇 第三章';
-    document.title = '第零篇 第三章 刑法的法律效果 | 刑法總則研讀筆記';
+    document.title = '第三章 刑法的法律效果 | 刑法總則研讀筆記';
     renderToc('part0-chapter-3');
 
     if (shouldScrollTop) {
@@ -879,7 +879,7 @@ function switchView(viewName, shouldScrollTop = true) {
     }
 
     if (currentChapterBadge) currentChapterBadge.textContent = '第零篇 第三章・第一節';
-    document.title = '第一節 刑罰的種類——兼談法定刑 | 刑法總則研讀筆記';
+    document.title = '第一節 刑罰種類・法定刑 | 刑法總則研讀筆記';
     renderToc('part0-ch3-sec1');
 
     if (shouldScrollTop) {
@@ -902,7 +902,7 @@ function switchView(viewName, shouldScrollTop = true) {
     }
 
     if (currentChapterBadge) currentChapterBadge.textContent = '第零篇 第三章・第二節';
-    document.title = '第二節 刑罰的調整——兼談處斷刑 | 刑法總則研讀筆記';
+    document.title = '第二節 刑罰調整・處斷刑 | 刑法總則研讀筆記';
     renderToc('part0-ch3-sec2');
 
     if (shouldScrollTop) {
@@ -925,7 +925,7 @@ function switchView(viewName, shouldScrollTop = true) {
     }
 
     if (currentChapterBadge) currentChapterBadge.textContent = '第零篇 第三章・第三節';
-    document.title = '第三節 刑罰的量定——兼談宣告刑 | 刑法總則研讀筆記';
+    document.title = '第三節 刑罰量定・宣告刑 | 刑法總則研讀筆記';
     renderToc('part0-ch3-sec3');
 
     if (shouldScrollTop) {
@@ -948,7 +948,7 @@ function switchView(viewName, shouldScrollTop = true) {
     }
 
     if (currentChapterBadge) currentChapterBadge.textContent = '第零篇 第三章・第四節';
-    document.title = '第四節 刑罰的執行——兼談執行刑 | 刑法總則研讀筆記';
+    document.title = '第四節 刑罰執行・執行刑 | 刑法總則研讀筆記';
     renderToc('part0-ch3-sec4');
 
     if (shouldScrollTop) {
@@ -1147,26 +1147,6 @@ function scrollToSection(e, targetId) {
     if (viewChapter2 && viewChapter2.classList.contains('hidden')) {
       switchView('chapter-2', false);
     }
-  } else if (targetId.startsWith('sec-p0ch3-sec4-')) {
-    if (viewPart0Ch3Sec4 && viewPart0Ch3Sec4.classList.contains('hidden')) {
-      switchView('part0-ch3-sec4', false);
-    }
-  } else if (targetId.startsWith('sec-p0ch3-sec3-')) {
-    if (viewPart0Ch3Sec3 && viewPart0Ch3Sec3.classList.contains('hidden')) {
-      switchView('part0-ch3-sec3', false);
-    }
-  } else if (targetId.startsWith('sec-p0ch3-sec2-')) {
-    if (viewPart0Ch3Sec2 && viewPart0Ch3Sec2.classList.contains('hidden')) {
-      switchView('part0-ch3-sec2', false);
-    }
-  } else if (targetId.startsWith('sec-p0ch3-sec1-')) {
-    if (viewPart0Ch3Sec1 && viewPart0Ch3Sec1.classList.contains('hidden')) {
-      switchView('part0-ch3-sec1', false);
-    }
-  } else if (targetId.startsWith('sec-p0ch3-')) {
-    if (viewPart0Chapter3 && viewPart0Chapter3.classList.contains('hidden')) {
-      switchView('part0-chapter-3', false);
-    }
   } else if (targetId.startsWith('sec-p0ch2-sec2-')) {
     if (viewPart0Ch2Sec2 && viewPart0Ch2Sec2.classList.contains('hidden')) {
       switchView('part0-ch2-sec2', false);
@@ -1253,26 +1233,6 @@ function handleHashRouting() {
     switchView('chapter-2', false);
     const targetId = hash.substring(1);
     setTimeout(() => { scrollToSection(null, targetId); }, 50);
-  } else if (hash.startsWith('#sec-p0ch3-sec4-')) {
-    switchView('part0-ch3-sec4', false);
-    const targetId = hash.substring(1);
-    setTimeout(() => { scrollToSection(null, targetId); }, 50);
-  } else if (hash.startsWith('#sec-p0ch3-sec3-')) {
-    switchView('part0-ch3-sec3', false);
-    const targetId = hash.substring(1);
-    setTimeout(() => { scrollToSection(null, targetId); }, 50);
-  } else if (hash.startsWith('#sec-p0ch3-sec2-')) {
-    switchView('part0-ch3-sec2', false);
-    const targetId = hash.substring(1);
-    setTimeout(() => { scrollToSection(null, targetId); }, 50);
-  } else if (hash.startsWith('#sec-p0ch3-sec1-')) {
-    switchView('part0-ch3-sec1', false);
-    const targetId = hash.substring(1);
-    setTimeout(() => { scrollToSection(null, targetId); }, 50);
-  } else if (hash.startsWith('#sec-p0ch3-')) {
-    switchView('part0-chapter-3', false);
-    const targetId = hash.substring(1);
-    setTimeout(() => { scrollToSection(null, targetId); }, 50);
   } else if (hash.startsWith('#sec-p0ch2-sec2-')) {
     switchView('part0-ch2-sec2', false);
     const targetId = hash.substring(1);
@@ -1331,16 +1291,6 @@ function handleHashRouting() {
     switchView('part0-ch2-sec1', true);
   } else if (hash === '#part0-ch2-sec2') {
     switchView('part0-ch2-sec2', true);
-  } else if (hash === '#part0-chapter-3' || hash === '#part0-ch3') {
-    switchView('part0-chapter-3', true);
-  } else if (hash === '#part0-ch3-sec1') {
-    switchView('part0-ch3-sec1', true);
-  } else if (hash === '#part0-ch3-sec2') {
-    switchView('part0-ch3-sec2', true);
-  } else if (hash === '#part0-ch3-sec3') {
-    switchView('part0-ch3-sec3', true);
-  } else if (hash === '#part0-ch3-sec4') {
-    switchView('part0-ch3-sec4', true);
   } else {
     switchView('home', false);
   }
@@ -2057,7 +2007,7 @@ function openDiagramLightbox(element, title = '核心架構圖解', page = '原�
   
   clone.classList.remove('cursor-pointer', 'hover:border-blue-500/50', 'hover:shadow-md');
   clone.style.width = '100%';
-  clone.style.maxWidth = '780px';
+  clone.style.maxWidth = '1140px';
   clone.style.margin = '0 auto';
   canvas.appendChild(clone);
 
@@ -2235,3 +2185,201 @@ function toggleOriginalQuote() {
   }
 }
 window.toggleOriginalQuote = toggleOriginalQuote;
+
+// ==================== 15. 第三章 Draw.io 體系流程圖與節點彈窗控制 ====================
+let currentCh3Scale = 1.0;
+
+function updateCh3Transform() {
+  const canvas = document.getElementById('ch3DrawioCanvas');
+  const display = document.getElementById('ch3ZoomDisplay');
+  if (canvas) canvas.style.transform = `scale(${currentCh3Scale})`;
+  if (display) display.textContent = `${Math.round(currentCh3Scale * 100)}%`;
+}
+
+function zoomCh3Canvas(delta) {
+  currentCh3Scale = Math.min(Math.max(0.4, currentCh3Scale + delta), 2.2);
+  updateCh3Transform();
+}
+
+function resetCh3Zoom() {
+  currentCh3Scale = 1.0;
+  updateCh3Transform();
+  const container = document.getElementById('ch3DrawioContainer');
+  if (container) {
+    container.scrollTo({
+      left: (1240 - container.clientWidth) / 2,
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+}
+
+function fitCh3Width() {
+  const container = document.getElementById('ch3DrawioContainer');
+  if (!container) return;
+  const availableWidth = container.clientWidth - 48;
+  const contentWidth = 1240;
+  currentCh3Scale = Math.max(0.45, Math.min(1.0, availableWidth / contentWidth));
+  updateCh3Transform();
+}
+
+window.zoomCh3Canvas = zoomCh3Canvas;
+window.resetCh3Zoom = resetCh3Zoom;
+window.fitCh3Width = fitCh3Width;
+
+// 節點點擊細節資料庫
+const ch3NodeDetails = {
+  'root': {
+    icon: '⚖️',
+    title: '刑法的法律效果（手段與目的比例關係）',
+    body: `<p><strong>【教材 P. 2-25 原文要旨】</strong></p><p>正式進入刑法學習之前，必須先理解犯罪成立後的法律效果。如果不懂法律效果，大言不慚地說「某某人會成立本罪」猶如小孩子玩扮家家酒，無法體會<strong>手段（刑罰）與目的（法益保護原則）之間的比例關係</strong>。</p><div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-blue-900 dark:text-blue-300"><strong>核心命題：</strong>刑罰是以法益保護為終極目標，學理上分為「懲罰過去（應報）」與「預防未來（預防）」兩大基本面向。</div>`
+  },
+  'retribution-title': {
+    icon: '⏳',
+    title: '懲罰過去的法益侵害行為',
+    body: `<p>此面向著眼於「已經發生」的不法惡害。國家發動刑罰權，是為了使行為人為其過去所製造的違法行為承擔責任，貫徹罪責原則。</p>`
+  },
+  'retribution': {
+    icon: '⚔️',
+    title: '應報理論（絕對理論・Retribution）',
+    body: `<p><strong>淵源：</strong>源自原始社會「以眼還眼、以牙還牙」的同態復仇思想。</p><p><strong>近代學說：</strong>認為刑事制裁乃是公正地應報犯罪，藉以衡平犯罪所引起的惡害。</p><div class="space-y-1.5 pt-2"><div class="p-2 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300"><strong>✅ 優點：</strong>設定國家發動刑罰權的嚴格界限，刑罰絕對不能超過行為人製造的惡害（限制國家刑罰權上限）。</div><div class="p-2 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300"><strong>❌ 缺點：</strong>無助於犯人受刑後脫離犯罪、重返社會，更增添再犯率。</div></div>`
+  },
+  'retribution-origin': {
+    icon: '📜',
+    title: '復仇思想起源',
+    body: `<p>人類最原始的正義感：「傷人者受傷、殺人者償命」。同態復仇限制了無限尋仇，是近代刑罰走向對等衡平的萌芽階段。</p>`
+  },
+  'retribution-modern': {
+    icon: '⚖️',
+    title: '近代應報理論之衡平本質',
+    body: `<p>近代刑法拋棄野蠻肉刑，改以自由刑與罰金刑衡平惡害。刑罰的本質即是「惡的報應」，唯有給予犯人實質的不利益，才能撫平被害人受創的法益與社會公義。</p>`
+  },
+  'story-hammurabi': {
+    icon: '📜',
+    title: '【作者叮嚀典故】巴比倫《漢摩拉比法典》',
+    body: `<p>巴比倫人所遵從的漢摩拉比法典，就是通篇充滿應報思想的最佳典範（以眼還眼、以牙還牙）。</p><div class="p-3 rounded-xl bg-amber-100/70 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800 text-amber-950 dark:text-amber-200"><strong>💡 超先進立法：</strong>法典第 23 條規定了<strong>國家賠償的無過失責任</strong>（若抓不到強盜犯，地方長官必須由公庫如實賠償被害人損失），在遠古時代實屬驚人的先進立法！</div>`
+  },
+  'prevention-title': {
+    icon: '🛡️',
+    title: '預防未來的法益侵害行為',
+    body: `<p>此面向著眼於「尚未發生」的危險。刑罰的存在是為了避免犯罪再次發生，以維護未來社會的安全與秩序。</p>`
+  },
+  'prevention': {
+    icon: '🔮',
+    title: '預防理論（相對理論・Prevention）',
+    body: `<p>認為刑罰的存在應該是針對尚未發生的犯罪，亦即預防犯罪行為的再次發生。依據訴求對象不同，細分為「一般預防（大眾）」與「特別預防（犯人）」。</p>`
+  },
+  'prevention-core': {
+    icon: '🎯',
+    title: '預防犯罪行為之再次發生',
+    body: `<p>「懲前毖後、防範未然」。刑罰不再只是單純向後看的報復，而是向前看的社會防衛手段。</p>`
+  },
+  'general-prev': {
+    icon: '👥',
+    title: '一般預防理論（General Prevention）',
+    body: `<p><strong>訴求對象：</strong>社會一般大眾（潛在犯罪人）。</p><p><strong>機制：</strong>藉由刑事制裁的痛苦性威嚇大眾，從而產生嚇阻犯罪的預防功能（殺雞儆猴）。</p><div class="space-y-1.5 pt-2"><div class="p-2 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300"><strong>✅ 優點：</strong>從社會大眾的角度切入，得以維護社會秩序與法威信。</div><div class="p-2 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300"><strong>❌ 缺點：</strong>與犯罪學理論相背離（多數犯人是自認不會被抓才去犯，不計算惡害）；且容易走向「刑罰越殘酷越好」的重刑化偏差。</div></div>`
+  },
+  'special-prev': {
+    icon: '👤',
+    title: '特別預防理論（Special Prevention）',
+    body: `<p><strong>訴求對象：</strong>已經犯罪的受刑人個別本身。</p><p><strong>機制：</strong>刑罰目的在於矯治犯罪人，除去行為人的犯罪因子，使其能適應社會而不再犯罪。</p><div class="space-y-1.5 pt-2"><div class="p-2 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300"><strong>✅ 優點：</strong>有助於再社會化與防範個別再犯，發展出「保安處分」之配套。</div><div class="p-2 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300"><strong>❌ 缺點：</strong>若行為人有高度再犯風險且無法矯治，貫徹本說將得出「無限期關押刑罰」的極端恐怖結論。</div></div>`
+  },
+  'story-sunwu': {
+    icon: '⚔️',
+    title: '【作者叮嚀典故】孫武斬愛妾練娘子軍',
+    body: `<p>春秋時期兵聖孫武為吳王闔閭訓練女子軍，眾嬪妃嬉笑不聽軍令。孫武當場將帶頭的兩位吳王愛妾斬首立威。</p><div class="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-blue-900 dark:text-blue-300"><strong>⚠️ 殺雞儆猴的反思：</strong>使眾娘子們嚇得肝膽俱裂、莫敢不從，雖然立馬見效（威嚇嚇阻），但「實在太過分了（竟然斬正妹……）」，正是刑罰過度殘酷之寫照。</div>`
+  },
+  'story-cuckoo': {
+    icon: '🧠',
+    title: '【作者叮嚀典故】《飛越杜鵑窩》腦前葉切開術',
+    body: `<p>電影中兇手殺了人，最後卻沒有受刑罰處罰，而是送往醫院進行所謂的「腦前葉切開術」。</p><div class="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-900 text-indigo-900 dark:text-indigo-300"><strong>🏥 保安處分的前身：</strong>當時被認為是對犯罪者的醫療治療以除去犯罪因子，概念正相當於現代的<strong>保安處分</strong>（非制裁，而重矯治！）。</div>`
+  },
+  'combination': {
+    icon: '🧬',
+    title: '結合理論（折衷理論・Vereinigungstheorie）',
+    body: `<p><strong>核心地位：</strong>現代學說通說與我國刑法實務採取的立場！</p><p><strong>截長補短公式：</strong></p><ul class="list-disc pl-5 space-y-1"><li><strong>上限：</strong>以行為人所製造的惡害為上限（取自<strong>應報理論</strong>，絕不能判超過罪責）。</li><li><strong>威嚇：</strong>在上限範圍內，考量社會威嚇（取自<strong>一般預防理論</strong>）。</li><li><strong>矯治：</strong>在上限範圍內，考量矯治受刑人（取自<strong>特別預防理論</strong>）。</li></ul>`
+  }
+};
+
+function showNodeDetail(key) {
+  const data = ch3NodeDetails[key];
+  const modal = document.getElementById('nodeDetailModal');
+  if (!data || !modal) return;
+  const icon = document.getElementById('modalIcon');
+  const title = document.getElementById('modalTitle');
+  const body = document.getElementById('modalBody');
+  if (icon) icon.textContent = data.icon;
+  if (title) title.textContent = data.title;
+  if (body) body.innerHTML = data.body;
+  modal.classList.remove('hidden');
+}
+
+function closeNodeDetailModal() {
+  const modal = document.getElementById('nodeDetailModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function setCh3ImgMode(mode) {
+  const img = document.getElementById('ch3FlowchartImg');
+  const btnFit = document.getElementById('btnCh3FitWidth');
+  const btnOrigin = document.getElementById('btnCh3OriginWidth');
+  const container = document.getElementById('ch3ImgContainer');
+  if (!img || !container) return;
+
+  if (mode === 'origin') {
+    img.style.minWidth = '1040px';
+    img.style.width = '1040px';
+    container.classList.add('overflow-x-auto');
+    if (btnOrigin) {
+      btnOrigin.className = 'px-2.5 py-1 rounded-lg bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-xs transition-all font-bold';
+    }
+    if (btnFit) {
+      btnFit.className = 'px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-all font-medium';
+    }
+  } else {
+    img.style.minWidth = '';
+    img.style.width = '100%';
+    container.classList.remove('overflow-x-auto');
+    if (btnFit) {
+      btnFit.className = 'px-2.5 py-1 rounded-lg bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-xs transition-all font-bold';
+    }
+    if (btnOrigin) {
+      btnOrigin.className = 'px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-all font-medium';
+    }
+  }
+}
+
+function setCh3StepsImgMode(mode) {
+  const img = document.getElementById('ch3StepsDiagramImg');
+  const btnFit = document.getElementById('btnCh3StepsFitWidth');
+  const btnOrigin = document.getElementById('btnCh3StepsOriginWidth');
+  const container = document.getElementById('ch3StepsImgContainer');
+  if (!img || !container) return;
+
+  if (mode === 'origin') {
+    img.style.minWidth = '1040px';
+    img.style.width = '1040px';
+    container.classList.add('overflow-x-auto');
+    if (btnOrigin) {
+      btnOrigin.className = 'px-2.5 py-1 rounded-lg bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-xs transition-all font-bold';
+    }
+    if (btnFit) {
+      btnFit.className = 'px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-all font-medium';
+    }
+  } else {
+    img.style.minWidth = '';
+    img.style.width = '100%';
+    container.classList.remove('overflow-x-auto');
+    if (btnFit) {
+      btnFit.className = 'px-2.5 py-1 rounded-lg bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-xs transition-all font-bold';
+    }
+    if (btnOrigin) {
+      btnOrigin.className = 'px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-all font-medium';
+    }
+  }
+}
+
+window.showNodeDetail = showNodeDetail;
+window.closeNodeDetailModal = closeNodeDetailModal;
+window.setCh3ImgMode = setCh3ImgMode;
+window.setCh3StepsImgMode = setCh3StepsImgMode;

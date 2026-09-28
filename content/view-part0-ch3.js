@@ -142,403 +142,226 @@ window.APP_VIEWS['viewPart0Chapter3'] = window.APP_VIEWS['viewPart0Ch3'] = windo
             </div>
           </section>
 
-          <!-- ==================== 二、刑罰目的理論之二元面向與三大核心學說 ==================== -->
+          <!-- ==================== 二、刑罰目的理論體系全景流程圖 ==================== -->
           <section id="sec-p0ch3-theories" class="space-y-6 pt-2">
             <div class="flex items-center justify-between border-b border-slate-100 dark:border-white/[0.06] pb-2">
               <div class="flex items-center gap-3">
                 <span class="w-2 h-6 rounded-full bg-indigo-600"></span>
                 <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                  二、刑罰目的理論的兩大面向（教材第 2-25 ～ 2-26 頁）
+                  二、刑罰目的理論體系全景流程圖（教材第 2-25 ～ 2-27 頁）
                 </h3>
               </div>
               <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-bold">
-                法益保護的兩大向度
+                Draw.io 體系架構復刻
               </span>
             </div>
 
-            <!-- 🐣 刑罰目的理論小白秒懂專區 -->
-            <div class="rounded-2xl border-2 border-amber-300 dark:border-amber-700/80 bg-gradient-to-br from-amber-50/90 via-orange-50/60 to-yellow-50/70 dark:from-amber-950/40 dark:via-orange-950/30 dark:to-yellow-950/30 p-5 space-y-4 shadow-sm">
-              <div class="flex items-center gap-2.5 border-b border-amber-200 dark:border-amber-800/60 pb-3">
-                <span class="text-2xl animate-bounce">🐣</span>
-                <div>
-                  <h4 class="text-sm sm:text-base font-black text-amber-950 dark:text-amber-200">
-                    【小白秒懂專區】刑罰目的理論：國家為什麼要把犯人關起來？
-                  </h4>
-                  <p class="text-xs text-amber-800 dark:text-amber-300 font-medium">
-                    三大白話派別：以牙還牙（應報）、殺雞儆猴（一般預防）、愛的教育（特別預防）！
-                  </p>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
-                <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                  <span class="text-rose-700 dark:text-rose-400 font-black block flex items-center gap-1.5">
-                    <span class="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-200 flex items-center justify-center text-xs font-bold">1</span>
-                    <span>應報理論（看著過去）</span>
-                  </span>
-                  <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                    <strong>「善有善報、惡有惡報！」</strong> 你偷多少錢、打斷人家幾根骨頭，國家就給你對等的痛苦（以眼還眼）。最大優點是<strong>嚴格限制處罰上限</strong>，不能因為想嚇阻別人就判太重！
-                  </p>
-                </div>
-
-                <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                  <span class="text-blue-700 dark:text-blue-400 font-black block flex items-center gap-1.5">
-                    <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-200 flex items-center justify-center text-xs font-bold">2</span>
-                    <span>一般預防（威嚇大眾）</span>
-                  </span>
-                  <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                    <strong>「殺雞儆猴給猴子看！」</strong> 處罰這隻雞，不是只針對雞，而是要讓台下圍觀的全國老百姓心生畏懼，不敢去模仿犯罪。缺點是容易走向「越判越殘忍」的重刑化泥淖。
-                  </p>
-                </div>
-
-                <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                  <span class="text-indigo-700 dark:text-indigo-400 font-black block flex items-center gap-1.5">
-                    <span class="w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-200 flex items-center justify-center text-xs font-bold">3</span>
-                    <span>特別預防（矯治犯人）</span>
-                  </span>
-                  <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                    <strong>「治病救人、重新做人！」</strong> 把犯人送去職訓、戒毒、心理輔導，除去犯罪因子。缺點是如果犯人一直學不乖，照這理論豈不是要<strong>無限期關到死為止</strong>？
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              刑罰是以<strong>法益保護作為終極目標</strong>，不過對於這個目標卻有不同的理解方向（學理上稱為「<strong>刑罰目的理論</strong>」），大致上有兩個基本面向：
-            </p>
-
-            <!-- 面向 1 vs 面向 2 雙核心網格 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- ==================== Draw.io 格式體系流程架構圖 (圖 1 標準格式復刻) ==================== -->
+            <div id="sec-p0ch3-drawio-diagram" class="p-4 sm:p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-indigo-200 dark:border-indigo-800/80 shadow-sm space-y-4">
               
-              <!-- 1. 應報理論卡片 -->
-              <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border-2 border-rose-500/40 space-y-4 flex flex-col justify-between">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between">
-                    <span class="px-2.5 py-0.5 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-300 font-mono font-bold text-[11px]">
-                      懲罰過去的侵害
-                    </span>
-                    <span class="text-xs font-bold text-rose-600 dark:text-rose-400 font-mono">RETRIBUTION</span>
-                  </div>
-
-                  <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
-                    <span>⚔️</span>
-                    <span>一、應報理論（絕對理論）</span>
-                  </h4>
-
-                  <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    源自於原始社會中「<strong>以眼還眼、以牙還牙</strong>」的同態復仇思想。近代應報理論認為刑事制裁乃是<strong>公正地應報犯罪</strong>，藉以撫平犯罪所引起的損害與社會創傷。
-                  </p>
-                </div>
-
-                <div class="space-y-2 pt-3 border-t border-rose-200/50 dark:border-rose-900/40 text-xs">
-                  <div class="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300">
-                    <strong>✅ 優點：</strong>設定國家發動刑罰權的嚴格界限，<strong>刑罰絕對不能超過行為人所製造的危害</strong>（罪刑相當）。
-                  </div>
-                  <div class="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800 text-rose-800 dark:text-rose-300">
-                    <strong>❌ 缺點：</strong>無助於犯人受刑後脫離犯罪、重返社會，單純受苦反而更增添日後之再犯率。
-                  </div>
-                </div>
-              </div>
-
-              <!-- 2. 預防理論卡片 -->
-              <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border-2 border-blue-500/40 space-y-4 flex flex-col justify-between">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between">
-                    <span class="px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 font-mono font-bold text-[11px]">
-                      預防未來的侵害
-                    </span>
-                    <span class="text-xs font-bold text-blue-600 dark:text-blue-400 font-mono">PREVENTION</span>
-                  </div>
-
-                  <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white flex items-center gap-2">
-                    <span>🛡️</span>
-                    <span>二、預防理論（相對理論）</span>
-                  </h4>
-
-                  <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    認為刑罰的存在應該是<strong>針對尚未發生的犯罪</strong>，亦即「預防犯罪行為的再次發生」。依據訴求對象不同，再細分為兩大流派：
-                  </p>
-                </div>
-
-                <!-- 內部一般 vs 特別次網格 -->
-                <div class="space-y-2 pt-3 border-t border-blue-200/50 dark:border-blue-900/40 text-xs">
-                  <div class="p-3 rounded-2xl bg-white dark:bg-slate-800 border border-blue-200 dark:border-blue-700/60 space-y-1">
-                    <div class="font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1.5">
-                      <span>👥 (一) 一般預防理論（General Prevention）</span>
-                    </div>
-                    <p class="text-[11.5px] text-slate-600 dark:text-slate-300 leading-relaxed">
-                      藉刑罰痛苦性<strong>威嚇社會一般大眾</strong>以嚇阻犯罪。優點是維持大眾秩序；缺點是背離犯罪學（犯人多自認不會被抓），且易產生「<strong>刑罰越殘酷越好</strong>」之偏差。
-                    </p>
-                  </div>
-
-                  <div class="p-3 rounded-2xl bg-white dark:bg-slate-800 border border-indigo-200 dark:border-indigo-700/60 space-y-1">
-                    <div class="font-bold text-indigo-700 dark:text-indigo-300 flex items-center gap-1.5">
-                      <span>👤 (二) 特別預防理論（Special Prevention）</span>
-                    </div>
-                    <p class="text-[11.5px] text-slate-600 dark:text-slate-300 leading-relaxed">
-                      目的在<strong>矯治犯罪人本身</strong>、除去犯罪因子，使其能回歸社會。優點是有助再社會化；缺點是若有再犯風險，貫徹本說將得出<strong>無限期關押處罰</strong>的極端結論。
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </section>
-
-          <!-- ==================== 三、現代通說：結合理論與雙軌制裁體系 ==================== -->
-          <section id="sec-p0ch3-combination" class="space-y-6 pt-2">
-            <div class="flex items-center justify-between border-b border-slate-100 dark:border-white/[0.06] pb-2">
-              <div class="flex items-center gap-3">
-                <span class="w-2 h-6 rounded-full bg-emerald-600"></span>
-                <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                  三、現代通說：結合理論與「刑罰／保安處分」雙軌體系
-                </h3>
-              </div>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 font-bold">
-                教材第 2-26 頁
-              </span>
-            </div>
-
-            <!-- 結合理論展開說明卡 -->
-            <div class="p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-emerald-50/60 via-teal-50/40 to-blue-50/40 dark:from-emerald-950/30 dark:via-teal-950/20 dark:to-blue-950/20 border-2 border-emerald-200 dark:border-emerald-800/80 border-l-[8px] border-l-emerald-600 shadow-md space-y-5">
-              <div class="flex items-center justify-between border-b border-emerald-200/60 dark:border-emerald-800/60 pb-3">
-                <div class="flex items-center gap-2">
-                  <span class="text-xl">🧬</span>
-                  <div>
-                    <span class="text-[11px] font-mono font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider block">
-                      COMBINATION THEORY & DUAL SYSTEM
-                    </span>
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl">📊</span>
                     <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white">
-                      結合理論（Vereinigungstheorie / 折衷理論）
+                      刑罰目的理論體系全景流程圖（Draw.io 格式復刻）
+                    </h4>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">
+                    完整整合教材第 2-25 ～ 2-27 頁：應報理論、預防理論（一般/特別預防）、結合理論、雙軌制裁體系與四大審查步驟
+                  </p>
+                </div>
+
+                <div class="flex items-center gap-2 shrink-0 flex-wrap">
+                  <!-- 顯示寬度切換 (適配 / 100% 原圖) -->
+                  <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-xl text-xs font-semibold">
+                    <button type="button" id="btnCh3FitWidth" onclick="setCh3ImgMode('fit')"
+                      class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-xs transition-all font-bold cursor-pointer"
+                      title="自動適配畫面欄位寬度">
+                      適配頁面
+                    </button>
+                    <button type="button" id="btnCh3OriginWidth" onclick="setCh3ImgMode('origin')"
+                      class="px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-all font-medium cursor-pointer"
+                      title="展開為 100% 原始解析度大圖（支援水平橫移捲動）">
+                      100% 原始大圖
+                    </button>
+                  </div>
+
+                  <button type="button" onclick="openDiagramLightbox(document.getElementById('ch3FlowchartImg'), '刑罰目的理論體系全景流程圖', '教材第 2-25 ～ 2-27 頁')"
+                    class="px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
+                    title="在全螢幕燈箱放大檢視">
+                    <span>🔍</span>
+                    <span>全螢幕檢視</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 圖片呈現容器：純圖片、完全固定、禁止拖拽移動 (user-select: none, draggable: false) -->
+              <div id="ch3ImgContainer" class="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-white shadow-xs transition-all">
+                <img 
+                  id="ch3FlowchartImg"
+                  src="images/part0-ch3-flowchart.svg" 
+                  alt="刑罰目的理論體系全景流程圖 (教材第 2-25 ～ 2-27 頁)" 
+                  draggable="false"
+                  onclick="openDiagramLightbox(this, '刑罰目的理論體系全景流程圖', '教材第 2-25 ～ 2-27 頁')"
+                  class="w-full h-auto block select-none pointer-events-auto cursor-zoom-in rounded-2xl transition-all"
+                  style="-webkit-user-drag: none; user-select: none; -webkit-touch-callout: none;"
+                  title="💡 點擊全螢幕放大檢視"
+                />
+              </div>
+
+              <!-- 底部圖解說明 -->
+              <div class="flex flex-wrap items-center justify-between gap-2 pt-1 text-[11.5px] text-slate-500 dark:text-slate-400">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span>💡 提示：字體已大幅加粗放大！點擊圖片任一處或「全螢幕檢視」即可開全屏大圖，亦可切換「100% 原始大圖」</span>
+                </div>
+                <div class="text-[10.5px] font-mono text-slate-400">
+                  HIGH CONTRAST • ULTRA SHARP
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ==================== 流程圖白話文速讀導引專區 ==================== -->
+            <div id="sec-p0ch3-flowchart-guide" class="p-5 sm:p-7 rounded-3xl bg-gradient-to-br from-amber-50/90 via-orange-50/40 to-yellow-50/60 dark:from-amber-950/30 dark:via-orange-950/20 dark:to-yellow-950/20 border-2 border-amber-300 dark:border-amber-700/80 shadow-sm space-y-5">
+              
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-amber-200 dark:border-amber-800/60 pb-3">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl animate-bounce">💡</span>
+                  <div>
+                    <span class="text-[11px] font-mono font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider block">
+                      PLAIN-LANGUAGE FLOWCHART GUIDE
+                    </span>
+                    <h4 class="text-base sm:text-lg font-black text-amber-950 dark:text-amber-200">
+                      【白話文專區】一張圖看懂刑罰目的與雙軌體系——全景流程圖核心脈絡白話拆解
                     </h4>
                   </div>
                 </div>
-                <span class="px-2.5 py-1 rounded-full bg-emerald-600 text-white font-mono font-bold text-xs shadow-xs">
-                  我國刑法通說與實務立場
+                <span class="px-2.5 py-1 rounded-full bg-amber-600 text-white font-mono font-bold text-xs shadow-xs shrink-0 self-start sm:self-auto">
+                  3 分鐘速通流程圖
                 </span>
               </div>
 
-              <!-- 🐣 雙軌制裁體系小白秒懂專區 -->
-              <div class="rounded-2xl border-2 border-amber-300 dark:border-amber-700/80 bg-gradient-to-br from-amber-50/90 via-orange-50/60 to-yellow-50/70 dark:from-amber-950/40 dark:via-orange-950/30 dark:to-yellow-950/30 p-5 space-y-4 shadow-sm">
-                <div class="flex items-center gap-2.5 border-b border-amber-200 dark:border-amber-800/60 pb-3">
-                  <span class="text-2xl animate-bounce">🐣</span>
-                  <div>
-                    <h4 class="text-sm sm:text-base font-black text-amber-950 dark:text-amber-200">
-                      【小白秒懂專區】雙軌制裁體系：刑罰 vs 保安處分差在哪？
-                    </h4>
-                    <p class="text-xs text-amber-800 dark:text-amber-300 font-medium">
-                      發動門檻大不同：刑罰要過三關（TB+R+S），保安處分只要壞事成立（TB+R）就能啟動！
-                    </p>
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
-                  <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                    <span class="text-indigo-700 dark:text-indigo-400 font-black block flex items-center gap-1.5">
-                      <span class="w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-200 flex items-center justify-center text-xs font-bold">1</span>
-                      <span>刑罰（針對罪人發動懲戒）</span>
-                    </span>
-                    <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                      <strong>必須滿足三階層（TB + R + S）！</strong> 只有具備構成要件、違法性且「有罪責（有責任能力、懂事）」的人，才能課予刑罰。如果精神崩潰無法辨識行為（§ 19 Ⅰ），就不能判刑！
-                    </p>
-                  </div>
-
-                  <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                    <span class="text-emerald-700 dark:text-emerald-400 font-black block flex items-center gap-1.5">
-                      <span class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-200 flex items-center justify-center text-xs font-bold">2</span>
-                      <span>保安處分（針對危險進行防衛）</span>
-                    </span>
-                    <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                      <strong>只要具備不法（TB + R）即可！</strong> 保安處分不是在「懲罰過去」，而是在「防禦未來危害」。就算精神障礙不罰，但因有再傷人危險，法院仍可判入相當處所<strong>施以監護（強制就醫）</strong>！
-                    </p>
-                  </div>
-
-                  <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                    <span class="text-amber-700 dark:text-amber-300 font-black block flex items-center gap-1.5">
-                      <span class="w-5 h-5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-200 flex items-center justify-center text-xs font-bold">3</span>
-                      <span>兩軌可以雙管齊下</span>
-                    </span>
-                    <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                      刑罰與保安處分不是「二選一」！一個人吸毒犯罪，法院可以判他坐牢（刑罰），同時宣告他在刑前或刑後送戒癮機構（保安處分・禁戒），兩者<strong>完全可以並行適用</strong>！
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
-                有鑑於單一理論均有無法突破的極限，現代學說多採取「<strong>結合理論</strong>」，試圖結合各說之優點並補正其缺失：
-              </p>
-
-              <!-- 三大理論合體公式圖解 -->
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
-                <div class="p-3.5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-rose-200 dark:border-rose-900/60 space-y-1">
-                  <span class="text-[11px] font-mono font-bold text-rose-600 dark:text-rose-400 block">① 劃定上限（取自應報）</span>
-                  <div class="text-xs font-bold text-slate-900 dark:text-white">以製造危害為上限</div>
-                  <p class="text-[11px] text-slate-500">刑罰絕不能超越行為人的不法罪責程度。</p>
-                </div>
-
-                <div class="p-3.5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-blue-200 dark:border-blue-900/60 space-y-1">
-                  <span class="text-[11px] font-mono font-bold text-blue-600 dark:text-blue-400 block">② 社會威嚇（取自一般預防）</span>
-                  <div class="text-xs font-bold text-slate-900 dark:text-white">維護法秩序威信</div>
-                  <p class="text-[11px] text-slate-500">在上限範圍內，適度考量防範大眾仿效效應。</p>
-                </div>
-
-                <div class="p-3.5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-indigo-200 dark:border-indigo-900/60 space-y-1">
-                  <span class="text-[11px] font-mono font-bold text-indigo-600 dark:text-indigo-400 block">③ 再社會化（取自特別預防）</span>
-                  <div class="text-xs font-bold text-slate-900 dark:text-white">矯治受刑人犯罪因子</div>
-                  <p class="text-[11px] text-slate-500">使其出獄後能夠重新融入社會、不再犯罪。</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- 刑罰 vs. 保安處分 雙軌制裁體系深度對比卡 -->
-            <div class="p-6 rounded-3xl bg-slate-50 dark:bg-slate-900/60 border-2 border-indigo-500/40 space-y-4">
-              <div class="flex items-center gap-2">
-                <span class="text-xl">🛤️</span>
-                <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white">
-                  我國「刑罰」與「保安處分」之雙軌制裁體系
-                </h4>
-              </div>
-
-              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                我國刑法採取結合理論，因而發展出「<strong>刑罰</strong>」與「<strong>保安處分</strong>」之雙軌制裁體系。兩者在發動要件與本質目的上有著重大且關鍵的界線：
-              </p>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
-                <!-- 刑罰 -->
-                <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border-2 border-indigo-500/50 space-y-2">
+              <!-- 4 步驟對應流程圖的四大區塊 -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+                
+                <!-- 區塊 1: 算舊帳 vs 防未來 -->
+                <div class="p-4 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-amber-200/80 dark:border-amber-800/60 space-y-2 shadow-xs">
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-indigo-700 dark:text-indigo-300 font-mono">TRACK 1 • 刑罰</span>
-                    <span class="px-2 py-0.5 rounded bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-300 font-mono text-[10px] font-bold">
-                      追究過去責任
+                    <span class="font-bold text-rose-700 dark:text-rose-400 text-sm flex items-center gap-1.5">
+                      <span class="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 flex items-center justify-center text-xs font-bold">1</span>
+                      <span>起點：國家為什麼要處罰人？（兩大對立思路）</span>
+                    </span>
+                    <span class="text-[10.5px] font-mono px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950 text-rose-600 dark:text-rose-400 font-bold">
+                      應報 vs. 預防
                     </span>
                   </div>
-                  <div class="text-sm font-bold text-slate-900 dark:text-white">必須成立犯罪（TB + R + S）</div>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    必須具備<strong>構成要件該當性（TB）+ 違法性（R）+ 罪責（S）</strong>，三階層完全成立始得發動。無罪責即無刑罰（罪責原則）。
+                  <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                    流程圖最上方顯示，刑法終極目標是「保護大家的法益」，但手段有兩種極端想法：
                   </p>
+                  <ul class="list-disc list-inside space-y-1 text-slate-600 dark:text-slate-300 text-xs">
+                    <li><strong>應報理論（算舊帳）：</strong>「你做多少壞事，就受多少痛苦！」源自古代《漢摩拉比法典》以眼還眼。核心是<strong>以罪責當天花板</strong>，絕不能超額處罰。</li>
+                    <li><strong>預防理論（看未來）：</strong>處罰是為了防止再犯！細分兩種：
+                      <div class="pl-4 pt-1 space-y-0.5 text-[11.5px] text-slate-500 dark:text-slate-400">
+                        • <strong>一般預防：</strong>「殺雞儆猴」，像孫武練兵斬美姬立威，威嚇社會大眾不敢犯法。<br/>
+                        • <strong>特別預防：</strong>針對這個犯人本身施以教化矯治，像《飛越杜鵑窩》反思的醫療矯治，讓他回歸社會不再犯罪。
+                      </div>
+                    </li>
+                  </ul>
                 </div>
 
-                <!-- 保安處分 -->
-                <div class="p-4 rounded-2xl bg-white dark:bg-slate-800 border-2 border-emerald-500/50 space-y-2">
+                <!-- 區塊 2: 現代通說 結合理論 -->
+                <div class="p-4 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-amber-200/80 dark:border-amber-800/60 space-y-2 shadow-xs">
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-emerald-700 dark:text-emerald-300 font-mono">TRACK 2 • 保安處分</span>
-                    <span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-mono text-[10px] font-bold">
-                      著眼未來防衛
+                    <span class="font-bold text-teal-700 dark:text-teal-400 text-sm flex items-center gap-1.5">
+                      <span class="w-5 h-5 rounded-full bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 flex items-center justify-center text-xs font-bold">2</span>
+                      <span>現代通說：結合理論（雙劍合璧，截長補短）</span>
+                    </span>
+                    <span class="text-[10.5px] font-mono px-2 py-0.5 rounded bg-teal-50 dark:bg-teal-950 text-teal-600 dark:text-teal-400 font-bold">
+                      我國刑法通說
                     </span>
                   </div>
-                  <div class="text-sm font-bold text-slate-900 dark:text-white">具備不法（TB + R）即可發動！</div>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    <strong>只要具備不法（TB + R）便可發動</strong>！因為保安處分<strong>不在制裁，而是在於矯治與防衛社會</strong>（例如精神障礙者 § 19 Ⅰ 阻卻罪責不罰，但仍得依 § 87 施以監護處分）。
+                  <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                    單一說法都有致命缺點（光算帳犯人回不去社會；光威嚇容易演變成酷刑亂世重典）。因此現代刑法採取<strong>結合理論</strong>：
                   </p>
+                  <div class="p-3 rounded-xl bg-teal-50/70 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-900 text-xs text-teal-900 dark:text-teal-200 leading-relaxed">
+                    <strong>⚖️ 核心黃金公式：</strong><br/>
+                    「<strong>以製造危害的罪責為上限（取自應報）＋ 在上限範圍內追求威嚇與教化預防（取自預防）</strong>」！法官絕對不能以「想嚇死大眾」為由，判超越他罪過的超重刑度！
+                  </div>
                 </div>
-              </div>
 
-              <div class="p-3.5 rounded-xl bg-indigo-50/80 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 text-xs text-indigo-900 dark:text-indigo-200 flex items-center justify-between">
-                <span>⚡ <strong>並行制度：</strong>刑罰與保安處分並非互斥關係，現代刑法下<strong>二者當然可以並行適用</strong>（如執行徒刑後併受禁戒或強制治療）。</span>
-              </div>
-            </div>
-          </section>
-
-          <!-- ==================== 四、作者叮嚀：三大刑罰理論歷史生動典故 ==================== -->
-          <section id="sec-p0ch3-author-stories" class="space-y-6 pt-2">
-            <div class="flex items-center justify-between border-b border-slate-100 dark:border-white/[0.06] pb-2">
-              <div class="flex items-center gap-3">
-                <span class="w-2 h-6 rounded-full bg-amber-500"></span>
-                <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                  四、作者叮嚀：三大刑罰理論的歷史與影劇生動典故
-                </h3>
-              </div>
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 font-bold">
-                教材第 2-26 頁
-              </span>
-            </div>
-
-            <!-- 三大生動歷史故事卡 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              
-              <!-- 典故 1: 漢摩拉比法典 -->
-              <div class="p-5 rounded-3xl bg-white dark:bg-slate-900 border-2 border-rose-300 dark:border-rose-900/60 shadow-sm space-y-3 flex flex-col justify-between">
-                <div class="space-y-2.5">
+                <!-- 區塊 3: 雙軌制裁體系 -->
+                <div class="p-4 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-amber-200/80 dark:border-amber-800/60 space-y-2 shadow-xs">
                   <div class="flex items-center justify-between">
-                    <span class="text-xs font-mono font-bold text-rose-600 dark:text-rose-400 flex items-center gap-1">
-                      <span>📜</span>
-                      <span>應報理論典範</span>
+                    <span class="font-bold text-indigo-700 dark:text-indigo-400 text-sm flex items-center gap-1.5">
+                      <span class="w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 flex items-center justify-center text-xs font-bold">3</span>
+                      <span>雙軌制裁體系：「處罰」與「看病」的兩條平行線</span>
                     </span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-50 dark:bg-rose-950 text-rose-600 dark:text-rose-400 font-bold">
-                      古巴比倫
+                    <span class="text-[10.5px] font-mono px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-bold">
+                      刑罰 vs. 保安處分
                     </span>
                   </div>
-                  <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-                    漢摩拉比法典（Code of Hammurabi）
-                  </h4>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    巴比倫人所遵從的漢摩拉比法典，就是通篇充滿應報思想的最佳典範（以牙還牙、以眼還眼）。
+                  <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                    流程圖中間的「雙軌體系」，說明了刑法處置壞事的兩套工具：
                   </p>
-                  <div class="p-3 rounded-2xl bg-rose-50/60 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 text-xs text-rose-900 dark:text-rose-200 leading-relaxed">
-                    <strong>💡 超先進立法：</strong>不過法典<strong>第 23 條規定了國家賠償的無過失責任</strong>（若抓不到強盜犯，地方長官必須如實賠償被害人損失），在古代實屬驚人的先進立法！
+                  <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                    <li><strong>軌道一【刑罰】（處罰罪人）：</strong>發動門檻最高！必須通過<strong>三階層審查（TB + R + S）</strong>，有懂事責任能力才能判刑。</li>
+                    <li><strong>軌道二【保安處分】（治病防危）：</strong>門檻只要具備<strong>不法（TB + R）且具危險性</strong>即可啟動！就算精神崩潰阻卻罪責不罰，法院仍可宣告送精神醫院「監護強制治療」。</li>
+                    <li><strong>兩軌可雙管齊下：</strong>例如吸毒犯可判坐牢（刑罰），同時宣告令入戒癮處所禁戒（保安處分），兩者絕非互斥！</li>
+                  </ul>
+                </div>
+
+                <!-- 區塊 4: 刑罰思考四大步驟 -->
+                <div class="p-4 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-amber-200/80 dark:border-amber-800/60 space-y-2 shadow-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-700 dark:text-purple-400 text-sm flex items-center gap-1.5">
+                      <span class="w-5 h-5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300 flex items-center justify-center text-xs font-bold">4</span>
+                      <span>落地執行：法官決定關幾年的四大關卡</span>
+                    </span>
+                    <span class="text-[10.5px] font-mono px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 font-bold">
+                      四大審查步驟
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                    流程圖最底部的四大步驟，就是本章後續一至四節要研讀的核心主線：
+                  </p>
+                  <div class="grid grid-cols-2 gap-2 text-xs pt-1">
+                    <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                      <span class="font-bold text-slate-900 dark:text-white block">① 法定刑（找範圍）</span>
+                      <span class="text-[11px] text-slate-500">法條寫的死範圍（第一節）</span>
+                    </div>
+                    <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                      <span class="font-bold text-slate-900 dark:text-white block">② 處斷刑（算加減）</span>
+                      <span class="text-[11px] text-slate-500">累犯加重、自首減輕（第二節）</span>
+                    </div>
+                    <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                      <span class="font-bold text-slate-900 dark:text-white block">③ 宣告刑（定數字）</span>
+                      <span class="text-[11px] text-slate-500">法官敲槌判具體刑期（第三節）</span>
+                    </div>
+                    <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                      <span class="font-bold text-slate-900 dark:text-white block">④ 執行刑（掏錢坐牢）</span>
+                      <span class="text-[11px] text-slate-500">數罪合併定刑、緩刑（第四節）</span>
+                    </div>
                   </div>
                 </div>
+
               </div>
 
-              <!-- 典故 2: 孫武練娘子軍 -->
-              <div class="p-5 rounded-3xl bg-white dark:bg-slate-900 border-2 border-blue-300 dark:border-blue-900/60 shadow-sm space-y-3 flex flex-col justify-between">
-                <div class="space-y-2.5">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">
-                      <span>⚔️</span>
-                      <span>一般預防典範</span>
-                    </span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 font-bold">
-                      春秋戰國
-                    </span>
-                  </div>
-                  <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-                    兵聖孫武斬愛妾練娘子軍
-                  </h4>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    兵聖孫武為吳王闔閭訓練娘子軍，嬪妃們嘻笑怠慢，孫武當場<strong>將帶頭嘻笑的愛妾隊長斬首立威</strong>。
-                  </p>
-                  <div class="p-3 rounded-2xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900 text-xs text-blue-900 dark:text-blue-200 leading-relaxed">
-                    <strong>⚠️ 殺雞儆猴的代價：</strong>使眾娘子們嚇得肝膽俱裂而莫敢不從，雖然立馬見效（威嚇嚇阻），但「實在太過分了（竟然斬正妹……）」，正是刑罰過度殘酷之寫照。
-                  </div>
-                </div>
-              </div>
-
-              <!-- 典故 3: 開膛手傑克與腦前葉切開術 -->
-              <div class="p-5 rounded-3xl bg-white dark:bg-slate-900 border-2 border-indigo-300 dark:border-indigo-900/60 shadow-sm space-y-3 flex flex-col justify-between">
-                <div class="space-y-2.5">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
-                      <span>🧠</span>
-                      <span>特別預防典範</span>
-                    </span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-bold">
-                      近代醫療矯治
-                    </span>
-                  </div>
-                  <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-                    電影《開膛手傑克》腦前葉切開術
-                  </h4>
-                  <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    兇手殺了這麼多人，最後卻沒有受到刑罰處罰，而是送往醫院進行所謂的「<strong>腦前葉切開術（Lobotomy）</strong>」。
-                  </p>
-                  <div class="p-3 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-900 text-xs text-indigo-900 dark:text-indigo-200 leading-relaxed">
-                    <strong>🏥 現代保安處分前身：</strong>這在當時被視為「對犯罪者的醫療治療」，以除去犯罪因子，概念正相當於現代的<strong>保安處分</strong>（非制裁，而重矯治！）。
-                  </div>
-                </div>
+              <!-- 總結引導語 -->
+              <div class="p-3.5 rounded-2xl bg-amber-100/70 dark:bg-amber-950/50 border border-amber-300 dark:border-amber-800 text-xs text-amber-950 dark:text-amber-200 flex items-center justify-between">
+                <span>📌 <strong>圖解銜接提示：</strong>看完上方宏觀全景圖與白話導引後，緊接著下方<strong>第三大段</strong>即為<strong>原書第 2-27 頁的「刑罰理論思考步驟架構圖」</strong>，帶您進入具體量刑與執行的詳細操作！</span>
               </div>
 
             </div>
           </section>
-
-          <!-- ==================== 五、原書架構圖解：刑罰理論的思考步驟 ==================== -->
+          <!-- ==================== 三、原書架構圖解：刑罰理論的思考四大步驟 ==================== -->
           <section id="sec-p0ch3-steps-diagram" class="space-y-6 pt-2">
             <div class="flex items-center justify-between border-b border-slate-100 dark:border-white/[0.06] pb-2">
               <div class="flex items-center gap-3">
                 <span class="w-2 h-6 rounded-full bg-purple-600"></span>
                 <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                  五、原書架構圖解：刑罰理論的思考四大步驟
+                  三、原書架構圖解：刑罰理論的思考四大步驟（教材第 2-27 頁）
                 </h3>
               </div>
               <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 font-bold">
@@ -547,177 +370,181 @@ window.APP_VIEWS['viewPart0Chapter3'] = window.APP_VIEWS['viewPart0Ch3'] = windo
             </div>
 
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              刑罰的產生過程可拆解成四大步驟，分別是「<strong>找尋基本範圍</strong>」、「<strong>調整處斷範圍</strong>」、「<strong>範圍內選定刑罰</strong>」以及「<strong>執行刑罰</strong>」，這四大步驟同時與<strong>法定刑、處斷刑、宣告刑與執行刑</strong>息息相關：
+              刑罰的產生過程可拆解成四大步驟，分別是「<strong>找尋基本範圍</strong>」、「<strong>調整處斷範圍</strong>」、「<strong>範圍內選定刑罰</strong>」以及「<strong>執行刑罰</strong>」，這四大步驟同時與<strong>法定刑、處斷刑、宣告刑與執行刑</strong>息息相關，亦即本章後續第一節至第四節之核心研讀主軸：
             </p>
 
-            <!-- 🐣 刑罰思考四大步驟小白秒懂專區 -->
-            <div class="rounded-2xl border-2 border-amber-300 dark:border-amber-700/80 bg-gradient-to-br from-amber-50/90 via-orange-50/60 to-yellow-50/70 dark:from-amber-950/40 dark:via-orange-950/30 dark:to-yellow-950/30 p-5 space-y-4 shadow-sm">
-              <div class="flex items-center gap-2.5 border-b border-amber-200 dark:border-amber-800/60 pb-3">
-                <span class="text-2xl animate-bounce">🐣</span>
-                <div>
-                  <h4 class="text-sm sm:text-base font-black text-amber-950 dark:text-amber-200">
-                    【小白秒懂專區】刑罰思考四大步驟：法官怎麼決定把你關幾年？
-                  </h4>
-                  <p class="text-xs text-amber-800 dark:text-amber-300 font-medium">
-                    超生動大賣場購物比喻：標籤定價 ➔ 折扣加價 ➔ 結帳發票 ➔ 掏錢付款！
+            <!-- ==================== 刑罰思考四大步驟流程圖 (Draw.io 格式標準復刻) ==================== -->
+            <div id="sec-p0ch3-steps-flowchart" class="p-4 sm:p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-purple-200 dark:border-purple-800/80 shadow-sm space-y-4">
+              
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xl">📊</span>
+                    <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white">
+                      刑罰理論的思考四大步驟流程圖（Draw.io 格式復刻）
+                    </h4>
+                  </div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">
+                    完整復刻教材第 2-27 頁：第一大階段量定刑罰（法定刑 ➔ 處斷刑 ➔ 宣告刑）與第二大階段執行刑罰（執行刑）
                   </p>
+                </div>
+
+                <div class="flex items-center gap-2 shrink-0 flex-wrap">
+                  <!-- 顯示寬度切換 (適配 / 100% 原圖) -->
+                  <div class="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-xl text-xs font-semibold">
+                    <button type="button" id="btnCh3StepsFitWidth" onclick="setCh3StepsImgMode('fit')"
+                      class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-700 text-purple-600 dark:text-purple-400 shadow-xs transition-all font-bold cursor-pointer"
+                      title="自動適配畫面欄位寬度">
+                      適配頁面
+                    </button>
+                    <button type="button" id="btnCh3StepsOriginWidth" onclick="setCh3StepsImgMode('origin')"
+                      class="px-2.5 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 transition-all font-medium cursor-pointer"
+                      title="展開為 100% 原始解析度大圖（支援水平橫移捲動）">
+                      100% 原始大圖
+                    </button>
+                  </div>
+
+                  <button type="button" onclick="openDiagramLightbox(document.getElementById('ch3StepsDiagramImg'), '刑罰理論的思考四大步驟體系流程圖', '教材第 2-27 頁')"
+                    class="px-3 py-1.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
+                    title="在全螢幕燈箱放大檢視">
+                    <span>🔍</span>
+                    <span>全螢幕檢視</span>
+                  </button>
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs sm:text-sm">
-                <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                  <span class="text-blue-700 dark:text-blue-400 font-black block flex items-center gap-1.5">
-                    <span class="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-200 flex items-center justify-center text-xs font-bold">1</span>
-                    <span>法定刑（架上原價）</span>
-                  </span>
+              <!-- 圖片呈現容器：純圖片、完全固定、禁止拖拽移動 (user-select: none, draggable: false) -->
+              <div id="ch3StepsImgContainer" class="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-white shadow-xs transition-all">
+                <img 
+                  id="ch3StepsDiagramImg"
+                  src="images/part0-ch3-steps-diagram.svg" 
+                  alt="刑罰理論的思考四大步驟流程圖 (教材第 2-27 頁)" 
+                  draggable="false"
+                  onclick="openDiagramLightbox(this, '刑罰理論的思考四大步驟體系流程圖', '教材第 2-27 頁')"
+                  class="w-full h-auto block select-none pointer-events-auto cursor-zoom-in rounded-2xl transition-all"
+                  style="-webkit-user-drag: none; user-select: none; -webkit-touch-callout: none;"
+                  title="💡 點擊全螢幕放大檢視"
+                />
+              </div>
+
+              <!-- 底部圖解說明 -->
+              <div class="flex flex-wrap items-center justify-between gap-2 pt-1 text-[11.5px] text-slate-500 dark:text-slate-400">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                  <span>💡 提示：向量高解析圖檔！點擊圖片或「全螢幕檢視」即可開燈箱，亦可切換「100% 原始大圖」</span>
+                </div>
+                <div class="text-[10.5px] font-mono text-purple-600 dark:text-purple-400 font-bold">
+                  FOUR STEPS • HIGH RESOLUTION SVG
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ==================== 四大步驟白話文速讀專區 ==================== -->
+            <div id="sec-p0ch3-steps-guide" class="p-5 sm:p-7 rounded-3xl bg-gradient-to-br from-purple-50/90 via-indigo-50/50 to-pink-50/50 dark:from-purple-950/30 dark:via-indigo-950/20 dark:to-pink-950/20 border-2 border-purple-300 dark:border-purple-700/80 shadow-sm space-y-5">
+              
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-purple-200 dark:border-purple-800/60 pb-3">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl animate-bounce">🛒</span>
+                  <div>
+                    <span class="text-[11px] font-mono font-bold text-purple-700 dark:text-purple-400 uppercase tracking-wider block">
+                      PLAIN-LANGUAGE SHOPPING METAPHOR
+                    </span>
+                    <h4 class="text-base sm:text-lg font-black text-purple-950 dark:text-purple-200">
+                      【白話文專區】刑罰思考四大步驟：法官怎麼決定把你關幾年？——「量刑大賣場購物」秒懂拆解！
+                    </h4>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-purple-600 text-white font-mono font-bold text-xs shadow-xs shrink-0 self-start sm:self-auto">
+                  超生動購物結帳比喻
+                </span>
+              </div>
+
+              <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                想像法官在決定一個人要被關多久時，就像走進一家<strong>「量刑大賣場」</strong>挑選商品的結帳過程：
+              </p>
+
+              <!-- 4 步驟大賣場購物比喻卡片網格 -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs sm:text-sm">
+                
+                <!-- 1. 法定刑 -->
+                <div class="p-3.5 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-purple-200 dark:border-purple-800/60 space-y-1.5 shadow-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="text-indigo-700 dark:text-indigo-400 font-black flex items-center gap-1.5">
+                      <span class="w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-200 flex items-center justify-center text-xs font-bold">1</span>
+                      <span>法定刑（架上原價標籤）</span>
+                    </span>
+                  </div>
+                  <div class="text-[11px] font-mono text-indigo-600 font-bold">立法院貼好的公定價</div>
                   <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                    <strong>法律條文寫的死範圍！</strong> 就像大賣場商品標籤：「殺人者，處死刑、無期徒刑或十年以上有期徒刑」。這是所有思考的原始起點。
+                    <strong>法律條文寫的死範圍！</strong> 就像大賣場商品標籤上印好的死價格。例如殺人罪（§ 271）「死刑、無期徒刑或 10 年以上有期徒刑」。這是所有思考的原始起點。
                   </p>
                 </div>
 
-                <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                  <span class="text-purple-700 dark:text-purple-400 font-black block flex items-center gap-1.5">
-                    <span class="w-5 h-5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200 flex items-center justify-center text-xs font-bold">2</span>
-                    <span>處斷刑（折扣或加價）</span>
-                  </span>
+                <!-- 2. 處斷刑 -->
+                <div class="p-3.5 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-purple-200 dark:border-purple-800/60 space-y-1.5 shadow-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="text-purple-700 dark:text-purple-400 font-black flex items-center gap-1.5">
+                      <span class="w-5 h-5 rounded-full bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-200 flex items-center justify-center text-xs font-bold">2</span>
+                      <span>處斷刑（折扣或加價活動）</span>
+                    </span>
+                  </div>
+                  <div class="text-[11px] font-mono text-purple-600 font-bold">加減計算後的全新浮動區間</div>
                   <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                    <strong>加減刑後的全新範圍！</strong> 如果是累犯要加價（加重本刑至 1/2），如果有自首要打折（得減輕其刑）。加加減減後算出一個新的「浮動區間」。
+                    <strong>加減刑後的全新浮動範圍！</strong> 如果是累犯要加價（加重本刑至 1/2），如果有自首要打折（得減輕其刑）。加加減減後，算出一個法官可以裁量的「新區間」。
                   </p>
                 </div>
 
-                <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                  <span class="text-emerald-700 dark:text-emerald-400 font-black block flex items-center gap-1.5">
-                    <span class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-200 flex items-center justify-center text-xs font-bold">3</span>
-                    <span>宣告刑（結帳發票定案）</span>
-                  </span>
+                <!-- 3. 宣告刑 -->
+                <div class="p-3.5 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-purple-200 dark:border-purple-800/60 space-y-1.5 shadow-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="text-emerald-700 dark:text-emerald-400 font-black flex items-center gap-1.5">
+                      <span class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-200 flex items-center justify-center text-xs font-bold">3</span>
+                      <span>宣告刑（結帳發票定案）</span>
+                    </span>
+                  </div>
+                  <div class="text-[11px] font-mono text-emerald-600 font-bold">敲定單一具體數字印在判決</div>
                   <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
                     <strong>法官挑選出具體數字！</strong> 法官在處斷刑範圍內，依 § 57 審酌犯人動機、態度，敲下法槌：「判處有期徒刑 12 年」！這就是印在判決主文上的宣告刑。
                   </p>
                 </div>
 
-                <div class="p-3.5 rounded-xl bg-white/95 dark:bg-slate-900/90 border border-amber-200 dark:border-amber-800/60 space-y-1.5 shadow-xs">
-                  <span class="text-amber-700 dark:text-amber-300 font-black block flex items-center gap-1.5">
-                    <span class="w-5 h-5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-200 flex items-center justify-center text-xs font-bold">4</span>
-                    <span>執行刑（真正從錢包掏錢）</span>
-                  </span>
+                <!-- 4. 執行刑 -->
+                <div class="p-3.5 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-purple-200 dark:border-purple-800/60 space-y-1.5 shadow-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="text-amber-700 dark:text-amber-300 font-black flex items-center gap-1.5">
+                      <span class="w-5 h-5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-200 flex items-center justify-center text-xs font-bold">4</span>
+                      <span>執行刑（真正從錢包掏錢）</span>
+                    </span>
+                  </div>
+                  <div class="text-[11px] font-mono text-amber-600 font-bold">檢察官負責具體落實執行</div>
                   <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-                    <strong>最後實際怎麼執行！</strong> 如果犯好幾條罪（數罪併罰定執行刑），或者能不能易科罰金一天一千塊、能不能宣告緩刑不必進去關。
+                    <strong>最後實際怎麼執行！</strong> 如果犯好幾條罪（數罪併罰定執行刑），或者能不能易科罰金一天一千塊、能不能宣告緩刑不必進去關，由檢察官具體指揮落實。
                   </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- 刑罰四大步驟流程展示卡 (原書圖說復刻) -->
-            <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#111726] border-2 border-purple-200 dark:border-purple-800/80 border-l-[8px] border-l-purple-600 shadow-md space-y-6 zoomable-diagram" data-zoom-title="刑罰理論的思考步驟架構圖" data-zoom-page="教材第 2-27 頁">
-              <div class="flex items-center justify-between border-b border-purple-100 dark:border-purple-900/50 pb-3">
-                <div class="flex items-center gap-2">
-                  <span class="text-xl">📊</span>
-                  <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white">
-                    刑罰理論的思考步驟（原書架構圖）
-                  </h4>
-                </div>
-                <span class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400">
-                  量定刑罰 ➔ 執行刑罰
-                </span>
-              </div>
-
-              <!-- 兩大核心階段容器：量定刑罰 vs 執行刑罰 -->
-              <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
-                
-                <!-- 階段 1: 量定刑罰（佔 3 欄） -->
-                <div class="lg:col-span-3 p-5 rounded-2xl bg-purple-50/50 dark:bg-purple-950/20 border-2 border-purple-300 dark:border-purple-800 space-y-4">
-                  <div class="flex items-center justify-between border-b border-purple-200 dark:border-purple-800/80 pb-2">
-                    <span class="text-xs font-bold text-purple-800 dark:text-purple-300 font-mono flex items-center gap-1.5">
-                      <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span>
-                      <span>第一大階段：量定刑罰（司法審判核心）</span>
-                    </span>
-                    <span class="text-[11px] font-mono text-purple-500 font-bold">步驟 1 ～ 3</span>
-                  </div>
-
-                  <!-- 確定範圍 vs 選定刑罰 -->
-                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    
-                    <!-- 子容器 A: 確定範圍 (2 欄) -->
-                    <div class="sm:col-span-2 p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800/60 space-y-2.5">
-                      <div class="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between">
-                        <span>【確定範圍】</span>
-                        <span class="text-[10px] text-purple-600 font-mono">STEP 1 ➔ 2</span>
-                      </div>
-                      
-                      <div class="grid grid-cols-2 gap-2">
-                        <!-- 步驟 1: 基本範圍 -->
-                        <div class="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center space-y-1">
-                          <span class="text-[10px] font-mono text-slate-400 block font-bold">步驟 ① 找尋基本範圍</span>
-                          <span class="text-xs font-bold text-purple-700 dark:text-purple-300 block">法定刑</span>
-                          <span class="text-[10px] text-slate-500 block">分則條文法定範圍（如 10年以上有期徒刑）</span>
-                        </div>
-
-                        <!-- 步驟 2: 調整範圍 -->
-                        <div class="p-2.5 rounded-lg bg-purple-100/60 dark:bg-purple-900/40 border border-purple-300 dark:border-purple-700 text-center space-y-1">
-                          <span class="text-[10px] font-mono text-purple-600 dark:text-purple-400 block font-bold">步驟 ② 調整處斷範圍</span>
-                          <span class="text-xs font-bold text-purple-700 dark:text-purple-300 block">處斷刑</span>
-                          <span class="text-[10px] text-slate-500 block">累犯加重、自首減輕後之新刑度範圍</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 子容器 B: 選定刑罰 (1 欄) -->
-                    <div class="p-3.5 rounded-xl bg-purple-600 text-white flex flex-col justify-between space-y-2 text-center shadow-md shadow-purple-600/25">
-                      <span class="text-[10px] font-mono text-purple-200 font-bold block">步驟 ③ 範圍內選定刑罰</span>
-                      <div class="space-y-0.5">
-                        <span class="text-sm font-black block">宣告刑</span>
-                        <span class="text-[10px] text-purple-200 block">法官於處斷刑範圍內量定之確定點（如判處有期徒刑 12 年）</span>
-                      </div>
-                      <span class="text-[9px] font-mono bg-purple-700/80 py-0.5 px-1.5 rounded">判決主文宣告</span>
-                    </div>
-
-                  </div>
-                </div>
-
-                <!-- 階段 2: 執行刑罰（佔 1 欄） -->
-                <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border-2 border-slate-300 dark:border-slate-700 flex flex-col justify-between space-y-3 text-center">
-                  <div class="border-b border-slate-200 dark:border-slate-800 pb-2">
-                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300 font-mono flex items-center justify-center gap-1">
-                      <span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span>
-                      <span>第二大階段：執行</span>
-                    </span>
-                    <span class="text-[10px] font-mono text-slate-400 block pt-0.5 font-bold">步驟 ④</span>
-                  </div>
-
-                  <div class="space-y-1">
-                    <span class="text-[11px] font-mono text-slate-400 block">步驟 ④ 執行刑罰</span>
-                    <span class="text-base font-black text-slate-900 dark:text-white block">執行刑</span>
-                    <p class="text-[10.5px] text-slate-500 leading-tight">
-                      數罪併罰定應執行刑（§ 51）、易科罰金、緩刑或入監實質服刑。
-                    </p>
-                  </div>
-
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold">
-                    檢察官指揮執行
-                  </span>
                 </div>
 
               </div>
 
               <!-- 四大概念精華比對表 -->
-              <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 pt-2 text-xs">
-                <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <span class="font-bold text-slate-900 dark:text-white block">1. 法定刑</span>
-                  <span class="text-slate-500 text-[11px]">立法院立法明定於刑法各分則條文之刑罰抽象範圍。</span>
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-2.5 pt-1 text-xs">
+                <div class="p-3 rounded-xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 space-y-1">
+                  <span class="font-bold text-slate-900 dark:text-white block">1. 法定刑（起點）</span>
+                  <span class="text-slate-500 text-[11px] block">立法院立法明定於刑法各分則條文之抽象刑罰範圍。</span>
                 </div>
-                <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <span class="font-bold text-slate-900 dark:text-white block">2. 處斷刑</span>
-                  <span class="text-slate-500 text-[11px]">依總則法定加重（如累犯）或減輕事由（如未遂、自首）調整後之範圍。</span>
+                <div class="p-3 rounded-xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 space-y-1">
+                  <span class="font-bold text-slate-900 dark:text-white block">2. 處斷刑（調幅）</span>
+                  <span class="text-slate-500 text-[11px] block">依總則法定加重（如累犯）或減輕（如自首）調整後之範圍。</span>
                 </div>
-                <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <span class="font-bold text-slate-900 dark:text-white block">3. 宣告刑</span>
-                  <span class="text-slate-500 text-[11px]">法官依 § 57 量刑基準，在處斷刑內挑選出的一個具體刑期並於主文宣告。</span>
+                <div class="p-3 rounded-xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 space-y-1">
+                  <span class="font-bold text-slate-900 dark:text-white block">3. 宣告刑（定槌）</span>
+                  <span class="text-slate-500 text-[11px] block">法官依 § 57 量刑基準，挑選出具體刑期並於主文宣告。</span>
                 </div>
-                <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <span class="font-bold text-slate-900 dark:text-white block">4. 執行刑</span>
-                  <span class="text-slate-500 text-[11px]">數罪宣告刑合併定執行刑，或宣告刑最後移送檢察官具體落實執行的狀態。</span>
+                <div class="p-3 rounded-xl bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 space-y-1">
+                  <span class="font-bold text-slate-900 dark:text-white block">4. 執行刑（落地）</span>
+                  <span class="text-slate-500 text-[11px] block">數罪宣告刑合併定執行刑，或移送檢察官具體落實執行。</span>
                 </div>
               </div>
+
             </div>
           </section>
 

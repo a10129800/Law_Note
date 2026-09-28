@@ -1675,15 +1675,15 @@ window.APP_VIEWS['viewPart0Ch2Sec2'] = window.APP_VIEWS['part0Ch2Sec2'] = window
               </div>
             </button>
 
-            <button onclick="switchView('part0-chapter-3')" class="group p-4 rounded-2xl border border-indigo-500/40 hover:border-indigo-500 bg-gradient-to-br from-indigo-50/50 to-blue-50/30 dark:from-indigo-950/30 dark:to-blue-950/20 text-right transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md flex items-center justify-between gap-3 cursor-pointer">
+            <button onclick="switchView('part0-chapter-2')" class="group p-4 rounded-2xl border border-indigo-500/40 hover:border-indigo-500 bg-gradient-to-br from-indigo-50/50 to-blue-50/30 dark:from-indigo-950/30 dark:to-blue-950/20 text-right transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md flex items-center justify-between gap-3 cursor-pointer">
               <div class="min-w-0 text-left">
-                <span class="text-[11px] text-indigo-700 dark:text-indigo-400 font-mono block font-bold">下一章・插槽預備</span>
+                <span class="text-[11px] text-indigo-700 dark:text-indigo-400 font-mono block font-bold">第二章研讀完結</span>
                 <span class="text-xs font-extrabold text-slate-900 dark:text-white group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors truncate block">
-                  第三章 刑法的法律效果 (插槽) →
+                  返回 第二章 刑法的操作原理 總覽 →
                 </span>
               </div>
               <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white flex items-center justify-center text-sm font-bold shrink-0 group-hover:scale-105 transition-transform shadow-md shadow-indigo-500/30">
-                ⚖️
+                📑
               </div>
             </button>
           </div>

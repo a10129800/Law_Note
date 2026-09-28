@@ -28,7 +28,7 @@ window.APP_VIEWS['viewPart0'] = window.APP_VIEWS['part0'] = `
               「本篇是正式踏入刑法學習前的暖身，介紹影響刑法運作的四大支柱，以及刑法操作的前理解（諸如刑法的適用效力、解釋方法）。至於刑法的法律效果，這個通常被教科書或參考書放在最尾巴說明的刑罰理論，筆者挪移到本篇提前整理，旨在提醒大家「謹思慎刑」的核心理念，也與刑法最後手段性原則接軌。」
             </blockquote>
 
-            <!-- 第零篇 三大章節全景導覽網格 -->
+            <!-- 第零篇 章節全景導覽網格 -->
             <div class="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div onclick="switchView('part0-chapter-1')" class="p-3.5 rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/40 dark:bg-indigo-950/20 hover:border-indigo-500/60 transition-all cursor-pointer space-y-1.5 group">
                 <div class="flex items-center justify-between">
@@ -55,12 +55,12 @@ window.APP_VIEWS['viewPart0'] = window.APP_VIEWS['part0'] = `
               <div onclick="switchView('part0-chapter-3')" class="p-3.5 rounded-2xl border border-purple-200 dark:border-purple-900/60 bg-purple-50/40 dark:bg-purple-950/20 hover:border-purple-500/60 transition-all cursor-pointer space-y-1.5 group">
                 <div class="flex items-center justify-between">
                   <span class="text-[10px] font-mono font-bold text-purple-600 dark:text-purple-400">CHAPTER 3</span>
-                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400 font-bold">導論已收錄</span>
+                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold">旗艦圖解</span>
                 </div>
                 <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                   第三章 刑法的法律效果
                 </div>
-                <p class="text-[11px] text-slate-500 line-clamp-2">刑罰目的理論（應報、預防、結合）、雙軌體系與思考四大步驟</p>
+                <p class="text-[11px] text-slate-500 line-clamp-2">Draw.io 體系流程圖、刑罰目的理論、雙軌制裁體系與思考四大步驟</p>
               </div>
             </div>
           </div>

@@ -40,6 +40,17 @@ if ([string]::IsNullOrWhiteSpace($userMsg)) {
     $userMsg = "更新筆記與資料庫架構 - $now"
 }
 
+# [自動同步] 複製 AI 角色頭像圖到 images/ 目錄以利 GitHub 部署
+$imgBrainDir = "C:\Users\mice\.gemini\antigravity-ide\brain\4df2d29d-6b0a-446b-b06f-c051f8946b4c"
+$imgTargetDir = Join-Path $scriptDir "images"
+if (Test-Path $imgBrainDir) {
+    if (-not (Test-Path $imgTargetDir)) { New-Item -ItemType Directory -Path $imgTargetDir -Force | Out-Null }
+    Copy-Item "$imgBrainDir\shiba_law_professor_1790657544044.jpg" (Join-Path $imgTargetDir "shiba_law_professor.jpg") -Force -ErrorAction SilentlyContinue
+    Copy-Item "$imgBrainDir\shepherd_law_inspector_1790658889114.jpg" (Join-Path $imgTargetDir "shepherd_law_inspector.jpg") -Force -ErrorAction SilentlyContinue
+    Copy-Item "$imgBrainDir\golden_case_attorney_1790659096990.jpg" (Join-Path $imgTargetDir "golden_case_attorney.jpg") -Force -ErrorAction SilentlyContinue
+    Write-Host "[圖片同步] ✔ 已自動將 3 大法學犬系角色圖片複製至 images/ 目錄" -ForegroundColor Cyan
+}
+
 # 加入檔案與 Commit
 Write-Host ""
 Write-Host "[3/4] 加入檔案並提交變更..." -ForegroundColor Green

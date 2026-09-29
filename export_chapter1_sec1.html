@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>導論第一章 1-1 頁 犯罪的概念【匯出版・柴犬教授白話講堂】</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts: Noto Serif TC & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .font-serif {
+      font-family: 'Noto Serif TC', serif, Georgia, Cambria;
+    }
+    /* 列印與 PDF 匯出優化樣式 */
+    @media print {
+      header, aside, .no-print, #exportToolbar {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      main {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .shadow-sm, .shadow-md, .shadow-xl {
+        box-shadow: none !important;
+      }
+      .border {
+        border-color: #cbd5e1 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-200 min-h-screen transition-colors duration-200">
+
+  <!-- 頂部 Header & 匯出工具列 -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/85 dark:bg-[#0f172a]/85 border-b border-slate-200/80 dark:border-white/10 px-4 sm:px-8 py-3 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+        ⚖️
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 dark:text-blue-400 font-bold uppercase tracking-wider">EXPORT EDITION</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold">可匯出版本</span>
+        </div>
+        <h1 class="text-sm sm:text-base font-black text-slate-900 dark:text-white">
+          導論・第一章 1-1 頁【犯罪的概念】（附柴犬教授白話講堂）
+        </h1>
+      </div>
+    </div>
+
+    <!-- 匯出與功能控制組件 -->
+    <div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+      
+      <!-- 🖨️ 匯出 PDF / 列印按鈕 -->
+      <button onclick="window.print()" class="px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm shadow-blue-500/20 active:scale-95">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+        </svg>
+        <span>匯出 PDF / 列印</span>
+      </button>
+
+      <!-- 📝 匯出 Markdown 筆記 -->
+      <button onclick="exportMarkdown()" class="hidden sm:flex px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold items-center gap-1.5 transition-all shadow-xs">
+        <span>📄</span>
+        <span>下載 Markdown</span>
+      </button>
+
+      <!-- 深淺色切換開關 -->
+      <button onclick="toggleDarkMode()" class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs">
+        <span id="themeIcon">🌙</span>
+        <span id="themeText" class="hidden sm:inline">深色模式</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 主佈局容器：自適應寬幅黃金 3 欄式設計 (消除兩側多餘空白) -->
+  <div class="max-w-[1720px] w-full mx-auto px-4 sm:px-8 xl:px-12 py-8 grid grid-cols-1 lg:grid-cols-12 gap-6 xl:gap-8 items-start">
+    
+    <!-- 左側導航縮影 (佔 2.5/2 欄，精緻吸頂) -->
+    <aside class="hidden lg:block lg:col-span-3 xl:col-span-2 sticky top-20 space-y-4 no-print">
+      
+      <!-- 導航卡片 -->
+      <div class="p-4 rounded-2xl bg-white dark:bg-[#121827] border border-slate-200/80 dark:border-white/10 shadow-xs space-y-3">
+        <div class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider px-2">章節導航</div>
+        <nav class="space-y-1 text-sm">
+          <div class="px-3 py-2 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center gap-2 cursor-not-allowed">
+            <span>📖</span>
+            <span>導論 犯罪概念與論罪結構</span>
+          </div>
+          <div class="px-3 py-2 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-bold flex items-center gap-2 border border-blue-200/60 dark:border-blue-800/40">
+            <span>👉</span>
+            <span>第一章 犯罪的概念 (1-1)</span>
+          </div>
+          <div class="pl-7 space-y-1 text-xs text-slate-500 dark:text-slate-400 pt-1">
+            <div class="text-blue-600 dark:text-blue-400 font-medium">• 1-1 核心直觀與推定</div>
+            <div class="hover:text-slate-700 dark:hover:text-slate-200">• 1-2 ～ 1-3 阻卻罪責法定例示</div>
+            <div class="hover:text-slate-700 dark:hover:text-slate-200">• 1-4 ～ 1-9 案例與體系深化</div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- 柴犬助教卡片 (放大頭像) -->
+      <div class="p-5 rounded-2xl bg-gradient-to-br from-amber-50/80 to-orange-50/50 dark:from-[#1c1917] dark:to-[#151210] border border-amber-200/80 dark:border-amber-900/40 text-xs space-y-3">
+        <div class="flex items-center gap-3">
+          <img id="asideShibaImg"
+               src="C:/Users/mice/.gemini/antigravity-ide/brain/4df2d29d-6b0a-446b-b06f-c051f8946b4c/shiba_law_professor_1790657544044.jpg" 
+               alt="柴犬法學教授" 
+               class="w-14 h-14 rounded-2xl object-cover border-2 border-amber-400 shadow-md cursor-pointer hover:scale-105 transition-transform"
+               onclick="openLightbox()"
+               title="點擊查看高清大圖" />
+          <div>
+            <div class="font-black text-amber-950 dark:text-amber-200 text-sm">柴柴法學教授</div>
+            <div class="text-[11px] text-amber-700 dark:text-amber-400 font-mono font-bold">Prof. Shiba, LL.D.</div>
+            <div class="text-[10px] text-slate-500 dark:text-slate-400">刑法總則特聘客座主講</div>
+          </div>
+        </div>
+        <p class="text-[11.5px] text-slate-600 dark:text-slate-300 leading-relaxed bg-white/60 dark:bg-black/30 p-2.5 rounded-xl border border-amber-200/50 dark:border-white/5">
+          「把抽象的刑法條文，轉化成好懂的生活案例，是本教授的專長汪！」
+        </p>
+        <button onclick="downloadShibaImage()" class="w-full py-1.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-700 dark:text-amber-300 text-[11px] font-bold border border-amber-300/60 dark:border-amber-700/50 flex items-center justify-center gap-1.5 transition-colors">
+          <span>🖼️</span>
+          <span>下載柴犬教授原圖</span>
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- 中央主閱讀區 (自適應擴展為 8 欄，閱讀視野開闊) -->
+    <main class="lg:col-span-6 xl:col-span-8 space-y-8">
+      
+      <!-- 頂部章節徽章 -->
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-mono text-xs font-bold">
+          <span>導論・第一章 1-1 ～ 1-11</span>
+        </div>
+        <h2 class="text-3xl font-serif font-black text-slate-900 dark:text-white tracking-tight">
+          第一章 犯罪的概念
+        </h2>
+        <p class="text-xs text-slate-500">
+          嚴格依據教材第 1-1 頁內容收錄・附柴犬教授白話講堂 (匯出版)
+        </p>
+      </div>
+
+      <!-- ==================== SECTION 1: 犯罪的概念（教材第 1-1 頁） ==================== -->
+      <section id="sec-intro-concept" class="scroll-mt-24 space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-200/80 dark:border-white/10 pb-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-3 h-3 rounded-full bg-blue-600"></span>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white tracking-wide">
+              一、犯罪的概念：一個壞人做了一件壞事
+            </h3>
+          </div>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800">
+            教材第 1-1 頁 原文
+          </span>
+        </div>
+
+        <!-- 原文精讀卡片：排版典雅、忠於原著 -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#121827] border border-slate-200/80 dark:border-white/10 shadow-sm space-y-4 text-slate-700 dark:text-slate-200 leading-relaxed font-serif text-justify text-sm sm:text-base">
+          <p class="indent-7">
+            刑法是一部處理犯罪的法律。至於何謂犯罪？簡單說，<strong class="text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 rounded border border-indigo-200 dark:border-indigo-800 font-sans font-bold">「一個壞人」</strong>做了一件<strong class="text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded border border-amber-200 dark:border-amber-800 font-sans font-bold">「壞事」</strong>就是犯罪。經驗告訴我們判斷誰是壞人非常困難，但判斷一件壞事卻比較容易，因此我們決定先判斷<strong class="text-slate-900 dark:text-white underline decoration-amber-500 decoration-2 underline-offset-4">「是否有一件壞事發生」</strong>，再判斷<strong class="text-slate-900 dark:text-white underline decoration-indigo-500 decoration-2 underline-offset-4">「做這件壞事的人是不是一個壞人」</strong>。
+          </p>
+          <p class="indent-7">
+            基於經驗的累積，會做壞事的人絕大多數（不是百分之百！）都是壞人，所以確定一件壞事的發生，就先<strong class="text-blue-600 dark:text-blue-400 font-sans font-black">「推定」</strong>做這件壞事的人是一個壞人，這就是<span class="text-slate-900 dark:text-white font-sans font-bold bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">「壞事推定壞人」原則</span>。
+          </p>
+          <p class="indent-7">
+            有鑑於這只是一個經驗上的直覺假設，而人類經驗卻不完全可靠，使用推定這個法律概念，為我們保留<strong class="text-rose-600 dark:text-rose-400 font-sans font-bold underline decoration-rose-500 decoration-2 underline-offset-4">反證推翻假設</strong>的機會。我們將壞事以<strong class="text-amber-600 dark:text-amber-400 font-sans font-bold">「不法」</strong>代稱，壞人以<strong class="text-indigo-600 dark:text-indigo-400 font-sans font-bold">「罪責」</strong>代稱，前述的推定模式就是<strong class="text-blue-600 dark:text-blue-400 font-sans font-black bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800">「不法推定罪責」原則</strong>，而推翻罪責推定的理由稱為<strong class="text-rose-600 dark:text-rose-400 font-sans font-bold bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded border border-rose-200 dark:border-rose-800">「阻卻罪責事由」</strong>。
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== SECTION 2: 原文圖解（教材第 1-1 頁） ==================== -->
+      <section id="sec-presume-rule" class="scroll-mt-24 space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-200/80 dark:border-white/10 pb-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-3 h-3 rounded-full bg-blue-600"></span>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 dark:text-white tracking-wide">
+              二、不法推定罪責原則 架構圖解
+            </h3>
+          </div>
+          <span class="text-xs font-mono font-bold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+            原書圖解 1:1 復刻
+          </span>
+        </div>
+
+        <!-- 圖解容器：禁止拖曳、超清晰字體、高對比度規範 -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#121827] border border-slate-200/90 dark:border-white/10 shadow-sm flex flex-col items-center">
+          
+          <div class="w-full max-w-xl py-2 select-none" style="-webkit-user-drag: none; user-select: none;">
+            <svg viewBox="0 0 540 260" class="w-full h-auto block drop-shadow-xs" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="arrow-down" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#475569" />
+                </marker>
+                <marker id="arrow-reverse" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#E11D48" />
+                </marker>
+                <marker id="arrow-right" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#64748B" />
+                </marker>
+              </defs>
+
+              <!-- 左側主體：犯罪 (圓角大框) -->
+              <rect x="20" y="90" width="85" height="80" rx="30" ry="30" class="fill-slate-50 dark:fill-slate-800/90 stroke-slate-400 dark:stroke-slate-600" stroke-width="2" />
+              <text x="62.5" y="137" text-anchor="middle" class="fill-slate-900 dark:fill-white font-sans font-black" font-size="19">犯罪</text>
+
+              <!-- 從犯罪引出的分流箭頭 -->
+              <path d="M 112 118 L 138 95" fill="none" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow-right)" />
+              <path d="M 112 142 L 138 165" fill="none" stroke="#64748B" stroke-width="2.5" marker-end="url(#arrow-right)" />
+
+              <!-- 上軌道：行為評價（壞事 ➔ 評價行為 ➔ 不法） -->
+              <rect x="145" y="35" width="88" height="42" rx="14" class="fill-amber-50 dark:fill-amber-950/40 stroke-amber-500 dark:stroke-amber-400" stroke-width="2" />
+              <text x="189" y="61" text-anchor="middle" class="fill-amber-900 dark:fill-amber-200 font-sans font-bold" font-size="15">壞事</text>
+
+              <line x1="189" y1="77" x2="189" y2="92" stroke="#64748B" stroke-width="2" marker-end="url(#arrow-down)" />
+
+              <rect x="145" y="95" width="88" height="38" rx="8" class="fill-slate-50 dark:fill-slate-800 stroke-slate-300 dark:stroke-slate-600" stroke-width="1.5" />
+              <text x="189" y="119" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 font-sans font-medium" font-size="13.5">評價行為</text>
+
+              <line x1="233" y1="56" x2="280" y2="56" stroke="#64748B" stroke-width="2" marker-end="url(#arrow-right)" />
+
+              <rect x="285" y="32" width="90" height="48" rx="10" class="fill-amber-100/70 dark:fill-amber-900/40 stroke-amber-600 dark:stroke-amber-400" stroke-width="2.5" />
+              <text x="330" y="62" text-anchor="middle" class="fill-amber-950 dark:fill-amber-100 font-sans font-black" font-size="17">不法</text>
+
+              <!-- 下軌道：行為人評價（壞人 ➔ 評價行為人 ➔ 罪責） -->
+              <rect x="145" y="152" width="88" height="42" rx="14" class="fill-indigo-50 dark:fill-indigo-950/40 stroke-indigo-500 dark:stroke-indigo-400" stroke-width="2" />
+              <text x="189" y="178" text-anchor="middle" class="fill-indigo-900 dark:fill-indigo-200 font-sans font-bold" font-size="15">壞人</text>
+
+              <line x1="189" y1="194" x2="189" y2="209" stroke="#64748B" stroke-width="2" marker-end="url(#arrow-down)" />
+
+              <rect x="145" y="212" width="88" height="38" rx="8" class="fill-slate-50 dark:fill-slate-800 stroke-slate-300 dark:stroke-slate-600" stroke-width="1.5" />
+              <text x="189" y="236" text-anchor="middle" class="fill-slate-700 dark:fill-slate-300 font-sans font-medium" font-size="13">評價行為人</text>
+
+              <line x1="233" y1="173" x2="280" y2="173" stroke="#64748B" stroke-width="2" marker-end="url(#arrow-right)" />
+
+              <rect x="285" y="149" width="90" height="48" rx="10" class="fill-indigo-100/70 dark:fill-indigo-900/40 stroke-indigo-600 dark:stroke-indigo-400" stroke-width="2.5" />
+              <text x="330" y="179" text-anchor="middle" class="fill-indigo-950 dark:fill-indigo-100 font-sans font-black" font-size="17">罪責</text>
+
+              <!-- 不法 ➔ 罪責 垂直推定箭頭與標籤 -->
+              <line x1="330" y1="80" x2="330" y2="145" stroke="#475569" stroke-width="3" marker-end="url(#arrow-down)" />
+              <rect x="306" y="101" width="48" height="26" rx="6" class="fill-white dark:fill-slate-900 stroke-slate-400 dark:stroke-slate-600" stroke-width="1.5" />
+              <text x="330" y="119" text-anchor="middle" class="fill-slate-900 dark:fill-slate-100 font-sans font-bold" font-size="13">推定</text>
+
+              <!-- 罪責 ➔ 反證迴路箭頭 -->
+              <path d="M 375 173 L 420 173 L 420 114 L 362 114" fill="none" stroke="#E11D48" stroke-width="2.5" stroke-dasharray="4 2" marker-end="url(#arrow-reverse)" />
+              <rect x="395" y="132" width="50" height="26" rx="6" class="fill-rose-50 dark:fill-rose-950/80 stroke-rose-500 dark:stroke-rose-400" stroke-width="1.5" />
+              <text x="420" y="150" text-anchor="middle" class="fill-rose-600 dark:fill-rose-300 font-sans font-black" font-size="13">反證</text>
+            </svg>
+          </div>
+
+          <div class="mt-3 text-xs font-mono text-slate-500 dark:text-slate-400 text-center">
+            ▲ 不法推定罪責原則 架構圖（教材第 1-1 頁 原文圖解）
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== NEW SECTION: 柴犬教授的大幅名師白話文法學講堂 ==================== -->
+      <section id="sec-shiba-explanation" class="scroll-mt-24 space-y-5">
+        <div class="flex items-center justify-between border-b border-amber-200/80 dark:border-amber-900/50 pb-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-3.5 h-3.5 rounded-full bg-amber-500 animate-pulse"></span>
+            <h3 class="text-base sm:text-xl font-black text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
+              <span>🐾</span>
+              <span>柴犬教授的名師白話客廳</span>
+            </h3>
+          </div>
+          <span class="text-xs font-mono font-bold px-3 py-1 rounded-full bg-amber-100/90 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300/80 dark:border-amber-800">
+            特聘客座講堂 • 名師解析
+          </span>
+        </div>
+
+        <!-- 柴犬教授名師專欄卡片 (大幅肖像 + 沉浸式演講氣勢) -->
+        <div class="p-6 sm:p-9 rounded-3xl bg-gradient-to-br from-amber-50/80 via-white to-orange-50/40 dark:from-[#1b1510] dark:via-[#141a27] dark:to-[#0f1422] border-2 border-amber-300/90 dark:border-amber-700/70 shadow-lg space-y-7">
+          
+          <!-- 頂部名師主舞台：超大柴犬教授全身/半身肖像 -->
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-6 pb-6 border-b border-amber-200/80 dark:border-white/10">
+            
+            <!-- 大幅柴犬教授肖像 (支援點擊放大) -->
+            <div class="relative group cursor-pointer shrink-0" onclick="openLightbox()">
+              <div class="w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-3xl overflow-hidden border-4 border-amber-400 dark:border-amber-500 shadow-xl shadow-amber-500/20 group-hover:scale-105 transition-all duration-300">
+                <img id="mainShibaImg"
+                     src="C:/Users/mice/.gemini/antigravity-ide/brain/4df2d29d-6b0a-446b-b06f-c051f8946b4c/shiba_law_professor_1790657544044.jpg" 
+                     alt="柴犬法學教授" 
+                     class="w-full h-full object-cover" />
+              </div>
+              <!-- 放大鏡提示遮罩 -->
+              <div class="absolute inset-0 bg-black/30 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold gap-1 pointer-events-none">
+                <span>🔍 點擊看大圖</span>
+              </div>
+              <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-amber-600 to-amber-700 text-white text-xs font-black shadow-md border border-amber-300 whitespace-nowrap">
+                Prof. Shiba Inu, LL.D.
+              </span>
+            </div>
+
+            <!-- 名師導言與頭銜 -->
+            <div class="space-y-3 text-center md:text-left flex-1">
+              <div class="space-y-1">
+                <div class="flex items-center justify-center md:justify-start gap-2.5 flex-wrap">
+                  <h4 class="text-2xl font-serif font-black text-slate-900 dark:text-white tracking-tight">
+                    柴柴法學教授
+                  </h4>
+                  <span class="px-2.5 py-0.5 rounded-lg bg-amber-500/20 text-amber-800 dark:text-amber-200 text-xs font-extrabold border border-amber-400/50">
+                    刑法總則權威解讀
+                  </span>
+                </div>
+                <p class="text-xs font-mono text-amber-700 dark:text-amber-400 font-medium">
+                  德國慕尼黑大學法學博士 • 柴柴法學院終身特聘講座教授
+                </p>
+              </div>
+
+              <!-- 教授開講對話框 (大氣漫畫式氣泡) -->
+              <div class="relative p-4 sm:p-5 rounded-2xl bg-white/95 dark:bg-[#182338] border-2 border-amber-200 dark:border-amber-800/80 shadow-sm text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-relaxed font-serif">
+                <div class="hidden md:block absolute -left-3 top-6 w-3 h-3 bg-white dark:bg-[#182338] border-l-2 border-b-2 border-amber-200 dark:border-amber-800/80 rotate-45"></div>
+                「汪！各位同學們好！剛翻到教科書第 1-1 頁，看到這句<strong class="text-blue-600 dark:text-blue-400 underline decoration-blue-500">『不法推定罪責』</strong>，是不是覺得腦袋快打結了？別慌，讓柴柴教授用最直觀、最接地氣的日常破窗生活例子，帶你一次通透這套思維哲學！」
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 三大白話拆解對話卡 -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+            
+            <!-- 拆解 1: 為什麼先看壞事 -->
+            <div class="p-5 rounded-2xl bg-white/95 dark:bg-[#162032] border-2 border-amber-200/90 dark:border-slate-800 space-y-2.5 shadow-sm hover:border-amber-400 transition-colors">
+              <div class="flex items-center gap-2 font-black text-amber-900 dark:text-amber-300 text-sm">
+                <span class="w-6 h-6 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold text-xs shadow-xs">1</span>
+                <span>為什麼先抓「壞事」？</span>
+              </div>
+              <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-[13.5px]">
+                如果路上有人一拳把店家玻璃砸碎了，監視器一拍，客觀鐵證如山：<strong class="text-amber-700 dark:text-amber-300 font-bold">「這是一件不折不扣的壞事（不法成立）」</strong>！壞事最直觀、最客觀，誰都抵賴不了，所以刑法審查永遠排在第一位。
+              </p>
+            </div>
+
+            <!-- 拆解 2: 為什麼推定壞人 -->
+            <div class="p-5 rounded-2xl bg-white/95 dark:bg-[#162032] border-2 border-indigo-200/90 dark:border-slate-800 space-y-2.5 shadow-sm hover:border-indigo-400 transition-colors">
+              <div class="flex items-center gap-2 font-black text-indigo-900 dark:text-indigo-300 text-sm">
+                <span class="w-6 h-6 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">2</span>
+                <span>為什麼推定是「壞人」？</span>
+              </div>
+              <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-[13.5px]">
+                大白天在路上沒事砸窗的人，社會生活經驗八九成都是蓄意破壞的惡徒！為了司法審判效率，法律先行常理預設：<strong class="text-indigo-700 dark:text-indigo-300 font-bold">「既然幹了壞事，八成就是壞人（罪責推定）」</strong>！
+              </p>
+            </div>
+
+            <!-- 拆解 3: 萬一被冤枉 -->
+            <div class="p-5 rounded-2xl bg-white/95 dark:bg-[#162032] border-2 border-rose-200/90 dark:border-slate-800 space-y-2.5 shadow-sm hover:border-rose-400 transition-colors">
+              <div class="flex items-center gap-2 font-black text-rose-900 dark:text-rose-300 text-sm">
+                <span class="w-6 h-6 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">3</span>
+                <span>萬一情有可原被冤枉？</span>
+              </div>
+              <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-[13.5px]">
+                人類經驗不保證百分百正確！萬一他是為了<strong class="text-rose-600 dark:text-rose-400 font-bold">撲滅店內大火急著救嬰兒</strong>才砸窗呢？這時候只要能舉出正當反證，法律就把壞人標籤當場撕掉，這就是<strong class="text-rose-600 dark:text-rose-400 font-bold">「阻卻罪責」</strong>！
+              </p>
+            </div>
+
+          </div>
+
+          <!-- 教授口訣金句看板 -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white flex items-center justify-between gap-4 flex-wrap shadow-md">
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-xl bg-white/20 text-white flex items-center justify-center font-bold text-lg shadow-sm">📢</span>
+              <div>
+                <div class="text-[11px] text-amber-200 font-mono font-bold">DR. SHIBA'S GOLDEN RULE</div>
+                <div class="font-black text-sm sm:text-base text-white">
+                  柴柴教授金句：客觀壞事先確立（不法）➔ 常理先推定壞人（罪責）➔ 遇免責反證立撕標籤！
+                </div>
+              </div>
+            </div>
+            <button onclick="copyQuote()" class="px-3.5 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white text-xs font-bold border border-white/30 transition-all">
+              📋 複製口訣
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 接續承上段落（預覽銜接至 1-2 頁） -->
+      <section id="sec-transition" class="scroll-mt-24 p-6 rounded-3xl bg-slate-100/70 dark:bg-slate-900/40 border border-slate-200/80 dark:border-white/10 space-y-2">
+        <div class="flex items-center gap-2 text-xs font-bold text-slate-500 dark:text-slate-400 font-mono">
+          <span>NEXT • 接續教材第 1-2 頁</span>
+        </div>
+        <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-serif">
+          承上，當行為人做了一件壞事而被推定為一個壞人，法律將賦予行為人<strong class="text-rose-600 dark:text-rose-400 underline decoration-rose-500">反證推翻的機會</strong>，亦即行為人可以主張一些有利於自己的理由，證明自己並非是一個壞人。立法者很貼心地在刑法當中加以例示（案例 1-1 至 1-5）...
+        </p>
+      </section>
+
+    </main>
+
+    <!-- 右側目錄 (TOC Scrollspy 縮影) (佔 2.5/2 欄) -->
+    <aside class="hidden lg:block lg:col-span-3 xl:col-span-2 sticky top-20 space-y-4 no-print">
+      
+      <!-- 目錄卡片 -->
+      <div class="p-4 rounded-2xl bg-white dark:bg-[#121827] border border-slate-200/80 dark:border-white/10 shadow-xs space-y-3">
+        <div class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider px-2">
+          📌 本節大綱 (TOC)
+        </div>
+        <nav class="space-y-1 text-xs">
+          <a href="#sec-intro-concept" class="block py-2 px-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium">
+            一、犯罪的核心直觀 (1-1)
+          </a>
+          <a href="#sec-presume-rule" class="block py-2 px-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium">
+            二、不法推定罪責原則 (圖解)
+          </a>
+          <a href="#sec-shiba-explanation" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🐾</span>
+            <span>柴犬教授名師客廳</span>
+          </a>
+          <a href="#sec-transition" class="block py-2 px-3 rounded-lg text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-all">
+            👉 接續 1-2 阻卻罪責例示
+          </a>
+        </nav>
+      </div>
+
+      <!-- 匯出與列印快速捷徑 -->
+      <div class="p-4 rounded-2xl bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200/60 dark:border-blue-900/40 space-y-2 text-xs">
+        <div class="font-bold text-blue-900 dark:text-blue-200 flex items-center gap-1.5">
+          <span>📦</span>
+          <span>匯出功能指南</span>
+        </div>
+        <p class="text-[11.5px] text-slate-600 dark:text-slate-400 leading-relaxed">
+          點擊頂部「匯出 PDF」即可產出精準去除側欄的正式講義列印檔，適合存檔或分享！
+        </p>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- 高清大圖燈箱彈窗 (Lightbox Modal) -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+    <div class="relative max-w-lg w-full bg-white dark:bg-[#121827] rounded-3xl p-5 border border-white/20 shadow-2xl space-y-4" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-white/10">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🎓</span>
+          <span class="font-black text-slate-900 dark:text-white">柴柴法學教授 • 超高清肖像</span>
+        </div>
+        <button onclick="closeLightbox()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold hover:bg-slate-200 flex items-center justify-center">
+          ✕
+        </button>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-inner">
+        <img id="lightboxImg"
+             src="C:/Users/mice/.gemini/antigravity-ide/brain/4df2d29d-6b0a-446b-b06f-c051f8946b4c/shiba_law_professor_1790657544044.jpg" 
+             alt="柴犬法學教授大圖" 
+             class="w-full h-auto block" />
+      </div>
+      <div class="flex items-center justify-between pt-1">
+        <span class="text-xs text-slate-400 font-mono">1024 x 1024 原生高解析</span>
+        <button onclick="downloadShibaImage()" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-md shadow-blue-500/30">
+          <span>💾</span>
+          <span>下載此圖片</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SHIBA_IMG_URL = "C:/Users/mice/.gemini/antigravity-ide/brain/4df2d29d-6b0a-446b-b06f-c051f8946b4c/shiba_law_professor_1790657544044.jpg";
+
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const themeIcon = document.getElementById('themeIcon');
+      const themeText = document.getElementById('themeText');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        themeIcon.textContent = '🌙';
+        if (themeText) themeText.textContent = '深色模式';
+      } else {
+        html.classList.add('dark');
+        themeIcon.textContent = '☀️';
+        if (themeText) themeText.textContent = '淺色模式';
+      }
+    }
+
+    function openLightbox() {
+      document.getElementById('lightboxModal').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.add('hidden');
+    }
+
+    function downloadShibaImage() {
+      const a = document.createElement('a');
+      a.href = SHIBA_IMG_URL;
+      a.download = "Professor_Shiba_Inu_LLD.jpg";
+      a.target = "_blank";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    function copyQuote() {
+      const quote = "客觀壞事先確立（不法）➔ 常理先推定壞人（罪責）➔ 遇免責反證立撕標籤！";
+      navigator.clipboard.writeText(quote).then(() => {
+        alert("✨ 已複製柴柴教授金句到剪貼簿：\n\n" + quote);
+      });
+    }
+
+    function exportMarkdown() {
+      const mdContent = `# 導論・第一章 犯罪的概念（教材第 1-1 頁）
+
+## 一、犯罪的概念：一個壞人做了一件壞事
+刑法是一部處理犯罪的法律。至於何謂犯罪？簡單說，「一個壞人」做了一件「壞事」就是犯罪。經驗告訴我們判斷誰是壞人非常困難，但判斷一件壞事卻比較容易，因此我們決定先判斷「是否有一件壞事發生」，再判斷「做這件壞事的人是不是一個壞人」。
+
+基於經驗的累積，會做壞事的人絕大多數（不是百分之百！）都是壞人，所以確定一件壞事的發生，就先「推定」做這件壞事的人是一個壞人，這就是「壞事推定壞人」原則。
+
+有鑑於這只是一個經驗上的直覺假設，而人類經驗卻不完全可靠，使用推定這個法律概念，為我們保留反證推翻假設的機會。我們將壞事以「不法」代稱，壞人以「罪責」代稱，前述的推定模式就是「不法推定罪責」原則，而推翻罪責推定的理由稱為「阻卻罪責事由」。
+
+---
+
+## 二、不法推定罪責原則 架構圖解
+- **源頭**：【犯罪】
+- **雙軌分流評價**：
+  - 客觀行為面：【壞事】 ➔ 【評價行為】 ➔ 【不法】
+  - 主觀行為人面：【壞人】 ➔ 【評價行為人】 ➔ 【罪責】
+- **核心動態**：
+  - 【不法】向下垂直【推定】➔【罪責】
+  - 【罪責】向右繞回逆向【反證】➔ 阻卻罪責事由
+
+---
+
+## 三、柴柴法學教授・名師白話客廳
+1. **為什麼先抓壞事？** 砸破窗戶是客觀鐵證，壞事最容易認定，故審查排在第一步（不法）。
+2. **為什麼推定是壞人？** 社會常情做壞事者八九成是壞蛋，故常理預設為壞人以利審判（罪責推定）。
+3. **萬一被冤枉？** 若是為了救火救人砸窗，提出反證即可撕掉壞人標籤（阻卻罪責）。
+
+> 📢 **柴柴教授金句**：客觀壞事先確立（不法）➔ 常理先推定壞人（罪責）➔ 遇免責反證立撕標籤！
+`;
+      const blob = new Blob([mdContent], { type: 'text/markdown;charset=utf-8;' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = "導論第一章_1-1頁_犯罪概念筆記.md";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
+</body>
+</html>

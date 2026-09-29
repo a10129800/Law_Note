@@ -177,6 +177,10 @@ window.APP_VIEWS['viewHome'] = window.APP_VIEWS['home'] = `
                   <button onclick="switchView('intro')" class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center gap-2">
                     <span>📖 查看本篇導論</span>
                   </button>
+                  <a href="工作總結報告_20260927.html" target="_blank" class="px-4 py-2.5 rounded-xl border border-indigo-200 dark:border-indigo-800/80 bg-indigo-50/60 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 text-xs font-semibold hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center gap-1.5 shadow-2xs">
+                    <span>📊</span>
+                    <span>工作總結報告</span>
+                  </a>
                 </div>
 
               </div>

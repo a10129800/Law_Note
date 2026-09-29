@@ -85,43 +85,6 @@
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
       background: rgba(100, 116, 139, 0.7);
     }
-
-    /* 3D 書封立體 Perspective 樣式 */
-    .book-container {
-      perspective: 1200px;
-    }
-    .book-3d {
-      transform-style: preserve-3d;
-      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
-      transform: rotateY(-16deg) rotateX(6deg);
-    }
-    .book-container:hover .book-3d {
-      transform: rotateY(-5deg) rotateX(2deg) translateY(-6px);
-    }
-    .book-spine {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 36px;
-      height: 100%;
-      transform: rotateY(-90deg) translateX(-36px);
-      transform-origin: left;
-      background: linear-gradient(90deg, #1e293b 0%, #334155 40%, #1e293b 100%);
-    }
-    .book-edge {
-      position: absolute;
-      top: 2px;
-      right: 0;
-      width: 36px;
-      height: calc(100% - 4px);
-      transform: rotateY(90deg) translateX(18px) translateZ(18px);
-      background: linear-gradient(90deg, #f8fafc 0%, #cbd5e1 50%, #e2e8f0 100%);
-      box-shadow: inset 0 0 8px rgba(0,0,0,0.15);
-    }
-    .book-glare {
-      background: linear-gradient(125deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 35%, transparent 60%);
-      pointer-events: none;
-    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-200 min-h-screen transition-colors duration-200">
@@ -187,32 +150,23 @@
       <div class="p-4 rounded-2xl bg-white dark:bg-[#121827] border border-slate-200/80 dark:border-white/10 shadow-xs space-y-3">
         <div class="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider px-2">章節導航</div>
         <nav class="space-y-2 text-sm">
-          <!-- 🏠 書籍封面與規格展示 (獨立主頁按鈕) -->
-          <button id="navBtnCover" onclick="switchView('cover')" class="w-full px-3 py-2 rounded-xl bg-amber-100/90 dark:bg-amber-950/70 text-amber-900 dark:text-amber-200 font-bold flex items-center justify-between transition-colors border border-amber-300 dark:border-amber-700/80 group shadow-xs cursor-pointer">
-            <span class="flex items-center gap-2">
-              <span>📚</span>
-              <span>書籍主頁 / 封面</span>
-            </span>
-            <span class="text-xs text-amber-600 dark:text-amber-400 font-mono">🏠</span>
-          </button>
-
           <!-- 父級：導論 -->
           <div class="space-y-1.5">
-            <button onclick="switchView('chapter1')" class="w-full px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-bold flex items-center justify-between transition-colors group cursor-pointer">
+            <a href="#sec-intro-concept" class="w-full px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-bold flex items-center justify-between transition-colors group">
               <span class="flex items-center gap-2">
                 <span>📘</span>
                 <span>導論 犯罪概念與論罪結構</span>
               </span>
               <span class="text-xs text-slate-400 group-hover:text-blue-500 transition-colors">▼</span>
-            </button>
+            </a>
 
             <!-- 子級：縮排樹狀層級 -->
             <div class="ml-3 pl-3 border-l-2 border-blue-200 dark:border-blue-900/60 space-y-2 pt-1">
               <!-- 第一章 -->
-              <button id="navBtnChapter1" onclick="switchView('chapter1')" class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-bold flex items-center gap-2 border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer">
+              <a href="#sec-intro-concept" class="block px-3 py-2 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-bold flex items-center gap-2 border border-blue-200/60 dark:border-blue-800/40 transition-all hover:shadow-xs">
                 <span>👉</span>
                 <span>第一章 犯罪的概念</span>
-              </button>
+              </a>
 
               <!-- 📦 1-1～1-11 小標折疊縮盒 (可自由收合/展開) -->
               <details open class="group bg-blue-50/40 dark:bg-blue-950/20 rounded-xl border border-blue-100 dark:border-blue-900/40 overflow-hidden shadow-2xs">
@@ -271,192 +225,23 @@
 
     </aside>
 
-    <!-- 中央主閱讀區 (在封面頁自動拓寬為 10 欄，無右側干擾) -->
-    <main id="mainContainer" class="lg:col-span-9 xl:col-span-10 space-y-8 transition-all duration-300">
+    <!-- 中央主閱讀區 (自適應擴展為 8 欄，閱讀視野開闊) -->
+    <main class="lg:col-span-6 xl:col-span-8 space-y-8">
       
-      <!-- ==================== VIEW 1: 單獨書籍封面展示頁 (獨立展示，無內文) ==================== -->
-      <div id="viewCover" class="space-y-6">
-        <section id="sec-book-cover" class="scroll-mt-24 rounded-3xl border border-slate-200/90 dark:border-white/10 bg-white/95 dark:bg-[#121827]/95 p-6 sm:p-8 lg:p-10 backdrop-blur shadow-sm space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
-          
-          <!-- 左側：3D 立體書封展示 -->
-          <div class="md:col-span-5 flex flex-col items-center justify-center py-2">
-            <div class="book-container py-2">
-              <div class="book-3d relative w-[190px] sm:w-[220px] h-[270px] sm:h-[310px] rounded-r-xl shadow-2xl shadow-slate-900/30 dark:shadow-blue-950/50 cursor-pointer select-none group">
-                
-                <!-- 書背/書脊立體效果 -->
-                <div class="book-spine rounded-l-md flex flex-col justify-between items-center py-4 text-white/80 font-serif text-[10px] tracking-widest uppercase">
-                  <span>高點文化</span>
-                  <span class="font-bold text-amber-300 writing-vertical" style="writing-mode: vertical-rl;">刑法總則（圖說）</span>
-                  <span class="font-mono text-[8px]">51ML602210</span>
-                </div>
-
-                <!-- 書頁邊厚度效果 -->
-                <div class="book-edge"></div>
-
-                <!-- 書封正面 -->
-                <div class="w-full h-full rounded-r-xl overflow-hidden relative border-y border-r border-white/20 bg-slate-900 flex flex-col justify-between">
-                  <!-- 實體封面圖 (若本機存在 cover.png 優先顯示) -->
-                  <img src="cover.png" 
-                       alt="《刑法總則（圖說）》封面圖" 
-                       class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-105"
-                       onerror="this.style.display='none'; document.getElementById('idxFallbackCover').classList.remove('hidden');" />
-
-                  <!-- CSS 燙金立體書封優雅降級 -->
-                  <div id="idxFallbackCover" class="hidden absolute inset-0 z-0 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 p-5 flex flex-col justify-between text-white border-l-4 border-amber-500">
-                    <div>
-                      <div class="flex items-center justify-between text-[10px] text-amber-300 font-mono font-bold">
-                        <span>高點法學圖說系列</span>
-                        <span class="px-1.5 py-0.5 rounded bg-amber-500/20 border border-amber-400/40 text-[9px]">第10版</span>
-                      </div>
-                      <h3 class="font-serif font-black text-xl text-white tracking-wide mt-4 leading-tight">
-                        刑法總則<br>
-                        <span class="text-amber-400 text-base font-medium">【圖說】</span>
-                      </h3>
-                      <div class="text-[10px] text-slate-400 font-serif tracking-widest mt-1">
-                        Strafrecht
-                      </div>
-                    </div>
-                    <div class="text-[10px] text-slate-300 font-serif border-t border-white/10 pt-2">
-                      陳奕廷(易律師) 編著
-                    </div>
-                  </div>
-
-                  <!-- 微光澤與左折痕陰影 -->
-                  <div class="book-glare absolute inset-0 z-10"></div>
-                  <div class="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/50 via-black/20 to-transparent z-10 pointer-events-none"></div>
-                </div>
-              </div>
-            </div>
-            <p class="text-[11px] text-slate-400 font-mono mt-2">✨ 3D 立體書封・懸停可感應角度動態</p>
-          </div>
-
-          <!-- 右側：完整圖書規格表與價格 -->
-          <div class="md:col-span-7 space-y-4">
-            <div>
-              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 text-xs font-semibold border border-amber-200/70 dark:border-amber-800/50 mb-2">
-                <span>📚 高點文化出版</span>
-                <span class="w-1 h-1 rounded-full bg-amber-500"></span>
-                <span>元照網路書店經銷</span>
-              </div>
-              <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
-                刑法總則（圖說）
-              </h3>
-            </div>
-
-            <!-- 元照規格網格表 (1:1 參照截圖) -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 text-xs">
-              <div>
-                <span class="text-slate-400 block text-[10px] font-semibold">【作 者】</span>
-                <span class="font-bold text-slate-800 dark:text-slate-100">陳奕廷(易律師)</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block text-[10px] font-semibold">【書 號】</span>
-                <span class="font-mono font-bold text-slate-800 dark:text-slate-100">51ML602210</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block text-[10px] font-semibold">【出版社】</span>
-                <span class="font-bold text-slate-800 dark:text-slate-100">高點文化</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block text-[10px] font-semibold">【出 版】</span>
-                <span class="font-bold text-slate-800 dark:text-slate-100">2022/10</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block text-[10px] font-semibold">【版 次】</span>
-                <span class="font-bold text-slate-800 dark:text-slate-100">10 版</span>
-              </div>
-              <div>
-                <span class="text-slate-400 block text-[10px] font-semibold">【ISBN/ISSN】</span>
-                <span class="font-mono font-bold text-slate-800 dark:text-slate-100">9786263342880</span>
-              </div>
-              <div class="col-span-2 sm:col-span-3 pt-2 border-t border-slate-200 dark:border-slate-700/60 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <span class="text-slate-400 text-xs font-semibold">【定 價】</span>
-                  <span class="line-through text-slate-400 font-bold text-xs">650 元</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <span class="text-rose-600 dark:text-rose-400 text-xs font-bold">【特 價】</span>
-                  <span class="font-black text-rose-600 dark:text-rose-400 text-lg">585 元</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 官方簡介折疊開合面板 (點選即可展開查看全文) -->
-            <details class="group bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden text-xs">
-              <summary class="list-none flex items-center justify-between p-3.5 font-bold text-slate-700 dark:text-slate-200 cursor-pointer select-none hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors">
-                <span class="flex items-center gap-2">
-                  <span>📖</span>
-                  <span>點擊展開：元照官方原書簡介與五大編排特色</span>
-                </span>
-                <span class="text-xs text-slate-400 transition-transform duration-200 group-open:rotate-180">▼</span>
-              </summary>
-              <div class="p-4 pt-1 space-y-3 font-serif leading-relaxed text-slate-600 dark:text-slate-300 border-t border-slate-200/80 dark:border-slate-700/60">
-                <p>
-                  本書是以「刑法總則」為主的體系書，重點放在刑法體系的建構，說明較為詳細、完整並力求理解，如果距離考試僅剩兩、三個月，這絕對不是你的首選，請另外參考作者的《考點式刑法實務選擇一本通》，本書足以令你在面臨任何刑法問題時，至少有跡可循。
-                </p>
-                <p>
-                  本次改版幅度甚大，除按慣例增補近一年來的新文獻，並就重傷、公務員、不能未遂、中止未遂、結果加重犯、緊急避難、規範性構成要件錯誤等諸多章節，進行翻整改寫；另也鑑於實務見解的重要性與日俱增，本版起嘗試將具代表性的憲法法庭裁判、最高法院刑事庭裁判、最高法院大法庭裁定，精選後置於引註處供參，並以底線標記重點，期望讓讀者們在了解學理之餘，也能掌握實務脈動。
-                </p>
-                <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-sans">
-                  <div class="p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                    <strong class="text-blue-600 dark:text-blue-400">‧ 內文</strong>：關鍵字粗體標示、特殊字體呈現象徵、引註從簡。
-                  </div>
-                  <div class="p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                    <strong class="text-amber-600 dark:text-amber-400">‧ 圖表</strong>：法條圖表化，概念比較易於記憶吸收。
-                  </div>
-                  <div class="p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                    <strong class="text-emerald-600 dark:text-emerald-400">‧ 案例</strong>：作者精編或改編試題，右上角標註約定俗成「案名」。
-                  </div>
-                  <div class="p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                    <strong class="text-indigo-600 dark:text-indigo-400">‧ 叮嚀與提示</strong>：作者叮嚀釐清概念，解題提示提供特製版型。
-                  </div>
-                </div>
-              </div>
-            </details>
-
-            <!-- 快速進入閱讀 CTA 按鈕組 -->
-            <div class="flex flex-wrap items-center gap-3 pt-3">
-              <button onclick="switchView('chapter1')" class="group relative px-6 py-3 rounded-2xl bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 hover:from-blue-600 hover:to-blue-800 text-white text-xs sm:text-sm font-black shadow-md shadow-blue-900/25 hover:shadow-lg hover:shadow-blue-900/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center gap-2 border border-blue-500/30 cursor-pointer">
-                <span>🚀 開始閱讀第一章：犯罪的概念</span>
-                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-              </button>
-              <button onclick="exportMarkdown()" class="px-4 py-3 rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer">
-                <span>📄 下載 Markdown 講義</span>
-              </button>
-            </div>
-
-          </div>
+      <!-- 頂部章節徽章 -->
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-mono text-xs font-bold">
+          <span>導論・第一章 1-1 ～ 1-11</span>
         </div>
-      </section>
+        <h2 class="text-3xl font-serif font-black text-slate-900 dark:text-white tracking-tight">
+          第一章 犯罪的概念
+        </h2>
+        <p class="text-xs text-slate-500">
+          嚴格依據教材第 1-1 頁內容收錄・附柴犬教授白話講堂 (匯出版)
+        </p>
       </div>
 
-      <!-- ==================== VIEW 2: 第一章 內文閱讀區 (點擊開始閱讀後才切換顯示) ==================== -->
-      <div id="viewChapter1" class="hidden space-y-8">
-        
-        <!-- 返回封面導航列與章節標題 -->
-        <div class="space-y-4">
-          <div class="flex items-center justify-between p-3 rounded-2xl bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200/60 dark:border-blue-900/40">
-            <button onclick="switchView('cover')" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-blue-700 dark:text-blue-300 text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs border border-blue-200/50 dark:border-blue-800/50 cursor-pointer">
-              <span>← 返回書籍主頁 / 封面</span>
-            </button>
-            <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">刑法總則【圖說】• 51ML602210</span>
-          </div>
-
-          <div class="space-y-1.5">
-            <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-mono text-xs font-bold">
-              <span>導論・第一章 1-1 ～ 1-11</span>
-            </div>
-            <h2 class="text-2xl sm:text-3xl font-serif font-black text-slate-900 dark:text-white tracking-tight">
-              第一章 犯罪的概念
-            </h2>
-            <p class="text-xs text-slate-500">
-              嚴格依據教材第 1-1 頁內容收錄・附柴犬教授白話講堂 (匯出版)
-            </p>
-          </div>
-        </div>
-
-        <!-- ==================== SECTION 1: 犯罪的概念（教材第 1-1 頁） ==================== -->
+      <!-- ==================== SECTION 1: 犯罪的概念（教材第 1-1 頁） ==================== -->
       <section id="sec-intro-concept" class="scroll-mt-24 space-y-4">
         <div class="flex items-center justify-between border-b border-slate-200/80 dark:border-white/10 pb-3">
           <div class="flex items-center gap-2.5">
@@ -689,6 +474,7 @@
 
         </div>
       </section>
+
       <!-- ==================== NEW SECTION: 德牧巡查官 現行法規查核專區 ==================== -->
       <section id="sec-shepherd-compliance" class="scroll-mt-24 space-y-4">
         <div class="flex items-center justify-between border-b border-indigo-200/80 dark:border-indigo-900/50 pb-3">
@@ -1660,6 +1446,7 @@
               </div>
             </div>
           </div>
+
           <!-- 案例 1-10 正當防衛 -->
           <div class="rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm overflow-hidden p-5 sm:p-6 space-y-3.5">
             <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
@@ -2105,6 +1892,7 @@
           </div>
         </div>
       </section>
+
       <!-- ==================== 區塊九：阻卻違法體系展開與三階論統整 (教材第 1-8 頁) ==================== -->
       <section id="sec-three-stages-summary" class="scroll-mt-24 space-y-5">
         <div class="flex items-center justify-between border-b border-indigo-200/80 dark:border-indigo-900/60 pb-3">
@@ -2178,7 +1966,7 @@
                   <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-200 dark:bg-emerald-900/80 text-emerald-950 dark:text-emerald-100 font-bold">終極通關密碼</span>
                 </div>
                 <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                  「整本刑法總則的骨架，就是這套<strong>『打怪闖三關』</strong>遊戲！法官在判定一個人有沒有罪，絕不是靠直討『抓去關！』，而是一步步過濾篩選：」
+                  「整本刑法總則的骨架，就是這套<strong>『打怪闖三關』</strong>遊戲！法官在判定一個人有沒有罪，絕不是靠直覺喊『抓去關！』，而是一步步過濾篩選：」
                 </p>
               </div>
             </div>
@@ -2535,6 +2323,7 @@
           </div>
         </div>
       </section>
+
       <!-- ==================== 區塊十一：犯罪二階層體系論與四塊拼圖（教材第 1-11 頁） ==================== -->
       <section id="sec-two-stages-doctrine" class="scroll-mt-24 space-y-5">
         <div class="flex items-center justify-between border-b border-indigo-200/80 dark:border-indigo-900/60 pb-3">
@@ -2688,12 +2477,10 @@
         </div>
       </section>
 
-      </div> <!-- 閉合 #viewChapter1 -->
-
     </main>
 
-    <!-- 右側目錄 (TOC Scrollspy 縮影) (預設在封面頁隱藏，進入內文時顯現) -->
-    <aside id="rightTocAside" class="hidden lg:col-span-3 xl:col-span-2 sticky top-20 space-y-4 no-print">
+    <!-- 右側目錄 (TOC Scrollspy 縮影) (佔 2.5/2 欄) -->
+    <aside class="hidden lg:block lg:col-span-3 xl:col-span-2 sticky top-20 space-y-4 no-print">
       
       <!-- 目錄卡片（支援獨立滾動與自訂細滾動條） -->
       <div class="p-4 rounded-2xl bg-white dark:bg-[#121827] border border-slate-200/80 dark:border-white/10 shadow-xs space-y-3 max-h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar pr-2">
@@ -2897,65 +2684,6 @@
         setFontSize('md');
       }
     })();
-
-    // 視圖切換器：嚴格區分「單獨封面頁」與「章節內文頁」
-    function switchView(view) {
-      const viewCover = document.getElementById('viewCover');
-      const viewChapter1 = document.getElementById('viewChapter1');
-      const rightToc = document.getElementById('rightTocAside');
-      const mainContainer = document.getElementById('mainContainer');
-      const navBtnCover = document.getElementById('navBtnCover');
-      const navBtnChapter1 = document.getElementById('navBtnChapter1');
-
-      if (view === 'cover') {
-        if (viewCover) viewCover.classList.remove('hidden');
-        if (viewChapter1) viewChapter1.classList.add('hidden');
-        if (rightToc) {
-          rightToc.classList.add('hidden');
-          rightToc.classList.remove('lg:block');
-        }
-        if (mainContainer) {
-          mainContainer.className = "lg:col-span-9 xl:col-span-10 space-y-8 transition-all duration-300";
-        }
-        if (navBtnCover) {
-          navBtnCover.className = "w-full px-3 py-2 rounded-xl bg-amber-100/90 dark:bg-amber-950/70 text-amber-900 dark:text-amber-200 font-bold flex items-center justify-between transition-colors border border-amber-300 dark:border-amber-700/80 group shadow-xs cursor-pointer";
-        }
-        if (navBtnChapter1) {
-          navBtnChapter1.className = "w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-bold flex items-center gap-2 border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer";
-        }
-      } else {
-        if (viewCover) viewCover.classList.add('hidden');
-        if (viewChapter1) viewChapter1.classList.remove('hidden');
-        if (rightToc) {
-          rightToc.classList.remove('hidden');
-          rightToc.classList.add('lg:block');
-        }
-        if (mainContainer) {
-          mainContainer.className = "lg:col-span-6 xl:col-span-8 space-y-8 transition-all duration-300";
-        }
-        if (navBtnCover) {
-          navBtnCover.className = "w-full px-3 py-2 rounded-xl bg-amber-50/50 dark:bg-amber-950/30 hover:bg-amber-100/80 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-300 font-semibold flex items-center justify-between transition-colors border border-amber-200/60 dark:border-amber-900/40 group cursor-pointer";
-        }
-        if (navBtnChapter1) {
-          navBtnChapter1.className = "w-full px-3 py-2 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-bold flex items-center gap-2 border border-blue-200/60 dark:border-blue-800/40 transition-all shadow-xs text-left cursor-pointer";
-        }
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 依據 URL Hash 初始化：若網址指定特定小節則進入章節內文，否則預設為純淨的「單獨封面頁」
-    window.addEventListener('DOMContentLoaded', () => {
-      const hash = window.location.hash;
-      if (hash && hash.startsWith('#sec-') && hash !== '#sec-book-cover') {
-        switchView('chapter1');
-        setTimeout(() => {
-          const el = document.querySelector(hash);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 150);
-      } else {
-        switchView('cover');
-      }
-    });
   </script>
 </body>
 </html>

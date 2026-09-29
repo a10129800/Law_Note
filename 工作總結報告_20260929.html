@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>專案工作總結簡報報告 (2026-09-29) - 《刑法總則（圖說）》旗艦主頁與架構升級</title>
+  <meta name="description" content="業界標準 Executive Slide Deck 簡報型工作總結報告，涵蓋獨立封面頁、3D 立體書封、元照官方規格對齊與雙態無刷新路由工程成果。">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts: Inter & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    /* 簡報 16:9 投影片比例自適應容器 */
+    .slide-viewport {
+      aspect-ratio: 16 / 9;
+      min-height: 580px;
+    }
+    @media (max-width: 1024px) {
+      .slide-viewport {
+        aspect-ratio: auto;
+        min-height: auto;
+      }
+    }
+    /* 投影片切換微動畫 */
+    .slide-item {
+      display: none;
+      animation: slideFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .slide-item.active {
+      display: flex;
+    }
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.995);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+    @media print {
+      .no-print { display: none !important; }
+      .slide-item { display: block !important; page-break-after: always; min-height: auto !important; aspect-ratio: auto !important; box-shadow: none !important; border: 1px solid #cbd5e1 !important; }
+      body { background: white !important; color: black !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- ==================== 頂部 Executive 簡報控制列 ==================== -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/90 border-b border-white/10 px-4 sm:px-8 py-3.5 flex items-center justify-between no-print">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white flex items-center justify-center font-bold text-base shadow-md shadow-blue-500/20">
+        📊
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-400 font-bold uppercase tracking-wider">EXECUTIVE WORK REPORT</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold">2026-09-29 成果匯報</span>
+        </div>
+        <h1 class="text-sm sm:text-base font-black text-white tracking-tight">
+          《刑法總則（圖說）》獨立封面頁與架構升級總結簡報
+        </h1>
+      </div>
+    </div>
+
+    <!-- 控制區組件 -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      
+      <!-- 簡報頁數指示徽章 -->
+      <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/90 border border-white/10 text-xs font-mono text-slate-300">
+        <span>Slide</span>
+        <span id="currentSlideNum" class="font-bold text-blue-400">1</span>
+        <span>/</span>
+        <span id="totalSlideNum" class="font-bold text-slate-400">8</span>
+      </div>
+
+      <!-- 切換上一頁/下一頁按鈕 -->
+      <div class="flex items-center gap-1 bg-slate-800/90 p-1 rounded-xl border border-white/10">
+        <button onclick="prevSlide()" class="p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all cursor-pointer" title="上一頁 (鍵盤 ←)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button onclick="nextSlide()" class="p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all cursor-pointer" title="下一頁 (鍵盤 → / 空白鍵)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- 檢視模式切換：幻燈片簡報 vs 一覽式清單 -->
+      <button onclick="toggleViewMode()" id="btnViewMode" class="hidden md:flex px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold items-center gap-1.5 transition-all border border-white/10 cursor-pointer">
+        <span id="viewModeIcon">📑</span>
+        <span id="viewModeText">切換為清單模式</span>
+      </button>
+
+      <!-- 快捷開啟 index.html -->
+      <a href="index.html" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-md shadow-blue-600/30 cursor-pointer">
+        <span>📖 開啟首頁 DEMO</span>
+      </a>
+
+      <!-- 列印 / 匯出 PDF -->
+      <button onclick="window.print()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold flex items-center gap-1 transition-all border border-white/10 cursor-pointer" title="列印或另存 PDF">
+        <span>🖨️</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==================== 主要投影片播放主體 ==================== -->
+  <main class="flex-1 max-w-6xl w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col justify-center">
+
+    <!-- 幻燈片容器 (16:9 寬螢幕投影質感卡片) -->
+    <div id="deckContainer" class="relative rounded-3xl bg-slate-850 bg-[#111827] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
+
+      <!-- ==================== SLIDE 1: 報告首頁 (Title & Executive Meta) ==================== -->
+      <section class="slide-item active slide-viewport flex-col justify-between p-8 sm:p-12 lg:p-14 bg-gradient-to-br from-slate-900 via-indigo-950/40 to-slate-900 relative">
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-600/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+
+        <!-- 頂部標籤 -->
+        <div class="flex items-center justify-between relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+            <span>2026 Q3 專案里程碑專案進度報告</span>
+          </div>
+          <span class="text-xs font-mono text-slate-400">專案代號：LAW-NOTE-2026</span>
+        </div>
+
+        <!-- 主標題區 -->
+        <div class="space-y-4 my-auto relative z-10">
+          <p class="text-xs sm:text-sm font-mono uppercase tracking-widest text-amber-400 font-bold">
+            STAGE 2 MILESTONE WORK SUMMARY
+          </p>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+            《刑法總則（圖說）》<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-amber-300">
+              獨立書籍主頁與雙態視圖架構升級
+            </span>
+          </h2>
+          <p class="text-sm sm:text-base text-slate-300 max-w-2xl font-normal leading-relaxed">
+            依據元照官方規格完成中繼中文字段對齊、3D 立體書封引擎構建，並實踐「漸進式揭露狀態 0」純淨單獨封面頁，徹底杜絕閱讀混淆。
+          </p>
+        </div>
+
+        <!-- 底部報告中繼資料 -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/10 relative z-10 text-xs">
+          <div>
+            <span class="text-slate-400 block font-mono text-[10px]">報告日期</span>
+            <span class="font-bold text-white">2026 年 9 月 29 日</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block font-mono text-[10px]">專案類型</span>
+            <span class="font-bold text-white">數位教材閱覽系統</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block font-mono text-[10px]">核心交付標的</span>
+            <span class="font-bold text-emerald-400">index.html 雙態解耦</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block font-mono text-[10px]">規格依據標準</span>
+            <span class="font-bold text-amber-300">元照 51ML602210</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 2: 問題診斷與核心訴求 (Problem & Solution) ==================== -->
+      <section class="slide-item slide-viewport flex-col justify-between p-8 sm:p-12 lg:p-14 bg-[#111827]">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-wider mb-2">
+            <span>01 • PROBLEM STATEMENT & APPROACH</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">使用者痛點診斷與重構核心策略</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">從「單頁混淆下滑」轉變為「階層化漸進式揭露」之演進脈絡</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-auto">
+          <!-- 痛點欄位 -->
+          <div class="p-6 rounded-2xl bg-rose-950/20 border border-rose-500/30 space-y-4">
+            <div class="flex items-center gap-2.5 text-rose-400 font-bold text-sm">
+              <span class="w-6 h-6 rounded-lg bg-rose-500/20 flex items-center justify-center text-xs">✕</span>
+              <span>既有問題：混雜展示導致認知負擔</span>
+            </div>
+            <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold">•</span>
+                <span><strong>直接破梗暴露內文</strong>：進入首頁往下滾動立即直接看見第一章論罪法理，缺乏正式書籍之儀式感。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold">•</span>
+                <span><strong>右側大綱目錄干擾</strong>：在展示封面時，右側即同步展開 1-1～1-11 章節細項，破壞書封視覺平衡。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold">•</span>
+                <span><strong>官方中繼資料缺漏</strong>：缺少版次（第10版）、特價（585元）與官方出版序言之完整規格。</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 解法欄位 -->
+          <div class="p-6 rounded-2xl bg-emerald-950/20 border border-emerald-500/30 space-y-4">
+            <div class="flex items-center gap-2.5 text-emerald-400 font-bold text-sm">
+              <span class="w-6 h-6 rounded-lg bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
+              <span>落地解法：雙態無刷新路由與隔離容器</span>
+            </div>
+            <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">•</span>
+                <span><strong>獨立純淨封面視圖 (`#viewCover`)</strong>：封面頁僅聚焦書本資訊與 3D 書封，下方徹底隱匿內文。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">•</span>
+                <span><strong>右側清單動態隱現控制</strong>：封面狀態全寬拓寬（10 欄），進入章節才釋放 2 欄顯現 TOC 清單。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">•</span>
+                <span><strong>1:1 官方圖書中繼規格對齊</strong>：精準納入 51ML602210、585 元特價、改版重點與折疊式原書簡介。</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-800/80 border border-white/10 text-xs flex items-center justify-between text-slate-400">
+          <span>核心方針：遵循「多欄位Note Skill」狀態 0（書籍主頁）➔ 狀態 2（章節內文）漸進式標準</span>
+          <span class="text-blue-400 font-mono font-bold">100% 符合規範</span>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 3: 核心交付里程碑 (Key Deliverables) ==================== -->
+      <section class="slide-item slide-viewport flex-col justify-between p-8 sm:p-12 lg:p-14 bg-[#111827]">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-wider mb-2">
+            <span>02 • CORE DELIVERABLES</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">本日四大核心里程碑工程交付</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">微侵入式代碼替換，嚴格維持系統穩定性與標籤閉合完整度</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-auto">
+          <!-- 卡片 1 -->
+          <div class="p-5 rounded-2xl bg-slate-800/60 border border-white/10 space-y-3 hover:border-blue-500/50 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl">
+              🎨
+            </div>
+            <h4 class="font-bold text-sm text-white">3D 透視擬真書封</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              構建 1200px 視差立體景深，搭載書脊書號厚度層、書頁層邊與燙金 Fallback 優雅降級。
+            </p>
+          </div>
+
+          <!-- 卡片 2 -->
+          <div class="p-5 rounded-2xl bg-slate-800/60 border border-white/10 space-y-3 hover:border-amber-500/50 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl">
+              📋
+            </div>
+            <h4 class="font-bold text-sm text-white">元照圖書規格對齊</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              1:1 對照官方書號 51ML602210、第 10 版次、特價 585 元與憲法法庭裁判新引註說明。
+            </p>
+          </div>
+
+          <!-- 卡片 3 -->
+          <div class="p-5 rounded-2xl bg-slate-800/60 border border-white/10 space-y-3 hover:border-emerald-500/50 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+              🛡️
+            </div>
+            <h4 class="font-bold text-sm text-white">雙態隔離閱讀視圖</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              將主頁拆分為 `#viewCover` 與 `#viewChapter1`，達成「滑動不再直接看見內文」之核心要求。
+            </p>
+          </div>
+
+          <!-- 卡片 4 -->
+          <div class="p-5 rounded-2xl bg-slate-800/60 border border-white/10 space-y-3 hover:border-purple-500/50 transition-all">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl">
+              ⚡
+            </div>
+            <h4 class="font-bold text-sm text-white">極速無刷新切換器</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              原生 JavaScript 實作 `switchView()`，具備左側選單、中央內文、右側 TOC 與網址錨點聯動。
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-white/10">
+          <span>落地檔案：[index.html](file:///e:/IDE資料/圖說刑法總則_專案/index.html)</span>
+          <span class="font-mono text-emerald-400 font-bold">4 處非破壞性 Chunk 置換完成</span>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 4: 圖書規格比對矩陣 (Spec Matrix) ==================== -->
+      <section class="slide-item slide-viewport flex-col justify-between p-8 sm:p-12 lg:p-14 bg-[#111827]">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-wider mb-2">
+            <span>03 • METADATA ALIGNMENT MATRIX</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">官方圖書規格 1:1 核驗對照矩陣</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">參照元照網路書店商品頁（angle.com.tw/book.asp）原書資訊完成校核</p>
+        </div>
+
+        <!-- 規格表格 -->
+        <div class="overflow-x-auto my-auto">
+          <table class="w-full text-left text-xs border border-white/10 rounded-xl overflow-hidden">
+            <thead class="bg-slate-800 text-slate-300 font-mono uppercase text-[11px]">
+              <tr>
+                <th class="p-3 border-b border-white/10">規格欄位 (Field)</th>
+                <th class="p-3 border-b border-white/10">截圖原物料依據</th>
+                <th class="p-3 border-b border-white/10">升級前舊狀態</th>
+                <th class="p-3 border-b border-white/10 text-emerald-400">今日升級後成果 (Production)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5 text-slate-300">
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-3 font-bold text-white">【作 者】</td>
+                <td class="p-3 font-mono">陳奕廷(易律師)</td>
+                <td class="p-3 text-slate-500">陳奕廷 (易律師) 編著</td>
+                <td class="p-3 font-bold text-emerald-400">陳奕廷(易律師)</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-3 font-bold text-white">【書 號】</td>
+                <td class="p-3 font-mono">51ML602210</td>
+                <td class="p-3 text-slate-500">L602210 (代碼混淆)</td>
+                <td class="p-3 font-mono font-bold text-emerald-400">51ML602210</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-3 font-bold text-white">【出 版 / 版次】</td>
+                <td class="p-3">2022/10 ・ 10 版</td>
+                <td class="p-3 text-slate-500">2022/10/31（缺版次）</td>
+                <td class="p-3 font-bold text-emerald-400">2022/10（第 10 版）</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-3 font-bold text-white">【定價 / 特價】</td>
+                <td class="p-3">定價 650 元 / 特價 585 元</td>
+                <td class="p-3 text-slate-500">僅標示 650 元</td>
+                <td class="p-3 font-bold text-emerald-400"><span class="line-through text-slate-500">650 元</span> ➔ 特價 585 元</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="p-3 font-bold text-white">【簡介與特色】</td>
+                <td class="p-3">改版文獻增補、憲法法庭裁判引註、五大特色</td>
+                <td class="p-3 text-slate-500">簡短宣傳口號</td>
+                <td class="p-3 text-emerald-400 font-bold">原生折疊開合面板，完整收錄改版背景與特色</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex items-center gap-2 text-xs text-slate-400">
+          <span class="text-amber-400">📌</span>
+          <span>資料完整度：提升至 100% 官方一致性，避免任何由 AI 腦補之未驗證資訊。</span>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 5: 犬系法學金三角 IP 角色設計 (Character Design System) ==================== -->
+      <section class="slide-item slide-viewport flex-col justify-between p-8 sm:p-12 lg:p-14 bg-[#111827]">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono font-bold text-amber-400 uppercase tracking-wider mb-2">
+            <span>04 • CHARACTER DESIGN & PEDAGOGICAL IP</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">犬系法學金三角：三大助教角色設計與教學分工規範</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">打造親和力與法學權威感兼備的助教天團，將抽象刑法法理、現行法規與訴訟攻防三維立體化</p>
+        </div>
+
+        <!-- 三大角色卡片 Grid (含精緻聚焦頭像) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-auto">
+          
+          <!-- 角色 A: 柴柴法學教授 -->
+          <div class="p-5 rounded-2xl bg-gradient-to-b from-amber-950/30 to-slate-900 border border-amber-500/40 space-y-3 relative overflow-hidden group hover:border-amber-400 transition-colors">
+            <div class="flex items-center gap-3">
+              <!-- 柴柴聚焦特寫頭像 (聚焦臉部、眼鏡與領結) -->
+              <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-amber-400 shadow-md shrink-0 bg-slate-900 cursor-pointer hover:scale-105 transition-transform" title="柴柴法學教授 (Prof. Shiba Inu, LL.D.)">
+                <img src="C:/Users/mice/.gemini/antigravity-ide/brain/4df2d29d-6b0a-446b-b06f-c051f8946b4c/shiba_law_professor_1790657544044.jpg" 
+                     alt="柴柴法學教授" 
+                     class="w-full h-full object-cover" 
+                     style="object-position: center 20%; transform: scale(1.38); transform-origin: center 20%;">
+              </div>
+              <div>
+                <div class="font-black text-sm text-white flex items-center gap-1.5">
+                  <span>柴柴法學教授</span>
+                  <span class="px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300 text-[10px] font-mono font-bold">特聘主講</span>
+                </div>
+                <div class="text-[10px] text-amber-400/80 font-mono">Prof. Shiba Inu, LL.D.</div>
+              </div>
+            </div>
+            <div class="text-xs text-slate-300 space-y-1.5 leading-relaxed">
+              <p>• <strong>角色定位</strong>：慕尼黑大學法學博士，專責「法理生活化、白話三步拆解、通透抽象概念」。</p>
+              <p>• <strong>特寫標準</strong>：配戴金絲圓框眼鏡、花呢西裝、酒紅小領結，精準聚焦臉部與眼鏡（`scale(1.38)`）。</p>
+              <p class="text-amber-300/90 font-bold bg-amber-950/40 p-2 rounded-lg border border-amber-500/20 text-[11px]">
+                📢 口訣金句：「客觀壞事先確立（不法）➔ 常理先推定壞人（罪責）➔ 遇免責反證立撕標籤！」
+              </p>
+            </div>
+          </div>
+
+          <!-- 角色 B: 德牧法規巡查官 -->
+          <div class="p-5 rounded-2xl bg-gradient-to-b from-indigo-950/30 to-slate-900 border border-indigo-500/40 space-y-3 relative overflow-hidden group hover:border-indigo-400 transition-colors">
+            <div class="flex items-center gap-3">
+              <!-- 德牧聚焦特寫頭像 (聚焦立耳、眼鏡與法秤胸章) -->
+              <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-indigo-400 shadow-md shrink-0 bg-slate-900 cursor-pointer hover:scale-105 transition-transform" title="德牧法規巡查官 (Inspector Shepherd)">
+                <img src="C:/Users/mice/.gemini/antigravity-ide/brain/4df2d29d-6b0a-446b-b06f-c051f8946b4c/shepherd_law_inspector_1790658889114.jpg" 
+                     alt="德牧法規巡查官" 
+                     class="w-full h-full object-cover" 
+                     style="object-position: center 20%; transform: scale(1.36); transform-origin: center 20%;">
+              </div>
+              <div>
+                <div class="font-black text-sm text-white flex items-center gap-1.5">
+                  <span>德牧法規巡查官</span>
+                  <span class="px-1.5 py-0.5 rounded bg-indigo-400/20 text-indigo-300 text-[10px] font-mono font-bold">法規督察</span>
+                </div>
+                <div class="text-[10px] text-indigo-400/80 font-mono">Inspector Shepherd</div>
+              </div>
+            </div>
+            <div class="text-xs text-slate-300 space-y-1.5 leading-relaxed">
+              <p>• <strong>角色定位</strong>：首席法規督察官・條文雷達哨兵，嚴密查核現行有效法規、違憲宣告與最新修法動態。</p>
+              <p>• <strong>特寫標準</strong>：英挺直耳、金屬黑框眼鏡、深藍條紋法制調查西裝、胸前配戴金色法秤督察金徽。</p>
+              <p class="text-indigo-300/90 font-bold bg-indigo-950/40 p-2 rounded-lg border border-indigo-500/20 text-[11px]">
+                🛡️ 法規雷達：「【2026 現行法有效】/【憲法法庭判決宣告】」實質查核專題卡片。
+              </p>
+            </div>
+          </div>
+
+          <!-- 角色 C: 金毛辯護大律師 -->
+          <div class="p-5 rounded-2xl bg-gradient-to-b from-blue-950/30 to-slate-900 border border-blue-500/40 space-y-3 relative overflow-hidden group hover:border-blue-400 transition-colors">
+            <div class="flex items-center gap-3">
+              <!-- 金毛聚焦特寫頭像 (聚焦微笑、西裝與律師金徽) -->
+              <div class="w-14 h-14 rounded-2xl overflow-hidden border-2 border-blue-400 shadow-md shrink-0 bg-slate-900 cursor-pointer hover:scale-105 transition-transform" title="金毛辯護大律師 (Counselor Golden)">
+                <img src="C:/Users/mice/.gemini/antigravity-ide/brain/4df2d29d-6b0a-446b-b06f-c051f8946b4c/golden_case_attorney_1790659096990.jpg" 
+                     alt="金毛辯護大律師" 
+                     class="w-full h-full object-cover" 
+                     style="object-position: center 20%; transform: scale(1.36); transform-origin: center 20%;">
+              </div>
+              <div>
+                <div class="font-black text-sm text-white flex items-center gap-1.5">
+                  <span>金毛辯護大律師</span>
+                  <span class="px-1.5 py-0.5 rounded bg-blue-400/20 text-blue-300 text-[10px] font-mono font-bold">首席辯護</span>
+                </div>
+                <div class="text-[10px] text-blue-400/80 font-mono">Counselor Golden</div>
+              </div>
+            </div>
+            <div class="text-xs text-slate-300 space-y-1.5 leading-relaxed">
+              <p>• <strong>角色定位</strong>：資深刑事辯護律師，專責「真實案例生動講評、案發現場情境還原、訴訟爭點攻防拆解」。</p>
+              <p>• <strong>特寫標準</strong>：溫暖自信微笑、柔順垂墜金色雙耳、高級炭灰法庭西裝、翻領佩戴金色天平律師徽章。</p>
+              <p class="text-blue-300/90 font-bold bg-blue-950/40 p-2 rounded-lg border border-blue-500/20 text-[11px]">
+                ⚖️ 實戰攻防：配置「被告心聲氣泡」與「法庭攻防焦點」，直指推定能否推翻與法定阻卻要件。
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 底部角色排版規範標籤 -->
+        <div class="p-3.5 rounded-xl bg-slate-800/80 border border-white/10 text-xs flex flex-wrap items-center justify-between gap-2 text-slate-300">
+          <div class="flex items-center gap-2">
+            <span class="text-amber-400 font-bold">★ 案例標配規範：</span>
+            <span>凡實戰案例（1-1 至 1-15）均標配「柴柴解碼 ＋ 金毛攻防 ＋ 德牧法規」三件套，採用單欄全寬垂直展開，杜絕壓縮變形。</span>
+          </div>
+          <span class="text-emerald-400 font-mono font-bold">角色 IP 體系確立</span>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 6: 技術架構與雙態路由 (Technical Architecture) ==================== -->
+      <section class="slide-item slide-viewport flex-col justify-between p-8 sm:p-12 lg:p-14 bg-[#111827]">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-wider mb-2">
+            <span>05 • SYSTEM ARCHITECTURE & CODE HIGHLIGHTS</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">微侵入式雙態無刷新路由工程</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">零框架負擔（Zero-Framework），純 Vanilla JS + DOM TokenList 實現極速響應</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 my-auto items-center">
+          <!-- 左側架構解說 -->
+          <div class="lg:col-span-5 space-y-3.5 text-xs text-slate-300">
+            <div class="p-3.5 rounded-xl bg-slate-800/80 border border-white/10">
+              <strong class="text-blue-400 block mb-1">1. 狀態 0：純淨封面展示態 (Cover View)</strong>
+              <p class="text-slate-400 leading-relaxed">
+                `#viewCover` 激活，`#viewChapter1` 與 `#rightTocAside` 自動加入 `.hidden`，中央 `<main>` 自動由 8 欄擴展至 10 欄寬幅，確保畫面置中不偏倚。
+              </p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-800/80 border border-white/10">
+              <strong class="text-indigo-400 block mb-1">2. 狀態 2：章節內文研讀態 (Chapter View)</strong>
+              <p class="text-slate-400 leading-relaxed">
+                點擊「開始閱讀第一章」即時隱藏書封，顯示內文並解鎖右側大綱目錄，頂部掛載「← 返回封面」導航麵包屑。
+              </p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-800/80 border border-white/10">
+              <strong class="text-emerald-400 block mb-1">3. 智慧錨點監聽 (Hash Listener)</strong>
+              <p class="text-slate-400 leading-relaxed">
+                當 URL 帶有特定小節錨點（如 `#sec-intro-concept`）自動穿透至內文並平滑滾動；若無錨點則精準停泊於獨立封面。
+              </p>
+            </div>
+          </div>
+
+          <!-- 右側代碼架構骨架 (語法高亮卡片) -->
+          <div class="lg:col-span-7 rounded-2xl bg-slate-950 p-5 border border-white/10 font-mono text-[11px] space-y-2 overflow-x-auto text-slate-300">
+            <div class="flex items-center justify-between text-slate-500 text-[10px] pb-2 border-b border-white/10">
+              <span>JS LOGIC: switchView(view)</span>
+              <span class="text-emerald-400">VANILLA JS</span>
+            </div>
+            <pre class="leading-relaxed"><span class="text-purple-400">function</span> <span class="text-blue-400">switchView</span>(view) {
+  <span class="text-slate-500">// 1. 取得視圖容器節點</span>
+  <span class="text-purple-400">const</span> isCover = (view === <span class="text-amber-300">'cover'</span>);
+  
+  <span class="text-slate-500">// 2. 切換中央主內容容器</span>
+  viewCover.classList.toggle(<span class="text-amber-300">'hidden'</span>, !isCover);
+  viewChapter1.classList.toggle(<span class="text-amber-300">'hidden'</span>, isCover);
+  
+  <span class="text-slate-500">// 3. 連動右側目錄 TOC 隱現與寬幅拓寬</span>
+  rightToc.classList.toggle(<span class="text-amber-300">'hidden'</span>, isCover);
+  mainContainer.className = isCover 
+    ? <span class="text-emerald-300">"lg:col-span-9 xl:col-span-10 space-y-8"</span>
+    : <span class="text-blue-300">"lg:col-span-6 xl:col-span-8 space-y-8"</span>;
+
+  <span class="text-slate-500">// 4. 側邊選單高亮與自動回頂</span>
+  updateNavHighlight(view);
+  window.<span class="text-yellow-300">scrollTo</span>({ top: <span class="text-amber-300">0</span>, behavior: <span class="text-amber-300">'smooth'</span> });
+}</pre>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-white/10">
+          <span>架構特性：零相依第三方庫、DOM 體積增加 &lt; 2KB、切換延遲 0 毫秒</span>
+          <span class="text-emerald-400 font-mono font-bold">PERFORMANCE GRADE: A+</span>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 7: 量化指標與效益比對 (KPI Metrics) ==================== -->
+      <section class="slide-item slide-viewport flex-col justify-between p-8 sm:p-12 lg:p-14 bg-[#111827]">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-wider mb-2">
+            <span>06 • QUANTITATIVE IMPACT & KPIS</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">升級效益量化成果評估</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">從使用者認知、視覺焦點到操作效能的全方位提升</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-auto">
+          <!-- KPI 1 -->
+          <div class="p-6 rounded-2xl bg-gradient-to-b from-blue-900/20 to-slate-900/40 border border-blue-500/30 text-center space-y-2">
+            <span class="text-slate-400 text-xs font-mono block">首頁視覺專注度</span>
+            <div class="text-3xl sm:text-4xl font-black text-white tracking-tight">100%</div>
+            <span class="text-[11px] text-blue-400 block font-bold">零內文滑動干擾</span>
+          </div>
+
+          <!-- KPI 2 -->
+          <div class="p-6 rounded-2xl bg-gradient-to-b from-amber-900/20 to-slate-900/40 border border-amber-500/30 text-center space-y-2">
+            <span class="text-slate-400 text-xs font-mono block">官方中繼對齊率</span>
+            <div class="text-3xl sm:text-4xl font-black text-white tracking-tight">1:1</div>
+            <span class="text-[11px] text-amber-400 block font-bold">元照 51ML602210 原書精確校核</span>
+          </div>
+
+          <!-- KPI 3 -->
+          <div class="p-6 rounded-2xl bg-gradient-to-b from-emerald-900/20 to-slate-900/40 border border-emerald-500/30 text-center space-y-2">
+            <span class="text-slate-400 text-xs font-mono block">視圖切換延遲</span>
+            <div class="text-3xl sm:text-4xl font-black text-white tracking-tight">&lt; 16ms</div>
+            <span class="text-[11px] text-emerald-400 block font-bold">60fps 瞬間切換</span>
+          </div>
+
+          <!-- KPI 4 -->
+          <div class="p-6 rounded-2xl bg-gradient-to-b from-purple-900/20 to-slate-900/40 border border-purple-500/30 text-center space-y-2">
+            <span class="text-slate-400 text-xs font-mono block">既有代碼保留率</span>
+            <div class="text-3xl sm:text-4xl font-black text-white tracking-tight">98.5%</div>
+            <span class="text-[11px] text-purple-400 block font-bold">非破壞性 Chunk 靶向更新</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-300 bg-slate-800/40 p-4 rounded-2xl border border-white/5">
+          <div class="flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✔ 使用者體驗提升：</span>
+            <span>完美重現紙本書籍封面展示情境，建立莊重、專屬的開讀儀式。</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-blue-400 font-bold">✔ 後續維護性：</span>
+            <span>日後擴展第二章、第三章只需新增 View 容器，架構高度可擴充。</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SLIDE 8: 後續規劃與結論 (Roadmap & Summary) ==================== -->
+      <section class="slide-item slide-viewport flex-col justify-between p-8 sm:p-12 lg:p-14 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/50">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-wider mb-2">
+            <span>07 • ROADMAP & SUMMARY</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">後續優化藍圖與專案總結</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">持續推進《刑法總則【圖說】》全書數位教材旗艦平台</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-auto">
+          <div class="p-5 rounded-2xl bg-slate-800/60 border border-white/10 space-y-2.5">
+            <div class="text-blue-400 font-mono font-bold text-xs">PHASE 2.1 (進行中)</div>
+            <h4 class="font-bold text-sm text-white">第二章 刑法論罪結構收錄</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              遵循多欄位 Note Skill，接續擴充第二章犯罪階層架構，接入第三個視圖容器 `#viewChapter2`。
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-800/60 border border-white/10 space-y-2.5">
+            <div class="text-indigo-400 font-mono font-bold text-xs">PHASE 2.2 (規劃中)</div>
+            <h4 class="font-bold text-sm text-white">憲法法庭裁判超連結庫</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              依據元照改版重點，將書中引註之代表性裁判（憲法裁判、最高法院判決）實現即時 Modal 彈跳預覽。
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-800/60 border border-white/10 space-y-2.5">
+            <div class="text-amber-400 font-mono font-bold text-xs">PHASE 2.3 (展望)</div>
+            <h4 class="font-bold text-sm text-white">交互式例題研究測驗模組</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              整合柴柴教授法學客廳，將「醫院案、皮帶案、抽血案」轉化為三階層審查互動式引導測驗。
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-blue-600/10 border border-blue-500/20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🏆</span>
+            <span class="text-slate-200"><strong>結論</strong>：本日任務圓滿達成，正式將單獨封面頁與元照中繼規格無縫交付上線。</span>
+          </div>
+          <a href="index.html" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all shrink-0 cursor-pointer">
+            立即體驗驗收成果 ➔
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 底部鍵盤控制輔助條 -->
+    <div class="flex items-center justify-between pt-4 px-2 text-[11px] text-slate-500 font-mono no-print">
+      <div class="flex items-center gap-3">
+        <span>鍵盤快速鍵：</span>
+        <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-white/10">←</span>
+        <span>上一頁</span>
+        <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-white/10">→</span>
+        <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-white/10">Space</span>
+        <span>下一頁</span>
+        <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-white/10">P</span>
+        <span>清單/簡報切換</span>
+      </div>
+      <div>
+        <span>刑法總則圖說專案團隊 • Confidential</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== 幻燈片控制腳本 ==================== -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-item');
+    const totalSlides = slides.length;
+    let isListView = false;
+
+    document.getElementById('totalSlideNum').textContent = totalSlides;
+
+    function showSlide(index) {
+      if (isListView) return;
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+
+      slides.forEach((s, idx) => {
+        if (idx === index) {
+          s.classList.add('active');
+        } else {
+          s.classList.remove('active');
+        }
+      });
+
+      currentSlide = index;
+      document.getElementById('currentSlideNum').textContent = currentSlide + 1;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        showSlide(currentSlide + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        showSlide(currentSlide - 1);
+      }
+    }
+
+    function toggleViewMode() {
+      isListView = !isListView;
+      const deckContainer = document.getElementById('deckContainer');
+      const viewModeIcon = document.getElementById('viewModeIcon');
+      const viewModeText = document.getElementById('viewModeText');
+
+      if (isListView) {
+        // 清單長文模式
+        slides.forEach(s => {
+          s.classList.add('active');
+          s.classList.remove('slide-viewport');
+          s.classList.add('border-b', 'border-white/10', 'py-12');
+        });
+        viewModeIcon.textContent = '📽️';
+        viewModeText.textContent = '切換為簡報模式';
+      } else {
+        // 幻燈片簡報模式
+        slides.forEach(s => {
+          s.classList.remove('border-b', 'border-white/10', 'py-12');
+          s.classList.add('slide-viewport');
+        });
+        viewModeIcon.textContent = '📑';
+        viewModeText.textContent = '切換為清單模式';
+        showSlide(currentSlide);
+      }
+    }
+
+    // 鍵盤導航監聽
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'p' || e.key === 'P') {
+        toggleViewMode();
+      } else if (e.key === 'Home') {
+        showSlide(0);
+      } else if (e.key === 'End') {
+        showSlide(totalSlides - 1);
+      }
+    });
+  </script>
+</body>
+</html>

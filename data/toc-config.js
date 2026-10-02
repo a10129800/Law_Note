@@ -261,15 +261,14 @@ window.TOC_CONFIG = {
     badge: '1-13 ～ 1-16 頁',
     title: '📌 第二章 章節清單',
     items: [
-      { id: 'sec-ch2-essence', label: '一、構成要件本質與處罰原則（故意＋既遂）' },
-      { id: 'sec-ch2-expansion', label: '二、例外擴張處罰門檻與觀念辨正' },
-      { id: 'sec-ch2-case-2-1', label: '三、案例 2-1 西瓜刀砍人案與殺人未遂審查' },
-      { id: 'sec-ch2-case-2-2', label: '四、案例 2-2 西瓜刀練刀致死案與過失犯審查' },
-      { id: 'sec-ch2-tips-formula', label: '五、【解題提示】直覺誤區辨正與 § 12 邏輯證明' },
-      { id: 'sec-ch2-case-2-3', label: '六、案例 2-3 挑唆防衛與阻卻違法之例外排除' },
-      { id: 'sec-ch2-case-2-4', label: '七、案例 2-4 原因自由行為與阻卻罪責之例外排除' },
-      { id: 'sec-ch2-punishment-spectrum', label: '八、刑法處罰光譜總整理與其他刑罰要件' },
-      { id: 'sec-ch2-basic-review-process', label: '九、犯罪基本審查流程（教材第 1-16 頁）' }
+      { id: 'sec-intro-concept', label: '一、構成要件本質與原則 (1-13)' },
+      { id: 'sec-basic-flowchart', label: '二、五階審查流程（原書圖解 1-16）' },
+      { id: 'sec-shiba-explanation', label: '🐾 柴犬教授名師客廳' },
+      { id: 'sec-shepherd-compliance', label: '🔍 德牧法規雷達查核' },
+      { id: 'sec-golden-casestudy', label: '三、案例 2-1～2-2 未遂與過失' },
+      { id: 'sec-tips-formula', label: '四、【解題提示】§ 12 邏輯證明' },
+      { id: 'sec-exceptions-casestudy', label: '五、案例 2-3～2-4 阻卻例外排除' },
+      { id: 'sec-summary-system', label: '六、全章總結與其他刑罰要件' }
     ]
   }
 };

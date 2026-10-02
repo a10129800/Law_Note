@@ -198,7 +198,7 @@ window.SEARCH_DATABASE = [
     categoryLabel: '案例',
     keywords: ['案例2-1', '西瓜刀', '砍人', '殺人未遂', '未遂犯', '271條第2項', '§271'],
     view: 'chapter-2',
-    anchor: 'sec-ch2-case-2-1',
+    anchor: 'sec-golden-casestudy',
     page: 'P. 1-13',
     desc: '殺人未遂審查公式：刑法 § 271 第 2 項特別明文處罰未遂。主觀出於殺人故意，客觀著手未生死亡結果。'
   },
@@ -209,7 +209,7 @@ window.SEARCH_DATABASE = [
     categoryLabel: '案例',
     keywords: ['案例2-2', '西瓜刀', '練刀', '過失致死', '過失犯', '276條', '§276'],
     view: 'chapter-2',
-    anchor: 'sec-ch2-case-2-2',
+    anchor: 'sec-golden-casestudy',
     page: 'P. 1-14',
     desc: '刑法 § 276 過失致死審查：欠缺殺人故意，客觀發生死亡結果，違反客觀注意義務具預見與避免可能性。'
   },
@@ -220,7 +220,7 @@ window.SEARCH_DATABASE = [
     categoryLabel: '案例',
     keywords: ['案例2-3', '挑唆防衛', '自招侵害', '阻卻違法例外排除', '防衛權濫用'],
     view: 'chapter-2',
-    anchor: 'sec-ch2-case-2-3',
+    anchor: 'sec-exceptions-casestudy',
     page: 'P. 1-15',
     desc: '意圖防衛而主動挑唆他人發動攻擊，防衛權行使具權利濫用本質，不得主張正當防衛阻卻違法。'
   },
@@ -231,7 +231,7 @@ window.SEARCH_DATABASE = [
     categoryLabel: '案例',
     keywords: ['案例2-4', '原因自由行為', '酒後殺人', '19條第3項', '§19', '借酒壯膽'],
     view: 'chapter-2',
-    anchor: 'sec-ch2-case-2-4',
+    anchor: 'sec-exceptions-casestudy',
     page: 'P. 1-15',
     desc: '刑法第 19 條第 3 項：故意或過失自陷精神障礙而犯罪者，排除阻卻或減輕罪責之適用。'
   },
@@ -244,7 +244,7 @@ window.SEARCH_DATABASE = [
     categoryLabel: '法條',
     keywords: ['12條', '§12', '故意', '過失', '處罰原則', '特別規定'],
     view: 'chapter-2',
-    anchor: 'sec-ch2-tips-formula',
+    anchor: 'sec-tips-formula',
     page: 'P. 1-14',
     desc: '行為非出於故意或過失者，不罰。過失行為之處罰，以有特別規定者為限。'
   },

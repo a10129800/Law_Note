@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第零篇 刑法的運作、操作原理與法律效果【本篇導讀】 - 陳奕廷律師</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Noto Serif TC, Noto Sans TC, Dancing Script -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-serif {
+      font-family: 'Noto Serif TC', serif, Georgia, Cambria;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .font-script {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    /* 書頁材質與柔和景深陰影 */
+    .book-page-canvas {
+      box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.05),
+        0 10px 25px -5px rgba(0, 0, 0, 0.08),
+        0 20px 40px -15px rgba(0, 0, 0, 0.12);
+    }
+
+    /* 書頁右上微折角裝飾 */
+    .book-page-fold {
+      position: relative;
+    }
+    .book-page-fold::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 28px 28px 0;
+      border-color: transparent rgba(0,0,0,0.12) transparent transparent;
+      pointer-events: none;
+    }
+
+    /* 列印與 PDF 匯出優化樣式 */
+    @media print {
+      header, footer, .no-print {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .book-page-canvas {
+        box-shadow: none !important;
+        border: 1px solid #111 !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-200/70 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col items-center">
+
+  <!-- ==================== 頂部極簡導航列 ==================== -->
+  <header class="w-full sticky top-0 z-40 backdrop-blur-md bg-white/85 dark:bg-[#0f172a]/85 border-b border-slate-200/80 dark:border-white/10 transition-colors">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
+      
+      <!-- 左側：標題 -->
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="text-xl">⚖️</span>
+        <div>
+          <div class="text-xs sm:text-sm font-black text-slate-900 dark:text-white">
+            第零篇 刑法的運作、操作原理與法律效果
+          </div>
+          <div class="text-[10px] text-slate-500 dark:text-slate-400 font-serif">
+            陳奕廷律師《刑法總則【圖說系列】》・本篇導讀
+          </div>
+        </div>
+      </a>
+
+      <!-- 右側：輔助操作 -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <!-- 朗讀導讀 -->
+        <button id="btnSpeech" onclick="toggleReadAloud()" title="語音朗讀導讀全文" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center gap-1 text-xs font-medium">
+          <span id="speechIcon">🔊</span>
+          <span class="hidden sm:inline" id="speechText">朗讀</span>
+        </button>
+
+        <!-- 複製原文 -->
+        <button onclick="copyRawQuote()" title="複製導讀原文" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center gap-1 text-xs font-medium">
+          <span id="copyIcon">📋</span>
+          <span class="hidden sm:inline" id="copyText">複製原文</span>
+        </button>
+
+        <!-- 深淺色切換 -->
+        <button onclick="toggleDarkMode()" title="切換深淺模式" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <span class="dark:hidden">🌙</span>
+          <span class="hidden dark:inline">☀️</span>
+        </button>
+
+        <!-- 返回主目錄 -->
+        <a href="index.html#viewPart0" class="px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-1">
+          <span>進入章節</span><span>→</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== 主內容展示區（居中單欄書頁） ==================== -->
+  <main class="flex-1 w-full max-w-2xl px-4 py-8 sm:py-12 space-y-8 flex flex-col items-center">
+
+    <!-- 書頁卡片容器（1:1 還原課本原貌） -->
+    <div class="w-full book-page-canvas book-page-fold rounded-2xl bg-white dark:bg-[#151c2d] border border-slate-300/80 dark:border-slate-700 p-8 sm:p-12 transition-all space-y-10 relative">
+      
+      <!-- 頂部黑邊線與角標 -->
+      <div class="flex justify-between items-center pb-2 border-b border-slate-900/80 dark:border-slate-400 text-[10px] font-mono tracking-widest text-slate-400">
+        <span>PREFACE</span>
+        <span>PART 0</span>
+      </div>
+
+      <!-- 1. 篇號徽章：【第】【零】【篇】三個圓圈 -->
+      <div class="flex justify-center pt-2">
+        <div class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-600 shadow-2xs">
+          <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 flex items-center justify-center font-serif font-black text-sm border border-slate-400 dark:border-slate-500">
+            第
+          </span>
+          <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 flex items-center justify-center font-serif font-black text-sm border border-slate-400 dark:border-slate-500">
+            零
+          </span>
+          <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 flex items-center justify-center font-serif font-black text-sm border border-slate-400 dark:border-slate-500">
+            篇
+          </span>
+        </div>
+      </div>
+
+      <!-- 2. 篇章大標題：大號楷體/宋體標題 -->
+      <div class="text-center space-y-2 py-2">
+        <h1 class="font-serif font-black text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-wider leading-relaxed">
+          刑法的運作、<br>
+          操作原理與法律效果
+        </h1>
+        <div class="w-14 h-0.5 bg-slate-900 dark:bg-slate-300 mx-auto rounded-full mt-3"></div>
+      </div>
+
+      <!-- 3. 原書手繪旗幟與本篇導讀邊框卡片 -->
+      <div class="relative mt-8 pt-7 pb-6 px-6 sm:px-8 rounded-2xl border-2 border-slate-800 dark:border-slate-300 bg-slate-50/40 dark:bg-slate-900/30 space-y-4">
+        
+        <!-- 頂端懸浮的手繪旗幟與鋼筆圖示 -->
+        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-white dark:bg-[#151c2d] px-4 py-0.5 rounded-full border-2 border-slate-800 dark:border-slate-300 flex items-center gap-2 shadow-2xs">
+          <!-- 鋼筆圖示 -->
+          <svg class="w-4 h-4 text-slate-800 dark:text-slate-200 -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+          </svg>
+          <div class="text-center">
+            <span class="font-serif font-bold text-sm text-slate-900 dark:text-white tracking-widest block leading-tight">
+              本篇導讀
+            </span>
+            <span class="font-script text-[11px] text-slate-500 dark:text-slate-400 block -mt-0.5">
+              Conducted read
+            </span>
+          </div>
+        </div>
+
+        <!-- 導讀正文 (純粹依原書排版，無花俏干擾) -->
+        <div class="pt-2">
+          <p class="font-serif text-[15px] sm:text-base text-slate-800 dark:text-slate-200 leading-loose text-justify indent-8 tracking-wide">
+            本篇是正式踏入刑法學習前的暖身，介紹影響刑法運作的四大支柱，以及刑法操作的前理解（諸如刑法的適用效力、解釋方法）。至於刑法的法律效果，這個通常被教科書或參考書放在最尾巴說明的刑罰理論，筆者挪移到本篇提前整理，旨在提醒大家「慎思慎刑」的核心理念，也與刑法最後手段性原則接軌。
+          </p>
+        </div>
+
+        <!-- 底端頁碼出處 -->
+        <div class="pt-3 flex items-center justify-between text-[11px] font-serif text-slate-400 dark:text-slate-500 border-t border-slate-200 dark:border-slate-800">
+          <span>高點文化 • 陳奕廷律師編著</span>
+          <span>第 0-1 頁</span>
+        </div>
+
+      </div>
+
+      <!-- 底部微裝飾線 -->
+      <div class="pt-2 flex justify-between items-center text-[10px] font-mono text-slate-400 border-t border-slate-200 dark:border-slate-800">
+        <span>CRIMINAL LAW GENERAL PRINCIPLES</span>
+        <span>PAGE 0-1</span>
+      </div>
+
+    </div>
+
+    <!-- 頁面底部快速前往章節按鈕 -->
+    <div class="w-full flex items-center justify-between gap-4 pt-2 no-print">
+      <a href="index.html#viewHome" class="text-xs font-medium text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors flex items-center gap-1">
+        <span>← 返回書籍主頁</span>
+      </a>
+
+      <a href="index.html#part0-chapter-1" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+        <span>進入第一章 刑法的運作原理 →</span>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ==================== 底部版權列 ==================== -->
+  <footer class="w-full border-t border-slate-200/80 dark:border-white/10 py-5 text-center text-xs text-slate-400 dark:text-slate-500 bg-white/40 dark:bg-slate-900/40 no-print">
+    <div class="max-w-4xl mx-auto px-4">
+      《刑法總則【圖說系列】》學習筆記 • 陳奕廷律師著
+    </div>
+  </footer>
+
+  <!-- Toast 提示通知元件 -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="px-4 py-2 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold shadow-xl flex items-center gap-2">
+      <span id="toastIcon">✓</span>
+      <span id="toastMessage">已複製至剪貼簿</span>
+    </div>
+  </div>
+
+  <!-- JavaScript 互動邏輯 -->
+  <script>
+    // 1. 深色模式切換
+    function toggleDarkMode() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+
+    // 2. 語音朗讀功能
+    let speechSynth = window.speechSynthesis;
+    let isSpeaking = false;
+
+    function toggleReadAloud() {
+      if (!speechSynth) {
+        showToast('⚠️ 瀏覽器不支援語音功能');
+        return;
+      }
+
+      if (isSpeaking) {
+        speechSynth.cancel();
+        isSpeaking = false;
+        document.getElementById('speechIcon').textContent = '🔊';
+        document.getElementById('speechText').textContent = '朗讀';
+        showToast('已停止朗讀');
+        return;
+      }
+
+      const text = "第零篇 刑法的運作、操作原理與法律效果。本篇導讀：本篇是正式踏入刑法學習前的暖身，介紹影響刑法運作的四大支柱，以及刑法操作的前理解，諸如刑法的適用效力、解釋方法。至於刑法的法律效果，這個通常被教科書或參考書放在最尾巴說明的刑罰理論，筆者挪移到本篇提前整理，旨在提醒大家慎思慎刑的核心理念，也與刑法最後手段性原則接軌。";
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'zh-TW';
+      utter.rate = 0.95;
+
+      utter.onend = () => {
+        isSpeaking = false;
+        document.getElementById('speechIcon').textContent = '🔊';
+        document.getElementById('speechText').textContent = '朗讀';
+      };
+
+      speechSynth.speak(utter);
+      isSpeaking = true;
+      document.getElementById('speechIcon').textContent = '⏹️';
+      document.getElementById('speechText').textContent = '停止';
+      showToast('🔊 正在朗讀導讀內容...');
+    }
+
+    // 3. 複製導讀原文
+    function copyRawQuote() {
+      const quote = "「本篇是正式踏入刑法學習前的暖身，介紹影響刑法運作的四大支柱，以及刑法操作的前理解（諸如刑法的適用效力、解釋方法）。至於刑法的法律效果，這個通常被教科書或參考書放在最尾巴說明的刑罰理論，筆者挪移到本篇提前整理，旨在提醒大家「慎思慎刑」的核心理念，也與刑法最後手段性原則接軌。」—— 陳奕廷律師《刑法總則【圖說系列】》第 0-1 頁導讀";
+      navigator.clipboard.writeText(quote).then(() => {
+        showToast('✓ 已複製導讀原文至剪貼簿！');
+      });
+    }
+
+    // 4. Toast 提示
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>

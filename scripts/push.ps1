@@ -13,9 +13,14 @@ if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     exit
 }
 
-# 切換到腳本所在目錄
+# 切換到專案根目錄 (當腳本置於 scripts/ 時，父層即為專案根目錄)
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-Set-Location $scriptDir
+$projectRoot = Split-Path -Parent $scriptDir
+if (Test-Path (Join-Path $projectRoot "index.html")) {
+    Set-Location $projectRoot
+} else {
+    Set-Location $scriptDir
+}
 
 # 設定目標 Repo
 $targetRepo = "https://github.com/a10129800/Law_Note.git"
@@ -37,18 +42,7 @@ Write-Host "[2/4] 請輸入本次更新說明 (直接按 Enter 使用預設說�
 $userMsg = Read-Host "> "
 if ([string]::IsNullOrWhiteSpace($userMsg)) {
     $now = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    $userMsg = "更新筆記與資料庫架構 - $now"
-}
-
-# [自動同步] 複製 AI 角色頭像圖到 images/ 目錄以利 GitHub 部署
-$imgBrainDir = "C:\Users\mice\.gemini\antigravity-ide\brain\4df2d29d-6b0a-446b-b06f-c051f8946b4c"
-$imgTargetDir = Join-Path $scriptDir "images"
-if (Test-Path $imgBrainDir) {
-    if (-not (Test-Path $imgTargetDir)) { New-Item -ItemType Directory -Path $imgTargetDir -Force | Out-Null }
-    Copy-Item "$imgBrainDir\shiba_law_professor_1790657544044.jpg" (Join-Path $imgTargetDir "shiba_law_professor.jpg") -Force -ErrorAction SilentlyContinue
-    Copy-Item "$imgBrainDir\shepherd_law_inspector_1790658889114.jpg" (Join-Path $imgTargetDir "shepherd_law_inspector.jpg") -Force -ErrorAction SilentlyContinue
-    Copy-Item "$imgBrainDir\golden_case_attorney_1790659096990.jpg" (Join-Path $imgTargetDir "golden_case_attorney.jpg") -Force -ErrorAction SilentlyContinue
-    Write-Host "[圖片同步] ✔ 已自動將 3 大法學犬系角色圖片複製至 images/ 目錄" -ForegroundColor Cyan
+    $userMsg = "更新筆記與架構整理 - $now"
 }
 
 # 加入檔案與 Commit
@@ -78,7 +72,7 @@ if ($LASTEXITCODE -eq 0) {
 } else {
     Write-Host ""
     Write-Host "===================================================" -ForegroundColor Yellow
-    Write-Host "  [提示] 推送遇到衝突或拒絕 (常見原因: 線上倉庫已有初始 README 等檔案)" -ForegroundColor Yellow
+    Write-Host "  [提示] 推送遇到衝突或拒絕" -ForegroundColor Yellow
     Write-Host "===================================================" -ForegroundColor Yellow
     Write-Host ""
     $force = Read-Host "是否要以本地專案【強制覆蓋】線上倉庫？(輸入 Y 覆蓋，其他鍵取消)"

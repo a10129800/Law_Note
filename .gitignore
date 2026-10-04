@@ -1,1 +1,39 @@
-/新文字文件.txt
+# Windows 系統暫存與縮圖檔案
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS 系統檔案
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 編輯器與 IDE 設定檔
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+*.bak
+*.old
+
+# 臨時日誌、除錯與快取檔案
+*.log
+*.tmp
+*.temp
+scratch/
+.cache/
+
+# 本地臨時清理腳本與草稿
+clean_unused_files.bat
+clean.ps1
+新文字文件.txt

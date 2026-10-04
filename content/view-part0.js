@@ -15,25 +15,33 @@ window.APP_VIEWS['viewPart0'] = window.APP_VIEWS['part0'] = `
           </div>
 
           <!-- 本篇導讀卡片 (教材第 0-1 頁原文) -->
-          <div class="p-6 sm:p-8 rounded-3xl border-2 border-blue-500/30 bg-white dark:bg-[#101623] shadow-sm space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-100 dark:border-white/[0.06] pb-3">
+          <div class="p-6 sm:p-8 rounded-3xl border-2 border-blue-500/30 bg-white dark:bg-[#101623] shadow-sm space-y-5">
+            
+            <!-- 原書風格頂部：第零篇圓圈徽章與導讀旗幟 -->
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-white/[0.06] pb-3 flex-wrap gap-2">
               <div class="flex items-center gap-2">
-                <span class="text-xl">📖</span>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">本篇導讀 (Conducted Read)</h3>
+                <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-xs font-serif font-black text-slate-800 dark:text-slate-200 shadow-2xs">
+                  <span>第</span><span>零</span><span>篇</span>
+                </span>
+                <div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold text-xs">
+                  <span>📖 本篇導讀</span>
+                  <span class="font-script text-[11px] opacity-80">(Conducted read)</span>
+                </div>
               </div>
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-500 dark:text-blue-400 font-bold">第 0-1 頁</span>
             </div>
 
-            <blockquote class="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed italic border-l-4 border-blue-500 pl-4 py-1">
-              「本篇是正式踏入刑法學習前的暖身，介紹影響刑法運作的四大支柱，以及刑法操作的前理解（諸如刑法的適用效力、解釋方法）。至於刑法的法律效果，這個通常被教科書或參考書放在最尾巴說明的刑罰理論，筆者挪移到本篇提前整理，旨在提醒大家「謹思慎刑」的核心理念，也與刑法最後手段性原則接軌。」
+            <!-- 原書逐字忠實呈現 -->
+            <blockquote class="text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed font-serif italic border-l-4 border-blue-500 pl-4 py-1.5 bg-blue-50/30 dark:bg-blue-950/20 rounded-r-xl">
+              「本篇是正式踏入刑法學習前的暖身，介紹影響刑法運作的四大支柱，以及刑法操作的前理解（諸如刑法的適用效力、解釋方法）。至於刑法的法律效果，這個通常被教科書或參考書放在最尾巴說明的刑罰理論，筆者挪移到本篇提前整理，旨在提醒大家「慎思慎刑」的核心理念，也與刑法最後手段性原則接軌。」
             </blockquote>
 
             <!-- 第零篇 章節全景導覽網格 -->
-            <div class="pt-2 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="pt-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div onclick="switchView('part0-chapter-1')" class="p-3.5 rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/40 dark:bg-indigo-950/20 hover:border-indigo-500/60 transition-all cursor-pointer space-y-1.5 group">
                 <div class="flex items-center justify-between">
                   <span class="text-[10px] font-mono font-bold text-indigo-600 dark:text-indigo-400">CHAPTER 1</span>
-                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold">已完結</span>
+                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold">四大支柱</span>
                 </div>
                 <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                   第一章 刑法的運作原理
@@ -44,7 +52,7 @@ window.APP_VIEWS['viewPart0'] = window.APP_VIEWS['part0'] = `
               <div onclick="switchView('part0-chapter-2')" class="p-3.5 rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/40 dark:bg-blue-950/20 hover:border-blue-500/60 transition-all cursor-pointer space-y-1.5 group">
                 <div class="flex items-center justify-between">
                   <span class="text-[10px] font-mono font-bold text-blue-600 dark:text-blue-400">CHAPTER 2</span>
-                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold">已完結</span>
+                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold">操作前理解</span>
                 </div>
                 <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   第二章 刑法的操作原理
@@ -55,7 +63,7 @@ window.APP_VIEWS['viewPart0'] = window.APP_VIEWS['part0'] = `
               <div onclick="switchView('part0-chapter-3')" class="p-3.5 rounded-2xl border border-purple-200 dark:border-purple-900/60 bg-purple-50/40 dark:bg-purple-950/20 hover:border-purple-500/60 transition-all cursor-pointer space-y-1.5 group">
                 <div class="flex items-center justify-between">
                   <span class="text-[10px] font-mono font-bold text-purple-600 dark:text-purple-400">CHAPTER 3</span>
-                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold">旗艦圖解</span>
+                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold">慎思慎刑</span>
                 </div>
                 <div class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                   第三章 刑法的法律效果

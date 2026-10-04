@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>柴柴心智圖 DEMO • 法益二元關係量相關說</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            mindOrange: '#e67e00',
+            mindBlue: '#001a70',
+            mindGreen: '#007a33',
+            mindSubBlue: '#1a365d',
+            mindSubGreen: '#0f5132',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans TC', 'system-ui', 'sans-serif'],
+            serif: ['Noto Serif TC', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;900&display=swap');
+
+    body {
+      font-family: 'Noto Sans TC', 'Inter', system-ui, sans-serif;
+    }
+
+    /* 100% 自適應畫布 - 零滾動一眼看清 */
+    .mindmap-canvas {
+      width: 100%;
+      min-width: 0;
+      background-color: transparent;
+    }
+
+    /* 平滑貝塞爾連接線 */
+    .mindmap-svg-path {
+      fill: none;
+      stroke: #94a3b8;
+      stroke-width: 1.8px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.2s, stroke-width 0.2s;
+    }
+    .mindmap-svg-path:hover {
+      stroke: #ea580c;
+      stroke-width: 2.6px;
+    }
+    .dark .mindmap-svg-path {
+      stroke: #475569;
+    }
+    .dark .mindmap-svg-path:hover {
+      stroke: #fbbf24;
+    }
+
+    /* 圓形 Q 按鈕 */
+    .btn-q {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 9999px;
+      background: #e2e8f0;
+      border: 1.2px solid #94a3b8;
+      color: #334155;
+      font-size: 11px;
+      font-weight: 800;
+      font-family: system-ui, sans-serif;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      user-select: none;
+      flex-shrink: 0;
+    }
+    .btn-q:hover {
+      background: #ea580c;
+      border-color: #ea580c;
+      color: #ffffff;
+      transform: scale(1.15);
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.35);
+    }
+    .dark .btn-q {
+      background: #334155;
+      border-color: #64748b;
+      color: #cbd5e1;
+    }
+    .dark .btn-q:hover {
+      background: #fbbf24;
+      border-color: #fbbf24;
+      color: #0f172a;
+    }
+
+    .node-root-mindmap {
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 dark:bg-[#070b14] dark:text-slate-100 min-h-screen py-8 px-4 sm:px-6 transition-colors duration-200">
+
+  <div class="max-w-4xl mx-auto space-y-6">
+    
+    <!-- 頂部說明列 -->
+    <header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 flex-wrap gap-3">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-200 text-xs font-bold font-mono mb-1.5">
+          <span>🧠 柴柴法學心智圖專區 • 獨立評估 DEMO</span>
+        </div>
+        <h1 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+          <span>法益二元關係：</span>
+          <span class="text-amber-600 dark:text-amber-400">量相關說心智圖</span>
+        </h1>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          100% 固定自適應大小，無需滑動即可一眼掌握個人法益與超個人法益之關係！
+        </p>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" class="p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:border-amber-400 transition-colors shadow-xs" title="切換深淺色模式">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Tab 切換器 (提供切換檢視) -->
+    <div class="flex items-center gap-2 p-1.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs">
+      <button onclick="switchTab('tab2')" id="btnTab2" class="flex-1 py-2 px-3 rounded-xl text-xs font-black transition-all bg-amber-500 text-slate-950 shadow-xs flex items-center justify-center gap-1.5">
+        <span>⭐ 本次新增：二元論量相關說心智圖</span>
+      </button>
+      <button onclick="switchTab('tab1')" id="btnTab1" class="flex-1 py-2 px-3 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all flex items-center justify-center gap-1.5">
+        <span>📖 前次回顧：何謂法益心智圖</span>
+      </button>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- 心智圖 2：法益二元論之量相關說 (本次用戶指定重點) -->
+    <!-- ============================================== -->
+    <section id="panelTab2" class="p-4 sm:p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-amber-300 dark:border-amber-700/80 shadow-md space-y-4">
+      
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3 flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <span class="w-8 h-8 rounded-xl bg-amber-100 dark:bg-amber-950/70 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-base shadow-xs">
+            ⚖️
+          </span>
+          <div>
+            <h2 class="font-black text-base sm:text-lg text-slate-900 dark:text-white flex items-center gap-1.5">
+              <span>法益二元關係：量相關說思維樹</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-mono font-bold">通說定見</span>
+            </h2>
+            <p class="text-xs text-slate-400 font-medium">
+              點擊右側灰色 <span class="font-bold text-slate-600 dark:text-slate-300">(Q)</span> 圓形徽章，查看柴柴大黑傘妙喻！
+            </p>
+          </div>
+        </div>
+        <span class="text-xs text-emerald-600 dark:text-emerald-400 font-mono font-bold">#數量差異非本質對立</span>
+      </div>
+
+      <!-- 心智圖畫布 (100% 自適應免滑動) -->
+      <div class="rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800/80 p-2 sm:p-3 relative overflow-hidden">
+        <div id="mindmapWrapper2" class="mindmap-canvas p-1 sm:p-2 relative select-none">
+          
+          <svg id="mindmapSvg2" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
+
+          <!-- 節點佈局層 -->
+          <div class="relative z-10 flex items-center gap-2.5 sm:gap-4 md:gap-5 justify-between">
+            
+            <!-- 1. 左側主根節點 (ROOT NODE) -->
+            <div id="mm2_Root" class="node-root-mindmap shrink-0 w-24 sm:w-28 md:w-32 py-3 px-1 sm:px-1.5 rounded-xl bg-gradient-to-b from-[#f38c00] to-[#d66f00] text-white font-black text-center border-2 border-[#b85b00] space-y-0.5 transition-transform hover:scale-105">
+              <div class="text-[9px] font-mono tracking-wider text-amber-100 uppercase opacity-90">Part 0 • 第一節</div>
+              <div class="text-xs sm:text-sm font-black leading-tight tracking-tight">
+                法益二元論<br>量相關說
+              </div>
+              <div class="pt-1 border-t border-amber-400/40 text-[9px] font-medium text-amber-100 flex items-center justify-center gap-0.5">
+                <span>🐾</span> 柴柴名師
+              </div>
+            </div>
+
+            <!-- 2. 右側多層分支群 -->
+            <div class="space-y-3.5 sm:space-y-4 flex-1 min-w-0">
+
+              <!-- 第一大支：個人法益 (基石) -->
+              <div class="flex items-center gap-1.5 sm:gap-2.5">
+                <div id="mm2_B1" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#001a70] text-white font-black text-[11px] sm:text-xs tracking-wide border border-[#001247] shadow-xs text-center leading-tight">
+                  個人法益<br>(核心基石)
+                </div>
+                <div class="space-y-1.5 flex-1 min-w-0">
+                  <div class="flex items-center gap-1.5">
+                    <div id="mm2_B1_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[10px]">
+                      主體
+                    </div>
+                    <div id="mm2_B1_1_box" class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs truncate">
+                      以個別自然人個體為歸屬主體
+                    </div>
+                    <button class="btn-q" onclick="showTip('個人法益歸屬主體', '以單獨的活生生自然人為中心，所有權利最終都落實在個人的生命、肉體與生存開展！')">Q</button>
+                  </div>
+
+                  <div class="flex items-center gap-1.5">
+                    <div id="mm2_B1_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[10px]">
+                      地位
+                    </div>
+                    <div id="mm2_B1_2_box" class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs truncate">
+                      刑法保護最直接、最核心的基石
+                    </div>
+                    <button class="btn-q" onclick="showTip('最核心基石', '國家刑法的首要任務就是保護個人安全，沒有個人的存在，國家與社會就失去意義！')">Q</button>
+                  </div>
+
+                  <div class="flex items-center gap-1.5">
+                    <div id="mm2_B1_3" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[10px]">
+                      範疇
+                    </div>
+                    <div id="mm2_B1_3_box" class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs truncate">
+                      生命・身體健康・自由・名譽・財產
+                    </div>
+                    <button class="btn-q" onclick="showTip('個人法益範疇', '分為人格專屬法益（生命自由等）與非專屬財產法益，是刑法分則最龐大的保護群！')">Q</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 第二大支：超個人法益 (防護大傘) -->
+              <div class="flex items-center gap-1.5 sm:gap-2.5">
+                <div id="mm2_B2" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#001a70] text-white font-black text-[11px] sm:text-xs tracking-wide border border-[#001247] shadow-xs text-center leading-tight">
+                  超個人法益<br>(防護大傘)
+                </div>
+                <div class="space-y-1.5 flex-1 min-w-0">
+                  <div class="flex items-center gap-1.5">
+                    <div id="mm2_B2_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[10px]">
+                      主體
+                    </div>
+                    <div id="mm2_B2_1_box" class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs truncate">
+                      超出個別自然人，著眼於群體與制度
+                    </div>
+                    <button class="btn-q" onclick="showTip('超個人法益主體', '歸屬於社會全體秩序或國家制度正常運作，非單一特定人的專屬利益！')">Q</button>
+                  </div>
+
+                  <div class="flex items-center gap-1.5">
+                    <div id="mm2_B2_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[10px]">
+                      範疇
+                    </div>
+                    <div id="mm2_B2_2_box" class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs truncate">
+                      公共安全・公共信用・公務公正・國家存立
+                    </div>
+                    <button class="btn-q" onclick="showTip('超個人法益範疇', '如防止縱火炸彈、偽造貨幣、貪污賄賂、外患叛亂等維繫社會生存的大秩序！')">Q</button>
+                  </div>
+
+                  <div class="flex items-center gap-1.5">
+                    <div id="mm2_B2_3" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[10px]">
+                      妙喻
+                    </div>
+                    <div id="mm2_B2_3_box" class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs truncate">
+                      超個人法益如同為所有人撐起的「大黑傘」
+                    </div>
+                    <button class="btn-q" onclick="showTip('大黑傘妙喻', '保護黑傘不是為了黑傘自己好看，而是防止大傘被燒破大洞淋濕傘下所有人！')">Q</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 第三大支：通說量相關說 (核心樞紐) -->
+              <div class="flex items-center gap-1.5 sm:gap-2.5">
+                <div id="mm2_B3" class="shrink-0 px-2 py-2 rounded-xl bg-[#007a33] text-white font-black text-[11px] sm:text-xs tracking-wide border border-[#005724] shadow-xs text-center leading-tight">
+                  通說立場<br>量相關說
+                </div>
+                <div class="space-y-1.5 flex-1 min-w-0">
+                  <div class="flex items-center gap-1.5">
+                    <div id="mm2_B3_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#007a33] text-white font-bold text-[10px]">
+                      核心判準
+                    </div>
+                    <div id="mm2_B3_1_box" class="px-2 py-0.5 rounded-lg bg-emerald-50/80 dark:bg-emerald-950/40 border border-[#007a33] dark:border-emerald-500 text-emerald-950 dark:text-emerald-200 text-[10px] sm:text-xs font-mono font-black shadow-xs truncate">
+                      數量上的差異，絕非本質上的對立！
+                    </div>
+                    <button class="btn-q" onclick="showTip('量相關說核心', '通說強調兩者保護方向完全一致！超個人法益就是個人法益在數量上的集合！')">Q</button>
+                  </div>
+
+                  <div class="flex items-center gap-1.5">
+                    <div id="mm2_B3_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#007a33] text-white font-bold text-[10px]">
+                      經典實證
+                    </div>
+                    <div id="mm2_B3_2_box" class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-800 border border-[#007a33] dark:border-emerald-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs truncate">
+                      保護「公共安全」 ＝ 保護不特定多數人之「個人生命」
+                    </div>
+                    <button class="btn-q" onclick="showTip('同向保護實證', '刑法處罰放火燒大樓，正是因為會一次燒死無數個個人！兩者同向並進，毫不矛盾！')">Q</button>
+                  </div>
+
+                  <div class="flex items-center gap-1.5">
+                    <div id="mm2_B3_3" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#e67e00] text-white font-bold text-[10px]">
+                      終極歸宿
+                    </div>
+                    <div id="mm2_B3_3_box" class="px-2 py-0.5 rounded-lg bg-amber-50/80 dark:bg-amber-950/40 border border-[#e67e00] dark:border-amber-500 text-amber-950 dark:text-amber-200 text-[10.5px] sm:text-xs font-black shadow-xs truncate">
+                      保護社會秩序，最終就是為了庇護每一個人！
+                    </div>
+                    <button class="btn-q" onclick="showTip('柴柴終極結論', '若有一條罪不能保護任何個人的利益，純為統治者威權，那就不是合法刑法法益汪！')">Q</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 柴柴白話解讀條 -->
+      <div class="p-3 rounded-2xl bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 flex items-start gap-3">
+        <span class="text-xl shrink-0">💡</span>
+        <div class="space-y-0.5 text-xs text-slate-700 dark:text-slate-300 font-serif">
+          <span class="font-black text-amber-950 dark:text-amber-200">柴柴教授速記口訣：</span>
+          <p>
+            「個人法益是傘下柴柴，超個人法益是大黑傘！通說量相關說告訴我們：<strong>保護黑傘就是保護傘下每隻柴柴，兩者只有數量差、沒有質對立！</strong>」
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 心智圖 1：何謂法益進化樹 (前次回顧) -->
+    <!-- ============================================== -->
+    <section id="panelTab1" class="hidden p-4 sm:p-6 rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 shadow-md space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+        <h2 class="font-black text-base sm:text-lg text-slate-900 dark:text-white flex items-center gap-1.5">
+          <span>何謂法益？生活利益 ➔ 法益進化樹 (回顧)</span>
+        </h2>
+        <span class="text-xs text-slate-400">已完整套用在正式章節中</span>
+      </div>
+
+      <div class="rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800/80 p-2 sm:p-3 relative overflow-hidden">
+        <div id="mindmapWrapper1" class="mindmap-canvas p-1 sm:p-2 relative select-none">
+          <svg id="mindmapSvg1" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
+          <div class="relative z-10 flex items-center gap-2.5 sm:gap-4 md:gap-5 justify-between">
+            <div id="mm1_Root" class="node-root-mindmap shrink-0 w-24 sm:w-28 md:w-32 py-3 px-1 sm:px-1.5 rounded-xl bg-gradient-to-b from-[#f38c00] to-[#d66f00] text-white font-black text-center border-2 border-[#b85b00] space-y-0.5">
+              <div class="text-[9px] font-mono tracking-wider text-amber-100 uppercase opacity-90">Part 0 • 第一節</div>
+              <div class="text-xs sm:text-sm font-black leading-tight tracking-tight">法益保護原則<br>何謂法益？</div>
+              <div class="pt-1 border-t border-amber-400/40 text-[9px] font-medium text-amber-100">🐾 柴柴名師</div>
+            </div>
+            <div class="space-y-3 flex-1 min-w-0">
+              <div class="flex items-center gap-2">
+                <div id="mm1_B1" class="shrink-0 px-2 py-1 rounded-lg bg-[#001a70] text-white font-bold text-xs">生活利益 (起點)</div>
+                <div id="mm1_B1_box" class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] text-xs font-bold truncate">先於法律存在・生命財產肉乾</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div id="mm1_B2" class="shrink-0 px-2 py-1 rounded-lg bg-[#007a33] text-white font-bold text-xs">刑法介入 (正名)</div>
+                <div id="mm1_B2_box" class="px-2 py-0.5 rounded-lg bg-emerald-50 dark:bg-emerald-950 border border-[#007a33] text-xs font-mono font-bold truncate">生活利益 ＋ 刑法保護 ＝ 法益</div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div id="mm1_B3" class="shrink-0 px-2 py-1 rounded-lg bg-[#001a70] text-white font-bold text-xs">謙抑邊界 (靈魂)</div>
+                <div id="mm1_B3_box" class="px-2 py-0.5 rounded-lg bg-amber-50 dark:bg-amber-950 border border-amber-500 text-xs font-bold truncate">條文是外殼，法益是活的靈魂！</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 底部彈窗提示 -->
+    <div id="tipModal" class="hidden p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/90 border-2 border-amber-400 dark:border-amber-700 shadow-md flex items-start gap-3.5 transition-all">
+      <div class="w-10 h-10 rounded-xl overflow-hidden border-2 border-amber-400 shrink-0">
+        <img src="../../images/shiba_law_professor.jpg" alt="柴柴教授" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.36);">
+      </div>
+      <div class="flex-1 space-y-1 text-xs sm:text-sm">
+        <div id="tipTitle" class="font-black text-amber-950 dark:text-amber-200"></div>
+        <p id="tipDesc" class="text-slate-700 dark:text-slate-300 font-serif leading-relaxed"></p>
+      </div>
+      <button onclick="closeTip()" class="text-slate-400 hover:text-slate-600 font-bold text-base px-1">✕</button>
+    </div>
+
+    <!-- 提示操作說明卡片 -->
+    <footer class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-center space-y-1.5">
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium">
+        💡 <strong>評估指引</strong>：這是專門為<strong>「量相關說（個人法益 vs 超個人法益）」</strong>量身打造的 100% 自適應樹狀心智圖！
+      </p>
+      <p class="text-xs text-slate-400">
+        完全不需要滑動即可看清全部！已整併進正式章節頁面。
+      </p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Tab 切換
+    function switchTab(tabId) {
+      const panelTab1 = document.getElementById('panelTab1');
+      const panelTab2 = document.getElementById('panelTab2');
+      const btnTab1 = document.getElementById('btnTab1');
+      const btnTab2 = document.getElementById('btnTab2');
+
+      if (tabId === 'tab2') {
+        panelTab2.classList.remove('hidden');
+        panelTab1.classList.add('hidden');
+        btnTab2.className = "flex-1 py-2 px-3 rounded-xl text-xs font-black transition-all bg-amber-500 text-slate-950 shadow-xs flex items-center justify-center gap-1.5";
+        btnTab1.className = "flex-1 py-2 px-3 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all flex items-center justify-center gap-1.5";
+        setTimeout(drawMindMap2, 60);
+      } else {
+        panelTab1.classList.remove('hidden');
+        panelTab2.classList.add('hidden');
+        btnTab1.className = "flex-1 py-2 px-3 rounded-xl text-xs font-black transition-all bg-amber-500 text-slate-950 shadow-xs flex items-center justify-center gap-1.5";
+        btnTab2.className = "flex-1 py-2 px-3 rounded-xl text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all flex items-center justify-center gap-1.5";
+        setTimeout(drawMindMap1, 60);
+      }
+    }
+
+    // 繪製心智圖 2 (量相關說)
+    function drawMindMap2() {
+      const svg = document.getElementById('mindmapSvg2');
+      const wrapper = document.getElementById('mindmapWrapper2');
+      if (!svg || !wrapper) return;
+
+      const wrapperRect = wrapper.getBoundingClientRect();
+      svg.innerHTML = '';
+
+      const connections = [
+        ['mm2_Root', 'mm2_B1'],
+        ['mm2_Root', 'mm2_B2'],
+        ['mm2_Root', 'mm2_B3'],
+
+        ['mm2_B1', 'mm2_B1_1'],
+        ['mm2_B1', 'mm2_B1_2'],
+        ['mm2_B1', 'mm2_B1_3'],
+        ['mm2_B1_1', 'mm2_B1_1_box'],
+        ['mm2_B1_2', 'mm2_B1_2_box'],
+        ['mm2_B1_3', 'mm2_B1_3_box'],
+
+        ['mm2_B2', 'mm2_B2_1'],
+        ['mm2_B2', 'mm2_B2_2'],
+        ['mm2_B2', 'mm2_B2_3'],
+        ['mm2_B2_1', 'mm2_B2_1_box'],
+        ['mm2_B2_2', 'mm2_B2_2_box'],
+        ['mm2_B2_3', 'mm2_B2_3_box'],
+
+        ['mm2_B3', 'mm2_B3_1'],
+        ['mm2_B3', 'mm2_B3_2'],
+        ['mm2_B3', 'mm2_B3_3'],
+        ['mm2_B3_1', 'mm2_B3_1_box'],
+        ['mm2_B3_2', 'mm2_B3_2_box'],
+        ['mm2_B3_3', 'mm2_B3_3_box'],
+      ];
+
+      connections.forEach(([fromId, toId]) => {
+        const fromEl = document.getElementById(fromId);
+        const toEl = document.getElementById(toId);
+        if (!fromEl || !toEl) return;
+
+        const fromRect = fromEl.getBoundingClientRect();
+        const toRect = toEl.getBoundingClientRect();
+
+        const x1 = fromRect.right - wrapperRect.left;
+        const y1 = fromRect.top + fromRect.height / 2 - wrapperRect.top;
+
+        const x2 = toRect.left - wrapperRect.left;
+        const y2 = toRect.top + toRect.height / 2 - wrapperRect.top;
+
+        const deltaX = Math.max(10, (x2 - x1) * 0.5);
+        const cx1 = x1 + deltaX;
+        const cy1 = y1;
+        const cx2 = x2 - deltaX;
+        const cy2 = y2;
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', `M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}`);
+        path.setAttribute('class', 'mindmap-svg-path');
+        if (fromId === 'mm2_Root') {
+          path.style.strokeWidth = '2.2px';
+        }
+        svg.appendChild(path);
+      });
+    }
+
+    // 繪製心智圖 1
+    function drawMindMap1() {
+      const svg = document.getElementById('mindmapSvg1');
+      const wrapper = document.getElementById('mindmapWrapper1');
+      if (!svg || !wrapper) return;
+      const wrapperRect = wrapper.getBoundingClientRect();
+      svg.innerHTML = '';
+
+      const connections = [
+        ['mm1_Root', 'mm1_B1'],
+        ['mm1_Root', 'mm1_B2'],
+        ['mm1_Root', 'mm1_B3'],
+        ['mm1_B1', 'mm1_B1_box'],
+        ['mm1_B2', 'mm1_B2_box'],
+        ['mm1_B3', 'mm1_B3_box'],
+      ];
+
+      connections.forEach(([fromId, toId]) => {
+        const fromEl = document.getElementById(fromId);
+        const toEl = document.getElementById(toId);
+        if (!fromEl || !toEl) return;
+
+        const fromRect = fromEl.getBoundingClientRect();
+        const toRect = toEl.getBoundingClientRect();
+
+        const x1 = fromRect.right - wrapperRect.left;
+        const y1 = fromRect.top + fromRect.height / 2 - wrapperRect.top;
+
+        const x2 = toRect.left - wrapperRect.left;
+        const y2 = toRect.top + toRect.height / 2 - wrapperRect.top;
+
+        const deltaX = Math.max(12, (x2 - x1) * 0.5);
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', `M ${x1} ${y1} C ${x1 + deltaX} ${y1}, ${x2 - deltaX} ${y2}, ${x2} ${y2}`);
+        path.setAttribute('class', 'mindmap-svg-path');
+        svg.appendChild(path);
+      });
+    }
+
+    // Q 提示卡片彈窗
+    const tipModal = document.getElementById('tipModal');
+    const tipTitle = document.getElementById('tipTitle');
+    const tipDesc = document.getElementById('tipDesc');
+
+    function showTip(title, desc) {
+      tipTitle.innerHTML = '🐾 柴柴法學教授重點錦囊：' + title;
+      tipDesc.textContent = desc;
+      tipModal.classList.remove('hidden');
+      tipModal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function closeTip() {
+      tipModal.classList.add('hidden');
+    }
+
+    // 深淺色切換
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+      themeIcon.textContent = '☀️';
+    } else {
+      html.classList.remove('dark');
+      themeIcon.textContent = '🌙';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const isDark = html.classList.contains('dark');
+      themeIcon.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      setTimeout(() => {
+        drawMindMap2();
+        drawMindMap1();
+      }, 50);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(drawMindMap2, 100);
+    });
+    window.addEventListener('resize', () => {
+      drawMindMap2();
+      drawMindMap1();
+    });
+  </script>
+</body>
+</html>

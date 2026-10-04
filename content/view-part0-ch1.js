@@ -69,10 +69,10 @@ window.APP_VIEWS['viewPart0Chapter1'] = window.APP_VIEWS['viewPart0Ch1'] = windo
                 <div id="originalQuoteContainer" class="hidden">
                   <blockquote class="p-4 rounded-2xl border-l-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/30 text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed italic space-y-2">
                     <p>
-                      「刑法的目的除了對過往犯罪加以制裁外（應報思想），更展望未來希望減少犯罪發生（預防思想）。其實無論根據何種思想，刑法的最終目的都是保護「人類極為重要生活利益」，簡稱法益保護。刑法基於法益保護的目的，允許使用較為嚴厲的手段，這種手段就是刑罰。刑罰的嚴厲性可以從法律效果窺見一二，生命的剝奪或自由的喪失，無疑是各種法律之最，然刑罰施加必須與目的追求成正比，若不慎得動用刑罰便應節制，縱使不得不發，也應遵循下列準則：基於應報，刑罰不允許超出行為人的責任範圍，亦即小罪不能大罰；基於預防，刑罰的依據必須明確，不能有任何含糊使人民無所安其手足。」
+                      「刑法的目的除了對過往犯罪加以制裁外（應報思想），更展望未來希冀減少犯罪發生（預防思想）。其實無論根據何種思想，刑法的最終目的都是保護「人類極為重要生活利益」，簡稱法益保護。刑法基於法益保護的目的，允許使用較為嚴厲的手段，這種手段就是刑罰。刑罰的嚴厲性可以從法律效果窺見一二，生命的剝奪或自由的喪失，無疑是各種法律之最。然刑罰施加必須與目的追求成正比，若不值得動用刑罰便應節制，縱使不得不發，也應遵循下列準則：基於應報，刑罰不允許超出行為人的責任範圍，亦即小罪不能大罰；基於預防，刑罰的依據必須明確，不能有任何含糊使人民無所安其手足。」
                     </p>
                     <p>
-                      「刑法的目的在保護重要的人類生活利益，即法益保護原則；而刑罰作為手段，必須與所追求的目的成比例，逼不得已才動用刑罰，這是最後手段性原則（—謙抑性思想）。即使動用刑罰，由使人民安措其手足導出罪刑法定原則，再由小罪不能大罰帶出罪責原則。這四大原則呈現出刑法的四大支柱，一切的刑法問題看似棘手了，也必須終歸於這四大支柱。以下分別介紹法益保護原則（第一節）、罪刑法定原則（第二節）以及罪責原則（第三節），至於最後手段性原則與罪刑法定、罪責原則乃互為光影，故一併納入第二、三節中。」
+                      「刑法的目的在保護重要的人類生活利益，即法益保護原則；而刑罰作為手段，必須與所追求的目的成比例，逼不得已才動用刑罰，這是最後手段性原則（＝謙抑性思想）。即使動用刑罰，由使人民安措其手足導出罪刑法定原則，再由小罪不能大罰帶出罪責原則。這四大原則呈現出刑法的四大支柱，一切的刑法問題皆脫離不了、也必須終歸於這四大支柱。以下分別介紹法益保護原則（第一節）、罪刑法定原則（第二節）以及罪責原則（第三節），至於最後手段性原則與罪刑法定、罪責原則乃互為光影，故一併納入第二、三節中。」
                     </p>
                   </blockquote>
                 </div>
@@ -88,7 +88,7 @@ window.APP_VIEWS['viewPart0Chapter1'] = window.APP_VIEWS['viewPart0Ch1'] = windo
                     </div>
                     <h4 class="text-base sm:text-lg font-black text-slate-900 dark:text-white leading-relaxed tracking-wide">
                       「刑法的目的除了對過往犯罪加以制裁外（<span class="text-blue-700 dark:text-blue-300 font-black">應報思想</span>），<br class="hidden sm:inline" />
-                      更展望未來希望減少犯罪發生（<span class="text-indigo-700 dark:text-indigo-300 font-black">預防思想</span>）。」
+                      更展望未來希冀減少犯罪發生（<span class="text-indigo-700 dark:text-indigo-300 font-black">預防思想</span>）。」
                     </h4>
                   </div>
 
@@ -131,12 +131,12 @@ window.APP_VIEWS['viewPart0Chapter1'] = window.APP_VIEWS['viewPart0Ch1'] = windo
                       <div class="flex-1 w-full space-y-2.5">
                         <!-- 第一層：嚴厲性 -->
                         <div class="p-3.5 sm:p-4 rounded-2xl bg-emerald-50/90 dark:bg-emerald-950/40 border-2 border-l-[6px] border-emerald-300 border-l-emerald-500 dark:border-emerald-800 dark:border-l-emerald-500 text-xs sm:text-sm text-slate-800 dark:text-emerald-100 font-medium leading-relaxed shadow-sm transition-all hover:shadow-md hover:border-emerald-400">
-                          刑罰的嚴厲性可以從法律效果窺見一二，<span class="font-extrabold text-emerald-950 dark:text-emerald-100 bg-emerald-200/80 dark:bg-emerald-900/60 px-2 py-0.5 rounded-md border border-emerald-300/80 dark:border-emerald-700">生命的剝奪或自由的喪失</span>，無疑是各種法律之最，
+                          刑罰的嚴厲性可以從法律效果窺見一二，<span class="font-extrabold text-emerald-950 dark:text-emerald-100 bg-emerald-200/80 dark:bg-emerald-900/60 px-2 py-0.5 rounded-md border border-emerald-300/80 dark:border-emerald-700">生命的剝奪或自由的喪失</span>，無疑是各種法律之最。
                         </div>
 
                         <!-- 第二層：比例與節制 -->
                         <div class="p-3.5 sm:p-4 rounded-2xl bg-emerald-50/90 dark:bg-emerald-950/40 border-2 border-l-[6px] border-emerald-300 border-l-emerald-500 dark:border-emerald-800 dark:border-l-emerald-500 text-xs sm:text-sm text-slate-800 dark:text-emerald-100 font-medium leading-relaxed shadow-sm transition-all hover:shadow-md hover:border-emerald-400">
-                          然刑罰施加必須<span class="font-extrabold text-emerald-950 dark:text-emerald-100 bg-emerald-200/80 dark:bg-emerald-900/60 px-2 py-0.5 rounded-md border border-emerald-300/80 dark:border-emerald-700">與目的追求成正比</span>，若不慎得動用刑罰便應節制，縱使不得不發，也應遵循下列準則：
+                          然刑罰施加必須<span class="font-extrabold text-emerald-950 dark:text-emerald-100 bg-emerald-200/80 dark:bg-emerald-900/60 px-2 py-0.5 rounded-md border border-emerald-300/80 dark:border-emerald-700">與目的追求成正比</span>，若不值得動用刑罰便應節制，縱使不得不發，也應遵循下列準則：
                         </div>
 
                         <!-- 第三層：應報與預防兩大分支 -->

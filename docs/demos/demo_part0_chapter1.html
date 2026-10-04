@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第零篇 第一章 刑法的運作原理【整理精讀筆記版】 - 柴犬教授白話講堂</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif {
+      font-family: 'Noto Serif TC', serif, Georgia, Cambria;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .font-script {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    /* 細精緻滾動條 */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.35);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(100, 116, 139, 0.6);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-100 transition-colors duration-200 min-h-screen">
+
+  <!-- ==================== 頂部導航列 ==================== -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/85 dark:bg-[#0f172a]/85 border-b border-slate-200/80 dark:border-white/10 px-4 sm:px-8 py-3 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+        ⚖️
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-blue-600 dark:text-blue-400 font-bold uppercase tracking-wider">圖說刑法總則</span>
+          <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold">精讀整理版</span>
+        </div>
+        <h1 class="text-sm sm:text-base font-black text-slate-900 dark:text-white">
+          第零篇 第一章 刑法的運作原理（教材第 2-1 頁整理）
+        </h1>
+      </div>
+    </div>
+
+    <!-- 右側工具 -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- 複製整理筆記 -->
+      <button onclick="copyOrganizedNotes()" class="hidden sm:flex px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold items-center gap-1.5 transition-all shadow-xs">
+        <span>📋</span>
+        <span>複製精華筆記</span>
+      </button>
+
+      <!-- 深淺色切換 -->
+      <button onclick="toggleDarkMode()" class="px-3 py-1.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs">
+        <span id="themeIcon">🌙</span>
+        <span class="hidden sm:inline">深色模式</span>
+      </button>
+
+      <!-- 返回主系統 -->
+      <a href="../../index.html#viewPart0" class="px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-1">
+        <span>返回主系統</span><span>→</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== 主內容閱讀容器 ==================== -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+    <!-- 頂部章節徽章與導讀 Banner -->
+    <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-blue-600 via-indigo-600 to-indigo-800 text-white shadow-lg space-y-3 relative overflow-hidden border border-blue-400/40">
+      <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+      
+      <div class="flex items-center gap-2 text-xs font-mono text-sky-200 font-bold uppercase tracking-wider">
+        <span>PART 0 • CHAPTER 1</span>
+        <span>•</span>
+        <span class="px-2 py-0.5 rounded-full bg-white/20 text-white text-[11px]">教材第 2-1 頁</span>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white leading-tight">
+        第一章 刑法的運作原理
+      </h2>
+
+      <p class="text-sm sm:text-base text-blue-100 leading-relaxed font-medium pt-1 max-w-3xl">
+        從「應報思想」與「預防思想」出發，探討刑罰手段的極致嚴厲性與謙抑節制，進而演繹出支撐整部刑法體系的<strong>「四大支柱」</strong>。
+      </p>
+    </div>
+
+    <!-- 1. 核心體系演繹心智導圖 (Mindmap Derivation Card) -->
+    <section class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#121827] border border-slate-200/90 dark:border-white/10 shadow-sm space-y-6">
+      
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 flex-wrap gap-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-base shadow-xs">
+            🗺️
+          </span>
+          <div>
+            <h3 class="font-black text-lg text-slate-900 dark:text-white">
+              體系演繹：刑法目的起點 ➔ 刑罰手段 ➔ 四大支柱推導
+            </h3>
+            <span class="text-xs text-slate-400 font-medium">結構化梳理教材第 2-1 頁四大核心邏輯階層</span>
+          </div>
+        </div>
+        <button onclick="toggleOriginalText()" class="text-xs text-blue-600 dark:text-blue-400 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+          <span id="origTextIcon">📖</span>
+          <span id="origTextLabel">查看原書對照文</span>
+        </button>
+      </div>
+
+      <!-- 可收合的原書對照文 -->
+      <div id="origTextCard" class="hidden p-4 sm:p-5 rounded-2xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-900/40 text-xs sm:text-[13.5px] font-serif leading-relaxed text-slate-800 dark:text-amber-100 space-y-3">
+        <div class="flex items-center gap-1.5 font-bold text-amber-900 dark:text-amber-300 border-b border-amber-200/80 dark:border-amber-900/40 pb-2">
+          <span>📜</span>
+          <span>陳奕廷律師《刑法總則【圖說系列】》第 2-1 頁原文核定版</span>
+        </div>
+        <p class="indent-6">
+          刑法的目的除了對過往犯罪加以制裁外（<strong>應報思想</strong>），更展望未來希冀減少犯罪發生（<strong>預防思想</strong>）。其實無論根據何種思想，刑法的最終目的都是保護「<strong>人類極為重要生活利益</strong>」，簡稱<strong>法益保護</strong>。刑法基於法益保護的目的，允許使用較為嚴厲的手段，這種手段就是<strong>刑罰</strong>。刑罰的嚴厲性可以從法律效果窺見一二，生命的剝奪或自由的喪失，無疑是各種法律之最。然刑罰施加必須與目的追求成正比，若不值得動用刑罰便應節制，縱使不得不發，也應遵循下列準則：<strong>基於應報</strong>，刑罰不允許超出行為人的責任範圍，亦即小罪不能大罰；<strong>基於預防</strong>，刑罰的依據必須明確，不能有任何含糊使人民無所安其手足。
+        </p>
+        <p class="indent-6">
+          刑法的目的在保護重要的人類生活利益，即法益保護原則；而刑罰作為手段，必須與所追求的目的成比例，逼不得已才動用刑罰，這是<strong>最後手段性原則（＝謙抑性思想）</strong>。即使動用刑罰，由使人民安措其手足導出<strong>罪刑法定原則</strong>，再由小罪不能大罰帶出<strong>罪責原則</strong>。這四大原則呈現出刑法的四大支柱，一切的刑法問題皆脫離不了、也必須終歸於這四大支柱。以下分別介紹法益保護原則（第一節）、罪刑法定原則（第二節）以及罪責原則（第三節），至於最後手段性原則與罪刑法定、罪責原則乃互為光影，故一併納入第二、三節中。
+        </p>
+      </div>
+
+      <!-- 四大步驟結構化推導階層 -->
+      <div class="space-y-4">
+        
+        <!-- 步驟 1：刑法兩大目的之起源 -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-50/80 to-indigo-50/50 dark:from-blue-950/30 dark:to-indigo-950/20 border-2 border-l-[6px] border-blue-200 border-l-blue-600 dark:border-blue-900 dark:border-l-blue-500 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-mono font-bold shadow-xs">
+              階層 ① • 目的起點
+            </span>
+            <span class="text-xs font-mono text-blue-700 dark:text-blue-300 font-bold">應報思想 vs 預防思想</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-blue-200/80 dark:border-slate-800 space-y-1">
+              <span class="font-bold text-xs text-rose-600 dark:text-rose-400 flex items-center gap-1">
+                <span>⚖️</span> 應報思想（Retribution）
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                著眼於<strong>回顧過往</strong>：對已發生的犯罪行為施加相稱制裁，平復受侵害的法秩序。
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border border-blue-200/80 dark:border-slate-800 space-y-1">
+              <span class="font-bold text-xs text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                <span>🛡️</span> 預防思想（Prevention）
+              </span>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                著眼於<strong>展望未來</strong>：希冀透過刑罰威嚇與矯治，有效減少未來犯罪發生。
+              </p>
+            </div>
+          </div>
+
+          <!-- 匯聚核心 -->
+          <div class="p-3 rounded-xl bg-blue-100/70 dark:bg-blue-900/40 text-xs sm:text-[13px] text-blue-950 dark:text-blue-200 font-bold flex items-center gap-2 border border-blue-200 dark:border-blue-800">
+            <span class="text-base">🎯</span>
+            <span>兩大思想的唯一終極目標：保護「人類極為重要生活利益」➔ 簡稱【法益保護】</span>
+          </div>
+        </div>
+
+        <!-- 步驟 2：刑罰手段的極致嚴厲性 -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-50/80 to-orange-50/50 dark:from-amber-950/30 dark:to-orange-950/20 border-2 border-l-[6px] border-amber-200 border-l-amber-500 dark:border-amber-900 dark:border-l-amber-500 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500 text-white text-xs font-mono font-bold shadow-xs">
+              階層 ② • 手段性質
+            </span>
+            <span class="text-xs font-mono text-amber-700 dark:text-amber-300 font-bold">各種法律制裁之最</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
+            為達法益保護，刑法允許動用最嚴厲手段——<strong>「刑罰」</strong>。其法律效果伴隨<strong>「生命的剝奪（死刑）」</strong>或<strong>「自由的喪失（徒刑、拘役）」</strong>，屬各法律之最。
+          </p>
+        </div>
+
+        <!-- 步驟 3：比例原則與動用節制 -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-50/80 to-teal-50/50 dark:from-emerald-950/30 dark:to-teal-950/20 border-2 border-l-[6px] border-emerald-200 border-l-emerald-600 dark:border-emerald-900 dark:border-l-emerald-500 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-mono font-bold shadow-xs">
+              階層 ③ • 動用節制
+            </span>
+            <span class="text-xs font-mono text-emerald-700 dark:text-emerald-300 font-bold">比例原則與謙抑思想</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
+            刑罰施加<strong>必須與目的追求成正比</strong>，若不值得動用便應節制，逼不得已才動用，此即<strong>「最後手段性原則（＝謙抑性思想）」</strong>。
+          </p>
+        </div>
+
+        <!-- 步驟 4：四大支柱終極推導 -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-purple-50/80 to-indigo-50/50 dark:from-purple-950/30 dark:to-indigo-950/20 border-2 border-l-[6px] border-purple-200 border-l-purple-600 dark:border-purple-900 dark:border-l-purple-500 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-600 text-white text-xs font-mono font-bold shadow-xs">
+              階層 ④ • 終極演繹
+            </span>
+            <span class="text-xs font-mono text-purple-700 dark:text-purple-300 font-bold">兩大準則推導四大支柱</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-slate-800 space-y-1">
+              <span class="font-bold text-xs text-sky-600 dark:text-sky-400 flex items-center gap-1">
+                <span>👉</span> 基於預防思想 ➔ 使人民安措其手足
+              </span>
+              <p class="text-xs font-black text-slate-900 dark:text-white">
+                導出【罪刑法定原則】（明確性・不可含糊）
+              </p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-slate-800 space-y-1">
+              <span class="font-bold text-xs text-rose-600 dark:text-rose-400 flex items-center gap-1">
+                <span>👉</span> 基於應報思想 ➔ 責任範圍內處罰
+              </span>
+              <p class="text-xs font-black text-slate-900 dark:text-white">
+                導出【罪責原則】（小罪不能大罰・重罪重罰）
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 2. 刑法四大支柱超級對照矩陣 (Four Pillars Matrix) -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🏛️</span>
+          <h3 class="font-black text-lg sm:text-xl text-slate-900 dark:text-white">
+            刑法的四大支柱超級對照矩陣（The Four Pillars）
+          </h3>
+        </div>
+        <span class="text-xs font-mono text-slate-400 hidden sm:inline">一切刑法問題皆脫離不了、終歸於此</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- 支柱 1 -->
+        <div class="p-5 rounded-3xl bg-blue-50/70 dark:bg-blue-950/30 border-2 border-blue-200 dark:border-blue-900/60 shadow-xs space-y-3 hover:border-blue-500 transition-all flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-md bg-blue-600 text-white font-mono font-black text-[10px]">支柱 ①</span>
+              <span class="text-xs font-bold text-blue-600 dark:text-blue-400">第一節</span>
+            </div>
+            <div class="font-black text-slate-900 dark:text-white text-base">
+              法益保護原則
+            </div>
+            <div class="text-[11px] font-bold text-blue-700 dark:text-blue-300">
+              【刑法的存在目的】
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              刑法的目的在於保護重要人類生活利益。無實質法益受侵害或具體危險，即無動用刑法制裁的正當性。
+            </p>
+          </div>
+          <div class="pt-3 border-t border-blue-200/80 dark:border-blue-900/60 text-[11px] font-mono text-blue-600 dark:text-blue-400">
+            • 核心：生命、自由、財產
+          </div>
+        </div>
+
+        <!-- 支柱 2 -->
+        <div class="p-5 rounded-3xl bg-amber-50/70 dark:bg-amber-950/30 border-2 border-amber-200 dark:border-amber-900/60 shadow-xs space-y-3 hover:border-amber-500 transition-all flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-md bg-amber-500 text-white font-mono font-black text-[10px]">支柱 ②</span>
+              <span class="text-xs font-bold text-amber-600 dark:text-amber-400">互為光影</span>
+            </div>
+            <div class="font-black text-slate-900 dark:text-white text-base">
+              最後手段性原則
+            </div>
+            <div class="text-[11px] font-bold text-amber-700 dark:text-amber-300">
+              【謙抑性思想・比例原則】
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              刑罰手段極度嚴厲，必須與目的成比例。民事賠償或行政管制足以處理時，不得輕易動用刑罰。逼不得已才出鞘！
+            </p>
+          </div>
+          <div class="pt-3 border-t border-amber-200/80 dark:border-amber-900/60 text-[11px] font-mono text-amber-600 dark:text-amber-400">
+            • 納入第二、三節深入探討
+          </div>
+        </div>
+
+        <!-- 支柱 3 -->
+        <div class="p-5 rounded-3xl bg-indigo-50/70 dark:bg-indigo-950/30 border-2 border-indigo-200 dark:border-indigo-900/60 shadow-xs space-y-3 hover:border-indigo-500 transition-all flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-md bg-indigo-600 text-white font-mono font-black text-[10px]">支柱 ③</span>
+              <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400">第二節</span>
+            </div>
+            <div class="font-black text-slate-900 dark:text-white text-base">
+              罪刑法定原則
+            </div>
+            <div class="text-[11px] font-bold text-indigo-700 dark:text-indigo-300">
+              【使人民安措其手足】
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              基於預防思想導出：處罰依據必須事先成文且明確，杜絕任何事後法與模糊規範，確保人民行止有所依循。
+            </p>
+          </div>
+          <div class="pt-3 border-t border-indigo-200/80 dark:border-indigo-900/60 text-[11px] font-mono text-indigo-600 dark:text-indigo-400">
+            • 明確性原則、禁止溯及既往
+          </div>
+        </div>
+
+        <!-- 支柱 4 -->
+        <div class="p-5 rounded-3xl bg-rose-50/70 dark:bg-rose-950/30 border-2 border-rose-200 dark:border-rose-900/60 shadow-xs space-y-3 hover:border-rose-500 transition-all flex flex-col justify-between">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-md bg-rose-600 text-white font-mono font-black text-[10px]">支柱 ④</span>
+              <span class="text-xs font-bold text-rose-600 dark:text-rose-400">第三節</span>
+            </div>
+            <div class="font-black text-slate-900 dark:text-white text-base">
+              罪責原則
+            </div>
+            <div class="text-[11px] font-bold text-rose-700 dark:text-rose-300">
+              【小罪不能大罰】
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              基於應報思想導出：刑罰不允許超出行為人責任範圍。無責任即無刑罰，重罪重罰、輕罪輕罰，罪刑相當。
+            </p>
+          </div>
+          <div class="pt-3 border-t border-rose-200/80 dark:border-rose-900/60 text-[11px] font-mono text-rose-600 dark:text-rose-400">
+            • 責任主義、罪刑相當性
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. 柴柴法學教授・白話名師客廳 (Prof. Shiba's Plain Language Salon) -->
+    <section class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-amber-50/90 via-orange-50/50 to-yellow-50/40 dark:from-[#1c1917] dark:to-[#171310] border-2 border-amber-300 dark:border-amber-900/50 shadow-sm space-y-5">
+      
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-2xl overflow-hidden border-2 border-amber-400 shadow-md shrink-0">
+          <img src="../../images/shiba_law_professor.jpg" alt="柴犬法學教授" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35); transform-origin: center 20%;" />
+        </div>
+        <div>
+          <div class="font-black text-base text-amber-950 dark:text-amber-200 flex items-center gap-1.5">
+            <span>🐾 柴柴法學教授 • 白話名師客廳</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-200 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 font-bold">名師指點</span>
+          </div>
+          <p class="text-xs text-amber-800 dark:text-amber-400 font-serif">
+            Prof. Shiba's Plain Language Salon ｜ 解密課本「互為光影」背後的法學精髓
+          </p>
+        </div>
+      </div>
+
+      <!-- 柴柴三大白話解析 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+        
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-amber-200/80 dark:border-slate-800 space-y-2">
+          <div class="font-bold text-amber-900 dark:text-amber-300 flex items-center gap-1.5">
+            <span>💡</span>
+            <span>Q1：為什麼說最後手段性是「大砲不能打小鳥」？</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-xs">
+            刑罰會剝奪人民的「生命」和「自由」，是法律武器庫裡威力最強的原子彈。如果鄰居欠你十塊錢、或是走路撞到肩膀，用民事賠償或道歉就能解決，就<strong>絕對不能動用刑法把人抓去關</strong>。逼不得已才出手，這就是<strong>「謙抑性（最後手段性）」</strong>！
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-amber-200/80 dark:border-slate-800 space-y-2">
+          <div class="font-bold text-amber-900 dark:text-amber-300 flex items-center gap-1.5">
+            <span>💡</span>
+            <span>Q2：課本說的「互為光影」到底是什麼意思？</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-xs">
+            「光」與「影」相伴而生！最後手段性要求國家節制刑罰，而國家要節制，就必須靠<strong>【罪刑法定】</strong>（只有法條明確寫要罰的才能罰，不能任意擴張）與<strong>【罪責原則】</strong>（罰的程度不能超過責任，小罪不能大罰）來落實。有了這兩大原則，最後手段性才不會淪為空洞口號！
+          </p>
+        </div>
+
+      </div>
+
+      <!-- 柴柴金句 -->
+      <div class="p-3.5 rounded-xl bg-amber-200/70 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800/80 text-amber-950 dark:text-amber-200 text-xs font-bold flex items-center gap-2">
+        <span>📢</span>
+        <span>柴柴教授口訣：目的在保護法益 ➔ 手段要最後謙抑 ➔ 預防要罪刑法定 ➔ 應報要罪責相稱！</span>
+      </div>
+
+    </section>
+
+    <!-- 4. 本章分節導引與快速傳送門 (Chapter Roadmap) -->
+    <section class="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#121827] border border-slate-200/90 dark:border-white/10 shadow-sm space-y-5">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🚀</span>
+          <h3 class="font-black text-lg text-slate-900 dark:text-white">
+            第一章 子小節分節研讀地圖
+          </h3>
+        </div>
+        <span class="text-xs font-mono text-slate-400">教材第 2-1 頁 導引指針</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+        
+        <!-- 第一節 -->
+        <a href="../../index.html" class="p-4 rounded-2xl border-2 border-blue-200 dark:border-blue-900/60 bg-blue-50/50 dark:bg-blue-950/20 hover:border-blue-500 hover:shadow-md transition-all group block">
+          <div class="flex items-center justify-between text-xs font-mono text-blue-600 dark:text-blue-400 font-bold mb-1">
+            <span>SECTION 1</span>
+            <span>第 2-1 頁起</span>
+          </div>
+          <div class="font-black text-slate-900 dark:text-white text-sm group-hover:text-blue-600 transition-colors">
+            第一節 法益保護原則
+          </div>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            探討法益概念、本質、機能以及保護的界限與範疇。
+          </p>
+        </a>
+
+        <!-- 第二節 -->
+        <a href="../../index.html" class="p-4 rounded-2xl border-2 border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/50 dark:bg-indigo-950/20 hover:border-indigo-500 hover:shadow-md transition-all group block">
+          <div class="flex items-center justify-between text-xs font-mono text-indigo-600 dark:text-indigo-400 font-bold mb-1">
+            <span>SECTION 2</span>
+            <span>第 2-15 頁起</span>
+          </div>
+          <div class="font-black text-slate-900 dark:text-white text-sm group-hover:text-indigo-600 transition-colors">
+            第二節 罪刑法定原則
+          </div>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            深入探討明確性、溯及既往禁止、習慣法禁止與最後手段性。
+          </p>
+        </a>
+
+        <!-- 第三節 -->
+        <a href="../../index.html" class="p-4 rounded-2xl border-2 border-purple-200 dark:border-purple-900/60 bg-purple-50/50 dark:bg-purple-950/20 hover:border-purple-500 hover:shadow-md transition-all group block">
+          <div class="flex items-center justify-between text-xs font-mono text-purple-600 dark:text-purple-400 font-bold mb-1">
+            <span>SECTION 3</span>
+            <span>第 2-30 頁起</span>
+          </div>
+          <div class="font-black text-slate-900 dark:text-white text-sm group-hover:text-purple-600 transition-colors">
+            第三節 罪責原則
+          </div>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+            無責任即無刑罰、小罪不能大罰，以及罪刑相當原則之實踐。
+          </p>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== 底部版權列 ==================== -->
+  <footer class="w-full border-t border-slate-200/80 dark:border-white/10 py-6 text-center text-xs text-slate-400 dark:text-slate-500 bg-white/40 dark:bg-slate-900/40">
+    <div class="max-w-4xl mx-auto px-4 space-y-1">
+      <div>《刑法總則【圖說系列】》研讀筆記系統 • 陳奕廷律師著</div>
+      <div class="text-[11px] font-mono text-slate-400">STRUCTURED KNOWLEDGE BASE • COMPILED FOR LEGAL MASTERY</div>
+    </div>
+  </footer>
+
+  <!-- Toast 通知提示 -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="px-4 py-2 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold shadow-xl flex items-center gap-2">
+      <span>✓</span>
+      <span id="toastMsg">已複製筆記精華！</span>
+    </div>
+  </div>
+
+  <script>
+    // 1. 深淺色模式切換
+    function toggleDarkMode() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      try {
+        localStorage.setItem('doc-theme', isDark ? 'dark' : 'light');
+      } catch (e) {}
+      updateThemeIcon(isDark);
+    }
+
+    function updateThemeIcon(isDark) {
+      const icon = document.getElementById('themeIcon');
+      if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+    }
+
+    (function initTheme() {
+      try {
+        const saved = localStorage.getItem('doc-theme');
+        const isDark = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (isDark) document.documentElement.classList.add('dark');
+        updateThemeIcon(isDark);
+      } catch (e) {}
+    })();
+
+    // 2. 切換查看原書原文卡片
+    function toggleOriginalText() {
+      const card = document.getElementById('origTextCard');
+      const label = document.getElementById('origTextLabel');
+      const icon = document.getElementById('origTextIcon');
+      if (card.classList.contains('hidden')) {
+        card.classList.remove('hidden');
+        label.textContent = '收合原書對照文';
+        icon.textContent = '▲';
+      } else {
+        card.classList.add('hidden');
+        label.textContent = '查看原書對照文';
+        icon.textContent = '📖';
+      }
+    }
+
+    // 3. 複製精華筆記
+    function copyOrganizedNotes() {
+      const notes = `# 第零篇 第一章 刑法的運作原理（教材第 2-1 頁精華整理）
+
+## 一、刑法的目的與起點
+1. 應報思想（回顧過往）：對過往犯罪施加相稱制裁。
+2. 預防思想（展望未來）：藉由法律威嚇與教化減少犯罪發生。
+★ 唯一終極目標：保護「人類極為重要生活利益」➔ 簡稱【法益保護】。
+
+## 二、刑罰手段之本質
+- 刑罰是法律中最嚴厲之利刃（生命剝奪、自由喪失）。
+- 比例原則與動用節制：施加必須與目的成正比，逼不得已才動用 ➔ 【最後手段性原則（謙抑性思想）】。
+
+## 三、刑法的四大支柱（The Four Pillars）
+① 法益保護原則（第一節）：刑法的存在目的。
+② 最後手段性原則（互為光影）：手段的節制與謙抑性。
+③ 罪刑法定原則（第二節）：基於預防思想，使人民安措其手足。
+④ 罪責原則（第三節）：基於應報思想，小罪不能大罰、重罪重罰。
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》`;
+
+      navigator.clipboard.writeText(notes).then(() => {
+        showToast("已成功複製四大支柱精華筆記！");
+      }).catch(() => {
+        showToast("複製失敗，請手動複製");
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2200);
+    }
+  </script>
+
+</body>
+</html>

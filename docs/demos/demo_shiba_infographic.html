@@ -164,9 +164,9 @@
         <span class="text-xs text-emerald-600 dark:text-emerald-400 font-mono font-bold">#數量差異非本質對立</span>
       </div>
 
-      <!-- 心智圖畫布 (100% 自適應免滑動) -->
-      <div class="rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800/80 p-2 sm:p-3 relative overflow-hidden">
-        <div id="mindmapWrapper2" class="mindmap-canvas p-1 sm:p-2 relative select-none">
+      <!-- 心智圖畫布 (支援手機橫向滑動與桌面自適應) -->
+      <div class="rounded-2xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800/80 p-2 sm:p-3 relative overflow-x-auto custom-scrollbar">
+        <div id="mindmapWrapper2" class="mindmap-canvas p-1 sm:p-2 relative select-none min-w-[560px] sm:min-w-full">
           
           <svg id="mindmapSvg2" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
 

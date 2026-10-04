@@ -84,9 +84,20 @@
 
 ---
 
-## 7. 思維心智導圖「就地展開・零跳動」規範 (In-Place Tip Modal)
+## 7. 思維心智導圖「就地展開・零跳動」與手機響應式規範 (Mindmap Standards)
 
-- 點擊心智導圖各節點右側灰色 `(Q)` 按鈕時，考點錦囊必須直接於**畫布下方原位就地展開**，嚴禁引發頁面滾動跳轉或畫面抖動。
+- **就地展開・零跳動 (In-Place Tip Modal)**：
+  - 點擊心智導圖各節點右側灰色 `(Q)` 按鈕時，考點錦囊必須直接於**畫布下方原位就地展開**，嚴禁引發頁面滾動跳轉或畫面抖動。
+- **手機端完整呈現與橫向平滑滾動 (Mobile Responsive Standard)**：
+  - 外層畫布容器**嚴禁設定硬性 `overflow-hidden`**，必須設定為：
+    ```html
+    <div class="rounded-xl ... overflow-x-auto custom-scrollbar">
+    ```
+  - 內層心智圖節點容器（`mindmapWrapper`）必須設定最小寬度保底：
+    ```html
+    <div class="mindmap-canvas ... min-w-[560px] sm:min-w-full">
+    ```
+  - 確保在 iPhone、Android 等較窄螢幕下，文字與按鈕不會被擠壓變形或被螢幕右側截斷，讀者可透過左右流暢滑動瀏覽完整清晰的心智圖樹狀體系。
 
 ---
 

@@ -699,7 +699,7 @@ window.SEARCH_DATABASE = [
     categoryLabel: '案例',
     keywords: ['案例1-7', '小三條款', '包養', '公務員', '法不溯及既往', '信賴保護', '溯及生效違憲', '第零篇', '2-6頁'],
     view: 'part0-ch1-sec2',
-    anchor: 'sec-p0ch1-sec2-sub4-retroactive',
+    anchor: 'sec-p0ch1-sec2-sub4-retro',
     page: 'P. 2-6~2-7',
     desc: '立法增訂公務員婚外情條例並附帶溯及前半年生效處罰甲。公然牴觸憲法罪刑法定與溯及既往禁止原則，該溯及條款違法無效。'
   },

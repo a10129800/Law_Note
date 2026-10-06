@@ -5,6 +5,7 @@
 ---
 
 ### 封存清單：
+- **`visual.html`**：早期全章節筆記內文巨石母本（現已全面由 `index.html` 旗艦主站整合替代）。
 - **`CRIMINAL_LAW_NOTES.md`**：早期全書筆記原始手稿。
 - **`CRIMINAL_LAW_VISUAL_GUIDE.md`**：舊版視覺設計指南（現已全面升級整併入 `AGENTS.md`）。
 - **`柴柴學者版.md`**：早期犬系名師構想手稿（現已全面整併入 `AGENTS.md` 與 `多欄位Note Skill`）。

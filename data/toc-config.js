@@ -90,7 +90,7 @@ window.TOC_CONFIG = {
       { id: 'sec-p0ch1-sec2-sub1-custom', label: '二、面向一：習慣法之禁止（案例 1-4）' },
       { id: 'sec-p0ch1-sec2-sub2-analogy', label: '三、面向二：類推適用之禁止（案例 1-5）' },
       { id: 'sec-p0ch1-sec2-sub3-clarity', label: '四、面向三：罪刑明確性原則（案例 1-6）' },
-      { id: 'sec-p0ch1-sec2-sub4-retroactive', label: '五、面向四：溯及既往之禁止（案例 1-7）' },
+      { id: 'sec-p0ch1-sec2-sub4-retro', label: '五、面向四：溯及既往之禁止（案例 1-7）' },
       { id: 'sec-p0ch1-sec2-author-memo', label: '六、作者叮嚀：公法憲法概念對照' }
     ]
   },

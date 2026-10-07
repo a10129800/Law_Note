@@ -1160,8 +1160,8 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
               <button onclick="switchView('cover')" class="px-4 py-2 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-900/50 font-bold text-xs flex items-center gap-1.5 border border-amber-300 dark:border-amber-700/60 cursor-pointer">
                 <span>🏠 返回首頁</span>
               </button>
-              <button onclick="alert('第三節 罪責原則——付出代價的極限何在？ (教材第 2-7～2-10 頁) 正在編纂中，敬請期待！')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-xs cursor-pointer">
-                <span>前往 第三節 罪責原則 →</span>
+              <button onclick="switchView('part0-ch1-sec3')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-xs cursor-pointer">
+                <span>前往 第三節 罪責原則 (2-7~2-8) →</span>
               </button>
             </div>
           </div>

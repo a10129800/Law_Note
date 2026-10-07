@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="css/app.css">
   <!-- 章節視圖內容模組 (Zero-CORS 本機秒開) -->
   <script src="content/view-part0-ch1-sec2.js"></script>
+  <script src="content/view-part0-ch1-sec3.js"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-200 min-h-screen transition-colors duration-200">
 
@@ -203,6 +204,15 @@
                       <span class="truncate">第二節 罪刑法定原則</span>
                     </span>
                     <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-100/70 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 ml-auto">2-5~2-7</span>
+                  </button>
+
+                  <!-- 第三節 罪責原則 (第 2-7～2-8 頁) -->
+                  <button id="navBtnPart0Ch1Sec3" onclick="switchView('part0-ch1-sec3')" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer">
+                    <span class="flex items-center gap-1.5 truncate">
+                      <span class="text-[11px]">⚖️</span>
+                      <span class="truncate">第三節 罪責原則</span>
+                    </span>
+                    <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-100/70 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 ml-auto">2-7~2-8</span>
                   </button>
                 </div>
               </div>
@@ -4295,30 +4305,32 @@
             </div>
 
             <!-- 第二節 -->
-            <div class="p-4 rounded-2xl border-2 border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/50 dark:bg-indigo-950/20 hover:border-indigo-500 hover:shadow-md transition-all group block">
+            <div onclick="switchView('part0-ch1-sec2')" class="p-4 rounded-2xl border-2 border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/50 dark:bg-indigo-950/20 hover:border-indigo-500 hover:shadow-md transition-all group block cursor-pointer">
               <div class="flex items-center justify-between text-xs font-mono text-indigo-600 dark:text-indigo-400 font-bold mb-1">
                 <span>SECTION 2</span>
-                <span>第 2-15 頁起</span>
+                <span>第 2-5 頁起</span>
               </div>
-              <div class="font-black text-slate-900 dark:text-white text-sm group-hover:text-indigo-600 transition-colors">
-                第二節 罪刑法定原則
+              <div class="font-black text-slate-900 dark:text-white text-sm group-hover:text-indigo-600 transition-colors flex items-center justify-between">
+                <span>第二節 罪刑法定原則</span>
+                <span class="text-xs group-hover:translate-x-1 transition-transform">→</span>
               </div>
               <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
-                深入探討明確性、溯及既往禁止、習慣法禁止與最後手段性。
+                深入探討四大面向：習慣法禁止、類推適用禁止、明確性與溯及既往禁止（教材第 2-5～2-7 頁）。
               </p>
             </div>
 
             <!-- 第三節 -->
-            <div class="p-4 rounded-2xl border-2 border-purple-200 dark:border-purple-900/60 bg-purple-50/50 dark:bg-purple-950/20 hover:border-purple-500 hover:shadow-md transition-all group block">
+            <div onclick="switchView('part0-ch1-sec3')" class="p-4 rounded-2xl border-2 border-purple-200 dark:border-purple-900/60 bg-purple-50/50 dark:bg-purple-950/20 hover:border-purple-500 hover:shadow-md transition-all group block cursor-pointer">
               <div class="flex items-center justify-between text-xs font-mono text-purple-600 dark:text-purple-400 font-bold mb-1">
                 <span>SECTION 3</span>
-                <span>第 2-30 頁起</span>
+                <span>第 2-7 頁起</span>
               </div>
-              <div class="font-black text-slate-900 dark:text-white text-sm group-hover:text-purple-600 transition-colors">
-                第三節 罪責原則
+              <div class="font-black text-slate-900 dark:text-white text-sm group-hover:text-purple-600 transition-colors flex items-center justify-between">
+                <span>第三節 罪責原則</span>
+                <span class="text-xs group-hover:translate-x-1 transition-transform">→</span>
               </div>
               <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
-                無責任即無刑罰、小罪不能大罰，以及罪刑相當原則之實踐。
+                無罪責即無刑罰、罪刑相當原則、準強盜罪合憲限縮與 112 憲判 19（教材第 2-7～2-8 頁）。
               </p>
             </div>
 
@@ -6263,6 +6275,9 @@
       <!-- ==================== VIEW 7: 第零篇 第一章・第二節 罪刑法定原則 (教材第 2-5～2-7 頁) ==================== -->
       <div id="viewPart0Ch1Sec2" class="fade-enter hidden space-y-8"></div>
 
+      <!-- ==================== VIEW 8: 第零篇 第一章・第三節 罪責原則 (教材第 2-7～2-8 頁) ==================== -->
+      <div id="viewPart0Ch1Sec3" class="fade-enter hidden space-y-8"></div>
+
     </main>
 
     <!-- 右側目錄 (TOC Scrollspy 縮影) (預設在封面頁隱藏，進入內文時顯現) -->
@@ -6412,6 +6427,20 @@
           <a href="#sec-p0ch1-sec2-author-memo" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
             <span>💡</span>
             <span>六、作者叮嚀：公法概念對照 (2-7)</span>
+          </a>
+        </nav>
+        <nav id="tocNavPart0Ch1Sec3" class="space-y-1 text-xs hidden">
+          <a href="#sec-p0ch1-sec3-def" class="block py-2 px-3 rounded-lg text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>📜</span>
+            <span>一、核心定義與雙重支柱 (2-7)</span>
+          </a>
+          <a href="#sec-p0ch1-sec3-case1-8" class="block py-2 px-3 rounded-lg text-rose-700 dark:text-rose-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>⚖️</span>
+            <span>二、案例 1-8：準強盜罪程度 (2-7~2-8)</span>
+          </a>
+          <a href="#sec-p0ch1-sec3-favorable" class="block py-2 px-3 rounded-lg text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>💡</span>
+            <span>三、解題提示：有利人民類推 (2-8)</span>
           </a>
         </nav>
       </div>
@@ -6672,6 +6701,14 @@
           if (mountedEl) mountedEl.dataset.mounted = 'true';
         }
       }
+      if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch1Sec3']) {
+        const el = document.getElementById('viewPart0Ch1Sec3');
+        if (el && !el.dataset.mounted) {
+          el.outerHTML = window.APP_VIEWS['viewPart0Ch1Sec3'];
+          const mountedEl = document.getElementById('viewPart0Ch1Sec3');
+          if (mountedEl) mountedEl.dataset.mounted = 'true';
+        }
+      }
     }
     // 頁面初次加載時立即掛載外部模組
     mountExternalViews();
@@ -6687,11 +6724,13 @@
       const viewPart0Chapter1 = document.getElementById('viewPart0Chapter1');
       const viewPart0Ch1Sec1 = document.getElementById('viewPart0Ch1Sec1');
       const viewPart0Ch1Sec2 = document.getElementById('viewPart0Ch1Sec2');
+      const viewPart0Ch1Sec3 = document.getElementById('viewPart0Ch1Sec3');
       const rightToc = document.getElementById('rightTocAside');
       const tocNavChapter1 = document.getElementById('tocNavChapter1');
       const tocNavChapter2 = document.getElementById('tocNavChapter2');
       const tocNavPart0Ch1Sec1 = document.getElementById('tocNavPart0Ch1Sec1');
       const tocNavPart0Ch1Sec2 = document.getElementById('tocNavPart0Ch1Sec2');
+      const tocNavPart0Ch1Sec3 = document.getElementById('tocNavPart0Ch1Sec3');
       const mainContainer = document.getElementById('mainContainer');
       const navBtnCover = document.getElementById('navBtnCover');
       const navBtnChapter1 = document.getElementById('navBtnChapter1');
@@ -6700,6 +6739,7 @@
       const navBtnPart0Ch1 = document.getElementById('navBtnPart0Ch1');
       const navBtnPart0Ch1Sec1 = document.getElementById('navBtnPart0Ch1Sec1');
       const navBtnPart0Ch1Sec2 = document.getElementById('navBtnPart0Ch1Sec2');
+      const navBtnPart0Ch1Sec3 = document.getElementById('navBtnPart0Ch1Sec3');
 
       // 手機版按鈕
       const mNavBtnCover = document.getElementById('mNavBtnCover');
@@ -6709,6 +6749,7 @@
       const mNavBtnPart0Ch1 = document.getElementById('mNavBtnPart0Ch1');
       const mNavBtnPart0Ch1Sec1 = document.getElementById('mNavBtnPart0Ch1Sec1');
       const mNavBtnPart0Ch1Sec2 = document.getElementById('mNavBtnPart0Ch1Sec2');
+      const mNavBtnPart0Ch1Sec3 = document.getElementById('mNavBtnPart0Ch1Sec3');
 
       // 動態更新頂部標頭資訊與瀏覽器頁籤
       const viewMeta = {
@@ -6753,6 +6794,12 @@
           sub: '第二節 內文',
           title: '⚖️ 第零篇・第一章 第二節 罪刑法定原則（教材第 2-5～2-7 頁）',
           tab: '第二節 罪刑法定原則 | 刑法總則【圖說系列】'
+        },
+        'part0-ch1-sec3': {
+          tag: '第零篇',
+          sub: '第三節 內文',
+          title: '⚖️ 第零篇・第一章 第三節 罪責原則（教材第 2-7～2-8 頁）',
+          tab: '第三節 罪責原則 | 刑法總則【圖說系列】'
         }
       };
       const curMeta = viewMeta[view] || viewMeta.chapter1;
@@ -6763,6 +6810,16 @@
       if (hBadgeSub) hBadgeSub.textContent = curMeta.sub;
       if (hTitle) hTitle.textContent = curMeta.title;
       document.title = curMeta.tab;
+
+      // 預設重置第三節視圖與按鈕狀態
+      if (viewPart0Ch1Sec3) viewPart0Ch1Sec3.classList.add('hidden');
+      if (tocNavPart0Ch1Sec3) tocNavPart0Ch1Sec3.classList.add('hidden');
+      if (navBtnPart0Ch1Sec3) {
+        navBtnPart0Ch1Sec3.className = "w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer";
+      }
+      if (mNavBtnPart0Ch1Sec3) {
+        mNavBtnPart0Ch1Sec3.className = "w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all";
+      }
 
       if (view === 'cover') {
         if (viewCover) viewCover.classList.remove('hidden');
@@ -7054,6 +7111,7 @@
         if (viewPart0Chapter1) viewPart0Chapter1.classList.add('hidden');
         if (viewPart0Ch1Sec1) viewPart0Ch1Sec1.classList.add('hidden');
         if (viewPart0Ch1Sec2) viewPart0Ch1Sec2.classList.remove('hidden');
+        if (viewPart0Ch1Sec3) viewPart0Ch1Sec3.classList.add('hidden');
         if (rightToc) {
           rightToc.classList.remove('hidden');
           rightToc.classList.add('lg:block');
@@ -7062,6 +7120,7 @@
         if (tocNavChapter2) tocNavChapter2.classList.add('hidden');
         if (tocNavPart0Ch1Sec1) tocNavPart0Ch1Sec1.classList.add('hidden');
         if (tocNavPart0Ch1Sec2) tocNavPart0Ch1Sec2.classList.remove('hidden');
+        if (tocNavPart0Ch1Sec3) tocNavPart0Ch1Sec3.classList.add('hidden');
         if (mainContainer) {
           mainContainer.className = "lg:col-span-6 xl:col-span-6 space-y-8 transition-all duration-300";
         }
@@ -7086,6 +7145,9 @@
         if (navBtnPart0Ch1Sec2) {
           navBtnPart0Ch1Sec2.className = "w-full px-2.5 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-bold text-xs flex items-center justify-between border border-blue-200/60 dark:border-blue-800/40 transition-all shadow-xs text-left cursor-pointer";
         }
+        if (navBtnPart0Ch1Sec3) {
+          navBtnPart0Ch1Sec3.className = "w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer";
+        }
         if (mNavBtnCover) mNavBtnCover.className = "w-full px-3 py-2.5 rounded-xl bg-amber-50/50 dark:bg-amber-950/30 text-amber-800 dark:text-amber-300 font-semibold flex items-center justify-between border border-amber-200/60 dark:border-amber-900/40";
         if (mNavBtnChapter1) mNavBtnChapter1.className = "w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left";
         if (mNavBtnChapter2) mNavBtnChapter2.className = "w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left";
@@ -7093,6 +7155,60 @@
         if (mNavBtnPart0Ch1) mNavBtnPart0Ch1.className = "w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left transition-all";
         if (mNavBtnPart0Ch1Sec1) mNavBtnPart0Ch1Sec1.className = "w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all";
         if (mNavBtnPart0Ch1Sec2) mNavBtnPart0Ch1Sec2.className = "w-full px-2.5 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-bold text-xs flex items-center justify-between border border-blue-200/60 dark:border-blue-800/40 text-left transition-all";
+        if (mNavBtnPart0Ch1Sec3) mNavBtnPart0Ch1Sec3.className = "w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all";
+      } else if (view === 'part0-ch1-sec3') {
+        if (viewCover) viewCover.classList.add('hidden');
+        if (viewChapter1) viewChapter1.classList.add('hidden');
+        if (viewChapter2) viewChapter2.classList.add('hidden');
+        if (viewPart0) viewPart0.classList.add('hidden');
+        if (viewPart0Chapter1) viewPart0Chapter1.classList.add('hidden');
+        if (viewPart0Ch1Sec1) viewPart0Ch1Sec1.classList.add('hidden');
+        if (viewPart0Ch1Sec2) viewPart0Ch1Sec2.classList.add('hidden');
+        if (viewPart0Ch1Sec3) viewPart0Ch1Sec3.classList.remove('hidden');
+        if (rightToc) {
+          rightToc.classList.remove('hidden');
+          rightToc.classList.add('lg:block');
+        }
+        if (tocNavChapter1) tocNavChapter1.classList.add('hidden');
+        if (tocNavChapter2) tocNavChapter2.classList.add('hidden');
+        if (tocNavPart0Ch1Sec1) tocNavPart0Ch1Sec1.classList.add('hidden');
+        if (tocNavPart0Ch1Sec2) tocNavPart0Ch1Sec2.classList.add('hidden');
+        if (tocNavPart0Ch1Sec3) tocNavPart0Ch1Sec3.classList.remove('hidden');
+        if (mainContainer) {
+          mainContainer.className = "lg:col-span-6 xl:col-span-6 space-y-8 transition-all duration-300";
+        }
+        if (navBtnCover) {
+          navBtnCover.className = "w-full px-3 py-2 rounded-xl bg-amber-50/50 dark:bg-amber-950/30 hover:bg-amber-100/80 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-300 font-semibold flex items-center justify-between transition-colors border border-amber-200/60 dark:border-amber-900/40 group cursor-pointer";
+        }
+        if (navBtnChapter1) {
+          navBtnChapter1.className = "w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer";
+        }
+        if (navBtnChapter2) {
+          navBtnChapter2.className = "w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/60 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer";
+        }
+        if (navBtnPart0) {
+          navBtnPart0.className = "w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer";
+        }
+        if (navBtnPart0Ch1) {
+          navBtnPart0Ch1.className = "w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer";
+        }
+        if (navBtnPart0Ch1Sec1) {
+          navBtnPart0Ch1Sec1.className = "w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer";
+        }
+        if (navBtnPart0Ch1Sec2) {
+          navBtnPart0Ch1Sec2.className = "w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer";
+        }
+        if (navBtnPart0Ch1Sec3) {
+          navBtnPart0Ch1Sec3.className = "w-full px-2.5 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-bold text-xs flex items-center justify-between border border-blue-200/60 dark:border-blue-800/40 transition-all shadow-xs text-left cursor-pointer";
+        }
+        if (mNavBtnCover) mNavBtnCover.className = "w-full px-3 py-2.5 rounded-xl bg-amber-50/50 dark:bg-amber-950/30 text-amber-800 dark:text-amber-300 font-semibold flex items-center justify-between border border-amber-200/60 dark:border-amber-900/40";
+        if (mNavBtnChapter1) mNavBtnChapter1.className = "w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left";
+        if (mNavBtnChapter2) mNavBtnChapter2.className = "w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left";
+        if (mNavBtnPart0) mNavBtnPart0.className = "w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left";
+        if (mNavBtnPart0Ch1) mNavBtnPart0Ch1.className = "w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left transition-all";
+        if (mNavBtnPart0Ch1Sec1) mNavBtnPart0Ch1Sec1.className = "w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all";
+        if (mNavBtnPart0Ch1Sec2) mNavBtnPart0Ch1Sec2.className = "w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all";
+        if (mNavBtnPart0Ch1Sec3) mNavBtnPart0Ch1Sec3.className = "w-full px-2.5 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-bold text-xs flex items-center justify-between border border-blue-200/60 dark:border-blue-800/40 text-left transition-all";
       }
       if (view === 'part0-ch1-sec1') {
         setTimeout(redrawAllMindMaps, 100);
@@ -7117,6 +7233,14 @@
         } else if (hash === '#part0-ch1-sec2' || hash === '#viewPart0Ch1Sec2' || hash.startsWith('#sec-p0ch1-sec2-')) {
           switchView('part0-ch1-sec2');
           if (hash.startsWith('#sec-p0ch1-sec2-')) {
+            setTimeout(() => {
+              const el = document.querySelector(hash);
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 150);
+          }
+        } else if (hash === '#part0-ch1-sec3' || hash === '#viewPart0Ch1Sec3' || hash.startsWith('#sec-p0ch1-sec3-')) {
+          switchView('part0-ch1-sec3');
+          if (hash.startsWith('#sec-p0ch1-sec3-')) {
             setTimeout(() => {
               const el = document.querySelector(hash);
               if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -7570,6 +7694,10 @@
                 <button id="mNavBtnPart0Ch1Sec2" onclick="switchView('part0-ch1-sec2'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
                   <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">⚖️</span><span class="truncate">第二節 罪刑法定原則</span></span>
                   <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-100/70 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 ml-auto">2-5~2-7</span>
+                </button>
+                <button id="mNavBtnPart0Ch1Sec3" onclick="switchView('part0-ch1-sec3'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
+                  <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">⚖️</span><span class="truncate">第三節 罪責原則</span></span>
+                  <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-100/70 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 ml-auto">2-7~2-8</span>
                 </button>
               </div>
             </div>

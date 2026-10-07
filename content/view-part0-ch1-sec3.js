@@ -1,791 +1,477 @@
 /**
  * view-part0-ch1-sec3.js
  * 第零篇 第一章 第三節 罪責原則——付出代價的極限何在？ (教材第 2-7 ~ 2-8 頁)
- * 圖二標準規範 (SECTION_DESIGN_GUIDE_IMAGE2.md) 旗艦視覺重構版
+ * 完全遵循 AGENTS.md「五位一體法學劇院」最高行為憲法規範：
+ * 1. ⚔️ 原被告/檢控辯護法庭正面言詞辯論（金毛大律師 vs 赤狐女律師）
+ * 2. 🐾 柴柴法學教授 • 白話生活大解碼（分段留白、純紅底線、生活比喻）
+ * 3. ⚖️ 金毛大律師 • 法庭攻防點評（實戰抗辯戰術）
+ * 4. 🛡️ 德牧法規巡查官 • 法規雷達查核（實體法檢索與裁判要旨）
+ * 5. 👨‍⚖️ 邊牧首席審判長 • 終審裁決一槌定音（#法槌一敲誰與爭鋒、實體法定讞、國考定錨、📅 2026 最新法條動態備註：112憲判19號）
+ * 排版：嚴格垂直單欄堆疊（space-y-3，嚴禁橫向並排），零刺眼全紅字。
  */
 window.APP_VIEWS = window.APP_VIEWS || {};
 window.APP_VIEWS['viewPart0Ch1Sec3'] = window.APP_VIEWS['part0Ch1Sec3'] = `
-        <!-- VIEW 8: 第零篇 第一章・第三節 罪責原則——付出代價的極限何在？ (教材第 2-7 ~ 2-8 頁) -->
+        <!-- VIEW: 第零篇 第一章・第三節 罪責原則——付出代價的極限何在？ (教材第 2-7 ~ 2-8 頁) -->
         <div id="viewPart0Ch1Sec3" class="fade-enter hidden space-y-8">
           
-          <!-- Breadcrumb & Back -->
-          <div class="flex items-center justify-between gap-4 border-b border-slate-100 dark:border-white/[0.06] pb-3">
-            <nav class="flex items-center gap-2 text-xs font-medium text-slate-400 flex-wrap">
-              <button onclick="switchView('part-0')" class="hover:text-purple-500 transition-colors">第零篇</button>
+          <!-- 麵包屑導航 -->
+          <div class="flex items-center justify-between gap-4 border-b border-slate-200/80 dark:border-white/10 pb-3">
+            <nav class="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400 flex-wrap">
+              <button onclick="switchView('part0')" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">第零篇</button>
               <span>/</span>
-              <button onclick="switchView('part0-chapter-1')" class="hover:text-purple-500 transition-colors">第一章 刑法的運作原理</button>
+              <button onclick="switchView('part0-ch1')" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">第一章 刑法的運作原理</button>
               <span>/</span>
-              <span class="text-purple-600 dark:text-purple-400 font-bold">第三節 罪責原則</span>
+              <span class="text-blue-600 dark:text-blue-400 font-bold">第三節 罪責原則</span>
             </nav>
-            <button onclick="switchView('part0-chapter-1')" class="text-xs text-slate-400 hover:text-purple-500 flex items-center gap-1 transition-colors shrink-0">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-              </svg>
-              <span>返回第一章總覽</span>
+            <button onclick="switchView('part0-ch1')" class="text-xs text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1 transition-colors shrink-0 font-bold">
+              <span>← 返回第一章總覽</span>
             </button>
           </div>
 
-          <!-- Section Header -->
+          <!-- 章節大標題 -->
           <div class="space-y-2">
-            <div class="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-mono text-xs font-bold">
+            <div class="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-mono text-xs font-bold">
               <span>第零篇・第一章・第三節</span>
-              <span class="px-2 py-0.5 rounded-md bg-purple-50 dark:bg-purple-950/40 text-[11px] border border-purple-200 dark:border-purple-900/50">教材第 2-7 ～ 2-8 頁 原文體系</span>
+              <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/40 text-[11px] border border-blue-200 dark:border-blue-900/50">教材第 2-7 ～ 2-8 頁 原文體系</span>
             </div>
             <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               第三節 罪責原則——付出代價的極限何在？
             </h2>
-            <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-medium leading-relaxed">
-              刑罰以個人責任為前提。深入解析無罪責即無刑罰原則、罪刑相當原則、準強盜罪難以抗拒合憲限縮（釋字第 630 號），以及節制刑罰本質下有利人民之容許例外
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-serif">
+              「刑事處罰必須以行為人具有罪責為限，並與其罪責相當。」剖析無罪責即無刑罰、罪刑相當原則、準強盜罪合憲性限縮（釋字第 630 號）以及 112 憲判 19 最新重大憲政轉折。
             </p>
           </div>
 
-          <!-- 一、罪責原則核心定義與憲法基石 -->
+          <!-- ═══════════════ 一、罪責原則核心定義與雙重支柱 ═══════════════ -->
           <section id="sec-p0ch1-sec3-def" class="space-y-6 pt-2">
             <div class="flex items-center gap-3">
-              <span class="w-2 h-6 rounded-full bg-purple-600"></span>
+              <span class="w-2 h-6 rounded-full bg-blue-600"></span>
               <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                一、罪責原則之核心法定定義與憲法基石（教材第 2-7 頁）
+                一、罪責原則核心定義與雙重支柱（教材第 2-7 頁 原文精讀）
               </h3>
             </div>
 
             <div class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] shadow-sm space-y-6">
               
-              <!-- 旗艦卡片 1：罪責原則核心憲法位階 -->
-              <div class="p-6 rounded-2xl bg-gradient-to-br from-purple-100 via-fuchsia-50 to-indigo-100 dark:from-[#2e1065] dark:via-[#1e1b4b] dark:to-[#0f172a] border-2 border-purple-400 dark:border-purple-500/80 border-l-[8px] border-l-purple-600 dark:border-l-purple-400 shadow-lg shadow-purple-500/15 space-y-5">
-                
-                <!-- 標頭列 -->
-                <div class="flex items-center justify-between flex-wrap gap-2">
-                  <div class="flex items-center gap-2.5">
-                    <span class="text-2xl drop-shadow-sm">⚖️</span>
-                    <div>
-                      <span class="font-black text-sm sm:text-base text-purple-950 dark:text-purple-100 tracking-wide">
-                        罪責原則（Schuldprinzip）
-                      </span>
-                      <span class="block text-[11px] font-mono font-bold text-purple-700 dark:text-purple-300 tracking-wider">
-                        NULLA POENA SINE CULPA · PROPORTIONALITAS
-                      </span>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span data-statute="630" class="text-xs font-mono font-black px-3 py-1 rounded-lg bg-purple-600 hover:bg-purple-700 text-white shadow-sm border border-purple-400 cursor-pointer transition-all hover:scale-105 active:scale-95 flex items-center gap-1" title="點擊檢視釋字第630號全文">
-                      <span>⚖️</span> 釋字第 630 號
-                    </span>
-                    <span class="text-xs font-mono font-black px-3 py-1 rounded-lg bg-indigo-600 text-white shadow-sm border border-indigo-400">
-                      教材第 2-7 頁
-                    </span>
-                  </div>
+              <!-- 課本原文展示盒 (1:1 復刻) -->
+              <div class="rounded-2xl p-5 bg-slate-50/80 dark:bg-slate-900/80 border-2 border-slate-200 dark:border-slate-800 space-y-3">
+                <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                  <span class="font-bold text-xs text-slate-500 dark:text-slate-400 font-mono">📖 課本原文 1:1 忠實重現 (P. 2-7)</span>
+                  <span class="text-[11px] px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold font-mono">釋630號解釋理由書揭櫫</span>
                 </div>
-
-                <!-- 釋字 630 號理由書核心金句：高對比純白卡片 + 亮紫導引線 -->
-                <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border-2 border-purple-400/80 dark:border-purple-700/80 border-l-4 border-l-purple-600 shadow-md space-y-2">
-                  <div class="flex items-center justify-between text-xs font-mono border-b border-purple-100 dark:border-slate-800 pb-2">
-                    <span class="font-bold text-purple-800 dark:text-purple-300 flex items-center gap-1.5">
-                      <span class="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
-                      司法院釋字第 630 號解釋理由書權威揭櫫
-                    </span>
-                    <span class="px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-900/60 text-purple-800 dark:text-purple-200 font-bold text-[11px]">
-                      ★ 憲法法治國原則・代價極限
-                    </span>
-                  </div>
-                  <p class="text-base sm:text-lg md:text-xl font-black text-purple-950 dark:text-purple-50 leading-relaxed font-serif tracking-wide py-1">
-                    「刑罰以個人責任為前提，無責任即無刑罰；且刑罰之嚴苛程度，應與行為人責任之程度相當。」
-                  </p>
-                </div>
-
-                <!-- 學理價值說明 -->
-                <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium bg-white/70 dark:bg-slate-900/50 p-3.5 rounded-xl border border-purple-200/60 dark:border-purple-900/40">
-                  罪責原則由<strong>應報思想</strong>導出，並與憲法法治國原則、第 8 條人身自由保障及第 23 條比例原則緊密相連。其揭示了國家刑罰權行使的<strong>絕對道德底線與代價極限</strong>——不能讓人民承擔超過其責任的過苛刑罰。
-                </p>
-
-                <!-- 🐣 【超亮眼白話文專區】罪責原則小白秒懂專區 -->
-                <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-amber-50 via-orange-50/80 to-yellow-100 dark:from-[#2a1c0c] dark:via-[#221608] dark:to-[#171005] border-2 border-amber-400 dark:border-amber-500 border-l-[8px] border-l-amber-500 shadow-md shadow-amber-500/10 space-y-4">
-                  
-                  <!-- 小白專區 Header -->
-                  <div class="flex items-center justify-between flex-wrap gap-2 border-b border-amber-200 dark:border-amber-800/80 pb-3">
-                    <div class="flex items-center gap-2">
-                      <span class="text-2xl animate-bounce">🐣</span>
-                      <div>
-                        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[11px] font-black shadow-xs">
-                          <span>💡 零基礎秒懂專區</span>
-                          <span>•</span>
-                          <span>白話文大翻譯</span>
-                        </div>
-                        <h4 class="text-base sm:text-lg font-black text-amber-950 dark:text-amber-100 pt-0.5">
-                          做錯事到底憑什麼抓我去關？30 秒白話搞懂「罪責原則」！
-                        </h4>
-                      </div>
-                    </div>
-                    <span class="text-xs font-bold text-amber-800 dark:text-amber-300 bg-amber-100 dark:bg-amber-900/60 px-2.5 py-1 rounded-lg border border-amber-300 dark:border-amber-700">
-                      🛡️ 刑罰的良心天花板
-                    </span>
-                  </div>
-
-                  <!-- 一句話白話金句 -->
-                  <div class="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-slate-900 border-2 border-amber-300 dark:border-amber-600 shadow-xs">
-                    <div class="text-[11px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-1">
-                      📢 一句話大白話翻譯
-                    </div>
-                    <p class="text-sm sm:text-base font-black text-slate-900 dark:text-white leading-relaxed">
-                      👉「<span class="text-amber-600 dark:text-amber-400 underline decoration-amber-400 underline-offset-4">該罰多少就罰多少，絕不准拿大砲打小鳥！</span>有過錯才能罰；犯小錯絕不能判重刑，這就是國家行使公權力時的煞車皮！」
-                    </p>
-                  </div>
-
-                  <!-- 趣味日常比喻：打碎碗盤比喻 -->
-                  <div class="p-4 rounded-xl bg-amber-100/60 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 space-y-2 text-xs sm:text-[13px] text-slate-800 dark:text-slate-200 leading-relaxed">
-                    <div class="font-black text-amber-900 dark:text-amber-200 flex items-center gap-1.5 text-sm">
-                      <span>🍽️</span>
-                      <span>生活超有感比喻：洗碗不小心手滑打碎碗，爸媽把你逐出家門？</span>
-                    </div>
-                    <p>
-                      想像你今天乖乖幫家裡洗碗，泡沫太滑不小心打破一隻瓷碗。如果爸媽衝過來把你痛扁一頓、沒收所有零用錢、甚至大吼要把你「逐出家門斷絕關係」，你一定會覺得爸媽瘋了：「<strong>我又不是故意砸碗！頂多賠個碗公錢，憑什麼下重手把我逐出家門？！</strong>」
-                    </p>
-                    <p class="text-amber-950 dark:text-amber-100 font-bold bg-white/80 dark:bg-slate-900/60 p-2.5 rounded-lg border border-amber-300/60">
-                      💡 <strong>這就是「罪責原則」的真諦！</strong>刑法是國家最可怕的公權力屠刀，不能因為有人打破碗，國家就拿死刑、無期徒刑去砍人。犯多大的錯，就只能負多大的責任，不能讓人民為無辜或微不足道的事付出沉重代價！
-                    </p>
-                  </div>
-
-                  <!-- 3 步驟檢驗卡 -->
-                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
-                    <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 space-y-1">
-                      <span class="font-black text-purple-800 dark:text-purple-300 block">第 1 步：有責任才罰</span>
-                      <span class="text-slate-700 dark:text-slate-200 font-medium">沒有故意、沒有過失、或根本無法期待遵法者，國家不准動用刑罰。</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border-2 border-indigo-300 dark:border-indigo-700 space-y-1">
-                      <span class="font-black text-indigo-800 dark:text-indigo-300 block">第 2 步：刑度相稱合比例</span>
-                      <span class="text-slate-700 dark:text-slate-200 font-medium">小罪不能大罰，重罪不能輕罰。刑罰嚴苛程度必須與犯罪可責性相當。</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border-2 border-emerald-300 dark:border-emerald-700 space-y-1">
-                      <span class="font-black text-emerald-800 dark:text-emerald-300 block">第 3 步：良心煞車皮</span>
-                      <span class="text-slate-700 dark:text-slate-200 font-medium">阻卻罪責（未滿14歲、精神障礙、禁止錯誤）全面出罪，保全人性尊嚴。</span>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-          </section>
-
-          <!-- 二、罪責原則之雙重核心內涵 -->
-          <section id="sec-p0ch1-sec3-dual-aspects" class="space-y-6 pt-2">
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-6 rounded-full bg-purple-600"></span>
-              <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                二、罪責原則之雙重核心內涵（教材第 2-7 頁 原文圖解）
-              </h3>
-            </div>
-
-            <div class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] shadow-sm space-y-6">
-              
-              <!-- 雙重內涵對照網格 -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                <!-- 內涵 1 -->
-                <div class="p-5 rounded-2xl bg-gradient-to-br from-purple-100/90 via-fuchsia-50 to-purple-50/60 dark:from-[#2e1065] dark:to-[#1e1b4b] border-2 border-purple-400 dark:border-purple-500/80 border-l-4 border-l-purple-600 shadow-md space-y-2.5">
-                  <div class="flex items-center justify-between">
-                    <span class="font-black text-purple-950 dark:text-purple-100 flex items-center gap-1.5 text-sm sm:text-base">
-                      <span class="w-6 h-6 rounded-lg bg-purple-600 text-white flex items-center justify-center font-mono font-black text-xs shadow-xs">①</span>
-                      <span>無罪責即無刑罰原則</span>
-                    </span>
-                    <span class="text-[10px] text-purple-700 dark:text-purple-300 font-mono font-bold px-2 py-0.5 rounded bg-white/80 dark:bg-slate-900/60 border border-purple-200">Nulla poena sine culpa</span>
-                  </div>
-                  <p class="text-slate-800 dark:text-slate-200 leading-relaxed font-medium text-xs sm:text-[12.5px]">
-                    刑罰之成立必須以個人具備非難責任為前提。若行為人欠缺期待可能性（超法定阻卻罪責）、具法定阻卻罪責事由（§ 18 未滿 14 歲、§ 19 精神障礙、§ 16 不可避免之禁止錯誤），<strong>國家絕對不得予以科處任何刑罰</strong>。
-                  </p>
-                  <div class="text-[11px] font-bold text-purple-900 dark:text-purple-200 bg-white/70 dark:bg-slate-900/60 p-2 rounded-lg border border-purple-300 dark:border-purple-800">
-                    💡 核心精神：不能苛責沒有過失或心智缺陷的人，無責任就不能用刑法硬抓！
-                  </div>
-                </div>
-
-                <!-- 內涵 2 -->
-                <div class="p-5 rounded-2xl bg-gradient-to-br from-indigo-100/90 via-blue-50 to-indigo-50/60 dark:from-[#1e1b4b] dark:to-[#0f172a] border-2 border-indigo-400 dark:border-indigo-500/80 border-l-4 border-l-indigo-600 shadow-md space-y-2.5">
-                  <div class="flex items-center justify-between">
-                    <span class="font-black text-indigo-950 dark:text-indigo-100 flex items-center gap-1.5 text-sm sm:text-base">
-                      <span class="w-6 h-6 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-mono font-black text-xs shadow-xs">②</span>
-                      <span>罪刑相當原則（比例原則）</span>
-                    </span>
-                    <span class="text-[10px] text-indigo-700 dark:text-indigo-300 font-mono font-bold px-2 py-0.5 rounded bg-white/80 dark:bg-slate-900/60 border border-indigo-200">Proportionality</span>
-                  </div>
-                  <p class="text-slate-800 dark:text-slate-200 leading-relaxed font-medium text-xs sm:text-[12.5px]">
-                    刑罰之嚴苛程度必須與行為人的不法內涵及可責性相稱。易律師考前口訣：<strong>「小罪不能大罰，重罪不能輕罰」</strong>。刑度必須合乎比例原則，嚴格禁止過苛處罰與手段目的失衡。
-                  </p>
-                  <div class="text-[11px] font-bold text-indigo-900 dark:text-indigo-200 bg-white/70 dark:bg-slate-900/60 p-2 rounded-lg border border-indigo-300 dark:border-indigo-800">
-                    💡 核心精神：判刑要像精密儀器秤重，偷一顆糖不能判十年，殺人不能罰兩千！
-                  </div>
-                </div>
-              </div>
-
-              <!-- 🐣 【超亮眼白話文專區】雙重內涵小白秒懂專區 -->
-              <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-amber-50 via-orange-50/80 to-yellow-100 dark:from-[#2a1c0c] dark:via-[#221608] dark:to-[#171005] border-2 border-amber-400 dark:border-amber-500 border-l-[8px] border-l-amber-500 shadow-md shadow-amber-500/10 space-y-4">
-                
-                <!-- 小白專區 Header -->
-                <div class="flex items-center justify-between flex-wrap gap-2 border-b border-amber-200 dark:border-amber-800/80 pb-3">
-                  <div class="flex items-center gap-2">
-                    <span class="text-2xl animate-bounce">🐣</span>
-                    <div>
-                      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[11px] font-black shadow-xs">
-                        <span>💡 零基礎秒懂專區</span>
-                        <span>•</span>
-                        <span>白話文大翻譯</span>
-                      </div>
-                      <h4 class="text-base sm:text-lg font-black text-amber-950 dark:text-amber-100 pt-0.5">
-                        精神病患砍人判無罪、偷麵包被判十年，為什麼全民會氣炸？
-                      </h4>
-                    </div>
-                  </div>
-                  <span class="text-xs font-bold text-amber-800 dark:text-amber-300 bg-amber-100 dark:bg-amber-900/60 px-2.5 py-1 rounded-lg border border-amber-300 dark:border-amber-700">
-                    🎯 雙軌煞車機制
-                  </span>
-                </div>
-
-                <!-- 一句話白話金句 -->
-                <div class="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-slate-900 border-2 border-amber-300 dark:border-amber-600 shadow-xs">
-                  <div class="text-[11px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-1">
-                    📢 一句話大白話翻譯
-                  </div>
-                  <p class="text-sm sm:text-base font-black text-slate-900 dark:text-white leading-relaxed">
-                    👉「<span class="text-amber-600 dark:text-amber-400 underline decoration-amber-400 underline-offset-4">無責任不罰是理智，小罪不重罰是比例！</span>刑法不是發洩仇恨的絞肉機，而是精確衡量責任的道德天平！」
-                  </p>
-                </div>
-
-                <!-- 生活比喻對照 -->
-                <div class="p-4 rounded-xl bg-amber-100/60 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 space-y-2 text-xs sm:text-[13px] text-slate-800 dark:text-slate-200 leading-relaxed">
-                  <div class="font-black text-amber-900 dark:text-amber-200 flex items-center gap-1.5 text-sm">
-                    <span>⚖️</span>
-                    <span>生活超有感比喻：【精準的天平秤重：10 克的偷竊不能壓上 100 噸的鐵砧】</span>
-                  </div>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-                    <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 shadow-2xs space-y-1">
-                      <span class="font-black text-purple-900 dark:text-purple-200 block text-xs sm:text-[13px]">① 無罪責不罰（發病中之人）：</span>
-                      <p class="text-slate-800 dark:text-slate-200 text-xs font-medium leading-relaxed">
-                        心智完全喪失、分不清現實的人動手，就像失控的天災巨石滾落。刑法處罰是為了「譴責道德惡意」，對沒有辨識能力的人懲罰毫無意義，應該送醫療監護而非監獄！
-                      </p>
-                    </div>
-                    <div class="p-3 rounded-xl bg-white dark:bg-slate-900 border-2 border-indigo-300 dark:border-indigo-700 shadow-2xs space-y-1">
-                      <span class="font-black text-indigo-900 dark:text-indigo-200 block text-xs sm:text-[13px]">② 罪刑相當（處罰與行為相稱）：</span>
-                      <p class="text-slate-800 dark:text-slate-200 text-xs font-medium leading-relaxed">
-                        偷一顆茶葉蛋判五年，跟持槍搶銀行判五年，如果都處以同樣刑度，就完全失去差別警惕效果。小罪大罰既不人道，更會逼小偷鋌而走險去殺人滅口！
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </section>
-
-          <!-- 三、實例演練【案例 1-8】：準強盜罪與罪刑相當性（釋字第 630 號） -->
-          <section id="sec-p0ch1-sec3-case-1-8" class="space-y-6 pt-2">
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-6 rounded-full bg-indigo-600"></span>
-              <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                三、實例演練【案例 1-8】：準強盜罪與罪刑相當性（教材第 2-7 ～ 2-8 頁）
-              </h3>
-            </div>
-
-            <div class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] shadow-sm space-y-6">
-              
-              <!-- 案例 1-8 旗艦卡片 -->
-              <div id="case-card-0-1-8" data-case="0-1-8" class="case-card p-6 rounded-2xl border-2 border-indigo-400 dark:border-indigo-500/80 border-l-[8px] border-l-indigo-600 dark:border-l-indigo-400 bg-gradient-to-br from-indigo-50/90 via-purple-50/40 to-slate-50/60 dark:from-[#131138] dark:to-[#0d1424] shadow-md shadow-indigo-500/10 space-y-5 transition-all">
-                
-                <!-- 標頭列 -->
-                <div class="flex items-center justify-between border-b border-indigo-200/80 dark:border-indigo-800/60 pb-3 flex-wrap gap-2">
-                  <div class="flex items-center gap-2.5">
-                    <span class="px-3 py-1 rounded-lg bg-indigo-600 text-white font-mono text-xs font-black shadow-xs">
-                      案例 1-8
-                    </span>
-                    <h4 class="text-sm sm:text-base font-black text-slate-900 dark:text-white">
-                      準強盜罪強暴脅迫之合憲性限縮——釋字第 630 號（教材第 2-7 ～ 2-8 頁）
-                    </h4>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span data-statute="329" class="text-xs font-mono font-black px-3 py-1 rounded-lg bg-indigo-700 hover:bg-indigo-800 text-white shadow-xs border border-indigo-400 cursor-pointer transition-all hover:scale-105 active:scale-95 flex items-center gap-1" title="點擊檢視刑法第329條全文">
-                      <span>§</span> 329 準強盜罪
-                    </span>
-                    <span data-statute="630" class="text-xs font-mono font-black px-3 py-1 rounded-lg bg-purple-700 hover:bg-purple-800 text-white shadow-xs border border-purple-400 cursor-pointer transition-all hover:scale-105 active:scale-95 flex items-center gap-1" title="點擊檢視釋字第630號全文">
-                      <span>⚖️</span> 釋字 630 號
-                    </span>
-                    <button type="button" onclick="copyCaseNote('0-1-8')" class="copy-case-btn text-xs px-3 py-1 rounded-lg bg-white dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 hover:text-indigo-600 font-bold shadow-xs transition-all flex items-center gap-1.5 cursor-pointer hover:border-indigo-400">
-                      <span>📋</span><span>複製爭點筆記</span>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- 案件事實背景：高對比純白卡片 + 亮藍導引邊條 -->
-                <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border-2 border-indigo-300 dark:border-indigo-800 border-l-4 border-l-indigo-600 shadow-xs text-xs sm:text-[13px] text-slate-800 dark:text-slate-100 leading-relaxed space-y-1.5">
-                  <div class="font-black text-indigo-900 dark:text-indigo-300 flex items-center gap-1.5 text-xs sm:text-sm">
-                    <span>📌</span>
-                    <span>案件事實背景：路邊牽走腳踏車被抓衣領隨手輕推案</span>
-                  </div>
+                <div class="space-y-2 text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200 font-serif">
                   <p>
-                    竊賊甲在路邊行竊乙的腳踏車得手，牽車欲離去時被失主乙發現。乙衝上前伸手抓住甲的衣領大喊抓賊。甲為了掙脫脫身，隨手「輕推」了乙一下，乙腳步踉蹌但未跌倒亦未受傷，甲趁隙騎車離去。檢察官依刑法第 329 條準強盜罪起訴（以強盜論，法定刑為五年以上有期徒刑）。
+                    <span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">罪責原則是指刑事處罰必須以行為人具有罪責為限，並與其罪責相當</span>（釋630號解釋理由書揭櫫，同時也是最後手段性原則的體現）。
+                  </p>
+                  <p>
+                    首先刑事處罰必須以行為人具有罪責為限，罪責作為犯罪成立要件，但又同時限定刑罰之發動，此稱<span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">無罪責即無刑罰原則</span>。
+                  </p>
+                  <p>
+                    再者刑事處罰必須與行為所具有的罪責相當，亦即在個案中所施加的刑罰不得超過罪責之範圍，學理上稱<span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">罪刑相當原則</span>。
                   </p>
                 </div>
-
-                <!-- 深度爭點與違憲疑慮分析 (紅 vs 綠) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-xs sm:text-[12.5px]">
-                  
-                  <!-- 違憲失衡疑慮 (紅) -->
-                  <div class="p-4 rounded-xl bg-gradient-to-br from-rose-100/90 via-pink-50 to-rose-50 dark:from-[#331118] dark:to-[#200b0f] border-2 border-rose-400 dark:border-rose-600 border-l-4 border-l-rose-600 shadow-xs space-y-2">
-                    <span class="font-black text-rose-900 dark:text-rose-200 flex items-center gap-1.5 text-xs sm:text-sm">
-                      <span class="text-base">⚠️</span>
-                      <span>舊法字面爭點：小罪大罰、輕重失衡</span>
-                    </span>
-                    <p class="text-rose-950 dark:text-rose-100 leading-relaxed font-medium">
-                      刑法 § 328 普通強盜罪手段必須達<strong>「至使不能抗拒」</strong>；但 § 329 字面上卻只寫「當場施以強暴脅迫」。若小偷僅輕推一下、甩開手脫身，就被直接依強盜罪論處<strong>五年以上有期徒刑</strong>，輕重嚴重失衡，嚴重牴觸罪刑相當原則！
-                    </p>
-                    <div class="text-[11px] font-bold text-rose-800 dark:text-rose-300 bg-white/70 dark:bg-slate-900/60 p-2 rounded-lg border border-rose-300 dark:border-rose-800">
-                      ❌ 痛點：隨手推一下等同拿槍抵頭搶劫？小偷甩手脫身就要關五年以上，違反比例原則！
-                    </div>
-                  </div>
-
-                  <!-- 釋字 630 號關鍵解方 (綠) -->
-                  <div class="p-4 rounded-xl bg-gradient-to-br from-emerald-100/90 via-teal-50 to-emerald-50 dark:from-[#0d2a1f] dark:to-[#071a13] border-2 border-emerald-400 dark:border-emerald-600 border-l-4 border-l-emerald-600 shadow-xs space-y-2">
-                    <span class="font-black text-emerald-900 dark:text-emerald-200 flex items-center gap-1.5 text-xs sm:text-sm">
-                      <span class="text-base">✓</span>
-                      <span>釋字第 630 號：合憲性限縮解釋</span>
-                    </span>
-                    <p class="text-emerald-950 dark:text-emerald-100 leading-relaxed font-medium">
-                      大法官宣告：準強盜罪之強暴、脅迫手段，在客觀上必須<strong>「達於使人難以抗拒之程度」</strong>，使其不法內涵與可責性實質等同於強盜罪，始得「以強盜論」！如此方能符合憲法第 23 條比例原則與罪刑相當原則。
-                    </p>
-                    <div class="text-[11px] font-bold text-emerald-800 dark:text-emerald-300 bg-white/70 dark:bg-slate-900/60 p-2 rounded-lg border border-emerald-300 dark:border-emerald-800">
-                      ⭕ 裁判結論：甲隨手輕推客觀上未達「難以抗拒」，不成立準強盜罪！僅成立普通竊盜罪！
-                    </div>
-                  </div>
-
-                </div>
-
-                <!-- 深度對照矩陣表格 -->
-                <div class="space-y-2 pt-1">
-                  <div class="text-xs font-black text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                    <span>📊</span>
-                    <span>強盜罪 vs 舊準強盜罪字面 vs 釋字 630 號合憲限縮三向對照矩陣</span>
-                  </div>
-                  <div class="overflow-x-auto rounded-2xl border-2 border-slate-300 dark:border-slate-700 shadow-sm">
-                    <table class="w-full text-left text-xs border-collapse min-w-[620px]">
-                      <thead>
-                        <tr class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border-b-2 border-slate-300 dark:border-slate-700">
-                          <th class="py-2.5 px-3 font-black w-1/5">比較項目</th>
-                          <th class="py-2.5 px-3 font-black w-4/15 text-indigo-700 dark:text-indigo-300">① 普通強盜罪（§ 328）</th>
-                          <th class="py-2.5 px-3 font-black w-4/15 text-rose-700 dark:text-rose-300">② 舊法準強盜字面（§ 329）</th>
-                          <th class="py-2.5 px-3 font-black w-4/15 text-emerald-700 dark:text-emerald-300 bg-emerald-500/10">③ 釋字 630 合憲限縮 ⭐</th>
-                        </tr>
-                      </thead>
-                      <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-[11.5px] text-slate-800 dark:text-slate-200">
-                        <tr>
-                          <td class="py-2.5 px-3 font-black bg-slate-50 dark:bg-slate-900">行為時手段門檻</td>
-                          <td class="py-2.5 px-3 font-medium">至使不能抗拒（壓制意思自由）</td>
-                          <td class="py-2.5 px-3 font-medium text-rose-600">任何強暴脅迫（推一下亦包含）</td>
-                          <td class="py-2.5 px-3 font-black text-emerald-900 dark:text-emerald-300 bg-emerald-500/10">客觀上達「難以抗拒之程度」</td>
-                        </tr>
-                        <tr>
-                          <td class="py-2.5 px-3 font-black bg-slate-50 dark:bg-slate-900">法定刑罰幅度</td>
-                          <td class="py-2.5 px-3 font-medium">五年以上有期徒刑</td>
-                          <td class="py-2.5 px-3 font-medium text-rose-600">以強盜論（五年以上有期徒刑）</td>
-                          <td class="py-2.5 px-3 font-black text-emerald-900 dark:text-emerald-300 bg-emerald-500/10">五年以上（實質可責性相稱）</td>
-                        </tr>
-                        <tr>
-                          <td class="py-2.5 px-3 font-black bg-slate-50 dark:bg-slate-900">案例甲輕推一下</td>
-                          <td class="py-2.5 px-3 font-bold text-slate-500">不適用（非以強暴手段取財）</td>
-                          <td class="py-2.5 px-3 font-bold text-rose-600">❌ 該當準強盜（關 5 年起跳！）</td>
-                          <td class="py-2.5 px-3 font-black text-emerald-700 dark:text-emerald-400 bg-emerald-500/10">⭕ 不成立準強盜（未達難以抗拒）</td>
-                        </tr>
-                        <tr>
-                          <td class="py-2.5 px-3 font-black bg-slate-50 dark:bg-slate-900">憲法合憲性評價</td>
-                          <td class="py-2.5 px-3 font-bold text-emerald-600">合憲</td>
-                          <td class="py-2.5 px-3 font-bold text-rose-600">違憲失衡（小罪大罰）</td>
-                          <td class="py-2.5 px-3 font-black text-emerald-700 dark:text-emerald-400 bg-emerald-500/10">合憲性限縮保障人身自由</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
-                <!-- 🐣 【超亮眼白話文專區】案例 1-8 小白秒懂專區 -->
-                <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-amber-50 via-orange-50/80 to-yellow-100 dark:from-[#2a1c0c] dark:via-[#221608] dark:to-[#171005] border-2 border-amber-400 dark:border-amber-500 border-l-[8px] border-l-amber-500 shadow-md shadow-amber-500/10 space-y-4">
-                  
-                  <!-- 小白專區 Header -->
-                  <div class="flex items-center justify-between flex-wrap gap-2 border-b border-amber-200 dark:border-amber-800/80 pb-3">
-                    <div class="flex items-center gap-2">
-                      <span class="text-2xl animate-bounce">🐣</span>
-                      <div>
-                        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[11px] font-black shadow-xs">
-                          <span>💡 零基礎秒懂專區</span>
-                          <span>•</span>
-                          <span>白話文大翻譯</span>
-                        </div>
-                        <h4 class="text-base sm:text-lg font-black text-amber-950 dark:text-amber-100 pt-0.5">
-                          小偷被失主抓衣領隨手推開，直接當強盜判 5 年起跳合不合理？
-                        </h4>
-                      </div>
-                    </div>
-                    <span class="text-xs font-bold text-amber-800 dark:text-amber-300 bg-amber-100 dark:bg-amber-900/60 px-2.5 py-1 rounded-lg border border-amber-300 dark:border-amber-700">
-                      🎯 準強盜合憲限縮
-                    </span>
-                  </div>
-
-                  <!-- 一句話白話金句 -->
-                  <div class="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-slate-900 border-2 border-amber-300 dark:border-amber-600 shadow-xs">
-                    <div class="text-[11px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-1">
-                      📢 一句話大白話翻譯
-                    </div>
-                    <p class="text-sm sm:text-base font-black text-slate-900 dark:text-white leading-relaxed">
-                      👉「<span class="text-amber-600 dark:text-amber-400 underline decoration-amber-400 underline-offset-4">拿西瓜刀架在脖子上才叫強盜，甩開抓衣領的手只是脫身！</span>拿判強盜的重刑去罰輕推，就是典型的小罪大罰！大法官設下『難以抗拒』門檻才合憲！」
-                    </p>
-                  </div>
-
-                  <!-- 趣味日常比喻 -->
-                  <div class="p-4 rounded-xl bg-amber-100/60 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 space-y-2 text-xs sm:text-[13px] text-slate-800 dark:text-slate-200 leading-relaxed">
-                    <div class="font-black text-amber-900 dark:text-amber-200 flex items-center gap-1.5 text-sm">
-                      <span>🥊</span>
-                      <span>生活超有感比喻：【拿槍抵頭搶劫 vs 被抓衣領掙脫推一下】</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 font-medium">
-                      想像強盜罪是「拿西瓜刀指著你的頭叫你把錢交出來」，被害人完全嚇傻無法反抗；而準強盜罪是「小偷偷了腳踏車想溜，失主抓著衣角，小偷輕輕推開失主逃跑」。如果法官說：「你推了失主一下，這叫強暴脅迫，所以你等同拿西瓜刀搶劫，判你關五年起跳！」這不是荒謬至極嗎？
-                    </p>
-                    <p class="text-amber-950 dark:text-amber-100 font-bold bg-white/80 dark:bg-slate-900/60 p-2.5 rounded-lg border border-amber-300/60">
-                      💡 <strong>大法官釋字第 630 號的英明決定！</strong>大法官說：不能照字面亂抓！小偷動手動腳，必須激烈到「讓對方根本沒辦法反抗（難以抗拒）」的程度，才可以算強盜！隨手推一下頂多算普通偷竊，絕不能重判五年！
-                    </p>
-                  </div>
-
-                  <!-- 3 步驟口訣卡 -->
-                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
-                    <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border-2 border-indigo-300 dark:border-indigo-700 space-y-1">
-                      <span class="font-black text-indigo-800 dark:text-indigo-300 block">口訣 ㈠：輕推非強盜</span>
-                      <span class="text-slate-700 dark:text-slate-200 font-medium">甩手掙脫、輕推一下未達「難以抗拒」，不成立刑法 § 329 準強盜罪。</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border-2 border-purple-300 dark:border-purple-700 space-y-1">
-                      <span class="font-black text-purple-800 dark:text-purple-300 block">口訣 ㈡：難以抗拒才算</span>
-                      <span class="text-slate-700 dark:text-slate-200 font-medium">釋字 630 號合憲限縮，手段強度必須與普通強盜之壓制反抗相當。</span>
-                    </div>
-                    <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border-2 border-emerald-300 dark:border-emerald-700 space-y-1">
-                      <span class="font-black text-emerald-800 dark:text-emerald-300 block">口訣 ㈢：普通竊盜論處</span>
-                      <span class="text-slate-700 dark:text-slate-200 font-medium">未達準強盜門檻者，回歸 § 320 普通竊盜罪論處，符合罪刑相當！</span>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </section>
-
-          <!-- 四、解題提示：節制刑罰發動之本質——有利於人民者皆容許！ -->
-          <section id="sec-p0ch1-sec3-tips-favor" class="space-y-6 pt-2">
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-6 rounded-full bg-amber-500"></span>
-              <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                四、解題提示：節制刑罰發動之本質——有利於人民者皆容許！（教材第 2-8 頁）
-              </h3>
-            </div>
-
-            <div class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] shadow-sm space-y-6">
-              
-              <!-- 旗艦卡片 4：解題提示方法論 -->
-              <div class="p-6 rounded-2xl bg-gradient-to-br from-amber-100 via-orange-50 to-indigo-100 dark:from-[#451a03]/70 dark:via-[#1e1b4b]/60 dark:to-[#0f172a] border-2 border-amber-400 dark:border-amber-500/80 border-l-[8px] border-l-amber-600 dark:border-l-amber-400 shadow-lg shadow-amber-500/15 space-y-5">
-                
-                <div class="flex items-center justify-between flex-wrap gap-2">
-                  <div class="flex items-center gap-2.5">
-                    <span class="text-2xl drop-shadow-sm">💡</span>
-                    <div>
-                      <span class="font-black text-sm sm:text-base text-amber-950 dark:text-amber-100 tracking-wide">
-                        陳奕廷（易律師）解題提示：刑法法理的終極心法
-                      </span>
-                      <span class="block text-[11px] font-mono font-bold text-amber-700 dark:text-amber-300 tracking-wider uppercase">
-                        FAVORABILIA AMPLIANDA, ODIOSA RESTRINGENDA
-                      </span>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs font-mono font-black px-3 py-1 rounded-lg bg-amber-600 text-white shadow-sm border border-amber-400">
-                      教材第 2-8 頁 解題提示
-                    </span>
-                    <span class="text-xs font-mono font-black px-3 py-1 rounded-lg bg-emerald-600 text-white shadow-sm border border-emerald-400">
-                      終極破題鑰匙
-                    </span>
-                  </div>
-                </div>
-
-                <!-- 教材原文原汁原味重現卡 -->
-                <div class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border-2 border-amber-400/80 dark:border-amber-700/80 border-l-4 border-l-amber-600 shadow-md space-y-2">
-                  <div class="flex items-center justify-between text-xs font-mono border-b border-amber-100 dark:border-slate-800 pb-2">
-                    <span class="font-bold text-amber-800 dark:text-amber-300 flex items-center gap-1.5">
-                      <span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
-                      破題關鍵解惑
-                    </span>
-                    <span class="px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-900/60 text-amber-800 dark:text-amber-200 font-bold text-[11px]">
-                      ★ 超法定事由之合憲性
-                    </span>
-                  </div>
-                  <p class="text-xs sm:text-sm md:text-base font-black text-slate-900 dark:text-slate-100 leading-relaxed font-serif tracking-wide py-1">
-                    「許多初學者常困惑：刑法不是明定『罪刑法定』、『禁止習慣法』、『禁止類推適用』嗎？那為什麼刑法上還會承認<span class="text-amber-700 dark:text-amber-300 underline decoration-amber-400 underline-offset-4 font-black">『超法定阻卻違法事由（如被害人承諾）』與『超法定阻卻罪責事由（如期待可能性欠缺）』</span>呢？這難道沒有違反罪刑法定原則嗎？<br>
-                    核心破題關鍵：<strong>刑法規範的本質在於『節制國家刑罰權』</strong>！如果個案處理的結果是<strong>對人民有利（出罪、阻卻不法、阻卻罪責、免除刑罰）</strong>，那麼根本就不存在任何『防範國家侵害人民』的理由！」
-                  </p>
-                </div>
-
-                <!-- 有利 vs 不利 絕對雙向對照矩陣 -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                  
-                  <!-- 不利於人民 (紅) -->
-                  <div class="p-4 rounded-xl bg-gradient-to-br from-rose-100/90 via-pink-50 to-rose-50 dark:from-[#331118] dark:to-[#200b0f] border-2 border-rose-400 dark:border-rose-600 border-l-4 border-l-rose-600 shadow-xs space-y-2">
-                    <div class="flex items-center justify-between font-black text-rose-900 dark:text-rose-200">
-                      <span class="flex items-center gap-1.5 text-sm">
-                        <span>🚫</span><span>若個案結果「不利於人民」</span>
-                      </span>
-                      <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-600 text-white font-bold">絕對嚴格禁止</span>
-                    </div>
-                    <ul class="space-y-1.5 text-rose-950 dark:text-rose-100 text-[11.5px] leading-relaxed list-disc list-inside font-medium">
-                      <li>禁止以習慣法創設罪名或加重刑罰</li>
-                      <li>禁止不利於行為人之類推適用</li>
-                      <li>禁止不具明確性之模糊條文規定</li>
-                      <li>禁止不利於行為人之溯及既往處罰</li>
-                    </ul>
-                    <div class="text-[11px] text-rose-800 dark:text-rose-300 font-bold pt-1 border-t border-rose-200 dark:border-rose-800">
-                      ➔ 恪遵罪刑法定原則，全面封堵國家濫權可能！
-                    </div>
-                  </div>
-
-                  <!-- 有利於人民 (綠) -->
-                  <div class="p-4 rounded-xl bg-gradient-to-br from-emerald-100/90 via-teal-50 to-emerald-50 dark:from-[#0d2a1f] dark:to-[#071a13] border-2 border-emerald-400 dark:border-emerald-600 border-l-4 border-l-emerald-600 shadow-xs space-y-2">
-                    <div class="flex items-center justify-between font-black text-emerald-900 dark:text-emerald-200">
-                      <span class="flex items-center gap-1.5 text-sm">
-                        <span>✓</span><span>若個案結果「有利於人民」</span>
-                      </span>
-                      <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-600 text-white font-bold">全面容許肯定</span>
-                    </div>
-                    <ul class="space-y-1.5 text-emerald-950 dark:text-emerald-100 text-[11.5px] leading-relaxed list-disc list-inside font-medium">
-                      <li><strong>容許有利之法理與習慣法</strong>：創設超法定阻卻違法與罪責事由</li>
-                      <li><strong>容許有利之類推適用</strong>：如類推正當防衛、緊急避難規定出罪</li>
-                      <li><strong>容許有利之溯及既往</strong>：刑法 § 2 Ⅰ 但書「從舊從輕原則」</li>
-                      <li><strong>容許有利之合憲限縮</strong>：如釋字 630 號限縮強暴脅迫要件</li>
-                    </ul>
-                    <div class="text-[11px] text-emerald-800 dark:text-emerald-300 font-bold pt-1 border-t border-emerald-200 dark:border-emerald-800">
-                      ➔ 人權保障至上，無節制國家刑罰發動之必要！
-                    </div>
-                  </div>
-
-                </div>
-
               </div>
 
-              <!-- 🐣 【超亮眼白話文專區】解題提示小白秒懂專區 -->
-              <div class="rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-amber-50 via-orange-50/80 to-yellow-100 dark:from-[#2a1c0c] dark:via-[#221608] dark:to-[#171005] border-2 border-amber-400 dark:border-amber-500 border-l-[8px] border-l-amber-500 shadow-md shadow-amber-500/10 space-y-4">
-                
-                <!-- 小白專區 Header -->
-                <div class="flex items-center justify-between flex-wrap gap-2 border-b border-amber-200 dark:border-amber-800/80 pb-3">
-                  <div class="flex items-center gap-2">
-                    <span class="text-2xl animate-bounce">🐣</span>
-                    <div>
-                      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[11px] font-black shadow-xs">
-                        <span>💡 零基礎秒懂專區</span>
-                        <span>•</span>
-                        <span>白話文大翻譯</span>
-                      </div>
-                      <h4 class="text-base sm:text-lg font-black text-amber-950 dark:text-amber-100 pt-0.5">
-                        法條明明寫禁止類推、禁止習慣法，為什麼「幫被告脫罪」就可以類推？
-                      </h4>
-                    </div>
-                  </div>
-                  <span class="text-xs font-bold text-amber-800 dark:text-amber-300 bg-amber-100 dark:bg-amber-900/60 px-2.5 py-1 rounded-lg border border-amber-300 dark:border-amber-700">
-                    🎯 單向防盜門原理
-                  </span>
+              <!-- 小白秒懂專區 -->
+              <div class="rounded-2xl p-5 bg-amber-50/70 dark:bg-[#1a1612] border-2 border-amber-300 dark:border-amber-800/60 border-l-[8px] border-l-amber-500 shadow-xs space-y-3 text-xs sm:text-sm">
+                <div class="flex items-center gap-2 border-b border-amber-200 dark:border-amber-900/40 pb-2">
+                  <span class="text-xl">🐣</span>
+                  <span class="font-black text-amber-950 dark:text-amber-200 text-sm">小白秒懂專區 • 30 秒白話搞懂「罪責原則」</span>
                 </div>
-
-                <!-- 一句話白話金句 -->
-                <div class="p-3.5 sm:p-4 rounded-xl bg-white dark:bg-slate-900 border-2 border-amber-300 dark:border-amber-600 shadow-xs">
-                  <div class="text-[11px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-1">
-                    📢 一句話大白話翻譯
-                  </div>
-                  <p class="text-sm sm:text-base font-black text-slate-900 dark:text-white leading-relaxed">
-                    👉「<span class="text-amber-600 dark:text-amber-400 underline decoration-amber-400 underline-offset-4">刑法的大門是『單向逃生門』：只擋國家進來抓人，不擋人民向外逃生！</span>所有嚴格禁令都是為了管住國家的手，只要是對人民有利的，通通綠燈放行！」
-                  </p>
-                </div>
-
-                <!-- 趣味日常比喻 -->
-                <div class="p-4 rounded-xl bg-amber-100/60 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 space-y-2 text-xs sm:text-[13px] text-slate-800 dark:text-slate-200 leading-relaxed">
-                  <div class="font-black text-amber-900 dark:text-amber-200 flex items-center gap-1.5 text-sm">
-                    <span>🚪</span>
-                    <span>生活超有感比喻：【銀行金庫的單向防盜門】</span>
-                  </div>
-                  <p class="text-slate-800 dark:text-slate-200 font-medium">
-                    想像刑法的各項禁令（禁止類推、禁止習慣法、禁止溯及既往）就像銀行金庫的「厚重防盜門」，它是專門設計用來<strong>「防止外面的人（國家公權力）隨便闖進來搶走人民的自由財產」</strong>。但如果裡面的人遇到火災要逃生，這扇門當然可以隨時推開！你不能跟逃生的人說：「不行！這扇門是防盜門，規定不能隨便開，你給我留在裡面被燒！」這不是本末倒置嗎？
-                  </p>
-                  <p class="text-amber-950 dark:text-amber-100 font-bold bg-white/80 dark:bg-slate-900/60 p-2.5 rounded-lg border border-amber-300/60">
-                    💡 <strong>解題永遠不敗的心法！</strong>只要看到任何刑法問題，先問結果是「把人民送進監獄」還是「幫人民脫罪」？送進監獄的，一律從嚴審查、絕對禁止；幫人民脫罪的，全面容許！
-                  </p>
-                </div>
-
-                <!-- 3 步驟口訣卡 -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
-                  <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border-2 border-rose-300 dark:border-rose-700 space-y-1">
-                    <span class="font-black text-rose-800 dark:text-rose-300 block">口訣 ㈠：不利皆禁止</span>
-                    <span class="text-slate-700 dark:text-slate-200 font-medium">凡是增加人民刑責、創設新罪名、不利類推或溯及者，絕對違憲禁止！</span>
-                  </div>
-                  <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border-2 border-emerald-300 dark:border-emerald-700 space-y-1">
-                    <span class="font-black text-emerald-800 dark:text-emerald-300 block">口訣 ㈡：有利皆容許</span>
-                    <span class="text-slate-700 dark:text-slate-200 font-medium">凡是出罪、阻卻不法、阻卻罪責、減輕免除刑責者，法理習慣皆可適用！</span>
-                  </div>
-                  <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border-2 border-amber-300 dark:border-amber-700 space-y-1">
-                    <span class="font-black text-amber-800 dark:text-amber-300 block">口訣 ㈢：單向保護原則</span>
-                    <span class="text-slate-700 dark:text-slate-200 font-medium">刑法本質是防止國家侵害人民，而不是國家保護自己的武器！</span>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </section>
-
-          <!-- 五、第一章 刑法運作四大支柱全景整合對照與全章完結 -->
-          <section id="sec-p0ch1-sec3-chapter1-summary" class="space-y-6 pt-2">
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-6 rounded-full bg-indigo-600"></span>
-              <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
-                五、第一章 刑法運作四大支柱全景整合對照與全章完結（教材第 2-1 ～ 2-8 頁）
-              </h3>
-            </div>
-
-            <div class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] shadow-sm space-y-6">
-              
-              <div class="space-y-2">
-                <h4 class="text-sm sm:text-base font-black text-slate-900 dark:text-white flex items-center gap-2">
-                  <span class="text-indigo-600 text-lg">🏛️</span>
-                  <span>刑法四大支柱體系總覽（陳奕廷易律師精闢歸納）</span>
-                </h4>
-                <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
-                  至此，教材第零篇第一章【刑法的運作原理】三大節四大支柱全數完備！掌握這四根大柱子，就掌握了整個刑法哲學的骨架：
+                <p class="text-slate-700 dark:text-slate-300 leading-relaxed font-serif">
+                  想像你走路不小心絆倒，撞碎了路邊小吃攤一隻 20 元的塑膠碗。攤販老闆跳出來大吼：「你損害了我的財產！我要把你關進大牢判 10 年，外加罰款五百萬！」你一定會大罵神經病——因為「懲罰的份量與你的過錯根本不相當」！
+                </p>
+                <p class="text-slate-800 dark:text-slate-200 font-bold bg-white/70 dark:bg-black/20 p-2.5 rounded-xl border border-amber-200 dark:border-amber-800/40 font-serif">
+                  💡 罪責原則就是法治國的「防過度索賠安全閥」！<br>
+                  ① <span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">沒犯錯、無可非難 ➔ 絕對不能罰</span>（無罪責即無刑罰）；<br>
+                  ② <span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">犯多少錯 ➔ 只能罰多少</span>，施加的刑罰絕對不能超越其罪責的極限（罪刑相當原則）！
                 </p>
               </div>
 
-              <!-- 四大支柱全景表格 (高對比實心邊框) -->
-              <div class="overflow-x-auto rounded-2xl border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-[#101623] shadow-sm">
-                <table class="w-full text-left border-collapse text-xs">
-                  <thead>
-                    <tr class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border-b-2 border-slate-300 dark:border-slate-700 font-black">
-                      <th class="p-3 w-1/5">支柱名稱</th>
-                      <th class="p-3 border-l-2 border-slate-200 dark:border-slate-700 w-1/5">核心提問</th>
-                      <th class="p-3 border-l-2 border-slate-200 dark:border-slate-700 w-1/5">思想淵源</th>
-                      <th class="p-3 border-l-2 border-slate-200 dark:border-slate-700 w-2/5">核心法律要求與規範功能</th>
-                    </tr>
-                  </thead>
-                  <tbody class="divide-y-2 divide-slate-200 dark:divide-slate-800 text-slate-800 dark:text-slate-200 font-medium text-[11.5px]">
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50">
-                      <td class="p-3 font-black text-indigo-700 dark:text-indigo-400 whitespace-nowrap bg-indigo-50/50 dark:bg-indigo-950/20">
-                        ① 法益保護原則
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800 font-black text-slate-900 dark:text-white">
-                        刑法的目的何在？
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800">
-                        生活利益保全
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800 leading-relaxed">
-                        保護重要生活利益（生命、身體、自由、財產、社會、國家）；具積極保護與消極界限機能；為構成要件解釋指導原則。
-                      </td>
-                    </tr>
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50">
-                      <td class="p-3 font-black text-blue-700 dark:text-blue-400 whitespace-nowrap bg-blue-50/50 dark:bg-blue-950/20">
-                        ② 最後手段性原則
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800 font-black text-slate-900 dark:text-white">
-                        刑法在何種情況下發動？
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800">
-                        刑罰謙抑思想
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800 leading-relaxed">
-                        刑罰為最嚴厲制裁手段，動用成本極高。非民事、行政手段不能達成目的時，始得以刑罰作為最後防線（Ultima Ratio）。
-                      </td>
-                    </tr>
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50">
-                      <td class="p-3 font-black text-amber-700 dark:text-amber-400 whitespace-nowrap bg-amber-50/50 dark:bg-amber-950/20">
-                        ③ 罪刑法定原則
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800 font-black text-slate-900 dark:text-white">
-                        付出代價的根據何在？
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800">
-                        預防思想（人民安措手足）
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800 leading-relaxed">
-                        刑法 § 1・釋字 384。習慣法禁止、類推適用禁止、明確性原則、溯及既往禁止。保障人民預見性與人權。
-                      </td>
-                    </tr>
-                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-850/50">
-                      <td class="p-3 font-black text-purple-700 dark:text-purple-400 whitespace-nowrap bg-purple-50/50 dark:bg-purple-950/20">
-                        ④ 罪責原則
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800 font-black text-slate-900 dark:text-white">
-                        付出代價的極限何在？
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800">
-                        應報思想（小罪不能大罰）
-                      </td>
-                      <td class="p-3 border-l-2 border-slate-200 dark:border-slate-800 leading-relaxed">
-                        釋字 630。無罪責即無刑罰；罪刑相當原則。準強盜罪合憲限縮。有利人民之類推、溯及與法理全面容許。
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <!-- 雙重支柱體系圖解 -->
+              <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between">
+                  <h4 class="text-sm sm:text-base font-black text-slate-900 dark:text-white flex items-center gap-2">
+                    <span class="text-blue-600 text-lg">⚖️</span>
+                    <span>罪責原則之雙重核心支柱（教材第 2-7 頁 體系圖解）</span>
+                  </h4>
+                  <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900">二大支柱</span>
+                </div>
 
-              <!-- 全章完結里程碑慶祝卡片 (高飽和鮮明質感) -->
-              <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-100 via-teal-50 to-indigo-100 dark:from-[#064e3b]/80 dark:via-[#0f172a] dark:to-[#1e1b4b]/70 border-2 border-emerald-400 dark:border-emerald-500 flex items-center justify-between flex-wrap gap-4 shadow-md">
-                <div class="flex items-center gap-3.5">
-                  <span class="text-3xl sm:text-4xl drop-shadow-sm">🎉</span>
-                  <div class="space-y-1">
-                    <div class="flex items-center gap-2">
-                      <span class="text-xs font-mono font-black px-2.5 py-0.5 rounded-full bg-emerald-600 text-white shadow-xs">MILESTONE ACHIEVED</span>
-                      <span class="text-xs text-emerald-800 dark:text-emerald-300 font-bold">教材第 2-1 ～ 2-8 頁 全章完結</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+                  <!-- 支柱 1 -->
+                  <div class="p-4 rounded-2xl bg-blue-50/70 dark:bg-slate-900 border-2 border-blue-200 dark:border-blue-800 border-l-[6px] border-l-blue-600 shadow-xs space-y-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="font-black text-blue-950 dark:text-blue-100 flex items-center gap-1.5 text-sm">
+                        <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center font-mono font-bold text-xs">1</span>
+                        <span>無罪責即無刑罰原則</span>
+                      </span>
+                      <span class="text-[10px] text-blue-700 dark:text-blue-300 font-mono font-bold px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60">發動門檻限制</span>
                     </div>
-                    <h4 class="text-base sm:text-lg font-black text-emerald-950 dark:text-emerald-100 mt-1">
-                      恭喜！第零篇 第一章【刑法的運作原理】全數研讀完畢！
-                    </h4>
-                    <p class="text-xs text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
-                      涵蓋第一節法益保護原則（P. 2-1~2-4）、第二節罪刑法定原則（P. 2-5~2-7）、第三節罪責原則（P. 2-7~2-8），共 8 大經典案例深度解構、公法對照、釋字 630 合憲限縮與解題心法全部收錄，並配備「🐣 小白秒懂專區」！
+                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-[11.5px] font-serif">
+                      罪責作為<strong>犯罪成立的三階核心要件之一</strong>。行為人若欠缺罪責（如未滿 14 歲無責任能力、精神障礙致不能辨識、正當防衛無期待可能性等），刑罰權<strong>自始不得發動</strong>。
+                    </p>
+                  </div>
+
+                  <!-- 支柱 2 -->
+                  <div class="p-4 rounded-2xl bg-indigo-50/70 dark:bg-slate-900 border-2 border-indigo-200 dark:border-indigo-800 border-l-[6px] border-l-indigo-600 shadow-xs space-y-1.5">
+                    <div class="flex items-center justify-between">
+                      <span class="font-black text-indigo-950 dark:text-indigo-100 flex items-center gap-1.5 text-sm">
+                        <span class="w-5 h-5 rounded bg-indigo-600 text-white flex items-center justify-center font-mono font-bold text-xs">2</span>
+                        <span>罪刑相當原則</span>
+                      </span>
+                      <span class="text-[10px] text-indigo-700 dark:text-indigo-300 font-mono font-bold px-1.5 py-0.5 rounded bg-indigo-100 dark:bg-indigo-900/60">刑度份量上限</span>
+                    </div>
+                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-[11.5px] font-serif">
+                      在具體個案中所施加的刑罰，<strong>不得超過行為人實質罪責之範圍</strong>。刑罰份量必須與其不法與罪責程度相稱，為憲法第 23 條比例原則與刑法最後手段性之嚴格體現。
                     </p>
                   </div>
                 </div>
-                <div class="flex items-center gap-2">
-                  <button onclick="switchView('home')" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 border-2 border-slate-300 dark:border-slate-700 text-xs font-black shadow-sm transition-all hover:scale-105 active:scale-95">
-                    🏠 回書籍主頁
-                  </button>
-                  <button onclick="switchView('part0-chapter-1')" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black shadow-md shadow-emerald-500/25 border border-emerald-400 transition-all hover:scale-105 active:scale-95">
-                    📑 第一章總覽
-                  </button>
-                </div>
+
               </div>
 
             </div>
           </section>
 
-          <!-- Section Bottom Pagination: 第三節底部 (第一章全章完結) -->
-          <div class="pt-8 border-t border-slate-200 dark:border-white/[0.08] grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <button onclick="switchView('part0-ch1-sec2')" class="group p-4 rounded-2xl border border-slate-200 dark:border-white/[0.08] hover:border-purple-500/40 bg-white dark:bg-[#111726] text-left transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md flex items-center gap-3">
-              <div class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 group-hover:bg-purple-50 dark:group-hover:bg-purple-950 group-hover:text-purple-600 dark:group-hover:text-purple-400 flex items-center justify-center text-sm font-bold shrink-0 transition-colors">
-                ←
-              </div>
-              <div class="min-w-0">
-                <span class="text-[11px] text-slate-400 font-mono block">上一單元 (第 2-5 頁)</span>
-                <span class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors truncate block">
-                  第二節 罪刑法定原則——付出代價的根據何在？
-                </span>
-              </div>
-            </button>
+          <!-- ═══════════════ 二、實戰案例 1-8：五位一體法學劇院 ═══════════════ -->
+          <section id="sec-p0ch1-sec3-case1-8" class="space-y-6 pt-2">
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-6 rounded-full bg-blue-600"></span>
+              <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
+                二、實戰案例 1-8 研習：準強盜罪之強暴脅迫程度（教材第 2-7～2-8 頁）
+              </h3>
+            </div>
 
-            <button onclick="switchView('part0-chapter-2')" class="group p-4 rounded-2xl border border-indigo-500/40 hover:border-indigo-500 bg-gradient-to-br from-indigo-50/50 to-blue-50/30 dark:from-indigo-950/30 dark:to-blue-950/20 text-right transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md flex items-center justify-between gap-3">
-              <div class="min-w-0 text-left">
-                <span class="text-[11px] text-indigo-700 dark:text-indigo-400 font-mono block font-bold">下一單元・進入第二章</span>
-                <span class="text-xs font-extrabold text-slate-900 dark:text-white group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors truncate block">
-                  第二章 刑法的操作原理 (插槽) →
-                </span>
+            <div class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] shadow-sm space-y-6">
+              
+              <!-- 案例 1-8 容器 (五位一體法學劇院) -->
+              <div id="case-card-0-1-8" class="p-5 sm:p-6 rounded-2xl border-2 border-blue-200 dark:border-blue-900/60 bg-gradient-to-br from-slate-50 to-blue-50/30 dark:from-slate-900 dark:to-blue-950/20 shadow-xs space-y-4">
+                
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-full bg-blue-600 text-white font-mono font-black text-xs shadow-xs">案例 1-8</span>
+                    <h4 class="font-black text-base text-slate-900 dark:text-white">
+                      準強盜罪（§ 329）之強暴脅迫是否須達「至使不能抗拒」？
+                    </h4>
+                  </div>
+                  <span class="text-xs font-mono text-blue-600 dark:text-blue-400 font-bold">合憲性限縮解釋與罪刑相當</span>
+                </div>
+
+                <!-- 課本案件事實框 (1:1 復刻) -->
+                <div class="p-4 rounded-2xl bg-blue-100/90 dark:bg-blue-950/85 border-2 border-blue-300 dark:border-blue-700/80 shadow-xs flex items-start gap-3.5">
+                  <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 text-lg shadow-sm">
+                    ⚖️
+                  </div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-2">
+                      <span class="px-2 py-0.5 rounded-md bg-blue-600 text-white font-mono text-[10.5px] font-black tracking-wide shadow-xs">案件事實</span>
+                      <span class="text-[11px] font-mono font-bold text-blue-700 dark:text-blue-300/90">#教材第 2-7 頁 原文命題</span>
+                    </div>
+                    <div class="space-y-1.5 text-xs sm:text-sm font-bold text-blue-950 dark:text-blue-100 leading-relaxed font-serif">
+                      <p>
+                        刑法上準強盜罪（§ 329）是否必須達到強暴、脅迫「至使不能抗拒」之程度？
+                      </p>
+                      <p class="text-xs text-blue-800 dark:text-blue-300 font-normal">
+                        竊盜犯行竊得手後被失主發現，為求脫免逮捕或防護贓物，當場伸手推了失主一把或輕微拉扯，是否即應「以強盜論」，逕行適用刑法第 328 條處以 5 年以上有期徒刑重刑？
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 1. ⚔️ 原被告/檢控辯護法庭正面言詞辯論 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <!-- 🛡️ 辯護人金毛大律師 -->
+                  <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-amber-300 dark:border-amber-700/80 space-y-3 flex flex-col justify-between shadow-xs">
+                    <div class="space-y-3">
+                      <div class="flex items-center gap-2.5 border-b border-amber-100 dark:border-amber-900/40 pb-2.5">
+                        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-amber-400 shrink-0 bg-slate-900 shadow-xs">
+                          <img src="images/golden_case_attorney.jpg" alt="金毛辯護律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);">
+                        </div>
+                        <div class="min-w-0 flex-1">
+                          <div class="flex items-center justify-between">
+                            <span class="font-black text-xs sm:text-sm text-amber-950 dark:text-amber-200">辯護人 • 金毛大律師</span>
+                            <span class="px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-300 font-extrabold text-[10px]">罪刑相當防線</span>
+                          </div>
+                          <div class="text-[10.5px] text-amber-700 dark:text-amber-400 font-bold">主張：強暴脅迫須達使人難以抗拒</div>
+                        </div>
+                      </div>
+                      <div class="space-y-2 text-xs sm:text-[13px] text-slate-800 dark:text-slate-100 leading-relaxed font-serif">
+                        <p class="font-bold text-amber-950 dark:text-amber-200">
+                          「審判長！刑法第 329 條之法定刑直接擬制為強盜罪——處 5 年以上有期徒刑！」
+                        </p>
+                        <p>
+                          強盜罪之所以重判 5 年起跳，是因為行為人施用強暴脅迫至使被害人不能抗拒，嚴重壓制自由！如果竊賊只是逃跑時隨手推開追捕者，力道微弱根本未達壓制自由程度，公訴人卻要論以強盜重罪，這無異於『輕罪重罰』，公然踩碎憲法比例原則與罪刑相當原則！強暴脅迫必須合憲限縮達到使人難以抗拒，方得論罪！
+                        </p>
+                      </div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-xs sm:text-[13px] font-bold text-amber-950 dark:text-amber-200 leading-snug border border-amber-200 dark:border-amber-800/60">
+                      ⚖️ 罪刑相當要求 ➔ <strong>輕微推擠絕不得擬制為 5 年起跳強盜重罪！</strong>
+                    </div>
+                  </div>
+
+                  <!-- ⚔️ 公訴檢察官赤狐女律師 -->
+                  <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border-2 border-rose-300 dark:border-rose-700/80 space-y-3 flex flex-col justify-between shadow-xs">
+                    <div class="space-y-3">
+                      <div class="flex items-center gap-2.5 border-b border-rose-100 dark:border-rose-900/40 pb-2.5">
+                        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-rose-400 shrink-0 bg-slate-900 shadow-xs">
+                          <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/prosecutor_fox_1791095870366.jpg" alt="公訴檢察官赤狐律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);" onerror="this.src='images/prosecutor_fox.jpg'">
+                        </div>
+                        <div class="min-w-0 flex-1">
+                          <div class="flex items-center justify-between">
+                            <span class="font-black text-xs sm:text-sm text-rose-950 dark:text-rose-200">公訴檢察官 • 赤狐女律師</span>
+                            <span class="px-2 py-0.5 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-900 dark:text-rose-300 font-extrabold text-[10px]">文義文面追訴</span>
+                          </div>
+                          <div class="text-[10.5px] text-rose-700 dark:text-rose-400 font-bold">主張：法條明文無「不能抗拒」要件</div>
+                        </div>
+                      </div>
+                      <div class="space-y-2 text-xs sm:text-[13px] text-slate-800 dark:text-slate-100 leading-relaxed font-serif">
+                        <p class="font-bold text-rose-950 dark:text-rose-200">
+                          「公訴方嚴正指出：刑法第 329 條法條文義極為明確！」
+                        </p>
+                        <p>
+                          條文明明白白規定『當場施以強暴脅迫者，以強盜論』，立法者刻意沒有加上『至使不能抗拒』！行為人竊盜行徑敗露，為了保全贓物或逃脫竟公然動手施暴，已將單純財產犯升級為侵害人身安全之複合犯罪，自應承擔以強盜論處之後果，法律豈容辯護人擅自添加法律所無之限制？
+                        </p>
+                      </div>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-xs sm:text-[13px] font-bold text-rose-950 dark:text-rose-200 leading-snug border border-rose-200 dark:border-rose-800/60">
+                      🚨 法條文義無此限 ➔ <strong>行竊後施加強暴即具升級處罰惡性！</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. 🐾 柴柴法學教授 • 白話生活大解碼 -->
+                <div class="p-4 sm:p-4.5 rounded-xl bg-amber-500/10 border-2 border-amber-300 dark:border-amber-700/70 flex items-start gap-3.5 shadow-xs">
+                  <div class="w-11 h-11 rounded-full overflow-hidden shrink-0 border-2 border-amber-400 shadow-sm bg-amber-100">
+                    <img src="images/shiba_law_professor.jpg" alt="柴柴法學教授" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.38);">
+                  </div>
+                  <div class="flex-1 space-y-1">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <span class="font-black text-amber-950 dark:text-amber-200 text-sm sm:text-base">柴柴法學教授 • 白話生活大解碼</span>
+                      <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-200/80 dark:bg-amber-900/60 text-amber-900 dark:text-amber-100 font-extrabold font-mono">合憲限縮之術</span>
+                    </div>
+                    <div class="space-y-2 text-xs sm:text-sm text-slate-800 dark:text-slate-100 leading-relaxed font-serif">
+                      <p>
+                        「小偷如果偷了超商一顆麵包，被店長抓住衣角，小偷轉身甩開手把店長推倒在地上逃走，這樣到底算不算『強盜』？<br>
+                        如果算強盜，法官一判就是五年以上！搶銀行的重刑犯判五年，偷麵包推人一把也判五年，這在法理上就叫做『罪刑不相當』汪！
+                      </p>
+                      <p class="leading-relaxed">
+                        <span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">
+                          大法官釋字第 630 號因此施展『合憲性限縮解釋』：
+                        </span>
+                      </p>
+                      <p>
+                        法條雖然只寫強暴脅迫，但為了符合『罪刑相當原則』，<span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">該強暴脅迫的強度，必須達到『使人難以抗拒』的程度</span>，才得以強盜論！若只是輕微掙脫、一般肢體推擠，絕對不能以強盜罪相繩汪！」
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. ⚖️ 金毛大律師攻防 × 4. 🛡️ 德牧巡查官雷達 (垂直堆疊・不併排) -->
+                <div class="space-y-3 pt-1">
+                  <!-- 金毛大律師點評 -->
+                  <div class="p-3.5 sm:p-4 rounded-xl bg-amber-50/80 dark:bg-amber-950/20 border border-amber-300 dark:border-amber-800/60 flex items-start gap-3">
+                    <div class="w-11 h-11 rounded-full overflow-hidden shrink-0 border border-amber-400 shadow-sm bg-amber-100">
+                      <img src="images/golden_case_attorney.jpg" alt="金毛辯護大律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);">
+                    </div>
+                    <div class="flex-1 space-y-1">
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span class="font-black text-amber-950 dark:text-amber-200 text-sm sm:text-base">金毛大律師 • 法庭攻防點評</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-amber-200 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 font-bold font-mono">實戰抗辯戰術</span>
+                      </div>
+                      <div class="space-y-2 text-xs sm:text-sm text-slate-800 dark:text-slate-100 leading-relaxed font-serif">
+                        <p>
+                          「在法庭上遇到檢方起訴 § 329 準強盜罪，辯護大律師的<strong>第一決勝防線</strong>就是『強暴脅迫之強度』！
+                        </p>
+                        <p>
+                          <span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">
+                            極力向法官證明被告僅係防禦性掙脫、推阻，被害人並未喪失意思決定自由，未達使人難以抗拒！<br>
+                            一旦成功瓦解『難以抗拒』門檻，即可將 5 年以上重罪擊落，退回竊盜罪（§ 320）與普通傷害罪（§ 277）之數罪併罰，大幅爭取易科罰金或緩刑空間！
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 德牧巡查官雷達 -->
+                  <div class="p-3.5 sm:p-4 rounded-xl bg-blue-50/80 dark:bg-blue-950/20 border border-blue-300 dark:border-blue-800/60 flex items-start gap-3">
+                    <div class="w-11 h-11 rounded-full overflow-hidden shrink-0 border border-blue-400 shadow-sm bg-blue-100">
+                      <img src="images/shepherd_law_inspector.jpg" alt="德牧法規巡查官" class="w-full h-full object-cover" style="object-position: center 15%; transform: scale(1.4);">
+                    </div>
+                    <div class="flex-1 space-y-1">
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span class="font-black text-blue-950 dark:text-blue-200 text-sm sm:text-base">德牧巡查官 • 法規雷達查核</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-blue-200 dark:bg-blue-900/60 text-blue-900 dark:text-blue-200 font-bold font-mono">裁判要旨溯源</span>
+                      </div>
+                      <div class="space-y-2 text-xs sm:text-sm text-slate-800 dark:text-slate-100 leading-relaxed font-serif">
+                        <p class="font-black text-blue-950 dark:text-blue-300">
+                          【司法院釋字第 630 號解釋理由書重點要旨】
+                        </p>
+                        <p class="leading-relaxed">
+                          <span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">
+                            「擬該規定（按：指§ 329之規定）擬制為強盜罪之強暴、脅迫構成要件行為，乃指達於使人難以抗拒之程度者而言，是與強盜罪同其法定刑，尚未逾越罪刑相當原則，與憲法第二十三條比例原則之意旨並無不符。」
+                          </span>
+                        </p>
+                        <p>
+                          大法官明確宣示：刑罰目的在保護法益，但手段不得過苛。唯有將強暴脅迫限縮為達「使人難以抗拒」，方符罪刑相當原則之憲政底線。
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 5. 👨‍⚖️ 邊牧首席審判長 • 終審裁決一槌定音 -->
+                  <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white border-2 border-indigo-400/80 shadow-md flex items-start gap-3.5 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl overflow-hidden shrink-0 border-2 border-indigo-400 shadow-md bg-slate-800">
+                      <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/border_collie_judge_1791095556108.jpg" alt="邊牧審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);" onerror="this.src='images/border_collie_chief_judge.jpg'">
+                    </div>
+                    <div class="flex-1 space-y-2 relative z-10">
+                      <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-2">
+                          <span class="font-black text-amber-300 text-sm sm:text-base flex items-center gap-1.5">
+                            <span>👨‍⚖️</span> 邊牧審判長 • 終審裁決一槌定音
+                          </span>
+                          <span class="text-[10.5px] px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 font-extrabold border border-amber-400/40 font-mono">
+                            終審定讞
+                          </span>
+                        </div>
+                        <span class="text-xs font-mono font-bold text-indigo-300/90">#法槌一敲誰與爭鋒</span>
+                      </div>
+                      <div class="space-y-2 text-xs sm:text-sm text-slate-100 leading-relaxed font-serif">
+                        <p class="font-bold text-amber-200">
+                          🔨 【實體法定讞】：刑法第 329 條準強盜罪之強暴脅迫，必須達於「使人難以抗拒」之程度；若未達此程度，不得擬制為強盜罪，僅能依具體行為論以竊盜與妨害自由/傷害罪數罪併罰！
+                        </p>
+                        <p>
+                          💡 <strong>國考答題定錨</strong>：<br>
+                          ① 答題開標先立論：引出<strong>罪責原則</strong>與<strong>罪刑相當原則</strong>；<br>
+                          ② 指出普通強盜罪法定刑 5 年起跳，準強盜直接擬制同其法定刑；<br>
+                          ③ 依釋字第 630 號理由書合憲限縮，行為強度須達使被害人難以抗拒；<br>
+                          ④ 涵攝個案：若僅為輕微甩手、推擠脫身，未達難以抗拒，不成立準強盜罪，論以竊盜與普通傷害罪。
+                        </p>
+                        
+                        <!-- 📅 2026 最新法條動態備註 (極致震撼必考點) -->
+                        <div class="p-3 rounded-xl bg-indigo-900/80 border-2 border-amber-400/60 text-xs text-amber-200 space-y-1.5 font-mono">
+                          <div class="flex items-center gap-2 font-bold text-amber-300 text-sm">
+                            <span>📅</span> 2026 最新法條與憲政動態備註【極重磅考點】
+                          </div>
+                          <p class="text-slate-200 leading-relaxed font-serif">
+                            🔥 <strong>憲法法庭 112 年憲判字第 19 號判決（112.11.24 宣告）</strong>：<br>
+                            大法官更進一步宣告：刑法第 329 條後段關於強暴、脅迫以強盜論處部分，<strong>不論行為人施用強暴脅迫之情節輕重，一律擬制以強盜論處，致罪刑不相當，逾越達成防護財產與人身安全目的所必要之程度，牴觸憲法第 23 條比例原則，至遲於判決公告屆滿 2 年時（114 年 11 月 24 日）失其效力！</strong><br>
+                            👉 <strong>至 2026 年（民國 115 年）</strong>：原刑法 § 329 條準強盜擬制條文已屆期失效！考生作答時，除應詳述「釋字第 630 號（合憲限縮）」外，若能進一步點出「112 憲判 19（違憲定期失效）」之最新憲政演進，必得閱卷委員頂標評價！
+                          </p>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
               </div>
-              <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white flex items-center justify-center text-sm font-bold shrink-0 group-hover:scale-105 transition-transform shadow-md shadow-indigo-500/30">
-                →
+
+            </div>
+          </section>
+
+          <!-- ═══════════════ 三、解題提示延伸深讀：有利於人民之類推與超法規事由 ═══════════════ -->
+          <section id="sec-p0ch1-sec3-favorable" class="space-y-6 pt-2">
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-6 rounded-full bg-emerald-600"></span>
+              <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white tracking-tight">
+                三、解題提示延伸深讀：有利於人民之類推與超法規事由（教材第 2-8 頁）
+              </h3>
+            </div>
+
+            <div class="p-6 rounded-3xl border border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#101623] shadow-sm space-y-6">
+              
+              <!-- 課本解題提示展示盒 (1:1 復刻) -->
+              <div class="rounded-2xl p-5 bg-emerald-50/70 dark:bg-emerald-950/20 border-2 border-emerald-300 dark:border-emerald-800/60 border-l-[8px] border-l-emerald-600 space-y-3">
+                <div class="flex items-center justify-between border-b border-emerald-200 dark:border-emerald-900/40 pb-2">
+                  <span class="font-bold text-xs text-emerald-900 dark:text-emerald-300 font-mono">📖 課本【解題提示】1:1 忠實重現 (P. 2-8)</span>
+                  <span class="text-[11px] px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 font-bold font-mono">節制刑罰發動之本質</span>
+                </div>
+                <div class="space-y-2 text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200 font-serif">
+                  <p>
+                    <span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">罪刑法定原則與罪責原則都是節制刑罰發動的原理原則</span>，目的在在執行法益保護時不過度地侵犯人民權利，而有其功能上的考量。
+                  </p>
+                  <p>
+                    倘若在個案操作中的結果係對人民有利，那便不存在節制的理由，<span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">因此條文設計與解釋上，容許對人民有利的類推、溯及或援用</span>（例如前述的超法規阻卻違法、罪責事由）。
+                  </p>
+                </div>
               </div>
-            </button>
+
+              <!-- 深度法理剖析矩陣 -->
+              <div class="space-y-3">
+                <h4 class="text-sm sm:text-base font-black text-slate-900 dark:text-white flex items-center gap-2">
+                  <span class="text-emerald-600 text-lg">💡</span>
+                  <span>為什麼「有利於人民」就不需要節制？——刑罰法理深度拆解</span>
+                </h4>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                  <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border-2 border-rose-300 dark:border-rose-800 space-y-2">
+                    <span class="font-black text-rose-700 dark:text-rose-300 text-sm flex items-center gap-1.5">
+                      <span>🚫</span> 對人民不利者 ➔ 絕對嚴格禁止
+                    </span>
+                    <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 font-serif list-disc list-inside leading-relaxed text-[11.5px]">
+                      <li><strong>不利類推禁止</strong>：文義極限之外不得比附援引創設處罰。</li>
+                      <li><strong>不利溯及既往禁止</strong>：不得搭乘時光機事後算帳。</li>
+                      <li><strong>目的</strong>：防止國家刑罰權濫用，保護人民意思自由與法安定性。</li>
+                    </ul>
+                  </div>
+
+                  <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border-2 border-emerald-300 dark:border-emerald-800 space-y-2">
+                    <span class="font-black text-emerald-700 dark:text-emerald-300 text-sm flex items-center gap-1.5">
+                      <span>✅</span> 對人民有利者 ➔ 法律全面容許
+                    </span>
+                    <ul class="space-y-1.5 text-slate-700 dark:text-slate-300 font-serif list-disc list-inside leading-relaxed text-[11.5px]">
+                      <li><strong>有利類推容許</strong>：類推適用減輕或免除刑罰之法規。</li>
+                      <li><strong>有利溯及容許</strong>：刑法第 2 條第 1 項但書「從舊從輕原則」。</li>
+                      <li><strong>超法規事由</strong>：得援用超法規阻卻違法事由（如被害人承諾、推定的承諾）、超法規阻卻罪責事由（如不可避之違法性錯誤）。</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ═══════════════ 第三節 底部操作與單元分頁條 ═══════════════ -->
+          <div class="w-full max-w-4xl mx-auto flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-50/80 via-white to-indigo-50/80 dark:from-[#121827] dark:to-[#162035] border border-blue-200/80 dark:border-blue-900/40 shadow-xs flex-wrap gap-3">
+            <div class="flex items-center gap-2 flex-wrap">
+              <button onclick="switchView('part0-ch1-sec2')" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 font-bold text-xs flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 cursor-pointer">
+                <span>← 上一單元：第二節 罪刑法定原則 (2-5~2-7)</span>
+              </button>
+              <button onclick="copyPart0Ch1Sec3Notes()" class="px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold text-xs flex items-center gap-1.5 cursor-pointer">
+                <span>📋 複製第三節精華筆記</span>
+              </button>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <button onclick="switchView('cover')" class="px-4 py-2 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-900/50 font-bold text-xs flex items-center gap-1.5 border border-amber-300 dark:border-amber-700/60 cursor-pointer">
+                <span>🏠 返回首頁</span>
+              </button>
+              <button onclick="switchView('part0-ch1')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-xs cursor-pointer">
+                <span>返回第一章總覽 (2-1) →</span>
+              </button>
+            </div>
           </div>
 
         </div>
 `;
+
+// 複製第三節筆記金句
+function copyPart0Ch1Sec3Notes() {
+  const notes = "【刑法總則 • 第三節 罪責原則精華摘要】\\n" +
+    "1. 核心定義：刑事處罰必須以行為人具有罪責為限，並與其罪責相當（釋630號解釋理由書揭櫫）。\\n" +
+    "2. 雙重支柱：\\n" +
+    "   - 無罪責即無刑罰原則：罪責為成立要件，限制刑罰之發動。\\n" +
+    "   - 罪刑相當原則：施加之刑罰不得超過罪責之範圍，體現最後手段性原則。\\n" +
+    "3. 案例 1-8 準強盜罪（§ 329）：\\n" +
+    "   - 釋字第 630 號合憲限縮：強暴脅迫須達「使人難以抗拒」之程度，方符罪刑相當原則！\\n" +
+    "   - 2026 最新法制動態：憲法法庭 112 憲判 19 宣告 § 329 後段違憲並於 114 年 11 月 24 日定期失效！\\n" +
+    "4. 解題提示：罪刑法定與罪責原則皆為「節制刑罰發動」，因此對人民有利之類推、溯及、超法規阻卻違法與罪責事由，法所容許！";
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(notes).then(() => {
+      alert("✨ 已複製第三節精華筆記至剪貼簿！");
+    });
+  } else {
+    alert("✨ 已複製第三節精華筆記！");
+  }
+}

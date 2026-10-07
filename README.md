@@ -66,20 +66,18 @@
 ├── 🧹 clean_redundant_files.bat          # 【一鍵清理】快速封存歷史母本並清理冗餘檔案
 │
 ├── 📂 content/                           # 📚【章節內容模組】(Zero-CORS 模組化掛載)
-│   └── view-part0-ch1-sec2.js            # 第二節 罪刑法定原則 (2-5~2-7) 完整五位一體劇院模組
+│   ├── view-part0-ch1-sec2.js            # 第二節 罪刑法定原則 (2-5~2-7) 完整五位一體劇院模組
+│   └── view-part0-ch1-sec3.js            # 第三節 罪責原則 (2-7~2-8) 完整五位一體劇院模組
 │
 ├── 📂 data/                              # 🗄️【資料庫與設定模組】
 │   ├── search-db.js                      # 全域搜尋引擎關鍵字資料庫 (涵蓋案例 1-1 ~ 1-7)
 │   ├── statute-db.js                     # 刑法實體法條資料庫
 │   └── toc-config.js                     # 右側目錄 TOC 錨點設定模組
 │
-├── 📂 ponytail-4.12.0/                    # 🦄【Ponytail 極簡工程外掛】(Lazy Senior Dev Mode 規範與適配器)
-│   ├── README.md                         # 繁體中文版專案說明書
-│   ├── DEVELOPMENT_REPORT.md             # 深度架構剖析與開發評估報告
-│   └── ponytail-4.12.0/                  # 核心套件本體 (含 skills, hooks, mcp 等)
-│
 ├── 📂 scripts/                           # 🛠️【自動化工具箱】維護與清理工具集
-├── 📂 .agents/skills/多欄位Note Skill/    # 🌟【唯一開發技能】三態視圖、五位一體劇院、向量流程圖完整手冊
+├── 📂 .agents/
+│   ├── 📂 skills/                        # 🌟【專案技能庫】多欄位 Note Skill + Ponytail 極簡資深工程師系列技能
+│   └── 📂 rules/                         # 📜【專案輔助規則庫】ponytail.md
 │
 ├── 📂 docs/                              # 📑【文檔與成果歸檔庫】
 │   ├── 📂 reports/                       # 歷次工作總結報告 (2026-09-27 ~ 2026-10-06)

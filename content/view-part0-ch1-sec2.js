@@ -132,73 +132,216 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
 
               </div>
 
-              <!-- 四大面向派生子原則 原文架構圖 -->
-              <div class="space-y-3 pt-2">
-                <div class="flex items-center justify-between">
-                  <h4 class="text-sm sm:text-base font-black text-slate-900 dark:text-white flex items-center gap-2">
-                    <span class="text-blue-600 text-lg">🗺️</span>
-                    <span>罪刑法定原則之四大面向派生子原則（教材第 2-5 頁 原文圖解）</span>
-                  </h4>
-                  <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900">四大面向</span>
+              <!-- 核心面向導讀標題與 XMind 風格心智導圖 (教材第 2-5 頁 原文圖解昇華) -->
+              <div class="p-5 sm:p-6 rounded-2xl bg-slate-50/60 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800 space-y-4">
+                
+                <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200/80 dark:border-slate-800 pb-3">
+                  <div>
+                    <h4 class="font-black text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2">
+                      <span>🐾 柴柴名師 XMind 核心心智導圖：罪刑法定原則四大派生面向演繹</span>
+                      <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-mono font-bold">XMind風格</span>
+                      <span class="inline-flex sm:hidden items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 font-bold border border-amber-300 dark:border-amber-800">👉 可左右滑動</span>
+                    </h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 font-serif">
+                      本心智導圖精確提煉罪刑法定原則四大法治國支柱，對應案例 1-4 至 1-7 實務爭點。
+                    </p>
+                  </div>
+                  <span class="text-[11px] text-slate-400 font-medium">點擊右側灰色 <strong class="text-amber-600 dark:text-amber-400">(Q)</strong> 展開柴柴考點錦囊</span>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
-                  <!-- 面向 1 -->
-                  <div class="p-4 rounded-2xl bg-blue-50/70 dark:bg-slate-900 border-2 border-blue-200 dark:border-blue-800 border-l-4 border-l-blue-600 shadow-xs space-y-1.5">
-                    <div class="flex items-center justify-between">
-                      <span class="font-black text-blue-950 dark:text-blue-100 flex items-center gap-1.5 text-sm">
-                        <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center font-mono font-bold text-xs">1</span>
-                        <span>習慣法之禁止</span>
-                      </span>
-                      <span class="text-[10px] text-blue-700 dark:text-blue-300 font-mono font-bold px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60">成文法主義</span>
-                    </div>
-                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-[11.5px] font-serif">
-                      刑事處罰，必須以<strong>形式法律</strong>（立法院三讀、總統公布）加以規定，嚴禁逕以社會習慣作為處罰依據。
-                    </p>
-                  </div>
+                <!-- 畫布容器（支援手機橫向滑動與桌面自適應） -->
+                <div class="rounded-xl bg-slate-50/70 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800/80 p-2 sm:p-2.5 relative overflow-x-auto custom-scrollbar">
+                  <div id="mindmapWrapperSec1_Sec2" class="mindmap-canvas p-1.5 sm:p-2 relative select-none min-w-[660px] sm:min-w-full">
+                    
+                    <!-- 背景 SVG 連線畫布 -->
+                    <svg id="mindmapSvgSec1_Sec2" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
 
-                  <!-- 面向 2 -->
-                  <div class="p-4 rounded-2xl bg-indigo-50/70 dark:bg-slate-900 border-2 border-indigo-200 dark:border-indigo-800 border-l-4 border-l-indigo-600 shadow-xs space-y-1.5">
-                    <div class="flex items-center justify-between">
-                      <span class="font-black text-indigo-950 dark:text-indigo-100 flex items-center gap-1.5 text-sm">
-                        <span class="w-5 h-5 rounded bg-indigo-600 text-white flex items-center justify-center font-mono font-bold text-xs">2</span>
-                        <span>類推適用之禁止</span>
-                      </span>
-                      <span class="text-[10px] text-indigo-700 dark:text-indigo-300 font-mono font-bold px-1.5 py-0.5 rounded bg-indigo-100 dark:bg-indigo-900/60">文義射程極限</span>
-                    </div>
-                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-[11.5px] font-serif">
-                      刑事處罰，必須法律「針對該行為」加以規定。文義極限為處罰界限，嚴禁超出文字射程而為不利行為人之類推。
-                    </p>
-                  </div>
+                    <!-- 節點佈局層 -->
+                    <div class="relative z-10 flex items-center gap-2 sm:gap-3.5 md:gap-4 justify-between">
+                      
+                      <!-- 1. 左側主根節點 (ROOT NODE) -->
+                      <div id="mmSec2_Root" class="node-root-mindmap shrink-0 w-24 sm:w-28 md:w-32 py-3 px-1.5 sm:px-2 rounded-xl bg-gradient-to-b from-[#f38c00] to-[#d66f00] text-white font-black text-center border-2 border-[#b85b00] space-y-1 transition-transform hover:scale-105 shadow-sm">
+                        <div class="text-[9.5px] font-mono tracking-wider text-amber-100 uppercase opacity-90">Part 0 • 第二節</div>
+                        <div class="text-xs sm:text-sm font-black leading-tight tracking-tight">
+                          罪刑法定原則<br>四大派生面向
+                        </div>
+                        <div class="pt-1 border-t border-amber-400/40 text-[9.5px] font-medium text-amber-100 flex items-center justify-center gap-0.5">
+                          <span>🐾</span> 柴柴名師導讀
+                        </div>
+                      </div>
 
-                  <!-- 面向 3 -->
-                  <div class="p-4 rounded-2xl bg-amber-50/70 dark:bg-slate-900 border-2 border-amber-200 dark:border-amber-800 border-l-4 border-l-amber-600 shadow-xs space-y-1.5">
-                    <div class="flex items-center justify-between">
-                      <span class="font-black text-amber-950 dark:text-amber-100 flex items-center gap-1.5 text-sm">
-                        <span class="w-5 h-5 rounded bg-amber-600 text-white flex items-center justify-center font-mono font-bold text-xs">3</span>
-                        <span>罪刑明確性原則</span>
-                      </span>
-                      <span class="text-[10px] text-amber-700 dark:text-amber-300 font-mono font-bold px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-900/60">行為可預見</span>
-                    </div>
-                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-[11.5px] font-serif">
-                      刑事處罰，必須「明確」加以規定。犯罪要件與法律效果均須具體清晰，嚴禁絕對不定期刑。
-                    </p>
-                  </div>
+                      <!-- 2. 右側多層分支群 (四大支柱) -->
+                      <div class="space-y-3 sm:space-y-3.5 flex-1 min-w-0">
 
-                  <!-- 面向 4 -->
-                  <div class="p-4 rounded-2xl bg-rose-50/70 dark:bg-slate-900 border-2 border-rose-200 dark:border-rose-800 border-l-4 border-l-rose-600 shadow-xs space-y-1.5">
-                    <div class="flex items-center justify-between">
-                      <span class="font-black text-rose-950 dark:text-rose-100 flex items-center gap-1.5 text-sm">
-                        <span class="w-5 h-5 rounded bg-rose-600 text-white flex items-center justify-center font-mono font-bold text-xs">4</span>
-                        <span>法不溯及既往原則</span>
-                      </span>
-                      <span class="text-[10px] text-rose-700 dark:text-rose-300 font-mono font-bold px-1.5 py-0.5 rounded bg-rose-100 dark:bg-rose-900/60">信賴保護</span>
+                        <!-- 第一大支：習慣法之禁止 (成文法主義) -->
+                        <div class="flex items-center gap-1.5 sm:gap-2">
+                          <div id="mmSec2_B1" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#001a70] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#001247] shadow-xs text-center leading-tight">
+                            ① 習慣法禁止<br><span class="text-[9.5px] opacity-80 font-normal">成文法主義</span>
+                          </div>
+                          <div class="space-y-1.5 flex-1 min-w-0">
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B1_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                保留
+                              </div>
+                              <div id="mmSec2_B1_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                形式法律保留：限立法院三讀、總統公布之法律
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('習慣法之禁止（成文法主義）', '刑事處罰必須以實定形式法律為唯一依據。縱使社會習慣歷經百年，若未經立法程序明文化，亦絕對不得作為科處刑罰或加重刑度之基礎！')">Q</button>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B1_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                射程
+                              </div>
+                              <div id="mmSec2_B1_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                釋字第 384 號：不得以習慣法創設罪刑
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('司法院釋字第 384 號憲法法源', '大法官明確宣告：實質正當法律程序包括罪刑法定主義之要求。非經立法機關通過之法律，法院不得自行依習慣法造法處罰人民！')">Q</button>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B1_3" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                實例
+                              </div>
+                              <div id="mmSec2_B1_3_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                【案例 1-4】原因自由行為爭議 ➔ 95 年修正明定 § 19 Ⅲ
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('案例 1-4 原因自由行為明文化', '自陷精神障礙處罰早年僅有德日法理支持，學界批評違反罪刑法定；立法院因此於 95 年修正增訂第 19 條第 3 項，補足成文法依據！')">Q</button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 第二大支：類推適用之禁止 (文義射程極限) -->
+                        <div class="flex items-center gap-1.5 sm:gap-2">
+                          <div id="mmSec2_B2" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#3730a3] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#1e1b4b] shadow-xs text-center leading-tight">
+                            ② 類推適用禁止<br><span class="text-[9.5px] opacity-80 font-normal">文義射程極限</span>
+                          </div>
+                          <div class="space-y-1.5 flex-1 min-w-0">
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B2_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#3730a3] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                極限
+                              </div>
+                              <div id="mmSec2_B2_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#3730a3] dark:border-indigo-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                文字射程極限：法條文字之最大可能文義為處罰邊界
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('文義可能射程為處罰界線', '擴張解釋仍在文義射程之內；一旦跨越字面最大可能文義，即進入類推適用領域，刑法全面禁止不利於行為人之類推！')">Q</button>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B2_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#3730a3] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                區分
+                              </div>
+                              <div id="mmSec2_B2_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#3730a3] dark:border-indigo-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                禁止不利類推 ✕；容許有利類推 ○（罪疑唯輕）
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('不利禁止 vs 有利容許', '罪刑法定原則旨在保護人民不被國家恣意定罪。因此若為有利於行為人之類推（如阻卻違法、減輕免除其刑），不在禁止之列！')">Q</button>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B2_3" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#3730a3] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                實例
+                              </div>
+                              <div id="mmSec2_B2_3_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#3730a3] dark:border-indigo-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                【案例 1-5】「配偶之尊親屬」不包含「配偶本人」
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('案例 1-5 遺棄罪文義極限檢驗', '刑法 § 294-1 第 3 款明定配偶之直系血親尊親屬，若將配偶本人硬套入，屬超出文字射程之不利類推，為法所不許！')">Q</button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 第三大支：罪刑明確性原則 (行為可預見) -->
+                        <div class="flex items-center gap-1.5 sm:gap-2">
+                          <div id="mmSec2_B3" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#b45309] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#78350f] shadow-xs text-center leading-tight">
+                            ③ 罪刑明確性<br><span class="text-[9.5px] opacity-80 font-normal">行為可預見</span>
+                          </div>
+                          <div class="space-y-1.5 flex-1 min-w-0">
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B3_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#b45309] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                要件
+                              </div>
+                              <div id="mmSec2_B3_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#b45309] dark:border-amber-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                構成要件明確：受規範者可預見、司法可審查（釋字 432、521）
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('明確性三要件判準', '法律規定意義須非難以理解、為受規範者所得預見、並可由司法審查加以確認，才能確保人民行動自由不受恣意侵害！')">Q</button>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B3_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#b45309] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                效果
+                              </div>
+                              <div id="mmSec2_B3_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#b45309] dark:border-amber-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                法律效果明確：嚴禁絕對不定期刑，刑度上下限須明定
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('嚴格禁止絕對不定期刑', '刑罰不得規定為『關到行為人悔改為止』！法律效果若無確定刑期上下限，法官與典獄長將擁有生殺大權，嚴重牴觸法治國原則！')">Q</button>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B3_3" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#b45309] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                實例
+                              </div>
+                              <div id="mmSec2_B3_3_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#b45309] dark:border-amber-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                【案例 1-6】恐嚇危害安全罪與強制罪之構成要件明確性檢視
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('案例 1-6 不確定法律概念限縮', '刑法中常有『強暴脅迫』或『惡害通知』等概括名詞，實務必須嚴格透過判例裁判要旨予以類型化限縮，避免淪為口袋罪！')">Q</button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 第四大支：法不溯及既往原則 (信賴保護) -->
+                        <div class="flex items-center gap-1.5 sm:gap-2">
+                          <div id="mmSec2_B4" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#be123c] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#881337] shadow-xs text-center leading-tight">
+                            ④ 法不溯及既往<br><span class="text-[9.5px] opacity-80 font-normal">信賴保護原則</span>
+                          </div>
+                          <div class="space-y-1.5 flex-1 min-w-0">
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B4_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                原則
+                              </div>
+                              <div id="mmSec2_B4_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                以行為時法為原則：嚴禁事後立法算帳（禁止搭時光機）
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('法不溯及既往之真諦', '國家不能在行為人做完某件事之後，才通過一條法律說那件事違法並抓去關！這是憲法保障人民行動安全的最重要底線！')">Q</button>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B4_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                例外
+                              </div>
+                              <div id="mmSec2_B4_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                從舊從輕原則（刑法 § 2 Ⅰ 但書：有利於行為人者從新）
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('從舊從輕原則實踐', '刑法 § 2 Ⅰ：行為後法律有變更者，原則上適用行為時舊法；但若新法廢止處罰或減輕刑度，則例外適用最有利於行為人之新法！')">Q</button>
+                            </div>
+
+                            <div class="flex items-center gap-1.5">
+                              <div id="mmSec2_B4_3" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px] sm:text-[10px]">
+                                實例
+                              </div>
+                              <div id="mmSec2_B4_3_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight sm:leading-snug">
+                                【案例 1-7】特別刑法之廢止減輕 ➔ 直通第二章第一節時的效力
+                              </div>
+                              <button class="btn-q shrink-0" onclick="showSection1TipSec2('案例 1-7 與第二章時的效力串聯', '案例 1-7 探討公務員貪污條例修法之追溯適用，並與第二章第一節之繼續犯跨越新舊法、限時法追溯力形成完整體系！')">Q</button>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+
                     </div>
-                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-[11.5px] font-serif">
-                      刑事處罰，必須「行為時」即加以規定。禁止搭時光機事後算帳，保障人民安排生活之信賴利益。
-                    </p>
                   </div>
                 </div>
+
+                <!-- 柴柴考點錦囊就地展開容器 (零跳動・原位展開) -->
+                <div id="section1TipModalSec2" class="hidden p-4 rounded-2xl bg-amber-500/10 border-2 border-amber-300 dark:border-amber-700/80 shadow-xs space-y-2 transition-all">
+                  <div class="flex items-center justify-between">
+                    <span id="sec1TipTitleSec2" class="font-black text-amber-950 dark:text-amber-200 text-sm flex items-center gap-1.5">
+                      <span>🐾</span> 柴柴名師考點錦囊
+                    </span>
+                    <button onclick="closeSection1TipSec2()" class="text-xs text-amber-800 dark:text-amber-300 hover:text-amber-950 font-bold px-2 py-0.5 rounded bg-amber-200/60 dark:bg-amber-900/40 cursor-pointer">關閉 ✕</button>
+                  </div>
+                  <p id="sec1TipDescSec2" class="text-xs sm:text-[13px] text-slate-800 dark:text-slate-200 leading-relaxed font-serif"></p>
+                </div>
+
               </div>
 
             </div>
@@ -245,6 +388,146 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                   </div>
                 </div>
 
+                <!-- 🐾 柴柴名師 XMind 思維導圖：案例 1-4 原因自由行為與成文法保留檢驗樹 -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-900/50 border border-blue-200/80 dark:border-blue-900/60 shadow-xs space-y-3">
+                  <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200/80 dark:border-slate-800 pb-2.5">
+                    <div>
+                      <h5 class="font-black text-xs sm:text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
+                        <span>🐾 柴柴名師 XMind 案例思維導圖：原因自由行為與成文法保留檢驗樹</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 font-mono font-bold">XMind風格</span>
+                        <span class="inline-flex sm:hidden items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 font-bold border border-amber-300 dark:border-amber-800">👉 可左右滑動</span>
+                      </h5>
+                    </div>
+                    <span class="text-[11px] text-slate-400 font-medium">點擊右側灰色 <strong class="text-amber-600 dark:text-amber-400">(Q)</strong> 展開柴柴考點錦囊</span>
+                  </div>
+
+                  <!-- 畫布容器 -->
+                  <div class="rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 p-2 sm:p-2.5 relative overflow-x-auto custom-scrollbar">
+                    <div id="mindmapWrapperSec1_Case14" class="mindmap-canvas p-1.5 sm:p-2 relative select-none min-w-[620px] sm:min-w-full">
+                      <svg id="mindmapSvgSec1_Case14" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
+                      
+                      <div class="relative z-10 flex items-center gap-2 sm:gap-3.5 md:gap-4 justify-between">
+                        <!-- 主根節點 -->
+                        <div id="mmCase14_Root" class="node-root-mindmap shrink-0 w-24 sm:w-28 md:w-30 py-2.5 px-1.5 rounded-xl bg-gradient-to-b from-[#f38c00] to-[#d66f00] text-white font-black text-center border-2 border-[#b85b00] space-y-0.5 transition-transform hover:scale-105 shadow-sm">
+                          <div class="text-[9px] font-mono tracking-wider text-amber-100 uppercase opacity-90">案例 1-4 核心</div>
+                          <div class="text-xs sm:text-sm font-black leading-tight tracking-tight">
+                            原因自由行為<br>成文法保留
+                          </div>
+                          <div class="pt-0.5 border-t border-amber-400/40 text-[9px] font-medium text-amber-100 flex items-center justify-center gap-0.5">
+                            <span>🐾</span> 柴柴名師
+                          </div>
+                        </div>
+
+                        <!-- 四大分支 -->
+                        <div class="space-y-2.5 sm:space-y-3 flex-1 min-w-0">
+                          <!-- 分支 1：自陷階段 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase14_B1" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#001a70] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#001247] shadow-xs text-center leading-tight">
+                              ① 原因設定<br><span class="text-[9px] opacity-80 font-normal">心智健全</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase14_B1_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px]">起點</div>
+                                <div id="mmCase14_B1_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  清醒時猛灌烈酒壯膽：具完全責任能力
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase14('原因設定行為', '行為人在喝酒自陷泥醉階段心智健全，責任能力完整，為後續侵害法益啟動因果鏈！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase14_B1_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px]">前置</div>
+                                <div id="mmCase14_B1_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  責任非難點前置：對結果具故意或過失預見
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase14('責任焦點前置', '刑法非難重點前移至設定階段，行為人不能拿事後發瘋作為卸責免罪的藉口！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 2：早期爭議 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase14_B2" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#be123c] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#881337] shadow-xs text-center leading-tight">
+                              ② 早期爭議<br><span class="text-[9px] opacity-80 font-normal">法無明文</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase14_B2_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px]">漏洞</div>
+                                <div id="mmCase14_B2_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  舊法 § 19 僅精神障礙不罰，未明文排除自陷例外
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase14('舊法成文法漏洞', '早期條文只有「心神喪失者不罰」，白紙黑字完全沒有排除自行灌醉的情形！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase14_B2_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px]">批判</div>
+                                <div id="mmCase14_B2_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  法官逕援用德國法理判有罪 ➔ 牴觸成文法保留原則！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase14('習慣法定罪之批判', '法官不能自己拿德國法理論罪，未明文化前直接處罰本質上就是用習慣法創設罪刑，違憲！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 3：95年修法 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase14_B3" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#047857] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#065f46] shadow-xs text-center leading-tight">
+                              ③ 修法明文<br><span class="text-[9px] opacity-80 font-normal">補足成文</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase14_B3_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#047857] text-white font-bold text-[9.5px]">立體</div>
+                                <div id="mmCase14_B3_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#047857] dark:border-emerald-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  95 年修正明定 § 19 Ⅲ：「因故意或過失自行招致者不適用之」
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase14('增訂 § 19 Ⅲ 明文', '立法院三讀通過明文化，正式補足成文法依據，以杜裁判適用之爭議！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase14_B3_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#047857] text-white font-bold text-[9.5px]">法源</div>
+                                <div id="mmCase14_B3_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#047857] dark:border-emerald-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  釋字第 384 號：合憲之實質正當法律程序
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase14('釋字 384 號要求合致', '唯有依立法院三讀成文法明定處罰要件，方符憲法罪刑法定原則與正當程序！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 4：國考定錨 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase14_B4" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#6b21a8] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#581c87] shadow-xs text-center leading-tight">
+                              ④ 國考答題<br><span class="text-[9px] opacity-80 font-normal">三階審查</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase14_B4_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#6b21a8] text-white font-bold text-[9.5px]">階層</div>
+                                <div id="mmCase14_B4_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#6b21a8] dark:border-purple-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  答題定錨於『罪責階層』討論責任能力（非構成要件）
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase14('罪責階層定錨', '考生切勿在構成要件或違法性階層討論原因自由行為，該爭點專屬於罪責責任能力！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase14_B4_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#6b21a8] text-white font-bold text-[9.5px]">結論</div>
+                                <div id="mmCase14_B4_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#6b21a8] dark:border-purple-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  適用 § 19 Ⅲ 排除減免事由 ➔ 成立犯罪既遂！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase14('實體法定讞結論', '行為人故意自陷泥醉以行兇，依 § 19 Ⅲ 不得主張心智缺陷減免，應負完全故意既遂責任！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 柴柴考點錦囊就地展開容器 (案例 1-4 原位展開) -->
+                  <div id="section1TipModalCase14" class="hidden p-3.5 rounded-xl bg-amber-500/10 border-2 border-amber-300 dark:border-amber-700/80 shadow-xs space-y-1.5 transition-all">
+                    <div class="flex items-center justify-between">
+                      <span id="sec1TipTitleCase14" class="font-black text-amber-950 dark:text-amber-200 text-xs sm:text-sm flex items-center gap-1.5">
+                        <span>🐾</span> 柴柴名師考點錦囊
+                      </span>
+                      <button onclick="closeTipCase14()" class="text-[11px] text-amber-800 dark:text-amber-300 hover:text-amber-950 font-bold px-2 py-0.5 rounded bg-amber-200/60 dark:bg-amber-900/40 cursor-pointer">關閉 ✕</button>
+                    </div>
+                    <p id="sec1TipDescCase14" class="text-xs sm:text-[12.5px] text-slate-800 dark:text-slate-200 leading-relaxed font-serif"></p>
+                  </div>
+                </div>
+
                 <!-- 1. ⚔️ 原被告/檢控辯護法庭正面言詞辯論 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <!-- 🛡️ 辯護人金毛大律師 -->
@@ -281,7 +564,7 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                     <div class="space-y-3">
                       <div class="flex items-center gap-2.5 border-b border-rose-100 dark:border-rose-900/40 pb-2.5">
                         <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-rose-400 shrink-0 bg-slate-900 shadow-xs">
-                          <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/prosecutor_fox_1791095870366.jpg" alt="公訴檢察官赤狐律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);" onerror="this.src='images/prosecutor_fox.jpg'">
+                          <img src="images/prosecutor_fox.jpg" alt="公訴檢察官赤狐律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);">
                         </div>
                         <div class="min-w-0 flex-1">
                           <div class="flex items-center justify-between">
@@ -388,7 +671,7 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                   <!-- 5. 👨‍⚖️ 邊牧首席審判長 • 終審裁決一槌定音 -->
                   <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white border-2 border-indigo-400/80 shadow-md flex items-start gap-3.5 relative overflow-hidden">
                     <div class="w-12 h-12 rounded-2xl overflow-hidden shrink-0 border-2 border-indigo-400 shadow-md bg-slate-800">
-                      <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/border_collie_judge_1791095556108.jpg" alt="邊牧審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);" onerror="this.src='images/border_collie_chief_judge.jpg'">
+                      <img src="images/border_collie_chief_judge.jpg" alt="邊牧審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);">
                     </div>
                     <div class="flex-1 space-y-2 relative z-10">
                       <div class="flex items-center justify-between flex-wrap gap-2">
@@ -464,6 +747,146 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                   </div>
                 </div>
 
+                <!-- 🐾 柴柴名師 XMind 思維導圖：案例 1-5 竊電擬制 vs 偷接第四台訊號（類推適用禁止檢驗樹） -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-900/50 border border-indigo-200/80 dark:border-indigo-900/60 shadow-xs space-y-3">
+                  <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200/80 dark:border-slate-800 pb-2.5">
+                    <div>
+                      <h5 class="font-black text-xs sm:text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
+                        <span>🐾 柴柴名師 XMind 案例思維導圖：竊電擬制 vs 偷接第四台訊號（類推適用禁止檢驗樹）</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-300 font-mono font-bold">XMind風格</span>
+                        <span class="inline-flex sm:hidden items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 font-bold border border-amber-300 dark:border-amber-800">👉 可左右滑動</span>
+                      </h5>
+                    </div>
+                    <span class="text-[11px] text-slate-400 font-medium">點擊右側灰色 <strong class="text-amber-600 dark:text-amber-400">(Q)</strong> 展開柴柴考點錦囊</span>
+                  </div>
+
+                  <!-- 畫布容器 -->
+                  <div class="rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 p-2 sm:p-2.5 relative overflow-x-auto custom-scrollbar">
+                    <div id="mindmapWrapperSec1_Case15" class="mindmap-canvas p-1.5 sm:p-2 relative select-none min-w-[620px] sm:min-w-full">
+                      <svg id="mindmapSvgSec1_Case15" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
+                      
+                      <div class="relative z-10 flex items-center gap-2 sm:gap-3.5 md:gap-4 justify-between">
+                        <!-- 主根節點 -->
+                        <div id="mmCase15_Root" class="node-root-mindmap shrink-0 w-24 sm:w-28 md:w-30 py-2.5 px-1.5 rounded-xl bg-gradient-to-b from-[#f38c00] to-[#d66f00] text-white font-black text-center border-2 border-[#b85b00] space-y-0.5 transition-transform hover:scale-105 shadow-sm">
+                          <div class="text-[9px] font-mono tracking-wider text-amber-100 uppercase opacity-90">案例 1-5 核心</div>
+                          <div class="text-xs sm:text-sm font-black leading-tight tracking-tight">
+                            竊電擬制 vs<br>第四台訊號
+                          </div>
+                          <div class="pt-0.5 border-t border-amber-400/40 text-[9px] font-medium text-amber-100 flex items-center justify-center gap-0.5">
+                            <span>🐾</span> 柴柴名師
+                          </div>
+                        </div>
+
+                        <!-- 四大分支 -->
+                        <div class="space-y-2.5 sm:space-y-3 flex-1 min-w-0">
+                          <!-- 分支 1：電能擬制 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase15_B1" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#001a70] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#001247] shadow-xs text-center leading-tight">
+                              ① 電能擬制<br><span class="text-[9px] opacity-80 font-normal">立法明文</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase15_B1_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px]">實體</div>
+                                <div id="mmCase15_B1_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  動產本質（§ 320）：有體物、佔有空間、可支配管領
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase15('動產概念', '傳統刑法動產指有體物，具有形體且能移轉支配持有！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase15_B1_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px]">擬制</div>
+                                <div id="mmCase15_B1_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  電能擬制（§ 323）：立法院明文將電能、熱能擬制為動產 ➔ 竊電成罪！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase15('§ 323 電能擬制', '電能本是無體能量，因立法院特設第 323 條明文擬制，偷電才得以論以竊盜罪！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 2：訊號本質 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase15_B2" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#be123c] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#881337] shadow-xs text-center leading-tight">
+                              ② 訊號物理<br><span class="text-[9px] opacity-80 font-normal">非消耗能量</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase15_B2_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px]">性質</div>
+                                <div id="mmCase15_B2_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  影音訊號為電磁波調變與資訊載體，非消耗性之物理能量
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase15('訊號不是物理能量', '偷接第四台並未奪走或耗損業者的電能，電纜裡的訊號並未因而消失或減少！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase15_B2_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px]">文義</div>
+                                <div id="mmCase15_B2_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  日常文義極限：電視影音訊號在客觀文義上絕難涵蓋為動產或能量
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase15('文義射程極限', '一般社會通念不會把「電視訊號」講成「能量」或「動產」，文字客觀文義是處罰邊界！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 3：檢辯攻防 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase15_B3" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#3730a3] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#1e1b4b] shadow-xs text-center leading-tight">
+                              ③ 檢辯攻防<br><span class="text-[9px] opacity-80 font-normal">類推適用禁止</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase15_B3_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#3730a3] text-white font-bold text-[9.5px]">控方</div>
+                                <div id="mmCase15_B3_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#3730a3] dark:border-indigo-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  檢察官主張：目的性擴張解釋，訊號具龐大經濟價值應予保護
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase15('控方擴張主張', '控方認為第四台有商業利益，擅自搭便車享有利益，應本於立法目的將其涵攝為動產！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase15_B3_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#3730a3] text-white font-bold text-[9.5px]">辯方</div>
+                                <div id="mmCase15_B3_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#3730a3] dark:border-indigo-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  辯護人主張：跨越可能文字文義即屬違法不利類推，憲法所不許！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase15('辯方類推禁止防線', '只要超越文字最大射程，縱使法益值得保護，法官亦嚴禁自創不利類推定罪！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 4：定讞結論 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase15_B4" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#047857] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#065f46] shadow-xs text-center leading-tight">
+                              ④ 終審定讞<br><span class="text-[9px] opacity-80 font-normal">判決無罪</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase15_B4_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#047857] text-white font-bold text-[9.5px]">裁判</div>
+                                <div id="mmCase15_B4_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#047857] dark:border-emerald-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  高院 97 上易 648 號判決：不該當竊盜罪構成要件，判決無罪！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase15('高等法院判決要旨', '法院判決無罪！恪遵罪刑法定與類推適用禁止，司法不得越俎代庖創設刑罰！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase15_B4_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#047857] text-white font-bold text-[9.5px]">定錨</div>
+                                <div id="mmCase15_B4_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#047857] dark:border-emerald-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  立法事後於《有線廣播電視法》專條處罰 ➔ 彰顯成文法正道！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase15('立法者專法補破網', '刑法判無罪後，立法院事後在行政特別法另訂罰則，完全展現了罪刑法定主義之精神！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 柴柴考點錦囊就地展開容器 (案例 1-5 原位展開) -->
+                  <div id="section1TipModalCase15" class="hidden p-3.5 rounded-xl bg-amber-500/10 border-2 border-amber-300 dark:border-amber-700/80 shadow-xs space-y-1.5 transition-all">
+                    <div class="flex items-center justify-between">
+                      <span id="sec1TipTitleCase15" class="font-black text-amber-950 dark:text-amber-200 text-xs sm:text-sm flex items-center gap-1.5">
+                        <span>🐾</span> 柴柴名師考點錦囊
+                      </span>
+                      <button onclick="closeTipCase15()" class="text-[11px] text-amber-800 dark:text-amber-300 hover:text-amber-950 font-bold px-2 py-0.5 rounded bg-amber-200/60 dark:bg-amber-900/40 cursor-pointer">關閉 ✕</button>
+                    </div>
+                    <p id="sec1TipDescCase15" class="text-xs sm:text-[12.5px] text-slate-800 dark:text-slate-200 leading-relaxed font-serif"></p>
+                  </div>
+                </div>
+
                 <!-- 1. ⚔️ 原被告/檢控辯護法庭正面言詞辯論 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <!-- 🛡️ 辯護人金毛大律師 -->
@@ -500,7 +923,7 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                     <div class="space-y-3">
                       <div class="flex items-center gap-2.5 border-b border-rose-100 dark:border-rose-900/40 pb-2.5">
                         <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-rose-400 shrink-0 bg-slate-900 shadow-xs">
-                          <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/prosecutor_fox_1791095870366.jpg" alt="公訴檢察官赤狐律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);" onerror="this.src='images/prosecutor_fox.jpg'">
+                          <img src="images/prosecutor_fox.jpg" alt="公訴檢察官赤狐律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);">
                         </div>
                         <div class="min-w-0 flex-1">
                           <div class="flex items-center justify-between">
@@ -607,7 +1030,7 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                   <!-- 5. 👨‍⚖️ 邊牧首席審判長 • 終審裁決一槌定音 -->
                   <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white border-2 border-indigo-400/80 shadow-md flex items-start gap-3.5 relative overflow-hidden">
                     <div class="w-12 h-12 rounded-2xl overflow-hidden shrink-0 border-2 border-indigo-400 shadow-md bg-slate-800">
-                      <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/border_collie_judge_1791095556108.jpg" alt="邊牧審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);" onerror="this.src='images/border_collie_chief_judge.jpg'">
+                      <img src="images/border_collie_chief_judge.jpg" alt="邊牧審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);">
                     </div>
                     <div class="flex-1 space-y-2 relative z-10">
                       <div class="flex items-center justify-between flex-wrap gap-2">
@@ -686,6 +1109,149 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                   </div>
                 </div>
 
+                <!-- 🐾 柴柴名師 XMind 思維導圖：案例 1-6 處罰方式之明確性（絕對不定期刑 vs 相對不定期刑） -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-900/50 border border-amber-200/80 dark:border-amber-900/60 shadow-xs space-y-3">
+                  <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200/80 dark:border-slate-800 pb-2.5">
+                    <div>
+                      <h5 class="font-black text-xs sm:text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
+                        <span>🐾 柴柴名師 XMind 案例思維導圖：處罰方式明確性檢驗樹（絕對不定期刑 vs 相對不定期刑）</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 font-mono font-bold">XMind風格</span>
+                        <span class="inline-flex sm:hidden items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 font-bold border border-amber-300 dark:border-amber-800">👉 可左右滑動</span>
+                      </h5>
+                    </div>
+                    <span class="text-[11px] text-slate-400 font-medium">點擊右側灰色 <strong class="text-amber-600 dark:text-amber-400">(Q)</strong> 展開柴柴考點錦囊</span>
+                  </div>
+
+                  <!-- 畫布容器 -->
+                  <div class="rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 p-2 sm:p-2.5 relative overflow-x-auto custom-scrollbar">
+                    <div id="mindmapWrapperSec1_Case16" class="mindmap-canvas p-1.5 sm:p-2 relative select-none min-w-[620px] sm:min-w-full">
+                      <svg id="mindmapSvgSec1_Case16" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
+                      
+                      <div class="relative z-10 flex items-center gap-2 sm:gap-3.5 md:gap-4 justify-between">
+                        <!-- 主根節點 -->
+                        <div id="mmCase16_Root" class="node-root-mindmap shrink-0 w-24 sm:w-28 md:w-30 py-2.5 px-1.5 rounded-xl bg-gradient-to-b from-[#f38c00] to-[#d66f00] text-white font-black text-center border-2 border-[#b85b00] space-y-0.5 transition-transform hover:scale-105 shadow-sm">
+                          <div class="text-[9px] font-mono tracking-wider text-amber-100 uppercase opacity-90">案例 1-6 核心</div>
+                          <div class="text-xs sm:text-sm font-black leading-tight tracking-tight">
+                            法律效果明確<br>不定期刑檢驗
+                          </div>
+                          <div class="pt-0.5 border-t border-amber-400/40 text-[9px] font-medium text-amber-100 flex items-center justify-center gap-0.5">
+                            <span>🐾</span> 柴柴名師
+                          </div>
+                        </div>
+
+                        <!-- 四大分支 -->
+                        <div class="space-y-2.5 sm:space-y-3 flex-1 min-w-0">
+                          <!-- 分支 1：雙軌明確性 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase16_B1" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#001a70] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#001247] shadow-xs text-center leading-tight">
+                              ① 雙軌審查<br><span class="text-[9px] opacity-80 font-normal">法治國基石</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase16_B1_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px]">要件</div>
+                                <div id="mmCase16_B1_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  構成要件明確：使受規範者可得預見、得經司法審查（釋字 432、521）
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase16('構成要件明確性', '刑法條文所描述的犯罪構成要件，用字必須具體清晰，人民讀了知道界線，法官審判時也能透過客觀標準加以檢驗與審查！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase16_B1_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px]">效果</div>
+                                <div id="mmCase16_B1_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  法律效果明確：刑罰種類與刑度幅度，必須由立法院以成文法明定
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase16('法律效果明確性', '不僅是「什麼行為算犯罪」要寫清楚，「犯了罪會被怎麼處罰、被關幾年」也必須由法律白紙黑字寫明，不得含糊帶過！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 2：絕對不定期刑 (違憲) -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase16_B2" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#be123c] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#881337] shadow-xs text-center leading-tight">
+                              ② 絕對不定期<br><span class="text-[9px] opacity-80 font-normal">違憲黑牢</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase16_B2_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px]">文意</div>
+                                <div id="mmCase16_B2_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  第一種立法：「過失致死者必須加以處罰」或「關到悔改為止」
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase16('典型絕對不定期刑', '完全未定刑罰種類（罰金？徒刑？死刑？）與刑期期限，把受刑人的命運完全交給法官或典獄長主觀判定！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase16_B2_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px]">違憲</div>
+                                <div id="mmCase16_B2_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  違憲無效：完全剝奪人民預見可能性，任由公權力恣意侵害人身自由
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase16('絕對不定期刑違憲', '憲法第 8 條保障人身自由，若法律無上限限制刑期，將淪為極權統治工具，嚴重牴觸罪刑法定與法律明確性原則！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 3：相對不定期刑 (合憲) -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase16_B3" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#047857] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#064e3b] shadow-xs text-center leading-tight">
+                              ③ 相對不定期<br><span class="text-[9px] opacity-80 font-normal">合憲有效</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase16_B3_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#047857] text-white font-bold text-[9.5px]">文意</div>
+                                <div id="mmCase16_B3_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#047857] dark:border-emerald-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  第二種立法：「過失致人於死者，處兩年以下有期徒刑」
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase16('相對不定期刑特徵', '立法者已明確訂出剝奪自由的「最高上限（2年）」或「最低下限」，具有客觀明確之處罰範圍！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase16_B3_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#047857] text-white font-bold text-[9.5px]">合憲</div>
+                                <div id="mmCase16_B3_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#047857] dark:border-emerald-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  合憲有效：具備預見可能性，保留法官因應個案情節之合憲量刑裁量權
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase16('合憲性根據', '人民事前已知最重代價為兩年，司法者則可在零到兩年間依犯後態度量刑，兼顧罪責原則與個案正義！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 4：終審定錨 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase16_B4" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#4c1d95] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#2e1065] shadow-xs text-center leading-tight">
+                              ④ 終審定錨<br><span class="text-[9px] opacity-80 font-normal">邊牧裁決</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase16_B4_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#4c1d95] text-white font-bold text-[9.5px]">定讞</div>
+                                <div id="mmCase16_B4_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#4c1d95] dark:border-purple-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  實體法定讞：第一種立法違憲無效；第二種立法合憲有效！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase16('終審定讞結論', '第一種立法無刑種與刑度，違憲無效；第二種定有最高刑期，符合罪刑明確性，合憲有效！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase16_B4_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#4c1d95] text-white font-bold text-[9.5px]">定錨</div>
+                                <div id="mmCase16_B4_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#4c1d95] dark:border-purple-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  國考答題定錨：展開「構成要件明確性」＋「法律效果明確性」雙軌審查
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase16('國考答題定錨', '答題時若遇法條爭議，切勿只寫構成要件是否抽象，亦應檢視刑度是否明定上下限！我國刑法目前均採相對不定期刑體制！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 柴柴考點錦囊就地展開容器 (零跳動・原位展開) -->
+                  <div id="section1TipModalCase16" class="hidden p-4 rounded-2xl bg-amber-500/10 border-2 border-amber-300 dark:border-amber-700/80 shadow-xs space-y-2 transition-all">
+                    <div class="flex items-center justify-between">
+                      <span id="sec1TipTitleCase16" class="font-black text-amber-950 dark:text-amber-200 text-sm flex items-center gap-1.5">
+                        <span>🐾</span> 柴柴名師考點錦囊
+                      </span>
+                      <button onclick="closeTipCase16()" class="text-xs text-amber-800 dark:text-amber-300 hover:text-amber-950 font-bold px-2 py-0.5 rounded bg-amber-200/60 dark:bg-amber-900/40 cursor-pointer">關閉 ✕</button>
+                    </div>
+                    <p id="sec1TipDescCase16" class="text-xs sm:text-[13px] text-slate-800 dark:text-slate-200 leading-relaxed font-serif"></p>
+                  </div>
+
+                </div>
+
                 <!-- 1. ⚔️ 原被告/檢控辯護法庭正面言詞辯論 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <!-- 🛡️ 辯護人金毛大律師 -->
@@ -722,7 +1288,7 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                     <div class="space-y-3">
                       <div class="flex items-center gap-2.5 border-b border-rose-100 dark:border-rose-900/40 pb-2.5">
                         <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-rose-400 shrink-0 bg-slate-900 shadow-xs">
-                          <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/prosecutor_fox_1791095870366.jpg" alt="公訴檢察官赤狐律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);" onerror="this.src='images/prosecutor_fox.jpg'">
+                          <img src="images/prosecutor_fox.jpg" alt="公訴檢察官赤狐律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);">
                         </div>
                         <div class="min-w-0 flex-1">
                           <div class="flex items-center justify-between">
@@ -829,7 +1395,7 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                   <!-- 5. 👨‍⚖️ 邊牧首席審判長 • 終審裁決一槌定音 -->
                   <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white border-2 border-indigo-400/80 shadow-md flex items-start gap-3.5 relative overflow-hidden">
                     <div class="w-12 h-12 rounded-2xl overflow-hidden shrink-0 border-2 border-indigo-400 shadow-md bg-slate-800">
-                      <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/border_collie_judge_1791095556108.jpg" alt="邊牧審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);" onerror="this.src='images/border_collie_chief_judge.jpg'">
+                      <img src="images/border_collie_chief_judge.jpg" alt="邊牧審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);">
                     </div>
                     <div class="flex-1 space-y-2 relative z-10">
                       <div class="flex items-center justify-between flex-wrap gap-2">
@@ -907,6 +1473,149 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                   </div>
                 </div>
 
+                <!-- 🐾 柴柴名師 XMind 思維導圖：案例 1-7 小三條款溯及生效之合憲檢驗（法不溯及既往原則） -->
+                <div class="p-4 sm:p-5 rounded-2xl bg-slate-50/70 dark:bg-slate-900/50 border border-rose-200/80 dark:border-rose-900/60 shadow-xs space-y-3">
+                  <div class="flex items-center justify-between flex-wrap gap-2 border-b border-slate-200/80 dark:border-slate-800 pb-2.5">
+                    <div>
+                      <h5 class="font-black text-xs sm:text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
+                        <span>🐾 柴柴名師 XMind 案例思維導圖：小三條款溯及生效合憲檢驗樹（法不溯及既往原則）</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-300 font-mono font-bold">XMind風格</span>
+                        <span class="inline-flex sm:hidden items-center gap-1 text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 font-bold border border-amber-300 dark:border-amber-800">👉 可左右滑動</span>
+                      </h5>
+                    </div>
+                    <span class="text-[11px] text-slate-400 font-medium">點擊右側灰色 <strong class="text-amber-600 dark:text-amber-400">(Q)</strong> 展開柴柴考點錦囊</span>
+                  </div>
+
+                  <!-- 畫布容器 -->
+                  <div class="rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 p-2 sm:p-2.5 relative overflow-x-auto custom-scrollbar">
+                    <div id="mindmapWrapperSec1_Case17" class="mindmap-canvas p-1.5 sm:p-2 relative select-none min-w-[620px] sm:min-w-full">
+                      <svg id="mindmapSvgSec1_Case17" class="absolute inset-0 w-full h-full pointer-events-none z-0"></svg>
+                      
+                      <div class="relative z-10 flex items-center gap-2 sm:gap-3.5 md:gap-4 justify-between">
+                        <!-- 主根節點 -->
+                        <div id="mmCase17_Root" class="node-root-mindmap shrink-0 w-24 sm:w-28 md:w-30 py-2.5 px-1.5 rounded-xl bg-gradient-to-b from-[#f38c00] to-[#d66f00] text-white font-black text-center border-2 border-[#b85b00] space-y-0.5 transition-transform hover:scale-105 shadow-sm">
+                          <div class="text-[9px] font-mono tracking-wider text-amber-100 uppercase opacity-90">案例 1-7 核心</div>
+                          <div class="text-xs sm:text-sm font-black leading-tight tracking-tight">
+                            小三條款溯及<br>法不溯及既往
+                          </div>
+                          <div class="pt-0.5 border-t border-amber-400/40 text-[9px] font-medium text-amber-100 flex items-center justify-center gap-0.5">
+                            <span>🐾</span> 柴柴名師
+                          </div>
+                        </div>
+
+                        <!-- 四大分支 -->
+                        <div class="space-y-2.5 sm:space-y-3 flex-1 min-w-0">
+                          <!-- 分支 1：行為時法原則 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase17_B1" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#001a70] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#001247] shadow-xs text-center leading-tight">
+                              ① 行為時法<br><span class="text-[9px] opacity-80 font-normal">刑法 § 1 鐵律</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase17_B1_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px]">法源</div>
+                                <div id="mmCase17_B1_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  成文法保留起點：以「行為時之法律有明文規定者為限」（刑法 § 1）
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase17('行為時法原則', '行為人在做這件事的當下，法律必須已經白紙黑字規定處罰。若行為時合法，國家事後絕不能立法回溯處罰！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase17_B1_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#001a70] text-white font-bold text-[9.5px]">信賴</div>
+                                <div id="mmCase17_B1_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#001a70] dark:border-blue-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  行為人信賴保護：人民依行為時法秩序安排私生活，享有法的安全感
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase17('信賴保護核心', '昨天的我不歸今天的法律管！人民對有效法規範的信賴受憲法保障，是法治國自由與人身安全的根本基石！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 2：真正溯及既往 (違憲) -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase17_B2" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#be123c] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#881337] shadow-xs text-center leading-tight">
+                              ② 溯及條款<br><span class="text-[9px] opacity-80 font-normal">時光機違憲</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase17_B2_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px]">設計</div>
+                                <div id="mmCase17_B2_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  突襲條款設計：增訂小三條款，並明文溯及自民國99年11月5日生效
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase17('真正溯及既往條款', '立法者把生效日期拉回修法前，意圖讓過去已完成且原屬合法的行為，一夕之間變成犯罪，此即典型搭時光機立法！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase17_B2_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#be123c] text-white font-bold text-[9.5px]">審查</div>
+                                <div id="mmCase17_B2_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#be123c] dark:border-rose-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  突襲立法違憲：縱有民意壓力或重大倫理公益，未顧信賴即屬違憲無效！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase17('真正溯及絕對禁止', '司法院釋字第 574、717 號解釋揭示：不利於受規範者的真正溯及既往刑罰，在憲法審查上屬於絕對嚴格禁止的違憲領域！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 3：例外：從舊從輕 (合憲) -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase17_B3" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#047857] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#064e3b] shadow-xs text-center leading-tight">
+                              ③ 從舊從輕<br><span class="text-[9px] opacity-80 font-normal">有利方可溯</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase17_B3_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#047857] text-white font-bold text-[9.5px]">例外</div>
+                                <div id="mmCase17_B3_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#047857] dark:border-emerald-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  刑法 § 2 Ⅰ 但書：法律有變更時，但新法有利於行為人者，例外從新！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase17('刑法第2條從舊從輕', '法不溯及既往是禁止「不利溯及」。如果新法是廢止犯罪、除罪化或減輕刑罰，則例外允許溯及適用最有利之新法！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase17_B3_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#047857] text-white font-bold text-[9.5px]">本旨</div>
+                                <div id="mmCase17_B3_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#047857] dark:border-emerald-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  只許寬恕送幸福，不准秋後算舊帳：原則保護人民人權，非保護國家刑罰
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase17('溯及原則本旨', '法不溯及既往是為了保護人民人權，而非保護國家刑罰權；因此有利於人民的溯及完全合法合憲！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 分支 4：終審定錨 -->
+                          <div class="flex items-center gap-1.5 sm:gap-2">
+                            <div id="mmCase17_B4" class="shrink-0 px-2 py-1.5 rounded-xl bg-[#4c1d95] text-white font-black text-[10.5px] sm:text-xs tracking-wide border border-[#2e1065] shadow-xs text-center leading-tight">
+                              ④ 終審定錨<br><span class="text-[9px] opacity-80 font-normal">邊牧裁決</span>
+                            </div>
+                            <div class="space-y-1.5 flex-1 min-w-0">
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase17_B4_1" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#4c1d95] text-white font-bold text-[9.5px]">定讞</div>
+                                <div id="mmCase17_B4_1_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#4c1d95] dark:border-purple-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  實體法定讞：溯及條款違憲無效，法院拒絕適用，被告獲判無罪！
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase17('實體法定讞結論', '法官審判時應拒絕適用違憲之溯及條款，依行為時法認定行為不罰，判決被告無罪！')">Q</button>
+                              </div>
+                              <div class="flex items-center gap-1.5">
+                                <div id="mmCase17_B4_2" class="shrink-0 px-1.5 py-0.5 rounded-md bg-[#4c1d95] text-white font-bold text-[9.5px]">定錨</div>
+                                <div id="mmCase17_B4_2_box" class="flex-1 min-w-0 px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-[#4c1d95] dark:border-purple-500 text-slate-800 dark:text-slate-100 text-[10.5px] sm:text-xs font-bold shadow-xs whitespace-normal break-words leading-tight">
+                                  國考答題定錨：分清「真正溯及（絕對禁止）」與「不真正溯及（原則允許）」
+                                </div>
+                                <button class="btn-q shrink-0" onclick="showTipCase17('國考答題定錨', '若過去行為已終結而事後立新法處罰，屬真正溯及既往絕對禁止；若行為處於繼續狀態跨越新舊法，則屬第二章第一節之時的效力連續犯爭點！')">Q</button>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 柴柴考點錦囊就地展開容器 (零跳動・原位展開) -->
+                  <div id="section1TipModalCase17" class="hidden p-4 rounded-2xl bg-amber-500/10 border-2 border-amber-300 dark:border-amber-700/80 shadow-xs space-y-2 transition-all">
+                    <div class="flex items-center justify-between">
+                      <span id="sec1TipTitleCase17" class="font-black text-amber-950 dark:text-amber-200 text-sm flex items-center gap-1.5">
+                        <span>🐾</span> 柴柴名師考點錦囊
+                      </span>
+                      <button onclick="closeTipCase17()" class="text-xs text-amber-800 dark:text-amber-300 hover:text-amber-950 font-bold px-2 py-0.5 rounded bg-amber-200/60 dark:bg-amber-900/40 cursor-pointer">關閉 ✕</button>
+                    </div>
+                    <p id="sec1TipDescCase17" class="text-xs sm:text-[13px] text-slate-800 dark:text-slate-200 leading-relaxed font-serif"></p>
+                  </div>
+
+                </div>
+
                 <!-- 1. ⚔️ 原被告/檢控辯護法庭正面言詞辯論 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <!-- 🛡️ 辯護人金毛大律師 -->
@@ -943,7 +1652,7 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                     <div class="space-y-3">
                       <div class="flex items-center gap-2.5 border-b border-rose-100 dark:border-rose-900/40 pb-2.5">
                         <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-rose-400 shrink-0 bg-slate-900 shadow-xs">
-                          <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/prosecutor_fox_1791095870366.jpg" alt="公訴檢察官赤狐律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);" onerror="this.src='images/prosecutor_fox.jpg'">
+                          <img src="images/prosecutor_fox.jpg" alt="公訴檢察官赤狐律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);">
                         </div>
                         <div class="min-w-0 flex-1">
                           <div class="flex items-center justify-between">
@@ -1047,7 +1756,7 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
                   <!-- 5. 👨‍⚖️ 邊牧首席審判長 • 終審裁決一槌定音 -->
                   <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white border-2 border-indigo-400/80 shadow-md flex items-start gap-3.5 relative overflow-hidden">
                     <div class="w-12 h-12 rounded-2xl overflow-hidden shrink-0 border-2 border-indigo-400 shadow-md bg-slate-800">
-                      <img src="file:///C:/Users/mice/.gemini/antigravity-ide/brain/f1b4b667-641e-4f46-960f-5319e24f9e51/border_collie_judge_1791095556108.jpg" alt="邊牧審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);" onerror="this.src='images/border_collie_chief_judge.jpg'">
+                      <img src="images/border_collie_chief_judge.jpg" alt="邊牧審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);">
                     </div>
                     <div class="flex-1 space-y-2 relative z-10">
                       <div class="flex items-center justify-between flex-wrap gap-2">
@@ -1168,3 +1877,482 @@ window.APP_VIEWS['viewPart0Ch1Sec2'] = window.APP_VIEWS['part0Ch1Sec2'] = `
 
         </div>
 `;
+
+// ==========================================
+// 柴柴心智圖：第零篇第一章第二節 罪刑法定原則專用 SVG 繪製與考點錦囊
+// ==========================================
+window.drawSection1MindMapSec2 = function() {
+  const svg = document.getElementById('mindmapSvgSec1_Sec2');
+  const wrapper = document.getElementById('mindmapWrapperSec1_Sec2');
+  if (!svg || !wrapper) return;
+
+  const wrapperRect = wrapper.getBoundingClientRect();
+  svg.innerHTML = '';
+
+  const connections = [
+    // 根節點連線至四大分支
+    ['mmSec2_Root', 'mmSec2_B1'],
+    ['mmSec2_Root', 'mmSec2_B2'],
+    ['mmSec2_Root', 'mmSec2_B3'],
+    ['mmSec2_Root', 'mmSec2_B4'],
+
+    // 分支 1：習慣法之禁止
+    ['mmSec2_B1', 'mmSec2_B1_1'],
+    ['mmSec2_B1', 'mmSec2_B1_2'],
+    ['mmSec2_B1', 'mmSec2_B1_3'],
+    ['mmSec2_B1_1', 'mmSec2_B1_1_box'],
+    ['mmSec2_B1_2', 'mmSec2_B1_2_box'],
+    ['mmSec2_B1_3', 'mmSec2_B1_3_box'],
+
+    // 分支 2：類推適用之禁止
+    ['mmSec2_B2', 'mmSec2_B2_1'],
+    ['mmSec2_B2', 'mmSec2_B2_2'],
+    ['mmSec2_B2', 'mmSec2_B2_3'],
+    ['mmSec2_B2_1', 'mmSec2_B2_1_box'],
+    ['mmSec2_B2_2', 'mmSec2_B2_2_box'],
+    ['mmSec2_B2_3', 'mmSec2_B2_3_box'],
+
+    // 分支 3：罪刑明確性原則
+    ['mmSec2_B3', 'mmSec2_B3_1'],
+    ['mmSec2_B3', 'mmSec2_B3_2'],
+    ['mmSec2_B3', 'mmSec2_B3_3'],
+    ['mmSec2_B3_1', 'mmSec2_B3_1_box'],
+    ['mmSec2_B3_2', 'mmSec2_B3_2_box'],
+    ['mmSec2_B3_3', 'mmSec2_B3_3_box'],
+
+    // 分支 4：法不溯及既往原則
+    ['mmSec2_B4', 'mmSec2_B4_1'],
+    ['mmSec2_B4', 'mmSec2_B4_2'],
+    ['mmSec2_B4', 'mmSec2_B4_3'],
+    ['mmSec2_B4_1', 'mmSec2_B4_1_box'],
+    ['mmSec2_B4_2', 'mmSec2_B4_2_box'],
+    ['mmSec2_B4_3', 'mmSec2_B4_3_box'],
+  ];
+
+  connections.forEach(([fromId, toId]) => {
+    const fromEl = document.getElementById(fromId);
+    const toEl = document.getElementById(toId);
+    if (!fromEl || !toEl) return;
+
+    const fromRect = fromEl.getBoundingClientRect();
+    const toRect = toEl.getBoundingClientRect();
+
+    const x1 = fromRect.right - wrapperRect.left;
+    const y1 = fromRect.top + fromRect.height / 2 - wrapperRect.top;
+
+    const x2 = toRect.left - wrapperRect.left;
+    const y2 = toRect.top + toRect.height / 2 - wrapperRect.top;
+
+    const deltaX = Math.max(10, (x2 - x1) * 0.5);
+    const cx1 = x1 + deltaX;
+    const cy1 = y1;
+    const cx2 = x2 - deltaX;
+    const cy2 = y2;
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', `M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}`);
+    path.setAttribute('class', 'mindmap-svg-path');
+    if (fromId === 'mmSec2_Root') {
+      path.style.strokeWidth = '2.2px';
+    }
+    svg.appendChild(path);
+  });
+
+  // 同步繪製案例 1-4 思維導圖
+  if (typeof window.drawMindMapCase14 === 'function') {
+    window.drawMindMapCase14();
+  }
+  // 同步繪製案例 1-5 思維導圖
+  if (typeof window.drawMindMapCase15 === 'function') {
+    window.drawMindMapCase15();
+  }
+  // 同步繪製案例 1-6 思維導圖
+  if (typeof window.drawMindMapCase16 === 'function') {
+    window.drawMindMapCase16();
+  }
+  // 同步繪製案例 1-7 思維導圖
+  if (typeof window.drawMindMapCase17 === 'function') {
+    window.drawMindMapCase17();
+  }
+};
+
+// 柴柴考點錦囊 (就地原位展開・零跳動)
+window.showSection1TipSec2 = function(title, desc) {
+  const modal = document.getElementById('section1TipModalSec2');
+  const titleEl = document.getElementById('sec1TipTitleSec2');
+  const descEl = document.getElementById('sec1TipDescSec2');
+  if (modal && titleEl && descEl) {
+    titleEl.innerHTML = '<span>🐾</span> 柴柴名師考點錦囊 • ' + title;
+    descEl.textContent = desc;
+    modal.classList.remove('hidden');
+  }
+};
+
+window.closeSection1TipSec2 = function() {
+  const modal = document.getElementById('section1TipModalSec2');
+  if (modal) modal.classList.add('hidden');
+};
+
+// ==========================================
+// 案例 1-4 專屬心智導圖繪製函式 (原因自由行為成文法保留)
+// ==========================================
+window.drawMindMapCase14 = function() {
+  const svg = document.getElementById('mindmapSvgSec1_Case14');
+  const wrapper = document.getElementById('mindmapWrapperSec1_Case14');
+  if (!svg || !wrapper) return;
+
+  const wrapperRect = wrapper.getBoundingClientRect();
+  svg.innerHTML = '';
+
+  const connections = [
+    // 根節點連線至四大分支
+    ['mmCase14_Root', 'mmCase14_B1'],
+    ['mmCase14_Root', 'mmCase14_B2'],
+    ['mmCase14_Root', 'mmCase14_B3'],
+    ['mmCase14_Root', 'mmCase14_B4'],
+
+    // 分支 1：原因設定階段
+    ['mmCase14_B1', 'mmCase14_B1_1'],
+    ['mmCase14_B1', 'mmCase14_B1_2'],
+    ['mmCase14_B1_1', 'mmCase14_B1_1_box'],
+    ['mmCase14_B1_2', 'mmCase14_B1_2_box'],
+
+    // 分支 2：早期爭議
+    ['mmCase14_B2', 'mmCase14_B2_1'],
+    ['mmCase14_B2', 'mmCase14_B2_2'],
+    ['mmCase14_B2_1', 'mmCase14_B2_1_box'],
+    ['mmCase14_B2_2', 'mmCase14_B2_2_box'],
+
+    // 分支 3：95年修法
+    ['mmCase14_B3', 'mmCase14_B3_1'],
+    ['mmCase14_B3', 'mmCase14_B3_2'],
+    ['mmCase14_B3_1', 'mmCase14_B3_1_box'],
+    ['mmCase14_B3_2', 'mmCase14_B3_2_box'],
+
+    // 分支 4：國考答題定錨
+    ['mmCase14_B4', 'mmCase14_B4_1'],
+    ['mmCase14_B4', 'mmCase14_B4_2'],
+    ['mmCase14_B4_1', 'mmCase14_B4_1_box'],
+    ['mmCase14_B4_2', 'mmCase14_B4_2_box'],
+  ];
+
+  connections.forEach(([fromId, toId]) => {
+    const fromEl = document.getElementById(fromId);
+    const toEl = document.getElementById(toId);
+    if (!fromEl || !toEl) return;
+
+    const fromRect = fromEl.getBoundingClientRect();
+    const toRect = toEl.getBoundingClientRect();
+
+    const x1 = fromRect.right - wrapperRect.left;
+    const y1 = fromRect.top + fromRect.height / 2 - wrapperRect.top;
+
+    const x2 = toRect.left - wrapperRect.left;
+    const y2 = toRect.top + toRect.height / 2 - wrapperRect.top;
+
+    const deltaX = Math.max(10, (x2 - x1) * 0.5);
+    const cx1 = x1 + deltaX;
+    const cy1 = y1;
+    const cx2 = x2 - deltaX;
+    const cy2 = y2;
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', `M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}`);
+    path.setAttribute('class', 'mindmap-svg-path');
+    if (fromId === 'mmCase14_Root') {
+      path.style.strokeWidth = '2.2px';
+    }
+    svg.appendChild(path);
+  });
+};
+
+// 案例 1-4 錦囊提示彈窗
+window.showTipCase14 = function(title, desc) {
+  const modal = document.getElementById('section1TipModalCase14');
+  const titleEl = document.getElementById('sec1TipTitleCase14');
+  const descEl = document.getElementById('sec1TipDescCase14');
+  if (modal && titleEl && descEl) {
+    titleEl.innerHTML = '<span>🐾</span> 柴柴名師考點錦囊 • ' + title;
+    descEl.textContent = desc;
+    modal.classList.remove('hidden');
+  }
+};
+
+window.closeTipCase14 = function() {
+  const modal = document.getElementById('section1TipModalCase14');
+  if (modal) modal.classList.add('hidden');
+};
+
+// ==========================================
+// 案例 1-5 專屬心智導圖繪製函式 (竊電擬制 vs 偷接第四台訊號)
+// ==========================================
+window.drawMindMapCase15 = function() {
+  const svg = document.getElementById('mindmapSvgSec1_Case15');
+  const wrapper = document.getElementById('mindmapWrapperSec1_Case15');
+  if (!svg || !wrapper) return;
+
+  const wrapperRect = wrapper.getBoundingClientRect();
+  svg.innerHTML = '';
+
+  const connections = [
+    // 根節點連線至四大分支
+    ['mmCase15_Root', 'mmCase15_B1'],
+    ['mmCase15_Root', 'mmCase15_B2'],
+    ['mmCase15_Root', 'mmCase15_B3'],
+    ['mmCase15_Root', 'mmCase15_B4'],
+
+    // 分支 1：電能擬制
+    ['mmCase15_B1', 'mmCase15_B1_1'],
+    ['mmCase15_B1', 'mmCase15_B1_2'],
+    ['mmCase15_B1_1', 'mmCase15_B1_1_box'],
+    ['mmCase15_B1_2', 'mmCase15_B1_2_box'],
+
+    // 分支 2：訊號物理
+    ['mmCase15_B2', 'mmCase15_B2_1'],
+    ['mmCase15_B2', 'mmCase15_B2_2'],
+    ['mmCase15_B2_1', 'mmCase15_B2_1_box'],
+    ['mmCase15_B2_2', 'mmCase15_B2_2_box'],
+
+    // 分支 3：檢辯攻防
+    ['mmCase15_B3', 'mmCase15_B3_1'],
+    ['mmCase15_B3', 'mmCase15_B3_2'],
+    ['mmCase15_B3_1', 'mmCase15_B3_1_box'],
+    ['mmCase15_B3_2', 'mmCase15_B3_2_box'],
+
+    // 分支 4：終審定讞
+    ['mmCase15_B4', 'mmCase15_B4_1'],
+    ['mmCase15_B4', 'mmCase15_B4_2'],
+    ['mmCase15_B4_1', 'mmCase15_B4_1_box'],
+    ['mmCase15_B4_2', 'mmCase15_B4_2_box'],
+  ];
+
+  connections.forEach(([fromId, toId]) => {
+    const fromEl = document.getElementById(fromId);
+    const toEl = document.getElementById(toId);
+    if (!fromEl || !toEl) return;
+
+    const fromRect = fromEl.getBoundingClientRect();
+    const toRect = toEl.getBoundingClientRect();
+
+    const x1 = fromRect.right - wrapperRect.left;
+    const y1 = fromRect.top + fromRect.height / 2 - wrapperRect.top;
+
+    const x2 = toRect.left - wrapperRect.left;
+    const y2 = toRect.top + toRect.height / 2 - wrapperRect.top;
+
+    const deltaX = Math.max(10, (x2 - x1) * 0.5);
+    const cx1 = x1 + deltaX;
+    const cy1 = y1;
+    const cx2 = x2 - deltaX;
+    const cy2 = y2;
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', `M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}`);
+    path.setAttribute('class', 'mindmap-svg-path');
+    if (fromId === 'mmCase15_Root') {
+      path.style.strokeWidth = '2.2px';
+    }
+    svg.appendChild(path);
+  });
+};
+
+// 案例 1-5 錦囊提示彈窗
+window.showTipCase15 = function(title, desc) {
+  const modal = document.getElementById('section1TipModalCase15');
+  const titleEl = document.getElementById('sec1TipTitleCase15');
+  const descEl = document.getElementById('sec1TipDescCase15');
+  if (modal && titleEl && descEl) {
+    titleEl.innerHTML = '<span>🐾</span> 柴柴名師考點錦囊 • ' + title;
+    descEl.textContent = desc;
+    modal.classList.remove('hidden');
+  }
+};
+
+window.closeTipCase15 = function() {
+  const modal = document.getElementById('section1TipModalCase15');
+  if (modal) modal.classList.add('hidden');
+};
+
+// ==========================================
+// 案例 1-6 專屬心智導圖繪製函式 (絕對不定期刑 vs 相對不定期刑)
+// ==========================================
+window.drawMindMapCase16 = function() {
+  const svg = document.getElementById('mindmapSvgSec1_Case16');
+  const wrapper = document.getElementById('mindmapWrapperSec1_Case16');
+  if (!svg || !wrapper) return;
+
+  const wrapperRect = wrapper.getBoundingClientRect();
+  svg.innerHTML = '';
+
+  const connections = [
+    // 根節點連線至四大分支
+    ['mmCase16_Root', 'mmCase16_B1'],
+    ['mmCase16_Root', 'mmCase16_B2'],
+    ['mmCase16_Root', 'mmCase16_B3'],
+    ['mmCase16_Root', 'mmCase16_B4'],
+
+    // 分支 1：雙軌明確性
+    ['mmCase16_B1', 'mmCase16_B1_1'],
+    ['mmCase16_B1', 'mmCase16_B1_2'],
+    ['mmCase16_B1_1', 'mmCase16_B1_1_box'],
+    ['mmCase16_B1_2', 'mmCase16_B1_2_box'],
+
+    // 分支 2：絕對不定期刑
+    ['mmCase16_B2', 'mmCase16_B2_1'],
+    ['mmCase16_B2', 'mmCase16_B2_2'],
+    ['mmCase16_B2_1', 'mmCase16_B2_1_box'],
+    ['mmCase16_B2_2', 'mmCase16_B2_2_box'],
+
+    // 分支 3：相對不定期刑
+    ['mmCase16_B3', 'mmCase16_B3_1'],
+    ['mmCase16_B3', 'mmCase16_B3_2'],
+    ['mmCase16_B3_1', 'mmCase16_B3_1_box'],
+    ['mmCase16_B3_2', 'mmCase16_B3_2_box'],
+
+    // 分支 4：終審定錨
+    ['mmCase16_B4', 'mmCase16_B4_1'],
+    ['mmCase16_B4', 'mmCase16_B4_2'],
+    ['mmCase16_B4_1', 'mmCase16_B4_1_box'],
+    ['mmCase16_B4_2', 'mmCase16_B4_2_box'],
+  ];
+
+  connections.forEach(([fromId, toId]) => {
+    const fromEl = document.getElementById(fromId);
+    const toEl = document.getElementById(toId);
+    if (!fromEl || !toEl) return;
+
+    const fromRect = fromEl.getBoundingClientRect();
+    const toRect = toEl.getBoundingClientRect();
+
+    const x1 = fromRect.right - wrapperRect.left;
+    const y1 = fromRect.top + fromRect.height / 2 - wrapperRect.top;
+
+    const x2 = toRect.left - wrapperRect.left;
+    const y2 = toRect.top + toRect.height / 2 - wrapperRect.top;
+
+    const deltaX = Math.max(10, (x2 - x1) * 0.5);
+    const cx1 = x1 + deltaX;
+    const cy1 = y1;
+    const cx2 = x2 - deltaX;
+    const cy2 = y2;
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', `M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}`);
+    path.setAttribute('class', 'mindmap-svg-path');
+    if (fromId === 'mmCase16_Root') {
+      path.style.strokeWidth = '2.2px';
+    }
+    svg.appendChild(path);
+  });
+};
+
+// 案例 1-6 錦囊提示彈窗
+window.showTipCase16 = function(title, desc) {
+  const modal = document.getElementById('section1TipModalCase16');
+  const titleEl = document.getElementById('sec1TipTitleCase16');
+  const descEl = document.getElementById('sec1TipDescCase16');
+  if (modal && titleEl && descEl) {
+    titleEl.innerHTML = '<span>🐾</span> 柴柴名師考點錦囊 • ' + title;
+    descEl.textContent = desc;
+    modal.classList.remove('hidden');
+  }
+};
+
+window.closeTipCase16 = function() {
+  const modal = document.getElementById('section1TipModalCase16');
+  if (modal) modal.classList.add('hidden');
+};
+
+// ==========================================
+// 案例 1-7 專屬心智導圖繪製函式 (小三條款溯及生效與信賴保護)
+// ==========================================
+window.drawMindMapCase17 = function() {
+  const svg = document.getElementById('mindmapSvgSec1_Case17');
+  const wrapper = document.getElementById('mindmapWrapperSec1_Case17');
+  if (!svg || !wrapper) return;
+
+  const wrapperRect = wrapper.getBoundingClientRect();
+  svg.innerHTML = '';
+
+  const connections = [
+    // 根節點連線至四大分支
+    ['mmCase17_Root', 'mmCase17_B1'],
+    ['mmCase17_Root', 'mmCase17_B2'],
+    ['mmCase17_Root', 'mmCase17_B3'],
+    ['mmCase17_Root', 'mmCase17_B4'],
+
+    // 分支 1：行為時法原則
+    ['mmCase17_B1', 'mmCase17_B1_1'],
+    ['mmCase17_B1', 'mmCase17_B1_2'],
+    ['mmCase17_B1_1', 'mmCase17_B1_1_box'],
+    ['mmCase17_B1_2', 'mmCase17_B1_2_box'],
+
+    // 分支 2：真正溯及既往違憲
+    ['mmCase17_B2', 'mmCase17_B2_1'],
+    ['mmCase17_B2', 'mmCase17_B2_2'],
+    ['mmCase17_B2_1', 'mmCase17_B2_1_box'],
+    ['mmCase17_B2_2', 'mmCase17_B2_2_box'],
+
+    // 分支 3：從舊從輕原則
+    ['mmCase17_B3', 'mmCase17_B3_1'],
+    ['mmCase17_B3', 'mmCase17_B3_2'],
+    ['mmCase17_B3_1', 'mmCase17_B3_1_box'],
+    ['mmCase17_B3_2', 'mmCase17_B3_2_box'],
+
+    // 分支 4：終審定錨
+    ['mmCase17_B4', 'mmCase17_B4_1'],
+    ['mmCase17_B4', 'mmCase17_B4_2'],
+    ['mmCase17_B4_1', 'mmCase17_B4_1_box'],
+    ['mmCase17_B4_2', 'mmCase17_B4_2_box'],
+  ];
+
+  connections.forEach(([fromId, toId]) => {
+    const fromEl = document.getElementById(fromId);
+    const toEl = document.getElementById(toId);
+    if (!fromEl || !toEl) return;
+
+    const fromRect = fromEl.getBoundingClientRect();
+    const toRect = toEl.getBoundingClientRect();
+
+    const x1 = fromRect.right - wrapperRect.left;
+    const y1 = fromRect.top + fromRect.height / 2 - wrapperRect.top;
+
+    const x2 = toRect.left - wrapperRect.left;
+    const y2 = toRect.top + toRect.height / 2 - wrapperRect.top;
+
+    const deltaX = Math.max(10, (x2 - x1) * 0.5);
+    const cx1 = x1 + deltaX;
+    const cy1 = y1;
+    const cx2 = x2 - deltaX;
+    const cy2 = y2;
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', `M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}`);
+    path.setAttribute('class', 'mindmap-svg-path');
+    if (fromId === 'mmCase17_Root') {
+      path.style.strokeWidth = '2.2px';
+    }
+    svg.appendChild(path);
+  });
+};
+
+// 案例 1-7 錦囊提示彈窗
+window.showTipCase17 = function(title, desc) {
+  const modal = document.getElementById('section1TipModalCase17');
+  const titleEl = document.getElementById('sec1TipTitleCase17');
+  const descEl = document.getElementById('sec1TipDescCase17');
+  if (modal && titleEl && descEl) {
+    titleEl.innerHTML = '<span>🐾</span> 柴柴名師考點錦囊 • ' + title;
+    descEl.textContent = desc;
+    modal.classList.remove('hidden');
+  }
+};
+
+window.closeTipCase17 = function() {
+  const modal = document.getElementById('section1TipModalCase17');
+  if (modal) modal.classList.add('hidden');
+};
+
+
+
+

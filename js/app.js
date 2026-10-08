@@ -55,7 +55,30 @@ function copyQuote() {
 function exportMarkdown() {
   let mdContent = "";
   let fileName = "";
-  if (currentView === 'part0-ch1-sec1') {
+  if (currentView === 'part0-ch2-sec1') {
+    fileName = "第零篇第二章第一節_2-9_2-14頁_刑法的適用效力全節筆記.md";
+    mdContent = `# 第零篇 第二章 第一節 刑法的適用效力（教材第 2-9 ～ 2-14 頁 全節完結精華整理）
+
+## 一、刑法適用效力之三大先天限制（時、地、人）
+- **時的限制**：以行為時為基準，原則禁止不利溯及，例外從舊從輕（§ 2）。
+- **地的限制**：國民主權空間界限，主要基準屬地原則（§ 3＋§ 4）優先，輔助基準（§ 5～§ 8）補充。
+- **人的限制**：原則平等適用，例外總統刑事豁免（憲法 § 52）、民代言論免責（憲法 § 73）、外交豁免。
+
+## 二、六大經典案例研習成果（五位一體法學劇院定錨）
+1. **案例 2-1（拘禁跨越修法案）**：私行拘禁為繼續犯，行為終了於新法時代，逕行適用行為時之新法。
+2. **案例 2-2（限時法追溯力案）**：動員戡亂時期國安法，實務 76 年決議採肯定說，限時法失效仍依 § 2 適用最有利法諭知免訴。
+3. **案例 2-3（菲國電信詐騙案）**：跨國機房詐騙隔地犯，受害人在台匯款，結果地在境內，依 § 4 屬地主要基準直接適用。
+4. **案例 2-4（使領館犯罪案）**：駐外使領館非浮動領土，依國際慣例以駐在國明示放棄管轄權為斷。
+5. **案例 2-5（大陸地區犯罪案）**：最高法院 90 台上 4247 特殊國內關係，兩岸條例 § 2 認定大陸為我國領土，在大陸犯罪屬境內犯罪；已受刑者依兩岸條例 § 75 得免其刑執行。
+6. **案例 2-6（境外偽造外國股票案）**：72 台上 5872 號判例，§ 5 ⑤ 保護原則僅限保護本國有價證券，外國股票無我國刑法適用！
+
+## 三、核心考點與審查順序
+- **廣大興案**：公海射擊台灣籍漁船致船長死亡，殺人結果地在浮動領土，依 § 3 但書＋§ 4 屬地主要基準優先管轄，切勿跳躍至 § 8！
+- **總統刑事豁免 vs 民代言論免責**：總統為程序上「訴訟障礙事由」，暫時性，行為仍成立犯罪；民代為實體法「免責權」，永久性排除刑罰！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part0-ch1-sec1') {
     fileName = "第零篇第一章第一節_2-1_2-4頁_法益保護原則筆記.md";
     mdContent = `# 第零篇 第一章 第一節 法益保護原則——何謂法益？（教材第 2-1 底 ～ 2-4 頁精華整理）
 
@@ -253,6 +276,30 @@ const VIEW_CONFIG = {
     tag: '第零篇', sub: '第一節 內文',
     title: '🛡️ 第零篇・第一章 第一節 法益保護原則（教材第 2-1～2-4 頁）',
     tab: '第一節 法益保護原則 | 刑法總則【圖說系列】'
+  },
+  'part0-ch1-sec2': {
+    paneId: 'viewPart0Ch1Sec2', tocId: 'tocNavPart0Ch1Sec2',
+    tag: '第零篇', sub: '第二節 內文',
+    title: '⚖️ 第零篇・第一章 第二節 罪刑法定原則（教材第 2-5～2-7 頁）',
+    tab: '第二節 罪刑法定原則 | 刑法總則【圖說系列】'
+  },
+  'part0-ch1-sec3': {
+    paneId: 'viewPart0Ch1Sec3', tocId: 'tocNavPart0Ch1Sec3',
+    tag: '第零篇', sub: '第三節 內文',
+    title: '⚖️ 第零篇・第一章 第三節 罪責原則（教材第 2-7～2-8 頁）',
+    tab: '第三節 罪責原則 | 刑法總則【圖說系列】'
+  },
+  'part0-ch2': {
+    paneId: 'viewPart0Chapter2', tocId: 'tocNavPart0Chapter2',
+    tag: '第零篇', sub: '第二章 總覽',
+    title: '⚙️ 第零篇・第二章 刑法的操作原理（教材第 2-9～2-24 頁）',
+    tab: '第二章 刑法的操作原理 | 刑法總則【圖說系列】'
+  },
+  'part0-ch2-sec1': {
+    paneId: 'viewPart0Ch2Sec1', tocId: 'tocNavPart0Ch2Sec1',
+    tag: '第零篇', sub: '第一節 內文',
+    title: '🌐 第零篇・第二章 第一節 刑法的適用效力（教材第 2-9～2-14 頁 全節完結）',
+    tab: '第一節 刑法的適用效力 | 刑法總則【圖說系列】'
   }
 };
 
@@ -277,7 +324,11 @@ const NAV_BTN_REFS = [
   { key: 'chapter2', dt: 'navBtnChapter2', mb: 'mNavBtnChapter2', style: 'indigo', base: 'w-full px-3 py-2 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
   { key: 'part0', dt: 'navBtnPart0', mb: 'mNavBtnPart0', style: 'blue', base: 'w-full px-3 py-2 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
   { key: 'part0-ch1', dt: 'navBtnPart0Ch1', mb: 'mNavBtnPart0Ch1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
-  { key: 'part0-ch1-sec1', dt: 'navBtnPart0Ch1Sec1', mb: 'mNavBtnPart0Ch1Sec1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' }
+  { key: 'part0-ch1-sec1', dt: 'navBtnPart0Ch1Sec1', mb: 'mNavBtnPart0Ch1Sec1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part0-ch1-sec2', dt: 'navBtnPart0Ch1Sec2', mb: 'mNavBtnPart0Ch1Sec2', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part0-ch1-sec3', dt: 'navBtnPart0Ch1Sec3', mb: 'mNavBtnPart0Ch1Sec3', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part0-ch2', dt: 'navBtnPart0Ch2', mb: 'mNavBtnPart0Ch2', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
+  { key: 'part0-ch2-sec1', dt: 'navBtnPart0Ch2Sec1', mb: 'mNavBtnPart0Ch2Sec1', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' }
 ];
 
 function switchView(view) {
@@ -310,7 +361,7 @@ function switchView(view) {
   if (mainContainer) {
     mainContainer.className = (hasToc ? "lg:col-span-6 xl:col-span-6" : "lg:col-span-9 xl:col-span-9") + " space-y-8 transition-all duration-300";
   }
-  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1'].forEach(id => {
+  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1', 'tocNavPart0Ch1Sec2', 'tocNavPart0Ch1Sec3', 'tocNavPart0Chapter2', 'tocNavPart0Ch2Sec1'].forEach(id => {
     const tocEl = document.getElementById(id);
     if (tocEl) tocEl.classList.toggle('hidden', id !== meta.tocId);
   });
@@ -327,7 +378,7 @@ function switchView(view) {
   });
 
   // 5. 特殊章節心智圖重繪
-  if (view === 'part0-ch1-sec1') {
+  if (view === 'part0-ch1-sec1' || view === 'part0-ch1-sec2') {
     setTimeout(redrawAllMindMaps, 100);
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -342,6 +393,38 @@ window.addEventListener('DOMContentLoaded', () => {
     } else if (hash === '#part0-ch1-sec1' || hash === '#viewPart0Ch1Sec1' || hash.startsWith('#sec-p0c1s1-')) {
       switchView('part0-ch1-sec1');
       if (hash.startsWith('#sec-p0c1s1-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part0-ch1-sec2' || hash === '#viewPart0Ch1Sec2' || hash.startsWith('#sec-p0ch1-sec2-')) {
+      switchView('part0-ch1-sec2');
+      if (hash.startsWith('#sec-p0ch1-sec2-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part0-ch1-sec3' || hash === '#viewPart0Ch1Sec3' || hash.startsWith('#sec-p0ch1-sec3-')) {
+      switchView('part0-ch1-sec3');
+      if (hash.startsWith('#sec-p0ch1-sec3-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part0-ch2-sec1' || hash === '#viewPart0Ch2Sec1' || hash.startsWith('#sec-p0ch2-sec1-')) {
+      switchView('part0-ch2-sec1');
+      if (hash.startsWith('#sec-p0ch2-sec1-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part0-ch2' || hash === '#viewPart0Chapter2' || hash.startsWith('#sec-p0ch2-')) {
+      switchView('part0-ch2');
+      if (hash.startsWith('#sec-p0ch2-')) {
         setTimeout(() => {
           const el = document.querySelector(hash);
           if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -572,6 +655,8 @@ function drawSection1MindMap3() {
 function redrawAllMindMaps() {
   drawSection1MindMap2();
   drawSection1MindMap3();
+  if (typeof window.drawSection1MindMapSec2 === 'function') window.drawSection1MindMapSec2();
+  if (typeof window.drawSection1MindMapSec3 === 'function') window.drawSection1MindMapSec3();
 }
 
 window.addEventListener('resize', redrawAllMindMaps);

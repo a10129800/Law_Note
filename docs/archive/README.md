@@ -9,3 +9,5 @@
 - **`CRIMINAL_LAW_NOTES.md`**：早期全書筆記原始手稿。
 - **`CRIMINAL_LAW_VISUAL_GUIDE.md`**：舊版視覺設計指南（現已全面升級整併入 `AGENTS.md`）。
 - **`柴柴學者版.md`**：早期犬系名師構想手稿（現已全面整併入 `AGENTS.md` 與 `多欄位Note Skill`）。
+- **`data/`**：早期搜尋引擎與法條歷史資料庫（現已全面由動態模組取代）。
+- **`legacy_modules/`**：早期未解耦之視圖模組（現已精簡保留生效中的 4 大核心模組）。

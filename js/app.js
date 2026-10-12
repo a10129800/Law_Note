@@ -41,6 +41,18 @@ function copyQuote() {
     quote = "目的在保護法益 ➔ 手段要最後謙抑 ➔ 預防要罪刑法定 ➔ 應報要罪責相稱！";
   } else if (currentView === 'part0-ch1-sec1') {
     quote = "讀分則先定法益，解要件不偏不倚！個人超個人數量差，三大案例展奇功！";
+  } else if (currentView === 'part0-ch2-sec2') {
+    quote = "文義為底線，目的為指南！憲法取向防冤獄，公務員三型嚴把關！";
+  } else if (currentView === 'part0-ch3') {
+    quote = "手段刑罰要相當，目的法益不相忘！應報劃出罪責頂，結合雙軌重矯治！";
+  } else if (currentView === 'part0-ch3-sec1') {
+    quote = "主刑三類定根基，死刑自由加罰金！從刑專屬褫奪權，沒收獨立第三軌！";
+  } else if (currentView === 'part0-ch3-sec2') {
+    quote = "處斷尺規先加減，累犯五年看執行！釋字七七五得免加，自首未發得減刑！";
+  } else if (currentView === 'part0-ch3-sec3') {
+    quote = "罪刑相當定宣告，五七十款為例示！重複評價斷不可，行使緘默非態度！";
+  } else if (currentView === 'part0-ch3-sec4') {
+    quote = "執行實踐防短弊，易科六月本刑五！併罰逾六仍得易，期滿未撤自始無！";
   }
   if (navigator.clipboard) {
     navigator.clipboard.writeText(quote).then(() => {
@@ -55,7 +67,290 @@ function copyQuote() {
 function exportMarkdown() {
   let mdContent = "";
   let fileName = "";
-  if (currentView === 'part0-ch2-sec1') {
+  if (currentView === 'part0-ch3-sec4') {
+    fileName = "第零篇第三章第四節_2-33_2-37頁_刑罰的執行兼談執行刑全節完結筆記.md";
+    mdContent = `# 第零篇 第三章 第四節 刑罰的執行——兼談執行刑（教材第 2-33 ～ 2-37 頁 全節完結精華整理）
+
+## 一、執行刑概念與分歧原因
+- **執行刑**：行為人實際上要被執行的刑罰。
+- **與宣告刑落差兩大成因**：
+  1. 易刑處分（易科罰金、易服勞役、易以訓誡、易服社會勞動）。
+  2. 實質競合（數罪併罰定應執行刑，§ 51）。
+
+## 二、案例 3-1 四階段思考流程全示範（甲犯強制性交後犯毀損文書）
+1. **法定刑**：3 年以下有期徒刑（下限 2 月）、拘役（上限 60 日）或 1 萬元以下罰金。
+2. **處斷刑**：出獄 5 年內故意再犯，累犯加重二分之一 ➔ 3 個月以上 4.5 年以下有期徒刑、90 日拘役或 1.5 萬元以下罰金。
+3. **宣告刑**：法官於處斷刑內酌定 ➔ 處 5 個月有期徒刑。
+4. **執行刑**：主文諭知折算標準，檢察官准予易科罰金 ➔ 新台幣 150,000 元整。
+
+## 三、易科罰金（§ 41）與案例 3-2（釋字 662 號）
+- **宗旨**：避免短期自由刑流弊（入監無效、學習惡習升等、與社會脫節）。
+- **要件**：
+  - 法定刑：最重本刑 5 年以下有期徒刑。
+  - 宣告刑：受 6 月以下有期徒刑或拘役宣告。
+  - 消極要件：難收矯正之效或難以維持法秩序者不得易科。
+- **★ 案例 3-2 數罪併罰易科罰金難題**：
+  - 各罪均得易科，但實質競合定應執行刑逾 6 個月（如判 4 月 + 判 4 月 = 執行刑 7 月）。
+  - **大法官釋字第 662 號 ＆ 現行法 § 41 Ⅷ（肯定說）**：各罪均得易科者，合併執行刑縱逾 6 個月，仍得易科罰金！
+
+## 四、緩刑制度（§ 74 ～ § 76）與案例 3-3（§ 76 但書）
+- **要件**：
+  - 宣告刑：受 2 年以下有期徒刑、拘役或罰金之宣告。（注意：若數罪併罰執行刑逾 2 年者不得緩刑！）
+  - 消極前科：未曾受徒刑宣告；或前受徒刑執行完畢後 5 年內未曾受徒刑宣告。
+  - 積極要件：認以暫不執行為適當。
+- **期滿效力**：期滿未撤銷者，刑之宣告失其效力（視為自始未受刑之宣告）。
+- **★ 案例 3-3 緩刑期滿後判決撤銷爭議**：
+  - 緩刑期內更犯罪，拖延至期滿後方判決確定。
+  - **§ 76 但書防脫法條款**：依 § 75 Ⅱ、§ 75-1 Ⅱ 撤銷緩刑者不在此限！避免受刑人藉故拖延訴訟保全緩刑。
+
+## 五、假釋制度（§ 77 ～ § 79）與案例 3-4（釋字 691 號）
+- **要件**：無期逾 25 年、有期逾 1/2、累犯逾 2/3；消極排除（未滿 6 月、三犯重罪、性侵未降低危險）；積極要有悛悔實據。
+- **批評**：行政機關主導、缺乏法官保留原則，易淪為解決監獄擁擠之鴕鳥政策。
+- **期滿與撤銷**：期滿未撤銷以已執行論；撤銷假釋依釋字 796 號合憲限縮，排除一律撤銷。
+- **★ 案例 3-4 假釋駁回救濟**：釋字第 691 號打破特別權力關係，受刑人不服不予假釋得向行政法院提起訴訟！
+
+## 六、刑法時效（§ 80 ～ § 85）
+- **追訴權時效**：狀態犯犯罪成立時起算 vs 繼續犯行為終了時起算。罹於時效未起訴為不起訴處分；已起訴為免訴判決。
+- **行刑權時效**：確定裁判執行之法定期間，罹於時效行刑權消滅，不得再執行。
+
+> 📢 **柴柴教授金句**：執行實踐防短弊，易科六月本刑五！併罰逾六仍得易，期滿未撤自始無！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part0-ch3-sec3') {
+    fileName = "第零篇第三章第三節_2-31_2-32頁_刑罰的量定兼談宣告刑全節筆記.md";
+    mdContent = `# 第零篇 第三章 第三節 刑罰的量定——兼談宣告刑（教材第 2-31 ～ 2-32 頁 精華整理）
+
+## 一、量刑中心思想：罪刑相當原則與宣告刑
+- **罪刑相當原則**：刑事處罰必須與行為所具有的罪責相當，個案中所有施加的刑罰不得超過罪責之範圍。
+- **宣告刑本質**：由法定刑到處斷刑，仍為「相對不定期刑」；法官必須在處斷刑框架內，依罪刑相當原則找出：
+  - 合理的刑罰（小罪不能大罰，大罪不能小罰）。
+  - 公平的刑罰（同等情況受同等對待，不同情況受不同對待）。
+  - 最終選定並於裁判主文具體宣示之刑罰，即為「宣告刑」。
+
+## 二、在處斷刑範圍內的「量刑考量標的」（§ 57）
+- **法條十款事由**：一動機目的、二犯罪刺激、三手段、四生活狀況、五品行、六智識程度、七與被害人關係、八違反義務程度、九危險損害、十犯後態度。
+- **四大憲法與法理審查鐵則**：
+  1. **各款僅為「例示規定」**：非列舉規定，法官可以考量法條文字以外的因素。
+  2. **禁止重複評價原則**：若該審酌事項已經列入加重或減輕犯罪成立要件中，量刑時就不能再重複評價。（如殺害直系血親尊親屬罪已加重二分之一，不得再評價一次「與被害人之關係」）
+  3. **權利行使禁止不利推論**：權利的行使不得作為加重量刑的事由，行使緘默權不得認為是犯罪後之態度不佳！（★ 99 台上 6995 決）
+  4. **不當聯結禁止原則**：操作「行為人人格品性」時，須以已經成為人格特徵並直接形成犯罪行為的建構基礎者，才能作為量刑因素。
+
+## 三、超出處斷刑範圍的「量刑補充規則」
+- **例外突破處斷刑的三大安全閥機制**：
+  1. **㈠ 酌加（§ 58）**：高於法定最高額之罰金，在行為人所得利益範圍內酌加。目的在剝奪犯罪誘因。
+  2. **㈡ 酌減（§ 59、§ 60）**：低於法定最低刑之減輕。犯罪之情狀顯可憫恕，認科以最低度刑仍嫌過重者得酌減。（作者直指實務認定十分浮濫，只要情狀顯可憫恕便得酌減）
+  3. **㈢ 酌免（§ 61）**：對於微罪得免除其刑。定性警示：宣告免除其刑「依然是有罪判決」，非無罪判決！
+
+> 📢 **柴柴教授金句**：罪刑相當定宣告，五七十款為例示！重複評價斷不可，行使緘默非態度！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part0-ch3-sec2') {
+    fileName = "第零篇第三章第二節_2-29_2-31頁_刑罰的調整兼談處斷刑全節筆記.md";
+    mdContent = `# 第零篇 第三章 第二節 刑罰的調整——兼談處斷刑（教材第 2-29 ～ 2-31 頁 精華整理）
+
+## 一、處斷刑之概念與體系地位
+- **法定刑**：立法者對該犯罪的最基本法律效果。
+- **處斷刑**：經過法律規定之加重或減輕事由調整後的刑罰範圍。
+- **調整事由分布**：
+  - 分則零星規定：如 § 134 公務員假借職務犯故意罪加重其刑至二分之一；§ 347 Ⅴ 擄人勒贖未經取贖釋放被害人必減、取贖後釋放得減。
+  - 總則普遍規定：§ 63～§ 73。核心原則：「先加後減」（§ 71 Ⅰ）。
+  - 本節兩大核心總則規定：**累犯加重** 與 **自首減輕**。
+
+## 二、刑罰加重事由 ➔ 累犯（§ 47 ～ § 49）
+- **定義**：受徒刑之執行完畢，或一部之執行而赦免後，5 年以內故意再犯有期徒刑以上之罪者，為累犯，加重本刑至二分之一。
+- **學理批評與違憲爭議**：
+  - 用前科作為加重理由，違反「禁止重複評價原則」與「罪責原則」。
+  - 短時間內再犯，有時反而是社會復歸困難或特定成癮弱勢之表徵。
+- **成立要件（五大檢驗防線）**：
+  1. **行為人必須曾受徒刑之執行**：
+     - 拘役、罰金、易服勞役之執行 ➔ 不成立累犯。
+     - 受有期徒刑宣告，易科罰金執行完畢 ➔ 仍屬徒刑之執行，有成立累犯可能。
+     - 緩刑期滿未經撤銷 ➔ 刑之宣告失其效力，不成立累犯；緩刑遭撤銷並服刑完畢出獄再犯故意罪 ➔ 成立累犯。
+  2. **犯罪必須發生於徒刑執行完畢或赦免後 5 年內**：
+     - 裁判確定但未執行、執行中、假釋中再犯 ➔ 非執行完畢，均無累犯之適用。
+  3. **行為人「故意」再犯「有期徒刑以上」之罪**：
+     - 前罪不以故意犯為限，但再犯之後罪「必須為故意犯」。
+  4. **前罪非於外國法院受裁判（§ 49）**。
+  5. **準累犯（§ 47 Ⅱ / § 98 Ⅱ 關於強制工作免除後再犯）**：
+     - 🚨 **重大憲法變革警示**：強制工作已被司法院釋字第 812 號解釋宣告全數違憲失效！
+- **法律效果**：
+  - 加重本刑至二分之一（法定刑上下限同加）。
+  - 🚨 **司法院釋字第 775 號憲法解釋變革**：刑法 § 47 Ⅰ 不分情節一律加重本刑過苛違憲！法院依個案情節裁量，認加重過苛者「得不加重其刑」。
+
+## 三、刑罰減輕事由 ➔ 自首（§ 62）
+- **定義**：對於未發覺之罪自首而受裁判者，得減輕其刑。
+- **立法目的**：獎勵犯罪人悔過自新、節省國家偵查成本。
+- **成立要件（三大核心）**：
+  1. **行為人申告自己之犯罪**：
+     - 不限任何形式要件（63台上1101例），可親自或委託他人代為申告（50台上65例）。
+     - 必須申告自己之犯罪；申告他人之罪為告訴、告發。
+     - 翻供效力（★ 99台上7333決）：自首後縱事後翻供否認犯行，不影響先前自首成立效力！
+  2. **犯罪尚未被偵查機關發覺**：
+     - 犯罪事實尚未被發覺，或雖知有犯罪事實但不知犯人為何人（20上1721例）。
+     - 判斷基準：「有偵查權之機關」為準。
+     - 已鎖定具體嫌疑人再出面 ➔ 僅為「投案」或「自白」，非自首！
+  3. **申告後必須自動接受裁判**：
+     - 申告後拒不到案或逃逸無蹤 ➔ 挑釁公權力，無法成立自首（94台上5690決）。
+- **法律效果**：
+  - 「得減輕其刑」（94 年修法前為必減，現行法為得減，賦予法院彈性裁量權）。
+
+> 📢 **柴柴教授金句**：處斷尺規先加減，累犯五年看執行！釋字七七五得免加，自首未發得減刑！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part0-ch3-sec1') {
+    fileName = "第零篇第三章第一節_2-27_2-29頁_刑罰的種類兼談法定刑全節筆記.md";
+    mdContent = `# 第零篇 第三章 第一節 刑罰的種類——兼談法定刑（教材第 2-27 ～ 2-29 頁 精華整理）
+
+## 一、法定刑概念與完全性法條結構
+- **法定刑**：刑法典上針對個別罪名預先設定之刑罰效果。
+- **完全性法條**：【成立要件】＋【法律效果（法定刑）】。
+  - 例：殺人罪（§ 271 Ⅰ）：「殺人者（要件），處死刑、無期徒刑或十年以上有期徒刑（法定刑）。」
+- **體系二分**：得單獨科處之【主刑】（§ 33），以及附屬之【從刑】（§ 34）。
+
+## 二、主刑之三大種類（§ 33）
+1. **死刑（生命刑）**：
+   - 最強烈之刑罰。
+   - § 63 限制：未滿 18 歲或滿 80 歲之犯罪人，不得處死刑或無期徒刑（減輕為有期徒刑）。
+   - ★ 113 憲判 8 號：嚴格正當法律程序，限情節最嚴重之罪、第三審強制辯護、合議庭一致決。
+2. **自由刑（人身自由剝奪）**：
+   - 無期徒刑：終身監禁。
+   - 有期徒刑：2 個月以上 15 年以下（加減至 2 月未滿，加重至 20 年）。
+   - 拘役：1 日以上 60 日未滿（加重至 120 日）。
+3. **罰金刑（財產刑）**：
+   - 新台幣 1000 元以上，屬最輕微處罰。
+
+## 三、從刑之種類與沒收新制大變革（教材第 2-28 頁）
+1. **褫奪公權（資格刑）**：
+   - 剝奪擔任公務員及公職人員候選人之資格（新法已刪除公權投票四權）。
+   - § 37 Ⅱ：宣告 1 年以上有期徒刑＋犯罪性質有必要者（宣告 1 年至 10 年）。
+   - **失能理論**：剝奪其權能等同失去犯罪能力（貪污收賄有必要；強盜無實益）。
+   - 起算：主刑執行完畢起算；緩刑或終身者自裁判確定起算。
+2. **沒收與追徵體系（重大法制演進警示）**：
+   - 標的：違禁物（必沒收）、犯罪所用/預備物（得沒收）、犯罪所生/所得物（得沒收）。
+   - 方式：相對沒收（限犯人所有且附隨主刑）vs 絕對沒收（不限犯人且得獨立宣告，如違禁物）。
+   - 追徵追繳抵償：沒收之補充替代手段。
+   - 成本扣除：總額原則（不扣成本）vs 淨額原則（扣成本）。
+   - 🚨 **2026 現行法關鍵**：105 年沒收新制已將沒收獨立為「獨立專章（§ 38～§ 38-3）」，現行 § 34 從刑僅剩「褫奪公權」一種！
+
+## 四、複數主刑之四種配置模式
+① 唯一主刑模式：如 § 271 Ⅲ 預備殺人（處二年以下有期徒刑）。
+② 多數主刑選科模式：如 § 276 Ⅰ 過失致死（有期徒刑、拘役、罰金擇一科處）。
+③ 多數主刑併科模式：如舊法 § 276 Ⅱ 業務過失致死（自由刑得同時併科罰金）。
+④ 多數主刑選科或併科模式：如 § 185-3 不能安全駕駛（得單選罰金，亦得於自由刑外併科罰金）。
+
+> 📢 **柴柴教授金句**：主刑三類定根基，死刑自由加罰金！從刑專屬褫奪權，沒收獨立第三軌！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part0-ch3') {
+    fileName = "第零篇第三章_2-25_2-27頁_刑法的法律效果前言筆記.md";
+    mdContent = `# 第零篇 第三章 刑法的法律效果（教材第 2-25 ～ 2-27 頁 前言與體系總覽）
+
+## 一、犯罪成立後的法律效果與比例原則
+- **前言核心**：犯罪成立後的法律效果是刑法學習的終極落腳點，必須體會手段（刑罰）與目的（法益保護原則）之間的比例關係。
+- **作者叮嚀**：將刑罰理論挪移前置，在於讓讀者「理解我們究竟要付出什麼代價後，才能更審慎地研究法學問題」。
+
+## 二、刑罰目的理論體系：兩大面向三大理論
+1. **懲罰過去的法益侵害行為 ➔ 應報理論**：
+   - 源於「以眼還眼、以牙還牙」思想，公正應報並撫平損害。
+   - 優點：設定國家發動刑罰權界限（刑罰不得超過侵害）。
+   - 缺點：無助於犯人脫離犯罪，更增添再犯率。
+   - 實例：漢摩拉比法典。
+2. **預防未來的法益侵害行為 ➔ 預防理論**：
+   - **一般預防理論**（訴求大眾）：藉刑罰痛苦威嚇社會大眾。缺點為與犯罪學相悖，易生刑罰越殘酷越好的偏差。實例：孫武斬宮女立威。
+   - **特別預防理論**（訴求犯人）：矯治受刑人除去犯罪因子。優點是有助於防範再犯；缺點為再犯風險高時恐導致無限期刑罰。實例：開膛手傑克前額葉切除保安處分。
+3. **現代通說 ➔ 結合理論（我國刑法所採）**：
+   - 以行為人所製造之侵害為上限（取自應報理論），在此範圍內考量社會威嚇（一般預防）與再社會化（特別預防）。
+   - 發展出「刑罰」與「保安處分」雙軌制裁體系。
+   - **門檻區別**：刑罰須成立犯罪（TB＋R＋S）；保安處分僅須具備不法（TB＋R）即可發動。
+
+## 三、刑罰理論的思考步驟（四大步驟）
+① 搜尋基本範圍 ➔ **法定刑**
+② 調整處斷範圍 ➔ **處斷刑**（總則加重/減輕）
+③ 範圍內選定刑罰 ➔ **宣告刑**（判決主文宣告之刑）
+（①+②+③ 統稱為「量定刑罰」）
+④ 執行刑罰 ➔ **執行刑**（數罪併罰定應執行刑、易刑、假釋）
+
+> 📢 **柴柴教授金句**：手段刑罰要相當，目的法益不相忘！應報劃出罪責頂，結合雙軌重矯治！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part0-ch2-sec2') {
+    fileName = "第零篇第二章第二節_2-15_2-24頁_刑法的解釋方法全節筆記.md";
+    mdContent = `# 第零篇 第二章 第二節 刑法的解釋方法（教材第 2-15 ～ 2-24 頁 全節完結精華整理）
+
+## 一、刑法解釋的二元途徑
+1. **司法解釋**：針對既存條文適用上之法學解釋方法（文義、歷史、目的、體系、憲法解釋）。
+2. **立法解釋**：預先以法規條文方式加以定義（如刑法 § 10）。
+
+## 二、司法解釋的四大方法與拉扯關係
+- **文義解釋**：一切解釋的起點與最外延，構成不可跨越的「罪刑法定底線」。
+- **目的解釋**：探求規範當代目的一保護法益的終極核心。刑法解釋常在「文義解釋」與「目的解釋」間來回拉扯！
+- **歷史解釋**：探求立法者原意，輔助文義與目的解釋。
+- **體系解釋**：作為選定解釋的佐證或修飾文義。
+
+## 三、兩大司法解釋爭點案例
+1. **案例 2-7（車禍現場抽煙案）**：留在現場不救助、謊稱目擊者，是否構成 § 185-4 肇事逃逸？（釋字 777 號違憲後現行法分級刑度＋無過失減免）。
+2. **案例 2-8（男男口交與通姦罪案）**：§ 239 通姦罪之「姦」文義 vs 目的解釋爭議（釋字 791 號已宣告通姦罪違憲立即失效）。
+
+## 四、合憲性解釋 vs 憲法取向解釋
+- **合憲性解釋**：多種可能結果中，選擇合憲者避免宣告違憲（釋字 509 號）；界線不得逾越文字可能合理理解範圍。
+- **憲法取向解釋**：選擇與憲法基本精神最密切吻合者（如鄧元貞重婚案、釋字 242 號）。
+
+## 五、立法解釋：公務員三大類型判斷流程（§ 10 Ⅱ）
+1. **身分公務員（§ 10 Ⅱ ①前）**：服務於國家/地方自治機關＋法定職務權限（如立委、法官、法制人員；排除清潔工、保全）。
+2. **授權公務員（§ 10 Ⅱ ①後）**：非服務於國家機關＋依公法法規從事公共事務＋法定職務權限（如農田水利會長、公立學校採購人員；排除私經濟行為）。
+3. **委託公務員（§ 10 Ⅱ ②）**：受國家機關依法委託＋涉公權力行使之公共事務（如受託驗車、海基會人員、大學教評會委員；排除行政輔助人如拖吊業者）。
+4. **個別化公務員概念（黃榮堅教授）**：
+   - 保護「公務正確性」➔ 實質功能意義（所從事事務是否為公務？如妨害公務罪）。
+   - 保護「公務員廉潔性」➔ 嚴格組織意義（行為人是否具特殊身分？如貪污治罪條例）。
+
+## 六、公務員核心爭點案例
+1. **案例 2-9（村里長公務員身分）**：地方制度法 § 59 明定受鄉鎮市區長指揮監督，依法辦理村里公務及交辦事項，具法定職務權限，屬身分公務員（98 台上 7191 決）。
+2. **案例 2-10（軍人士兵公務員身分）**：一般士兵僅服役聽命，無法定職務權限，非公務員；僅在別有法令依據從事一定公務時，始具身分公務員。
+3. **案例 2-11（公立大學教授以不實單據核銷科研補助）**：教授本職為學術研究，辦理採購僅為附隨事項非公權力行使，非授權或委託公務員，不具刑法公務員身分（103 年第 10 次刑庭決議）。
+
+## 七、立法解釋：重傷之體系架構（§ 10 Ⅳ）
+1. **列舉規定（§ 10 Ⅳ ①～⑤）**：
+   - 毀敗（完全永久喪失機能，28 上 1098 例）vs 嚴重減損（未完全喪失但喪失大部分機能，94 年修法增訂）。
+   - 標的：視覺、聽覺、語能味能嗅能、一肢以上機能、生殖機能。
+2. **概括規定（§ 10 Ⅳ ⑥）**：其他於身體或健康，有重大不治或難治之傷害。
+   - 實務認定：毀容、單耳鼻被削、大面積刺青等（重大不治難治）。
+   - 學說嚴格限制：重傷法定刑接近殺人，第 6 款之「重大」必須達「接近生命危險」之程度！
+3. **補充性法則**：列舉規定窮盡後，始得檢討概括規定；若列舉標的未達毀敗或嚴重減損，不得回頭適用第 6 款概括規定！
+
+## 八、重傷四大經典案例
+1. **案例 2-12（單顆腎臟破裂切除案）**：
+   - 實務（76 台上 2907 決、86 台上 1787 決）：重大不治之傷害，成立重傷（§ 10 Ⅳ ⑥）。
+   - 學說：另一正常腎臟足堪負擔排毒機能，未接近生命危險，非重傷。
+2. **案例 2-13（剪斷陰莖丟水溝案）**：
+   - 實務（78 台上 3271 決）：生殖機能包含製造精子受孕機能（睪丸）與性交機能（陰莖）。睪丸健全仍能造精，但陰莖截斷無法使人受孕，屬毀敗生殖機能，成立重傷（§ 10 Ⅳ ⑤）！
+3. **案例 2-14（斷手手術接回案）**：
+   - 28 上 1098 例：雖經治療回復機能者，非重傷。
+   - 學說（李聖傑教授）：重傷結果需具備「持續存在性」，無須終其一生，只要在可預見期間內無法治癒即足。手術接回完好無後遺症者，非重傷。
+4. **案例 2-15（小提琴高手食指被切斷案）**：
+   - 特殊個人機能說 vs 客觀一般人基準說（通說）。
+   - 裁決：刑法採客觀標準，單一食指喪失未達「一肢機能毀敗或嚴重減損」，不構成重傷；個人職涯特殊損害應循民事侵權賠償填補。
+
+## 九、立法解釋：性交三大審查要件（§ 10 Ⅴ，教材第 2-24 頁）
+1. **主觀要件：非基於正當目的**：
+   - 排除正當醫療行為（婦產科內診、護士量肛溫），自始排除於性交定義外，無構成要件該當性（不必退至阻卻違法階層！）。
+2. **主客體要件：性別無差異**：
+   - 男對女、男對男、女對女、女對男皆該當，破除傳統「姦淫」之男性專屬加害侷限。
+3. **客觀行為態樣與受體限制**：
+   - 態樣包括「進入」或「使之接合」。
+   - **受體孔道嚴格鎖定三大部位**：性器、肛門、口腔！侵入其他部位（胸部、腋下、大腿間）非受體，僅成立猥褻罪。
+
+## 十、【作者叮嚀】立法解釋的體系意涵（全節圓滿完結）
+- 刑法 § 10 預先界定公務員、重傷、性交三大概念，係為防範司法恣意擴張處罰。
+- 當條文將正當目的排斥於要件之外時，正當醫療在第一階即不該當；當受體被嚴格鎖定時，逾越者受罪刑法定原則嚴格拘束，不得類推為性交！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part0-ch2-sec1') {
     fileName = "第零篇第二章第一節_2-9_2-14頁_刑法的適用效力全節筆記.md";
     mdContent = `# 第零篇 第二章 第一節 刑法的適用效力（教材第 2-9 ～ 2-14 頁 全節完結精華整理）
 
@@ -300,6 +595,42 @@ const VIEW_CONFIG = {
     tag: '第零篇', sub: '第一節 內文',
     title: '🌐 第零篇・第二章 第一節 刑法的適用效力（教材第 2-9～2-14 頁 全節完結）',
     tab: '第一節 刑法的適用效力 | 刑法總則【圖說系列】'
+  },
+  'part0-ch2-sec2': {
+    paneId: 'viewPart0Ch2Sec2', tocId: 'tocNavPart0Ch2Sec2',
+    tag: '第零篇', sub: '第二節 內文',
+    title: '📖 第零篇・第二章 第二節 刑法的解釋方法（教材第 2-15～2-18 頁）',
+    tab: '第二節 刑法的解釋方法 | 刑法總則【圖說系列】'
+  },
+  'part0-ch3': {
+    paneId: 'viewPart0Chapter3', tocId: 'tocNavPart0Chapter3',
+    tag: '第零篇', sub: '第三章 前言',
+    title: '⚔️ 第零篇・第三章 刑法的法律效果（教材第 2-25～2-27 頁 前言與體系總覽）',
+    tab: '第三章 刑法的法律效果 | 刑法總則【圖說系列】'
+  },
+  'part0-ch3-sec1': {
+    paneId: 'viewPart0Ch3Sec1', tocId: 'tocNavPart0Ch3Sec1',
+    tag: '第零篇', sub: '第一節 內文',
+    title: '⚖️ 第零篇・第三章 第一節 刑罰的種類——兼談法定刑（教材第 2-27～2-29 頁）',
+    tab: '第一節 刑罰的種類 | 刑法總則【圖說系列】'
+  },
+  'part0-ch3-sec2': {
+    paneId: 'viewPart0Ch3Sec2', tocId: 'tocNavPart0Ch3Sec2',
+    tag: '第零篇', sub: '第二節 內文',
+    title: '⚖️ 第零篇・第三章 第二節 刑罰的調整——兼談處斷刑（教材第 2-29～2-31 頁）',
+    tab: '第二節 刑罰的調整 | 刑法總則【圖說系列】'
+  },
+  'part0-ch3-sec3': {
+    paneId: 'viewPart0Ch3Sec3', tocId: 'tocNavPart0Ch3Sec3',
+    tag: '第零篇', sub: '第三節 內文',
+    title: '⚖️ 第零篇・第三章 第三節 刑罰的量定——兼談宣告刑（教材第 2-31～2-32 頁）',
+    tab: '第三節 刑罰的量定 | 刑法總則【圖說系列】'
+  },
+  'part0-ch3-sec4': {
+    paneId: 'viewPart0Ch3Sec4', tocId: 'tocNavPart0Ch3Sec4',
+    tag: '第零篇', sub: '第四節 內文',
+    title: '🚪 第零篇・第三章 第四節 刑罰的執行——兼談執行刑（教材第 2-33～2-37 頁 全節完結）',
+    tab: '第四節 刑罰的執行 | 刑法總則【圖說系列】'
   }
 };
 
@@ -315,6 +646,10 @@ const NAV_STYLE_MAP = {
   indigo: {
     active: "bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border-indigo-200/60 dark:border-indigo-800/40 shadow-xs font-bold",
     inactive: "bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/60 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 border-slate-200/60 dark:border-slate-800 hover:shadow-xs font-bold"
+  },
+  rose: {
+    active: "bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border-rose-200/60 dark:border-rose-800/40 shadow-xs font-bold",
+    inactive: "bg-slate-50 dark:bg-slate-800/60 hover:bg-rose-50 dark:hover:bg-rose-950/60 text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 border-slate-200/60 dark:border-slate-800 hover:shadow-xs font-bold"
   }
 };
 
@@ -328,10 +663,103 @@ const NAV_BTN_REFS = [
   { key: 'part0-ch1-sec2', dt: 'navBtnPart0Ch1Sec2', mb: 'mNavBtnPart0Ch1Sec2', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
   { key: 'part0-ch1-sec3', dt: 'navBtnPart0Ch1Sec3', mb: 'mNavBtnPart0Ch1Sec3', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
   { key: 'part0-ch2', dt: 'navBtnPart0Ch2', mb: 'mNavBtnPart0Ch2', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
-  { key: 'part0-ch2-sec1', dt: 'navBtnPart0Ch2Sec1', mb: 'mNavBtnPart0Ch2Sec1', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' }
+  { key: 'part0-ch2-sec1', dt: 'navBtnPart0Ch2Sec1', mb: 'mNavBtnPart0Ch2Sec1', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part0-ch2-sec2', dt: 'navBtnPart0Ch2Sec2', mb: 'mNavBtnPart0Ch2Sec2', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part0-ch3', dt: 'navBtnPart0Ch3', mb: 'mNavBtnPart0Ch3', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
+  { key: 'part0-ch3-sec1', dt: 'navBtnPart0Ch3Sec1', mb: 'mNavBtnPart0Ch3Sec1', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part0-ch3-sec2', dt: 'navBtnPart0Ch3Sec2', mb: 'mNavBtnPart0Ch3Sec2', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part0-ch3-sec3', dt: 'navBtnPart0Ch3Sec3', mb: 'mNavBtnPart0Ch3Sec3', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part0-ch3-sec4', dt: 'navBtnPart0Ch3Sec4', mb: 'mNavBtnPart0Ch3Sec4', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' }
 ];
 
+// 自動掛載外部視圖模組 (Zero-CORS 本機秒開相容)
+function mountExternalViews() {
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch1Sec2']) {
+    const el = document.getElementById('viewPart0Ch1Sec2');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Ch1Sec2'];
+      const mountedEl = document.getElementById('viewPart0Ch1Sec2');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch1Sec3']) {
+    const el = document.getElementById('viewPart0Ch1Sec3');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Ch1Sec3'];
+      const mountedEl = document.getElementById('viewPart0Ch1Sec3');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Chapter2']) {
+    const el = document.getElementById('viewPart0Chapter2');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Chapter2'];
+      const mountedEl = document.getElementById('viewPart0Chapter2');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch2Sec1']) {
+    const el = document.getElementById('viewPart0Ch2Sec1');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Ch2Sec1'];
+      const mountedEl = document.getElementById('viewPart0Ch2Sec1');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch2Sec2']) {
+    const el = document.getElementById('viewPart0Ch2Sec2');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Ch2Sec2'];
+      const mountedEl = document.getElementById('viewPart0Ch2Sec2');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Chapter3']) {
+    const el = document.getElementById('viewPart0Chapter3');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Chapter3'];
+      const mountedEl = document.getElementById('viewPart0Chapter3');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch3Sec1']) {
+    const el = document.getElementById('viewPart0Ch3Sec1');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Ch3Sec1'];
+      const mountedEl = document.getElementById('viewPart0Ch3Sec1');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch3Sec2']) {
+    const el = document.getElementById('viewPart0Ch3Sec2');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Ch3Sec2'];
+      const mountedEl = document.getElementById('viewPart0Ch3Sec2');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch3Sec3']) {
+    const el = document.getElementById('viewPart0Ch3Sec3');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Ch3Sec3'];
+      const mountedEl = document.getElementById('viewPart0Ch3Sec3');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch3Sec4']) {
+    const el = document.getElementById('viewPart0Ch3Sec4');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Ch3Sec4'];
+      const mountedEl = document.getElementById('viewPart0Ch3Sec4');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+}
+// 立即嘗試初次掛載
+mountExternalViews();
+
 function switchView(view) {
+  mountExternalViews();
   currentView = view;
   const meta = VIEW_CONFIG[view] || VIEW_CONFIG.chapter1;
 
@@ -361,7 +789,7 @@ function switchView(view) {
   if (mainContainer) {
     mainContainer.className = (hasToc ? "lg:col-span-6 xl:col-span-6" : "lg:col-span-9 xl:col-span-9") + " space-y-8 transition-all duration-300";
   }
-  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1', 'tocNavPart0Ch1Sec2', 'tocNavPart0Ch1Sec3', 'tocNavPart0Chapter2', 'tocNavPart0Ch2Sec1'].forEach(id => {
+  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1', 'tocNavPart0Ch1Sec2', 'tocNavPart0Ch1Sec3', 'tocNavPart0Chapter2', 'tocNavPart0Ch2Sec1', 'tocNavPart0Ch2Sec2', 'tocNavPart0Chapter3', 'tocNavPart0Ch3Sec1', 'tocNavPart0Ch3Sec2', 'tocNavPart0Ch3Sec3', 'tocNavPart0Ch3Sec4'].forEach(id => {
     const tocEl = document.getElementById(id);
     if (tocEl) tocEl.classList.toggle('hidden', id !== meta.tocId);
   });
@@ -378,7 +806,7 @@ function switchView(view) {
   });
 
   // 5. 特殊章節心智圖重繪
-  if (view === 'part0-ch1-sec1' || view === 'part0-ch1-sec2') {
+  if (view === 'part0-ch1-sec1' || view === 'part0-ch1-sec2' || view === 'part0-ch1-sec3') {
     setTimeout(redrawAllMindMaps, 100);
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -422,9 +850,57 @@ window.addEventListener('DOMContentLoaded', () => {
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 150);
       }
+    } else if (hash === '#part0-ch2-sec2' || hash === '#viewPart0Ch2Sec2' || hash.startsWith('#sec-p0ch2-sec2-')) {
+      switchView('part0-ch2-sec2');
+      if (hash.startsWith('#sec-p0ch2-sec2-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
     } else if (hash === '#part0-ch2' || hash === '#viewPart0Chapter2' || hash.startsWith('#sec-p0ch2-')) {
       switchView('part0-ch2');
       if (hash.startsWith('#sec-p0ch2-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part0-ch3' || hash === '#viewPart0Chapter3' || (hash.startsWith('#sec-p0ch3-') && !hash.startsWith('#sec-p0ch3-sec1-') && !hash.startsWith('#sec-p0ch3-sec2-') && !hash.startsWith('#sec-p0ch3-sec3-') && !hash.startsWith('#sec-p0ch3-sec4-'))) {
+      switchView('part0-ch3');
+      if (hash.startsWith('#sec-p0ch3-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part0-ch3-sec1' || hash === '#viewPart0Ch3Sec1' || hash.startsWith('#sec-p0ch3-sec1-')) {
+      switchView('part0-ch3-sec1');
+      if (hash.startsWith('#sec-p0ch3-sec1-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part0-ch3-sec2' || hash === '#viewPart0Ch3Sec2' || hash.startsWith('#sec-p0ch3-sec2-')) {
+      switchView('part0-ch3-sec2');
+      if (hash.startsWith('#sec-p0ch3-sec2-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part0-ch3-sec3' || hash === '#viewPart0Ch3Sec3' || hash.startsWith('#sec-p0ch3-sec3-')) {
+      switchView('part0-ch3-sec3');
+      if (hash.startsWith('#sec-p0ch3-sec3-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part0-ch3-sec4' || hash === '#viewPart0Ch3Sec4' || hash.startsWith('#sec-p0ch3-sec4-')) {
+      switchView('part0-ch3-sec4');
+      if (hash.startsWith('#sec-p0ch3-sec4-')) {
         setTimeout(() => {
           const el = document.querySelector(hash);
           if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -553,6 +1029,179 @@ function copyPart0Ch1Sec1Notes() {
     });
   } else {
     showGlobalToast("已複製筆記精華！");
+  }
+}
+
+function copyPart0Ch1Sec2Notes() {
+  const notes = `# 第零篇 第一章 第二節 罪刑法定原則——付出代價的根據何在？（教材第 2-5 ～ 2-7 頁精華整理）
+
+## 一、罪刑法定原則之核心定義與依據
+- **刑法第 1 條**：「行為之處罰，以行為時之法律有明文規定者為限。拘束人身自由之保安處分，亦同。」
+- **釋字第 384 號解釋**：罪刑法定原則係最後手段性原則之體現，刑事處罰以行為時法律有明文規定者為限。
+
+## 二、罪刑法定原則之四大派生子原則
+1. **刑事處罰，必須以「法律」加以規定 ➔ 習慣法禁止原則**
+   - 習慣法不得創設或加重刑罰。
+   - 案例 1-4（原因自由行為）：早期學理上以習慣法補充處罰自陷精神障礙行為惹議，95年刑法修正增訂 §19 Ⅲ 予以明文化。
+2. **刑事處罰，必須法律「針對該行為」加以規定 ➔ 類推適用禁止原則**
+   - 文義解釋必須受限於「日常可能文義範圍」。不利行為人之類推適用嚴格禁止！
+   - 案例 1-5（竊取電能 vs 偷接第四台）：電能依 §323 擬制為動產成立竊盜；但第四台有線影音訊號無法涵蓋於動產日常文義範圍，類推禁止判決無罪（高院97上易648決）。
+3. **刑事處罰，必須「明確」加以規定 ➔ 罪刑明確性原則**
+   - 包含構成要件明確性與法律效果明確性。
+   - 案例 1-6（不定期刑設計）：絕對不定期刑完全剝奪受刑人預測可能性，違憲違法；相對不定期刑定有最高與最低刑期，具有客觀預見性，合憲有效。
+4. **刑事處罰，必須「行為時」即可加以規定 ➔ 法不溯及既往原則**
+   - 行為時未規定為犯罪者，事後立法不得溯及處罰；兼顧國家法安定性與人民信賴保護。
+   - 案例 1-7（小三條款溯及生效）：事後立法溯及既往侵害人民信賴保護與法安定性，違背憲法與刑法法不溯及原則。
+
+## 三、【作者叮嚀】公法／憲法角度思考罪刑法定原則
+- **依法行政原則（法律保留）** ➔ 習慣法禁止、類推適用禁止（刑法干預生命與身體自由，屬「絕對法律保留」，受「重要性理論」與「功能最適理論」指引）。
+- **明確性原則（法律明確＋授權明確）** ➔ 罪（要件）刑（效果）明確性原則。
+- **法安定性原則（法不溯及＋信賴保護）** ➔ 法不溯及既往原則。
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》`;
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(notes).then(() => {
+      showGlobalToast("已成功複製第二節罪刑法定原則精華筆記！");
+    }).catch(() => {
+      showGlobalToast("已複製筆記精華！");
+    });
+  } else {
+    showGlobalToast("已複製筆記精華！");
+  }
+}
+
+function copyPart0Ch2Sec1Notes() {
+  const notes = `# 第零篇 第二章 第一節 刑法的適用效力（教材第 2-9 ～ 2-14 頁 全節完結精華整理）
+
+## 一、刑法適用效力之三大先天限制
+我國刑法並非無遠弗屆適用，而是有時間範圍（時之效力）、空間範圍（地之效力）與人別範圍（人之效力）之先天限制。
+
+## 二、時的適用效力：從舊從輕原則（§ 2）
+- 刑法 § 2 Ⅰ 本文（從舊原則）：「行為後法律有變更者，適用行為時之法律。」基於法不溯及既往原則與信賴保護。
+- 刑法 § 2 Ⅰ 但書（從輕原則）：「但行為後之法律有利於行為人者，適用最有利於行為人之法律。」罪刑法定容許有利人民之溯及。
+- 案例 2-1（拘禁跨越修法案）：私行拘禁罪（§ 302）為繼續犯，行為終了在破案時（新法施行後），逕行適用行為時之新法，不生從舊從輕比較！
+- 案例 2-2（限時法追溯力案）：動員戡亂時期國安法，實務 76 年第 12 次刑庭總會決議採肯定說，限時法失效仍依 § 2 Ⅰ 適用裁判時最有利法諭知免訴！
+- 保安處分時間效力雙軌制：拘束人身自由（監護、禁戒）適用從舊從輕（§ 2 Ⅰ）；非拘束人身自由（保護管束、驅逐出境）適用裁判時法（§ 2 Ⅱ）。
+
+## 三、地的適用效力：屬地主要基準（§ 3＋§ 4）
+- 主要基準優先：屬地原則為核心，凡在中華民國領域內犯罪者適用我國刑法（§ 3 本文）。
+- 浮動領土：在領域外之中華民國船舶或航空器內犯罪，視為在領域內犯罪（§ 3 但書）。
+- 隔地犯（§ 4）：犯罪之行為或結果，有一在中華民國領域內者，為在中華民國領域內犯罪。
+- 案例 2-3（菲國電信詐騙案）：詐騙機房在菲律賓，受害人在台灣接聽並匯款，結果地在台灣，依 § 4 視為領域內犯罪直接適用！
+- 案例 2-4（駐外使領館犯罪案）：使館非浮動領土，依國際慣例以駐在國是否明示放棄管轄權為斷。
+- 案例 2-5（大陸地區犯罪案）：最高法院 90 台上 4247 採「特殊國內關係」，兩岸條例 § 2 明定大陸地區仍屬我國領土，在大陸犯罪仍屬領域內犯罪！但得依兩岸條例 § 75 扣抵免除其刑。
+
+## 四、地的適用效力：輔助基準（§ 5～§ 8）
+1. 屬人原則（§ 6＋§ 7）：處罰自己人。國民在境外犯最輕本刑 3 年以上重罪且犯罪地處罰者（§ 7）；公務員在境外犯特定之罪（§ 6）。
+2. 保護原則（§ 8）：處罰外國人保護國民。外國人在境外侵害我國國民犯 3 年以上重罪且犯罪地處罰者。
+3. 保護原則（§ 5 ①②③⑤⑥⑦）：處罰任何人保護本國國家法益。在境外犯內亂、外患、偽造貨幣、偽造本國有價證券等。
+   - 案例 2-6（境外偽造外國股票案）：72 台上 5872 號判例明定，§ 5 ⑤ 之有價證券僅限我國證券，不包含外國證券！無我國刑法適用！
+4. 世界原則（§ 5 ④⑧⑨⑩⑪）：處罰任何人。跨國公敵犯罪（航空、毒品、海盜、加重詐欺等）。
+5. 解題提示（廣大興案）：公海掃射我國籍漁船，死亡結果在我國船艦（浮動領土），依 § 3 但書＋§ 4 屬地主要基準即已充分管轄，切勿跳躍至 § 8 保護原則！
+6. 外國裁判補助原則（§ 9）：外國確定裁判仍得依本法處斷；但在外國已受刑執行者，得免其刑之全部或一部執行。
+
+## 五、人的適用效力（教材第 2-14 頁 全節完結）
+1. 總統刑事豁免權（憲法 § 52、釋 627 號）：
+   - 性質：限縮性、暫時性的訴訟障礙事由（程序法）。
+   - 除犯內亂、外患罪外不受刑事訴追；非經罷免解職或卸任不得訴追。行為仍成立犯罪！
+2. 民代言論免責權（憲法 § 73、釋 165/435 號）：
+   - 性質：自始性的個人排除刑罰事由（實體免責權）。
+   - 保障中央立委與地方議員；作最大程度界定（院會委員會發言表決及附隨行為）；蓄意肢體暴力行為除外！
+3. 外交豁免權：外國元首、使節、經許可駐軍享豁免特權。
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》`;
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(notes).then(() => {
+      showGlobalToast("已成功複製第一節刑法適用效力精華筆記！");
+    }).catch(() => {
+      showGlobalToast("已複製第一節精華筆記！");
+    });
+  } else {
+    showGlobalToast("已複製第一節精華筆記！");
+  }
+}
+
+function copyPart0Ch2Sec2Notes() {
+  const notes = `# 第零篇 第二章 第二節 刑法的解釋方法（教材第 2-15 ～ 2-24 頁 全節完結精華整理）
+
+## 一、刑法解釋的二元途徑
+1. **司法解釋**：針對既存條文適用上之法學解釋方法（文義、歷史、目的、體系、憲法解釋）。
+2. **立法解釋**：預先以法規條文方式加以定義（如刑法 § 10）。
+
+## 二、司法解釋的四大方法與拉扯關係
+- **文義解釋**：一切解釋的起點與最外延，構成不可跨越的「罪刑法定底線」。
+- **目的解釋**：探求規範當代目的一保護法益的終極核心。刑法解釋常在「文義解釋」與「目的解釋」間來回拉扯！
+- **歷史解釋**：探求立法者原意，輔助文義與目的解釋。
+- **體系解釋**：作為選定解釋的佐證或修飾文義。
+
+## 三、兩大司法解釋爭點案例
+1. **案例 2-7（車禍現場抽煙案）**：留在現場不救助、謊稱目擊者，是否構成 § 185-4 肇事逃逸？（釋字 777 號違憲後現行法分級刑度＋無過失減免）。
+2. **案例 2-8（男男口交與通姦罪案）**：§ 239 通姦罪之「姦」文義 vs 目的解釋爭議（釋字 791 號已宣告通姦罪違憲立即失效）。
+
+## 四、合憲性解釋 vs 憲法取向解釋
+- **合憲性解釋**：多種可能結果中，選擇合憲者避免宣告違憲（釋字 509 號）；界線不得逾越文字可能合理理解範圍。
+- **憲法取向解釋**：選擇與憲法基本精神最密切吻合者（如鄧元貞重婚案、釋字 242 號）。
+
+## 五、立法解釋：公務員三大類型判斷流程（§ 10 Ⅱ）
+1. **身分公務員（§ 10 Ⅱ ①前）**：服務於國家/地方自治機關＋法定職務權限（如立委、法官、法制人員；排除清潔工、保全）。
+2. **授權公務員（§ 10 Ⅱ ①後）**：非服務於國家機關＋依公法法規從事公共事務＋法定職務權限（如農田水利會長、公立學校採購人員；排除私經濟行為）。
+3. **委託公務員（§ 10 Ⅱ ②）**：受國家機關依法委託＋涉公權力行使之公共事務（如受託驗車、海基會人員、大學教評會委員；排除行政輔助人如拖吊業者）。
+4. **個別化公務員概念（黃榮堅教授）**：
+   - 保護「公務正確性」➔ 實質功能意義（所從事事務是否為公務？如妨害公務罪）。
+   - 保護「公務員廉潔性」➔ 嚴格組織意義（行為人是否具特殊身分？如貪污治罪條例）。
+
+## 六、公務員核心爭點案例
+1. **案例 2-9（村里長公務員身分）**：地方制度法 § 59 明定受鄉鎮市區長指揮監督，依法辦理村里公務及交辦事項，具法定職務權限，屬身分公務員（98 台上 7191 決）。
+2. **案例 2-10（軍人士兵公務員身分）**：一般士兵僅服役聽命，無法定職務權限，非公務員；僅在別有法令依據從事一定公務時，始具身分公務員。
+3. **案例 2-11（公立大學教授以不實單據核銷科研補助）**：教授本職為學術研究，辦理採購僅為附隨事項非公權力行使，非授權或委託公務員，不具刑法公務員身分（103 年第 10 次刑庭決議）。
+
+## 七、立法解釋：重傷之體系架構（§ 10 Ⅳ）
+1. **列舉規定（§ 10 Ⅳ ①～⑤）**：
+   - 毀敗（完全永久喪失機能，28 上 1098 例）vs 嚴重減損（未完全喪失但喪失大部分機能，94 年修法增訂）。
+   - 標的：視覺、聽覺、語能味能嗅能、一肢以上機能、生殖機能。
+2. **概括規定（§ 10 Ⅳ ⑥）**：其他於身體或健康，有重大不治或難治之傷害。
+   - 實務認定：毀容、單耳鼻被削、大面積刺青等（重大不治難治）。
+   - 學說嚴格限制：重傷法定刑接近殺人，第 6 款之「重大」必須達「接近生命危險」之程度！
+3. **補充性法則**：列舉規定窮盡後，始得檢討概括規定；若列舉標的未達毀敗或嚴重減損，不得回頭適用第 6 款概括規定！
+
+## 八、重傷四大經典案例
+1. **案例 2-12（單顆腎臟破裂切除案）**：
+   - 實務（76 台上 2907 決、86 台上 1787 決）：重大不治之傷害，成立重傷（§ 10 Ⅳ ⑥）。
+   - 學說：另一正常腎臟足堪負擔排毒機能，未接近生命危險，非重傷。
+2. **案例 2-13（剪斷陰莖丟水溝案）**：
+   - 實務（78 台上 3271 決）：生殖機能包含製造精子受孕機能（睪丸）與性交機能（陰莖）。睪丸健全仍能造精，但陰莖截斷無法使人受孕，屬毀敗生殖機能，成立重傷（§ 10 Ⅳ ⑤）！
+3. **案例 2-14（斷手手術接回案）**：
+   - 28 上 1098 例：雖經治療回復機能者，非重傷。
+   - 學說（李聖傑教授）：重傷結果需具備「持續存在性」，無須終其一生，只要在可預見期間內無法治癒即足。手術接回完好無後遺症者，非重傷。
+4. **案例 2-15（小提琴高手食指被切斷案）**：
+   - 特殊個人機能說 vs 客觀一般人基準說（通說）。
+   - 裁決：刑法採客觀標準，單一食指喪失未達「一肢機能毀敗或嚴重減損」，不構成重傷；個人職涯特殊損害應循民事侵權賠償填補。
+
+## 九、立法解釋：性交三大審查要件（§ 10 Ⅴ，教材第 2-24 頁）
+1. **主觀要件：非基於正當目的**：
+   - 排除正當醫療行為（婦產科內診、護士量肛溫），自始排除於性交定義外，無構成要件該當性（不必退至阻卻違法階層！）。
+2. **主客體要件：性別無差異**：
+   - 男對女、男對男、女對女、女對男皆該當，破除傳統「姦淫」之男性專屬加害侷限。
+3. **客觀行為態樣與受體限制**：
+   - 態樣包括「進入」或「使之接合」。
+   - **受體孔道嚴格鎖定三大部位**：性器、肛門、口腔！侵入其他部位（胸部、腋下、大腿間）非受體，僅成立猥褻罪。
+
+## 十、【作者叮嚀】立法解釋的體系意涵（全節圓滿完結）
+- 刑法 § 10 預先界定公務員、重傷、性交三大概念，係為防範司法恣意擴張處罰。
+- 當條文將正當目的排斥於要件之外時，正當醫療在第一階即不該當；當受體被嚴格鎖定時，逾越者受罪刑法定原則嚴格拘束，不得類推為性交！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》`;
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(notes).then(() => {
+      showGlobalToast("已成功複製第二節刑法的解釋方法精華筆記！");
+    }).catch(() => {
+      showGlobalToast("已複製第二節精華筆記！");
+    });
+  } else {
+    showGlobalToast("已複製第二節精華筆記！");
   }
 }
 

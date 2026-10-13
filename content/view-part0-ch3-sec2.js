@@ -369,7 +369,7 @@ window.APP_VIEWS['viewPart0Ch3Sec2'] = window.APP_VIEWS['part0Ch3Sec2'] = window
               <div class="p-6 rounded-2xl bg-blue-50/80 dark:bg-[#101a30] border-2 border-blue-300 dark:border-blue-700/80 space-y-3">
                 <div class="flex items-center gap-3 border-b border-blue-200 dark:border-blue-800/60 pb-3">
                   <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-blue-400 shadow-xs shrink-0">
-                    <img src="images/golden_retriever_counselor.jpg" alt="金毛首席辯護大律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);"/>
+                    <img src="images/golden_case_attorney.jpg" alt="金毛首席辯護大律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);"/>
                   </div>
                   <div>
                     <h4 class="font-black text-blue-950 dark:text-blue-100 text-sm sm:text-base">
@@ -393,7 +393,7 @@ window.APP_VIEWS['viewPart0Ch3Sec2'] = window.APP_VIEWS['part0Ch3Sec2'] = window
               <div class="p-6 rounded-2xl bg-indigo-50/80 dark:bg-[#13132d] border-2 border-indigo-300 dark:border-indigo-700/80 space-y-3">
                 <div class="flex items-center gap-3 border-b border-indigo-200 dark:border-indigo-800/60 pb-3">
                   <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-indigo-400 shadow-xs shrink-0">
-                    <img src="images/german_shepherd_inspector.jpg" alt="德牧法規巡查官" class="w-full h-full object-cover" style="object-position: center 15%; transform: scale(1.4);"/>
+                    <img src="images/shepherd_law_inspector.jpg" alt="德牧法規巡查官" class="w-full h-full object-cover" style="object-position: center 15%; transform: scale(1.4);"/>
                   </div>
                   <div>
                     <h4 class="font-black text-indigo-950 dark:text-indigo-100 text-sm sm:text-base">
@@ -429,7 +429,7 @@ window.APP_VIEWS['viewPart0Ch3Sec2'] = window.APP_VIEWS['part0Ch3Sec2'] = window
                 <div class="flex items-center justify-between flex-wrap gap-2 border-b border-white/10 pb-3">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-amber-400 shadow-md shrink-0">
-                      <img src="images/chief_judge_border_collie.jpg" alt="邊牧首席審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);"/>
+                      <img src="images/border_collie_chief_judge.jpg" alt="邊牧首席審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);"/>
                     </div>
                     <div>
                       <h4 class="font-black text-amber-200 text-sm sm:text-base">

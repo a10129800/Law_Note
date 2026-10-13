@@ -266,7 +266,7 @@ window.APP_VIEWS['viewPart0Ch3Sec3'] = `
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-amber-400 shadow-md shrink-0">
-                      <img src="images/prof_shiba.jpg" alt="柴柴法學教授" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.38);"/>
+                      <img src="images/shiba_law_professor.jpg" alt="柴柴法學教授" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.38);"/>
                     </div>
                     <div>
                       <h4 class="font-black text-slate-900 dark:text-white text-sm sm:text-base">
@@ -300,7 +300,7 @@ window.APP_VIEWS['viewPart0Ch3Sec3'] = `
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-yellow-400 shadow-md shrink-0">
-                      <img src="images/counselor_golden.jpg" alt="金毛首席辯護律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);"/>
+                      <img src="images/golden_case_attorney.jpg" alt="金毛首席辯護律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);"/>
                     </div>
                     <div>
                       <h4 class="font-black text-slate-900 dark:text-white text-sm sm:text-base">
@@ -332,7 +332,7 @@ window.APP_VIEWS['viewPart0Ch3Sec3'] = `
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-blue-500 shadow-md shrink-0">
-                      <img src="images/inspector_shepherd.jpg" alt="德牧法規巡查官" class="w-full h-full object-cover" style="object-position: center 15%; transform: scale(1.4);"/>
+                      <img src="images/shepherd_law_inspector.jpg" alt="德牧法規巡查官" class="w-full h-full object-cover" style="object-position: center 15%; transform: scale(1.4);"/>
                     </div>
                     <div>
                       <h4 class="font-black text-slate-900 dark:text-white text-sm sm:text-base">
@@ -350,7 +350,7 @@ window.APP_VIEWS['viewPart0Ch3Sec3'] = `
                   <div class="p-3 rounded-lg bg-blue-50/50 dark:bg-blue-950/30 border border-blue-200/50 dark:border-blue-900/30">
                     <span class="font-bold text-blue-800 dark:text-blue-300 block mb-1">【裁判要旨查核：禁止重複評價原則】</span>
                     <p class="text-xs">
-                      刑法分則之加重減輕（如 § 272 親屬身分、§ 321 加重竊盜各款）已由立法者將該情狀「耗盡評價」並提高法定刑。法官於 § 57 量刑時，嚴禁再將構成要件本質重複做不利評價。例如不能說「因為你加重竊盜攜帶凶器很危險，所以在 § 57 手段上再判你更重」，此即為典型重複評價瑕疵。
+                       刑法分則之加重減輕（如 § 272 親屬身分、§ 321 加重竊盜各款）已由立法者將該情狀「耗盡評價」並提高法定刑。法官於 § 57 量刑時，嚴禁再將構成要件本質重複做不利評價。例如不能說「因為你加重竊盜攜帶凶器很危險，所以在 § 57 手段上再判你更重」，此即為典型重複評價瑕疵。
                     </p>
                   </div>
                   <div class="p-3 rounded-lg bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800">
@@ -367,7 +367,7 @@ window.APP_VIEWS['viewPart0Ch3Sec3'] = `
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-amber-400 shadow-md shrink-0">
-                      <img src="images/chief_judge_border_collie.jpg" alt="邊牧首席審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);"/>
+                      <img src="images/border_collie_chief_judge.jpg" alt="邊牧首席審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);"/>
                     </div>
                     <div>
                       <h4 class="font-black text-amber-200 text-sm sm:text-base">

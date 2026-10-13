@@ -387,7 +387,7 @@ window.APP_VIEWS['viewPart0Ch3Sec4'] = `
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-amber-400 shadow-md shrink-0">
-                      <img src="images/prof_shiba.jpg" alt="柴柴法學教授" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.38);"/>
+                      <img src="images/shiba_law_professor.jpg" alt="柴柴法學教授" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.38);"/>
                     </div>
                     <div>
                       <h4 class="font-black text-slate-900 dark:text-white text-sm sm:text-base">
@@ -419,7 +419,7 @@ window.APP_VIEWS['viewPart0Ch3Sec4'] = `
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-yellow-400 shadow-md shrink-0">
-                      <img src="images/counselor_golden.jpg" alt="金毛首席辯護律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);"/>
+                      <img src="images/golden_case_attorney.jpg" alt="金毛首席辯護律師" class="w-full h-full object-cover" style="object-position: center 20%; transform: scale(1.35);"/>
                     </div>
                     <div>
                       <h4 class="font-black text-slate-900 dark:text-white text-sm sm:text-base">
@@ -451,7 +451,7 @@ window.APP_VIEWS['viewPart0Ch3Sec4'] = `
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-blue-500 shadow-md shrink-0">
-                      <img src="images/inspector_shepherd.jpg" alt="德牧法規巡查官" class="w-full h-full object-cover" style="object-position: center 15%; transform: scale(1.4);"/>
+                      <img src="images/shepherd_law_inspector.jpg" alt="德牧法規巡查官" class="w-full h-full object-cover" style="object-position: center 15%; transform: scale(1.4);"/>
                     </div>
                     <div>
                       <h4 class="font-black text-slate-900 dark:text-white text-sm sm:text-base">
@@ -486,7 +486,7 @@ window.APP_VIEWS['viewPart0Ch3Sec4'] = `
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-3">
                     <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-amber-400 shadow-md shrink-0">
-                      <img src="images/chief_judge_border_collie.jpg" alt="邊牧首席審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);"/>
+                      <img src="images/border_collie_chief_judge.jpg" alt="邊牧首席審判長" class="w-full h-full object-cover" style="object-position: center 25%; transform: scale(1.35);"/>
                     </div>
                     <div>
                       <h4 class="font-black text-amber-200 text-sm sm:text-base">

@@ -3,7 +3,7 @@
 > **系統架構**：Vanilla HTML5 / Modern CSS (Tailwind CDN) / Vanilla JS / Zero-CORS Module Architecture  
 > **工程哲學**：**Ponytail v4.12.0 極簡資深工程師紀律 (Lazy Senior Dev Mode)** ＋ **多欄位Note Skill**  
 > **最高憲法**：[`AGENTS.md`](file:///e:/IDE資料/圖說刑法總則_專案/AGENTS.md)  
-> **紀錄週期**：2026-09-25 ～ 2026-10-12（持續維護中）
+> **紀錄週期**：2026-09-25 ～ 2026-10-13（持續維護中）
 
 ---
 
@@ -22,12 +22,15 @@
    - [階段十：第二章第一節《刑法的適用效力》全節完結 (2026-10-10)](#階段十第二章第一節刑法的適用效力全節完結-2026-10-10)
    - [階段十一：第二章第二節《刑法的解釋方法》全節圓滿完結 (2026-10-10)](#階段十一第二章第二節刑法的解釋方法全節圓滿完結-2026-10-10)
    - [階段十二：第零篇第三章《刑法的法律效果》全章大圓滿完結 (2026-10-12)](#階段十二第零篇第三章刑法的法律效果全章大圓滿完結-2026-10-12)
-3. [五大核心技術攻堅與排錯實錄 (Deep Debugging & Technical Challenges)](#3-五大核心技術攻堅與排錯實錄-deep-debugging--technical-challenges)
+   - [階段十三：全域靜態資源路徑治理與四大天王頭像破圖全面根治 (2026-10-13)](#階段十三全域靜態資源路徑治理與四大天王頭像破圖全面根治-2026-10-13)
+3. [七大核心技術攻堅與排錯實錄 (Deep Debugging & Technical Challenges)](#3-七大核心技術攻堅與排錯實錄-deep-debugging--technical-challenges)
    - 3.1 [DOM 標籤平衡失衡與右側目錄掉落排錯](#31-dom-標籤平衡失衡與右側目錄掉落排錯)
    - 3.2 [本機 file:/// 零 CORS 跨域限制攻堅（從 Fetch 到 Module Mounting）](#32-本機-file-零-cors-跨域限制攻堅從-fetch-到-module-mounting)
    - 3.3 [心智導圖手機端響應式與點擊零跳動就地展開機制](#33-心智導圖手機端響應式與點擊零跳動就地展開機制)
    - 3.4 [視覺抗疲勞重構：從刺眼全紅字到典雅純紅底線](#34-視覺抗疲勞重構從刺眼全紅字到典雅純紅底線)
    - 3.5 [左側導航欄高度溢出與小節預設折疊治理](#35-左側導航欄高度溢出與小節預設折疊治理)
+   - 3.6 [專案技能庫體系整合與架構瘦身清理 (2026-10-07)](#36-專案技能庫體系整合與架構瘦身清理-2026-10-07)
+   - 3.7 [全域靜態資源路徑精準對齊與導師頭像破圖根除 (2026-10-13)](#37-全域靜態資源路徑精準對齊與導師頭像破圖根除-2026-10-13)
 4. [Ponytail 極簡軟體工程模式審查報告 (Ponytail Review & Audit)](#4-ponytail-極簡軟體工程模式審查報告-ponytail-review--audit)
 5. [未完成工單與後續升級路徑 (Technical Roadmap)](#5-未完成工單與後續升級路徑-technical-roadmap)
 
@@ -183,6 +186,21 @@
   - 升級自動清理腳本 `clean_redundant_files.ps1`，安全封存 16 個未引用的歷史視圖檔案至 `docs/archive/legacy_modules/`（`content/` 僅保留唯一動態掛載之 `view-part0-ch1-sec2.js`）。
   - 清理無用殘留檔 `content/test_sec3.js` 與外層原始解壓縮包 `ponytail-4.12.0/`，保護 `.agents/rules/` 不被誤刪。
 
+### 3.7 全域靜態資源路徑精準對齊與導師頭像破圖根除 (2026-10-13)
+* **問題現象**：
+  - 讀者在閱讀第零篇第三章（第一節至第四節）時，犬系法學四大天王導師席卡片（金毛大律師、德牧巡查官、邊牧審判長）出現破圖，降級顯示 `alt` 屬性截斷文字（「金首」、「德法」、「邊」）。
+* **排錯與根因分析**：
+  - 檢查 DOM 發現圖片標籤引用了不存在的別名路徑：
+    - 金毛大律師：誤引用 `images/golden_retriever_counselor.jpg` 或 `images/counselor_golden.jpg`
+    - 德牧巡查官：誤引用 `images/german_shepherd_inspector.jpg` 或 `images/inspector_shepherd.jpg`
+    - 邊牧審判長：誤引用 `images/chief_judge_border_collie.jpg`
+    - 柴柴教授：誤引用 `images/prof_shiba.jpg`
+  - 專案根目錄 `images/` 下實際存在的標準資產為：`shiba_law_professor.jpg`、`golden_case_attorney.jpg`、`shepherd_law_inspector.jpg`、`border_collie_chief_judge.jpg`。
+* **Ponytail 治理與根除方案**：
+  - 確立資產命名單一真理（SSOT），禁止在任何模組中自造未驗證之檔案路徑。
+  - 對 `content/view-part0-ch3-sec1.js`、`view-part0-ch3-sec2.js`、`view-part0-ch3-sec3.js`、`view-part0-ch3-sec4.js` 實施全量路徑替換修正。
+  - 運行全域 grep 掃描，驗證專案全域 0 破圖、0 孤立檔案引用，達成離線 `file:///` 本地雙擊與 GitHub Pages 線上雙向 100% 完美呈現。
+
 ---
 
 ## 4. Ponytail 極簡軟體工程模式審查報告 (Ponytail Review & Audit)
@@ -319,6 +337,26 @@
     - `index.html` 之 `tocNavPart0Ch3Sec4` 完整配備專屬導航錨點。
     - `data/search-db.js` 全文搜尋引擎索引擴充第三章全部案例與法條關鍵字。
     - `js/app.js` 完備第三章視圖配置、按鈕監聽、路由切換、金句與 Markdown 筆記匯出。
+
+### 階段十三：全域靜態資源路徑治理與四大天王頭像破圖全面根治 (2026-10-13)
+* **背景與破圖根因分析**：
+  - 讀者在閱覽第零篇第三章（第一節至第四節）時，發現導師席頭像破圖，畫面降級顯示替代文字（「金首」、「德法」、「邊」）。
+  - 排查確認：第三章視圖模組內所引用的頭像檔案名稱與 `images/` 目錄實際資產命名脫節（例如：誤寫為 `golden_retriever_counselor.jpg`、`counselor_golden.jpg`、`german_shepherd_inspector.jpg`、`inspector_shepherd.jpg`、`chief_judge_border_collie.jpg` 及 `prof_shiba.jpg`）。
+* **資產命名單一真理（SSOT）確立與全面修復**：
+  - 全面盤點專案 `images/` 目錄，嚴格確立四大天王與赤狐律師頭像之標準路徑規範：
+    1. 柴柴法學教授：`images/shiba_law_professor.jpg`
+    2. 金毛首席辯護大律師：`images/golden_case_attorney.jpg`
+    3. 德牧法規巡查官：`images/shepherd_law_inspector.jpg`
+    4. 邊牧首席審判長：`images/border_collie_chief_judge.jpg`
+    5. 公訴檢察官赤狐女律師：`images/prosecutor_fox.jpg`
+  - 同步重構並修復四大核心模組：
+    - `content/view-part0-ch3-sec1.js`（修正金毛、德牧、邊牧路徑）
+    - `content/view-part0-ch3-sec2.js`（修正金毛、德牧、邊牧路徑）
+    - `content/view-part0-ch3-sec3.js`（修正柴柴、金毛、德牧、邊牧路徑）
+    - `content/view-part0-ch3-sec4.js`（修正柴柴、金毛、德牧、邊牧路徑）
+* **驗證與成果**：
+  - 全專案全局檢索，確認已徹底消滅所有無效圖片引用。
+  - 本機雙擊離線開啟（`file:///`）與線上 GitHub Pages 均達成 100% 完美加載，四大導師法學劇院與 2026 最新法制演進名師席全數無瑕疵呈現。
 
 ---
 

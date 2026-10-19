@@ -103,17 +103,26 @@
 
 ## 8. 犬系法學四大天王導師席標準配置與肖像比例 (The Four Mentors & Portraits)
 
-- 側邊欄與各章節導師欄位統一配置四大天王：
+- **唯一法定圖片路徑 (Single Source of Truth - 嚴禁自造檔名)**：
+  - 專案 `images/` 目錄中之圖檔名稱為固定唯一法定名稱，**嚴禁任何 Agent 自行臆測或使用別名**（如誤用 `counselor_golden`、`prof_shiba`、`german_shepherd` 等一律視為重大違規）：
   1. **柴柴法學教授**（Prof. Shiba）：基礎法理、學說體系、生活白話解碼。  
-     頭像特寫標準：`style="object-position: center 20%; transform: scale(1.38);"`
+     - **法定圖檔路徑**：`images/shiba_law_professor.jpg`
+     - **頭像特寫標準**：`style="object-position: center 20%; transform: scale(1.38);"`
   2. **金毛首席辯護大律師**（Counselor Golden）：法庭攻防策略、罪與非罪抗辯。  
-     頭像特寫標準：`style="object-position: center 20%; transform: scale(1.35);"`
+     - **法定圖檔路徑**：`images/golden_case_attorney.jpg`
+     - **頭像特寫標準**：`style="object-position: center 20%; transform: scale(1.35);"`
   3. **德牧法規巡查官**（Inspector Shepherd）：法規雷達、最新修法與裁判要旨查核。  
-     頭像特寫標準：`style="object-position: center 15%; transform: scale(1.4);"`
+     - **法定圖檔路徑**：`images/shepherd_law_inspector.jpg`
+     - **頭像特寫標準**：`style="object-position: center 15%; transform: scale(1.4);"`
   4. **邊牧首席審判長**（Chief Judge Collie）：終審裁定、國考答題定錨、2026 最新法條動態備註。  
-     頭像特寫標準：`style="object-position: center 25%; transform: scale(1.35);"`
+     - **法定圖檔路徑**：`images/border_collie_chief_judge.jpg`
+     - **頭像特寫標準**：`style="object-position: center 25%; transform: scale(1.35);"`
   - **公訴檢察官赤狐女律師**（Prosecutor Fox）：法庭言詞對決控方代表。  
-    頭像特寫標準：`style="object-position: center 20%; transform: scale(1.35);"`
+    - **法定圖檔路徑**：`images/prosecutor_fox.jpg`
+    - **頭像特寫標準**：`style="object-position: center 20%; transform: scale(1.35);"`
+
+- **模組引用防快取標籤規範 (Cache-Busting)**：
+  - `index.html` 中引入 `content/` 動態視圖模組時，必須統一攜帶版本號後綴（如 `<script src="content/view-part0-ch3-sec2.js?v=20261013"></script>`），防止使用者或讀者瀏覽器快取舊代碼引發破圖或顯示舊內容。
 
 ---
 

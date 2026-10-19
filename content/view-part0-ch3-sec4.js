@@ -24,7 +24,7 @@ window.APP_VIEWS['viewPart0Ch3Sec4'] = `
             <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-rose-100/80 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border border-rose-200/60 dark:border-rose-800/40">
                 <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-                <span>教材第 2-33 ～ 2-37 頁（本章最終節完結）</span>
+                <span>教材第 2-33 ～ 2-37 頁</span>
               </div>
               <div class="flex items-center gap-2">
                 <span class="text-xs font-mono text-slate-500 dark:text-slate-400">P. 2-33 ~ 2-37</span>
@@ -545,15 +545,15 @@ window.APP_VIEWS['viewPart0Ch3Sec4'] = `
               </div>
             </button>
 
-            <button onclick="switchView('part0-ch3')" class="group p-4 rounded-2xl border border-rose-500/40 hover:border-rose-500 bg-gradient-to-br from-rose-50/50 to-amber-50/30 dark:from-rose-950/30 dark:to-amber-950/20 text-right transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md flex items-center justify-between gap-3 cursor-pointer">
+            <button onclick="switchView('part0-ch3-sec5')" class="group p-4 rounded-2xl border border-rose-500/40 hover:border-rose-500 bg-gradient-to-br from-rose-50/50 to-amber-50/30 dark:from-rose-950/30 dark:to-amber-950/20 text-right transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md flex items-center justify-between gap-3 cursor-pointer">
               <div class="min-w-0 text-left">
-                <span class="text-[11px] text-rose-700 dark:text-rose-400 font-mono block font-bold">第三章全章圓滿完結</span>
+                <span class="text-[11px] text-rose-700 dark:text-rose-400 font-mono block font-bold">進入下一單元 (第 2-37 頁)</span>
                 <span class="text-xs font-extrabold text-slate-900 dark:text-white group-hover:text-rose-700 dark:group-hover:text-rose-400 transition-colors truncate block">
-                  返回第三章 刑法的法律效果 總覽 →
+                  第五節 保安處分 →
                 </span>
               </div>
               <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 text-white flex items-center justify-center text-sm font-bold shrink-0 group-hover:scale-105 transition-transform shadow-md shadow-rose-500/30">
-                🎉
+                🚀
               </div>
             </button>
           </div>

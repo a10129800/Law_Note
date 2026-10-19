@@ -40,6 +40,12 @@
   <script src="content/view-part0-ch3-sec2.js?v=20261013"></script>
   <script src="content/view-part0-ch3-sec3.js?v=20261013"></script>
   <script src="content/view-part0-ch3-sec4.js?v=20261013"></script>
+  <script src="content/view-part0-ch3-sec5.js?v=20261015"></script>
+  <script src="content/view-part1-ch1.js?v=20261019"></script>
+  <script src="content/view-part1-ch2-sec1.js?v=20261019"></script>
+  <script src="content/view-part1-ch2-sec2.js?v=20261019"></script>
+  <script src="content/view-part1-ch2-sec3.js?v=20261019"></script>
+  <script src="content/view-part1-ch2-sec4.js?v=20261019"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-200 min-h-screen transition-colors duration-200">
 
@@ -303,6 +309,103 @@
                       <span class="truncate">第四節 刑罰的執行——兼談執行刑</span>
                     </span>
                     <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-rose-100/70 dark:bg-rose-900/50 text-rose-700 dark:text-rose-300 ml-auto">2-33~2-37</span>
+                  </button>
+
+                  <!-- 第五節 保安處分 (第 2-37～2-38 頁) -->
+                  <button id="navBtnPart0Ch3Sec5" onclick="switchView('part0-ch3-sec5')" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-rose-50 dark:hover:bg-rose-950/60 text-slate-600 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer">
+                    <span class="flex items-center gap-1.5 truncate">
+                      <span class="text-[11px]">🛡️</span>
+                      <span class="truncate">第五節 保安處分</span>
+                    </span>
+                    <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-rose-100/70 dark:bg-rose-900/50 text-rose-700 dark:text-rose-300 ml-auto">2-37~2-38</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════ 第 1 層：第一篇分組卡片 (Level 1 Group Card) ══════ -->
+          <div class="rounded-2xl p-2.5 bg-slate-50/70 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 space-y-2">
+            <!-- 篇標題列 (Level 1 Header) -->
+            <div class="flex items-center justify-between px-1 pb-1.5 border-b border-slate-200/60 dark:border-slate-800">
+              <div class="flex items-center gap-1.5">
+                <span class="text-sm">⚖️</span>
+                <span class="text-xs font-black text-slate-800 dark:text-slate-100 tracking-wide">第一篇</span>
+                <span class="text-[11px] font-medium text-slate-500 dark:text-slate-400">· 行為與犯罪類型</span>
+              </div>
+              <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-100/90 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300">導讀</span>
+            </div>
+
+            <!-- 第 2 層：章級軌道 (Level 2 Tree Rail - 明確縮排) -->
+            <div class="ml-2 pl-2.5 border-l-2 border-blue-300/80 dark:border-blue-800/80 space-y-2 pt-0.5">
+              <!-- 本篇導讀 -->
+              <div>
+                <button id="navBtnPart1" onclick="switchView('part1')" class="w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer">
+                  <span class="flex items-center gap-1.5 truncate">
+                    <span class="text-xs">📖</span>
+                    <span class="truncate">本篇導讀</span>
+                  </span>
+                  <span class="shrink-0 text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100/80 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 ml-auto">導讀</span>
+                </button>
+              </div>
+
+              <!-- 第一章 刑法意義的行為 (教材第 3-1～3-5 頁) -->
+              <div>
+                <button id="navBtnPart1Ch1" onclick="switchView('part1-ch1')" class="w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer">
+                  <span class="flex items-center gap-1.5 truncate">
+                    <span class="text-xs">👉</span>
+                    <span class="truncate">第一章 刑法意義的行為</span>
+                  </span>
+                  <span class="shrink-0 text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100/80 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 ml-auto">3-1</span>
+                </button>
+              </div>
+
+              <!-- 第二章 犯罪類型 (教材第 3-7～3-11 頁) -->
+              <div class="space-y-1.5 pt-0.5">
+                <button id="navBtnPart1Ch2" onclick="switchView('part1-ch2-sec1')" class="w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/60 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer">
+                  <span class="flex items-center gap-1.5 truncate">
+                    <span class="text-xs">📁</span>
+                    <span class="truncate">第二章 犯罪類型</span>
+                  </span>
+                  <span class="shrink-0 text-[10px] font-mono px-1.5 py-0.5 rounded bg-indigo-100/80 dark:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 ml-auto">3-7</span>
+                </button>
+
+                <!-- 第 3 層：第二章所屬各子節 (向右縮排一層) -->
+                <div class="ml-3 pl-2 border-l-2 border-indigo-300/60 dark:border-indigo-800/60 space-y-1">
+                  <!-- 第一節 基本要素——主體、行為、結果歸責 (第 3-7～3-11 頁) -->
+                  <button id="navBtnPart1Ch2Sec1" onclick="switchView('part1-ch2-sec1')" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-indigo-50 dark:hover:bg-indigo-950/60 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer">
+                    <span class="flex items-center gap-1.5 truncate">
+                      <span class="text-[11px]">👉</span>
+                      <span class="truncate">第一節 基本要素</span>
+                    </span>
+                    <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-indigo-100/70 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 ml-auto">3-7~3-11</span>
+                  </button>
+
+                  <!-- 第二節 變體要素——兼論純正與不純正不作為犯 (第 3-12～3-13 頁) -->
+                  <button id="navBtnPart1Ch2Sec2" onclick="switchView('part1-ch2-sec2')" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-purple-50 dark:hover:bg-purple-950/60 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer">
+                    <span class="flex items-center gap-1.5 truncate">
+                      <span class="text-[11px]">👉</span>
+                      <span class="truncate">第二節 變體要素</span>
+                    </span>
+                    <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-100/70 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 ml-auto">3-12~3-13</span>
+                  </button>
+
+                  <!-- 第三節 行為犯與結果犯 (第 3-14～3-17 頁) -->
+                  <button id="navBtnPart1Ch2Sec3" onclick="switchView('part1-ch2-sec3')" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-emerald-50 dark:hover:bg-emerald-950/60 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer">
+                    <span class="flex items-center gap-1.5 truncate">
+                      <span class="text-[11px]">👉</span>
+                      <span class="truncate">第三節 行為與結果犯</span>
+                    </span>
+                    <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-100/70 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 ml-auto">3-14~3-17</span>
+                  </button>
+
+                  <!-- 第四節 一般犯與身分犯 (第 3-17～3-18 頁) -->
+                  <button id="navBtnPart1Ch2Sec4" onclick="switchView('part1-ch2-sec4')" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-amber-50 dark:hover:bg-amber-950/60 text-slate-600 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer">
+                    <span class="flex items-center gap-1.5 truncate">
+                      <span class="text-[11px]">👉</span>
+                      <span class="truncate">第四節 一般犯與身分犯</span>
+                    </span>
+                    <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-100/70 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 ml-auto">3-17~3-18</span>
                   </button>
                 </div>
               </div>
@@ -6388,6 +6491,132 @@
       <!-- ==================== VIEW 16: 第零篇 第三章・第四節 刑罰的執行——兼談執行刑 (教材第 2-33～2-37 頁) ==================== -->
       <div id="viewPart0Ch3Sec4" class="fade-enter hidden space-y-8"></div>
 
+      <!-- ==================== VIEW 17: 第零篇 第三章・第五節 保安處分 (教材第 2-37～2-38 頁 全節完結) ==================== -->
+      <div id="viewPart0Ch3Sec5" class="fade-enter hidden space-y-8"></div>
+
+      <!-- ==================== VIEW 18: 第一篇 刑法意義的行為與犯罪、論罪類型 (本篇導讀 1:1 原書復刻) ==================== -->
+      <div id="viewPart1" class="hidden space-y-8 flex flex-col items-center">
+        
+        <!-- 頂部快速返回導航條 -->
+        <div class="w-full max-w-2xl flex items-center justify-between p-3 rounded-2xl bg-blue-50/60 dark:bg-blue-950/30 border border-blue-200/60 dark:border-blue-900/40">
+          <button onclick="switchView('cover')" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-blue-700 dark:text-blue-300 text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs border border-blue-200/50 dark:border-blue-800/50 cursor-pointer">
+            <span>← 返回書籍主頁 / 封面</span>
+          </button>
+          <div class="flex items-center gap-2">
+            <button onclick="switchView('part0-ch3-sec5')" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center gap-1.5 transition-all shadow-2xs border border-slate-200/50 dark:border-slate-800/50 cursor-pointer">
+              <span>← 上一單元：第零篇 第三章第五節</span>
+            </button>
+            <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400 hidden sm:inline">第一篇導讀</span>
+          </div>
+        </div>
+
+        <!-- 1:1 復刻原書紙本卡片 (居中單欄) -->
+        <div class="w-full max-w-2xl book-page-canvas rounded-2xl bg-white dark:bg-[#151c2d] border border-slate-300/80 dark:border-slate-700 p-8 sm:p-12 transition-all space-y-10 relative shadow-lg">
+          
+          <!-- 頂部黑邊線與角標 -->
+          <div class="flex justify-between items-center pb-2 border-b border-slate-900/80 dark:border-slate-400 text-[10px] font-mono tracking-widest text-slate-400">
+            <span>PREFACE</span>
+            <span>PART 1</span>
+          </div>
+
+          <!-- 1. 篇號徽章：【第】【一】【篇】三個圓圈 -->
+          <div class="flex justify-center pt-2">
+            <div class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-600 shadow-2xs">
+              <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 flex items-center justify-center font-serif font-black text-sm border border-slate-400 dark:border-slate-500">
+                第
+              </span>
+              <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 flex items-center justify-center font-serif font-black text-sm border border-slate-400 dark:border-slate-500">
+                一
+              </span>
+              <span class="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 flex items-center justify-center font-serif font-black text-sm border border-slate-400 dark:border-slate-500">
+                篇
+              </span>
+            </div>
+          </div>
+
+          <!-- 2. 篇章大標題：大號楷體/宋體標題 -->
+          <div class="text-center space-y-2 py-2">
+            <h1 class="font-serif font-black text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-wider leading-relaxed">
+              刑法意義的行為與<br>
+              犯罪、論罪類型
+            </h1>
+            <div class="w-14 h-0.5 bg-slate-900 dark:bg-slate-300 mx-auto rounded-full mt-3"></div>
+          </div>
+
+          <!-- 3. 原書手繪旗幟與本篇導讀邊框卡片 -->
+          <div class="relative mt-8 pt-7 pb-6 px-6 sm:px-8 rounded-2xl border-2 border-slate-800 dark:border-slate-300 bg-slate-50/40 dark:bg-slate-900/30 space-y-4">
+            
+            <!-- 頂端懸浮的手繪旗幟與鋼筆圖示 -->
+            <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-white dark:bg-[#151c2d] px-4 py-0.5 rounded-full border-2 border-slate-800 dark:border-slate-300 flex items-center gap-2 shadow-2xs">
+              <!-- 鋼筆圖示 -->
+              <svg class="w-4 h-4 text-slate-800 dark:text-slate-200 -rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
+              <div class="text-center">
+                <span class="font-serif font-bold text-sm text-slate-900 dark:text-white tracking-widest block leading-tight">
+                  本篇導讀
+                </span>
+                <span class="font-script text-[11px] text-slate-500 dark:text-slate-400 block -mt-0.5">
+                  Conducted read
+                </span>
+              </div>
+            </div>
+
+            <!-- 導讀正文 (純粹依原書排版，無花俏干擾，逐字精確無錯字) -->
+            <div class="pt-2">
+              <p class="font-serif text-[15px] sm:text-base text-slate-800 dark:text-slate-200 leading-loose text-justify indent-8 tracking-wide">
+                相信剛踏入刑法領域的初學者，一定曾經被眾多的「○○犯、□□犯」給搞得昏頭轉向，甚至已接觸刑法些許年的老手，也會在眾多類型的漩渦中感到迷惘，七葷八素不得其門進出。犯罪類型是對「單一具體犯罪」本身作分類，也就是按照特徵、內涵分門別類地歸納整理，繼而建構龐大的分析資料庫，例如殺人罪是一般犯、狀態犯、結果犯、實害犯。論罪類型則是就單一具體犯罪「該當形式」的分類，例如殺人罪的該當形式有故意既遂犯、未遂犯與過失犯。不過一頭栽入犯罪類型與論罪類型之前，我們先來談談開啟三階論的前提：刑法意義的行為。
+              </p>
+            </div>
+
+            <!-- 底端出處 -->
+            <div class="pt-3 flex items-center justify-between text-[11px] font-serif text-slate-400 dark:text-slate-500 border-t border-slate-200 dark:border-slate-800">
+              <span>高點文化 • 陳奕廷律師編著</span>
+              <span>第一篇 導讀</span>
+            </div>
+
+          </div>
+
+          <!-- 底部微裝飾線 -->
+          <div class="pt-2 flex justify-between items-center text-[10px] font-mono text-slate-400 border-t border-slate-200 dark:border-slate-800">
+            <span>CRIMINAL LAW GENERAL PRINCIPLES</span>
+            <span>PART 1 PREFACE</span>
+          </div>
+
+        </div>
+
+        <!-- 第一篇導讀 底部導航條 -->
+        <div class="w-full max-w-2xl flex items-center justify-between p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-50/80 via-white to-indigo-50/80 dark:from-[#121827] dark:to-[#162035] border border-blue-200/80 dark:border-blue-900/40 shadow-xs flex-wrap gap-3">
+          <button onclick="switchView('part0-ch3-sec5')" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 font-bold text-xs flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 cursor-pointer">
+            <span>← 上一單元：第零篇 第三章第五節</span>
+          </button>
+          <div class="flex items-center gap-2 flex-wrap">
+            <button onclick="switchView('cover')" class="px-4 py-2 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-900/50 font-bold text-xs flex items-center gap-1.5 border border-amber-300 dark:border-amber-700/60 cursor-pointer">
+              <span>🏠 返回書籍首頁</span>
+            </button>
+            <button onclick="switchView('part0')" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-bold text-xs flex items-center gap-1.5 transition-all shadow-xs cursor-pointer">
+              <span>第零篇 運作原理 →</span>
+            </button>
+          </div>
+        </div>
+
+      </div> <!-- 閉合 #viewPart1 -->
+
+      <!-- ==================== VIEW 19: 第一篇 第一章 刑法意義的行為 (教材第 3-1～3-5 頁) ==================== -->
+      <div id="viewPart1Chapter1" class="fade-enter hidden space-y-8"></div>
+
+      <!-- ==================== VIEW 20: 第一篇 第二章 第一節 基本要素 (教材第 3-7～3-11 頁) ==================== -->
+      <div id="viewPart1Ch2Sec1" class="fade-enter hidden space-y-8"></div>
+
+      <!-- ==================== VIEW 21: 第一篇 第二章 第二節 變體要素 (教材第 3-12～3-13 頁) ==================== -->
+      <div id="viewPart1Ch2Sec2" class="fade-enter hidden space-y-8"></div>
+
+      <!-- ==================== VIEW 22: 第一篇 第二章 第三節 行為犯與結果犯 (教材第 3-14～3-17 頁) ==================== -->
+      <div id="viewPart1Ch2Sec3" class="fade-enter hidden space-y-8"></div>
+
+      <!-- ==================== VIEW 23: 第一篇 第二章 第四節 一般犯與身分犯 (教材第 3-17～3-18 頁) ==================== -->
+      <div id="viewPart1Ch2Sec4" class="fade-enter hidden space-y-8"></div>
+
     </main>
 
     <!-- 右側目錄 (TOC Scrollspy 縮影) (預設在封面頁隱藏，進入內文時顯現) -->
@@ -6813,6 +7042,206 @@
           <a href="#sec-p0ch3-sec4-theatre" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
             <span>🐾</span>
             <span>七、犬系四大天王＆2026法規查核</span>
+          </a>
+        </nav>
+        <nav id="tocNavPart0Ch3Sec5" class="space-y-1 text-xs hidden">
+          <a href="#sec-p0ch3-sec5-intro" class="block py-2 px-3 rounded-lg text-rose-700 dark:text-rose-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🛡️</span>
+            <span>一、雙軌制裁與特別預防 (2-37)</span>
+          </a>
+          <a href="#sec-p0ch3-sec5-tree" class="block py-2 px-3 rounded-lg text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>📊</span>
+            <span>二、保安處分雙軌全景樹 (2-37)</span>
+          </a>
+          <a href="#sec-p0ch3-sec5-detention" class="block py-2 px-3 rounded-lg text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🔒</span>
+            <span>三、拘束人身自由五大類 (2-37~2-38)</span>
+          </a>
+          <a href="#sec-p0ch3-sec5-non-detention" class="block py-2 px-3 rounded-lg text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🕊️</span>
+            <span>四、非拘束人身自由二大類 (2-38)</span>
+          </a>
+          <a href="#sec-p0ch3-sec5-novice" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🐣</span>
+            <span>五、零基礎小白秒懂大翻譯</span>
+          </a>
+          <a href="#sec-p0ch3-sec5-theatre" class="block py-2 px-3 rounded-lg text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🐾</span>
+            <span>六、犬系四大天王＆合憲特審</span>
+          </a>
+        </nav>
+
+        <!-- 第一篇 第一章 目錄大綱 -->
+        <nav id="tocNavPart1Chapter1" class="space-y-1 text-xs hidden">
+          <a href="#sec-p1ch1-intro" class="block py-2 px-3 rounded-lg text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🛡️</span>
+            <span>一、前提檢驗與三大功能 (3-1)</span>
+          </a>
+          <a href="#sec-p1ch1-filter" class="block py-2 px-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium flex items-center gap-1.5">
+            <span>🚫</span>
+            <span>二、過濾功能與非行為五態 (3-1)</span>
+          </a>
+          <a href="#sec-p1ch1-classify" class="block py-2 px-3 rounded-lg text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>⚖️</span>
+            <span>三、分類功能與風險理論 (3-1)</span>
+          </a>
+          <a href="#sec-p1ch1-case11" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 1-1 救生繩索案 (3-2)</span>
+          </a>
+          <a href="#sec-p1ch1-case12" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 1-2 蛇毒血清催化劑 (3-2)</span>
+          </a>
+          <a href="#sec-p1ch1-case13" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 1-3 泳池打昏救生員 (3-2)</span>
+          </a>
+          <a href="#sec-p1ch1-confirm" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🎯</span>
+            <span>四、確認功能與時點鎖定 (3-3)</span>
+          </a>
+          <a href="#sec-p1ch1-case14" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 1-4 染菌皮革案 (3-3)</span>
+          </a>
+          <a href="#sec-p1ch1-case15" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 1-5 夜間未開頭燈案 (3-3)</span>
+          </a>
+          <a href="#sec-p1ch1-case16" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 1-6 故意推人落水案 (3-3)</span>
+          </a>
+          <a href="#sec-p1ch1-case17" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 1-7 過失推人落水案 (3-3~3-4)</span>
+          </a>
+          <a href="#sec-p1ch1-author-memo" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>💡</span>
+            <span>五、【作者叮嚀】時點多元性 (3-4)</span>
+          </a>
+          <a href="#sec-p1ch1-tips-flowchart" class="block py-2 px-3 rounded-lg text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🗺️</span>
+            <span>六、【解題提示】思考順序圖 (3-4~3-5)</span>
+          </a>
+          <a href="#sec-p1ch1-case18" class="block py-2 px-3 rounded-lg text-rose-700 dark:text-rose-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🏥</span>
+            <span>七、案例 1-8 醫師隱瞞案 (3-5)</span>
+          </a>
+        </nav>
+        <nav id="tocNavPart1Ch2Sec1" class="space-y-1 text-xs hidden font-serif">
+          <a href="#sec-p1ch2-sec1-intro" class="block py-2 px-3 rounded-lg text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>📖</span>
+            <span>第二章前言與基本要素 (3-7)</span>
+          </a>
+          <a href="#sec-p1ch2-sec1-subject" class="block py-2 px-3 rounded-lg text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>👤</span>
+            <span>一、行為主體：自然人與法人 (3-7)</span>
+          </a>
+          <a href="#sec-p1ch2-sec1-behavior" class="block py-2 px-3 rounded-lg text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>⚙️</span>
+            <span>二、構成要件行為 (3-7~3-11)</span>
+          </a>
+          <a href="#case-2-1" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 2-1 狀態犯砍三十刀 (3-8)</span>
+          </a>
+          <a href="#case-2-2" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 2-2 繼續犯拘禁二十年 (3-8~3-9)</span>
+          </a>
+          <a href="#case-2-3" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 2-3 上鎖日記本與文書 (3-10)</span>
+          </a>
+          <a href="#case-2-4" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 2-4 【誹韓案】目的性限縮 (3-10~3-11)</span>
+          </a>
+          <a href="#sec-p1ch2-sec1-result" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🍲</span>
+            <span>三、結果歸責與做菜調味解題 (3-11)</span>
+          </a>
+        </nav>
+
+        <!-- 第一篇 第二章 第二節 目錄大綱 (教材第 3-12～3-13 頁) -->
+        <nav id="tocNavPart1Ch2Sec2" class="space-y-1 text-xs hidden font-serif">
+          <a href="#sec-p1ch2-sec2-intro" class="block py-2 px-3 rounded-lg text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>📖</span>
+            <span>一、不作為犯文義判準 (3-12)</span>
+          </a>
+          <a href="#case-2-5" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 2-5 聚眾不解散案 (3-12)</span>
+          </a>
+          <a href="#case-2-6" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 2-6 不哺乳餓死嬰兒案 (3-12)</span>
+          </a>
+          <a href="#sec-p1ch2-sec2-author-note" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>💡</span>
+            <span>【作者叮嚀】純正作為犯 (3-12)</span>
+          </a>
+          <a href="#sec-p1ch2-sec2-equivalent" class="block py-2 px-3 rounded-lg text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>⚖️</span>
+            <span>二、等價條款與要素微調 (3-13)</span>
+          </a>
+        </nav>
+
+        <!-- 第一篇 第二章 第三節 目錄大綱 (教材第 3-14～3-17 頁) -->
+        <nav id="tocNavPart1Ch2Sec3" class="space-y-1 text-xs hidden font-serif">
+          <a href="#sec-p1ch2-sec3-intro" class="block py-2 px-3 rounded-lg text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>📖</span>
+            <span>一、要件設計與時點 (3-14)</span>
+          </a>
+          <a href="#sec-p1ch2-sec3-chart1" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>📊</span>
+            <span>【圖解 1】實害犯與危險犯 (3-15)</span>
+          </a>
+          <a href="#case-2-7" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 2-7 龜山島放火燒屋案 (3-15)</span>
+          </a>
+          <a href="#sec-p1ch2-sec3-chart2" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>🗺️</span>
+            <span>【圖解 2】通說關係架構圖 (3-16)</span>
+          </a>
+          <a href="#sec-p1ch2-sec3-author-memo" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>💡</span>
+            <span>【作者叮嚀】「致生」vs「足生」 (3-16)</span>
+          </a>
+          <a href="#case-2-8" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 2-8 敲天靈蓋身高不滿180 (3-16)</span>
+          </a>
+          <a href="#case-2-9" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 2-9 產婦醫院產子不告而別 (3-17)</span>
+          </a>
+        </nav>
+
+        <!-- 第一篇 第二章 第四節 目錄大綱 (教材第 3-17～3-18 頁) -->
+        <nav id="tocNavPart1Ch2Sec4" class="space-y-1 text-xs hidden font-serif">
+          <a href="#sec-p1ch2-sec4-intro" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>📖</span>
+            <span>一、一般犯 vs 身分犯 (3-17)</span>
+          </a>
+          <a href="#sec-p1ch2-sec4-pure" class="block py-2 px-3 rounded-lg text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>👔</span>
+            <span>二、純正身分犯與義務犯 (3-18)</span>
+          </a>
+          <a href="#sec-p1ch2-sec4-author-memo" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>💡</span>
+            <span>【作者叮嚀】不純正不作為犯 (3-18)</span>
+          </a>
+          <a href="#sec-p1ch2-sec4-impure" class="block py-2 px-3 rounded-lg text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>⚖️</span>
+            <span>三、不純正身分犯與條文 (3-18)</span>
+          </a>
+          <a href="#sec-p1ch2-sec4-chart" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>📊</span>
+            <span>【圖解】身分犯體系全貌</span>
           </a>
         </nav>
       </div>
@@ -7955,6 +8384,68 @@
                 <button id="mNavBtnPart0Ch3Sec4" onclick="switchView('part0-ch3-sec4'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
                   <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">🚪</span><span class="truncate">第四節 刑罰的執行——兼談執行刑</span></span>
                   <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-rose-100/70 dark:bg-rose-900/50 text-rose-700 dark:text-rose-300 ml-auto">2-33~2-37</span>
+                </button>
+                <button id="mNavBtnPart0Ch3Sec5" onclick="switchView('part0-ch3-sec5'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
+                  <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">🛡️</span><span class="truncate">第五節 保安處分</span></span>
+                  <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-rose-100/70 dark:bg-rose-900/50 text-rose-700 dark:text-rose-300 ml-auto">2-37~2-38</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════ 第 1 層：第一篇分組卡片 (手機版) ══════ -->
+        <div class="rounded-2xl p-2.5 bg-slate-50/70 dark:bg-[#161f30] border border-slate-200/80 dark:border-slate-800 space-y-2">
+          <!-- 篇標題列 -->
+          <div class="flex items-center justify-between px-1 pb-1.5 border-b border-slate-200/60 dark:border-slate-800">
+            <div class="flex items-center gap-1.5">
+              <span class="text-sm">⚖️</span>
+              <span class="text-xs font-black text-slate-800 dark:text-slate-100 tracking-wide">第一篇</span>
+              <span class="text-[11px] font-medium text-slate-500 dark:text-slate-400">· 行為與犯罪類型</span>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-100/90 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300">導讀</span>
+          </div>
+
+          <!-- 第 2 層：章級軌道 (明確縮排) -->
+          <div class="ml-2 pl-2.5 border-l-2 border-blue-300/80 dark:border-blue-800/80 space-y-2 pt-0.5">
+            <!-- 本篇導讀 -->
+            <div>
+              <button id="mNavBtnPart1" onclick="switchView('part1'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left transition-all">
+                <span class="flex items-center gap-1.5 truncate"><span class="text-xs">📖</span><span class="truncate">本篇導讀</span></span>
+                <span class="shrink-0 text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 ml-auto">導讀</span>
+              </button>
+            </div>
+
+            <!-- 第一章 刑法意義的行為 -->
+            <div>
+              <button id="mNavBtnPart1Ch1" onclick="switchView('part1-ch1'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left transition-all">
+                <span class="flex items-center gap-1.5 truncate"><span class="text-xs">👉</span><span class="truncate">第一章 刑法意義的行為</span></span>
+                <span class="shrink-0 text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 ml-auto">3-1</span>
+              </button>
+            </div>
+
+            <!-- 第二章 犯罪類型 -->
+            <div class="space-y-1.5 pt-0.5">
+              <button id="mNavBtnPart1Ch2" onclick="switchView('part1-ch2-sec1'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left transition-all">
+                <span class="flex items-center gap-1.5 truncate"><span class="text-xs">📁</span><span class="truncate">第二章 犯罪類型</span></span>
+                <span class="shrink-0 text-[10px] font-mono px-1.5 py-0.5 rounded bg-indigo-100 dark:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 ml-auto">3-7</span>
+              </button>
+              <div class="ml-3 pl-2 border-l-2 border-indigo-300/60 dark:border-indigo-800/60 space-y-1">
+                <button id="mNavBtnPart1Ch2Sec1" onclick="switchView('part1-ch2-sec1'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
+                  <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">👉</span><span class="truncate">第一節 基本要素</span></span>
+                  <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-indigo-100/70 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 ml-auto">3-7~3-11</span>
+                </button>
+                <button id="mNavBtnPart1Ch2Sec2" onclick="switchView('part1-ch2-sec2'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
+                  <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">👉</span><span class="truncate">第二節 變體要素</span></span>
+                  <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-100/70 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300 ml-auto">3-12~3-13</span>
+                </button>
+                <button id="mNavBtnPart1Ch2Sec3" onclick="switchView('part1-ch2-sec3'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
+                  <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">👉</span><span class="truncate">第三節 行為與結果犯</span></span>
+                  <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-100/70 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 ml-auto">3-14~3-17</span>
+                </button>
+                <button id="mNavBtnPart1Ch2Sec4" onclick="switchView('part1-ch2-sec4'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
+                  <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">👉</span><span class="truncate">第四節 一般犯與身分犯</span></span>
+                  <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-100/70 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 ml-auto">3-17~3-18</span>
                 </button>
               </div>
             </div>

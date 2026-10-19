@@ -53,6 +53,20 @@ function copyQuote() {
     quote = "罪刑相當定宣告，五七十款為例示！重複評價斷不可，行使緘默非態度！";
   } else if (currentView === 'part0-ch3-sec4') {
     quote = "執行實踐防短弊，易科六月本刑五！併罰逾六仍得易，期滿未撤自始無！";
+  } else if (currentView === 'part0-ch3-sec5') {
+    quote = "雙軌制裁防危險，拘束自由等同刑！從舊從輕法定守，強制工作已失效！";
+  } else if (currentView === 'part1') {
+    quote = "犯罪類型分特徵，論罪類型定該當！開啟三階前置點，刑法行為先確明！";
+  } else if (currentView === 'part1-ch1') {
+    quote = "三階之前先過濾，行為非行五態除！作為創造加速險，不作為任風險延！時點多元慎認定，思考順序定該當！";
+  } else if (currentView === 'part1-ch2-sec1') {
+    quote = "法人無責自然人，定式不定式分明！狀態犯終了即既遂，繼續犯終了始起算！客體表彰法益在，調味料足莫添亂！";
+  } else if (currentView === 'part1-ch2-sec2') {
+    quote = "文義限定乃純正，兼容作為不純正！等價條款立保證，要素微調定犯行！";
+  } else if (currentView === 'part1-ch2-sec3') {
+    quote = "事前莫偷看後續，一般優越鎖定行！致生危險結果犯，足生適格行為防！";
+  } else if (currentView === 'part1-ch2-sec4') {
+    quote = "一般主體不設限，身分限制定有無！義務犯承專屬責，條文選擇定高低！";
   }
   if (navigator.clipboard) {
     navigator.clipboard.writeText(quote).then(() => {
@@ -67,7 +81,334 @@ function copyQuote() {
 function exportMarkdown() {
   let mdContent = "";
   let fileName = "";
-  if (currentView === 'part0-ch3-sec4') {
+  if (currentView === 'part1-ch2-sec4') {
+    fileName = "第一篇第二章第四節_3-17_3-18頁_一般犯與身分犯全節筆記.md";
+    mdContent = `# 第一篇 第二章 第四節 一般犯與身分犯（教材第 3-17 ～ 3-18 頁 全節精華整理）
+
+## 一、基本概念：一般犯 vs 身分犯（教材第 3-17 頁）
+- **一般犯**：對行為主體不設限，任何人都可以該當構成要件行為的犯罪類型。
+  - 典型例證：普通殺人罪（§ 271），誰都可以該當「殺」這個行為。
+- **身分犯**：相較一般犯，對行為主體設有限制，必須滿足特殊身分才能成立該罪。
+  - 依據身分功能的不同，再區分為：
+    1. **純正身分犯**：以身分建構刑罰有無。
+    2. **不純正身分犯**：以身分建構刑罰高低。
+
+---
+
+## 二、純正身分犯（義務犯）（教材第 3-18 頁）
+- **核心性質**：該身分作為構成要件行為的前提，並決定行為人是否被處罰。
+  - **具備身分** ➔ 有構成要件行為而可能成立犯罪。
+  - **欠缺身分** ➔ 不成立犯罪。
+- **典型例證**：收受賄賂罪（§ 121），必須具備公務員身分始有「收賄」可言，不然單純兩個人私相授受，何來收賄行為？
+- **義務犯概念**：由於這類身分通常彰顯行為人承擔某些特殊義務（例如具備公務員身分即承擔依法行政這個專屬義務），所以又被稱作**義務犯**。
+
+### 【作者叮嚀】不純正不作為犯也是一種義務犯
+- 不純正不作為犯也是一種義務犯，因為要想讓消極不作為與積極作為等價齊觀，勢必要賦予行為人作為義務，也就是具備保證地位。
+- 舉殺人罪為例，不作為放任他人死亡是否該當「殺」，不可一概而論！
+- 僅當行為人因保證地位（例如危險前行為）這個特別身分而承擔特殊作為義務（例如危難排除義務）時，不作為始該當殺人行為。
+
+---
+
+## 三、不純正身分犯（教材第 3-18 頁）
+- **核心性質**：該身分與構成要件行為無關，僅決定行為人依哪個條文被處罰。
+  - **具備身分** ➔ 可能成立特別的犯罪。
+  - **欠缺身分** ➔ 回歸普通的犯罪。
+  - 因此不純正身分犯必然涉及普通之罪與特別之罪的條文選擇。
+- **典型例證**：
+  1. 殺人罪乃普通之罪，若公務員假借職務上機會殺人，滿足公務員身分者成立特別的不純正瀆職罪（§ 134）。
+  2. 殺人罪乃普通之罪，若直系血親卑親屬殺尊親屬，滿足直系血親卑親屬身分者成立特別的殺親罪（§ 272）。
+
+---
+
+## 四、國考核心定錨與剝離身分過濾法
+- **秒殺判準**：遇到身分犯，請直接在心中把該特殊身分抽掉：
+  - 抽掉身分後行為人完全無罪 ➔ **純正身分犯（義務犯）**！
+  - 抽掉身分後行為人仍成立普通犯罪 ➔ **不純正身分犯**！
+- **共犯關係（刑法第 31 條預告）**：
+  - 純正身分犯：無身分者共同實施 ➔ 依 § 31 Ⅰ 擬制為共犯，但得減輕其刑。
+  - 不純正身分犯：無身分者共同實施 ➔ 依 § 31 Ⅱ 科以通常之刑，不得加重！
+`;
+  } else if (currentView === 'part1-ch2-sec3') {
+    fileName = "第一篇第二章第三節_3-14_3-17頁_行為犯與結果犯全節筆記.md";
+    mdContent = `# 第一篇 第二章 第三節 行為犯與結果犯（教材第 3-14 ～ 3-17 頁 全節精華整理）
+
+## 一、基本要件設計與觀察時點（教材第 3-14 頁）
+- **要件設計**：
+  - **行為犯（＝舉動犯）**：僅要求構成要件行為，毋須檢驗構成要件結果歸責。
+  - **結果犯**：除行為外，必須行為與結果齊備，必須額外審查構成要件結果歸責。
+- **觀察時點論**：
+  - **構成要件行為 ➔ 採【事前說（事中說）】**：
+    - 立於侵害流程發端，判斷時**不應、也不能偷看後續所引發的任何事實**！
+    - 擷取事實範圍：一般認知 ＋ 行為人優越事實。
+  - **構成要件結果歸責 ➔ 採【事後說】**：
+    - 立於侵害流程結束後，可擷取案例中發生的全盤事實，判斷是否為法規範欲避免之結果。
+
+---
+
+## 二、實害犯 vs 危險犯（具體危險犯 vs 抽象危險犯）
+
+### (一) 通說體系對應架構（教材第 3-15 ～ 3-16 頁）
+1. **實害犯** ➔ 實害結果 ➔ **結果犯**（如殺人罪 § 271、傷害罪 § 277）。
+2. **具體危險犯** ➔ 危險結果 ➔ **結果犯**：
+   - 構成要件明文「致生……危險」（如 § 174 Ⅱ、§ 185 Ⅰ）。
+   - 「致生」乃結果歸責之描述，指行為導致發生某種外在事實危險狀態。
+3. **抽象危險犯** ➔ 行為典型伴隨危險 ➔ **行為犯**：
+   - 滿足行為即被立法者預測必然發生法益侵害（如 § 174 Ⅰ、§ 185-3 不能安全駕駛罪）。
+
+### (二) 【作者叮嚀】「致生」（結果犯）vs「足生」（適格犯／適性犯）（教材第 3-16 頁）
+- **致生**：構成要件行為「導致發生某某危險結果」，絕對是結果犯！
+- **足生**：針對行為的形容，指「有可能發生某某結果」的行為，學理稱「**適格犯（＝適性犯）**」，屬行為犯模式（如偽造文書 § 210、妨害幼童發育 § 286）。
+
+---
+
+## 三、經典實戰案例研習
+
+### 案例 2-7（龜山島放火燒屋案，§ 174 具體危險犯 vs 抽象危險犯）
+- **燒自己所有住宅（§ 174 Ⅱ）**：具體危險犯（結果犯），須致生延燒公共危險。獨立佇立龜山島客觀上不生延燒危險，**不構成犯罪**。
+- **燒荒廢他人住宅（§ 174 Ⅰ）**：抽象危險犯（行為犯），一經燒燬即成罪，事實上在孤島無延燒危險在所不問，**成立犯罪既遂**。
+
+### 案例 2-8（敲天靈蓋身高不滿180案，§ 286 立法演進）
+- **101年修法前**：「致妨害其身體之自然發育」➔ 具體危險犯、結果犯，因醫學無法證明身高未達180與敲頭之因果歸責，**不構成**。
+- **101年修法後**：「足以妨害其身心之健全或發展」➔ 適格犯、行為犯，常態敲打天靈蓋行為客觀上具妨害發育之危險適格性即既遂，**成立犯罪**。
+
+### 案例 2-9（產婦在醫院產子不告而別案，§ 294 Ⅰ 遺棄罪學說對決）
+- **結果犯說**：遺棄須致生生命死亡危險結果，嬰兒在產房受醫護照料未陷生存危險 ➔ **不成立**。
+- **行為犯說（適格犯說）**：條文無致生危險，須足以引起死亡危險之遺棄行為始該當，醫院留置非適格遺棄行為 ➔ **不成立**。
+- **結論**：雙說殊途同歸，均認產婦甲不成立違背義務遺棄罪！
+`;
+  } else if (currentView === 'part1-ch2-sec2') {
+    fileName = "第一篇第二章第二節_3-12_3-13頁_變體要素_純正與不純正不作為犯筆記.md";
+    mdContent = `# 第一篇 第二章 第二節 變體要素——兼論純正與不純正不作為犯（教材第 3-12 ～ 3-13 頁 全節精華整理）
+
+## 一、不作為犯之文義判準（教材第 3-12 頁）
+- **核心判準**：觀察法條對構成要件行為的描述方式。
+  - **純正不作為犯**：若文義上【只能用不作為達成】。
+  - **不純正不作為犯**：若文義上【兼容作為與不作為】。
+- **微調法則**：刑法分則的所有犯罪都可以拆解成五大構成要件要素，僅遇到不純正不作為犯時，必須對基本要素的內容作微調。
+
+---
+
+## 二、實戰案例研習（教材第 3-12 頁）
+
+### 案例 2-5（凱道抗議聚眾不解散案）
+- **事實**：甲臨時在凱道上揪人於總統府外抗議，警察舉牌三次要求解散，大夥鳥都不鳥。
+- **問題導引**：甲以消極不作為該當聚眾不解散罪（§ 149）的不解散行為，且文義上不解散行為限於用不作為的方式達成，乃**純正不作為犯**。
+- **實務與法規查核**：
+  - § 149 文義限於消極不解散，直接以不作為為構成要件行為。
+  - 行為主體為首謀者或在場助勢之人，無須另行檢驗 § 15 Ⅰ 之保證人地位。
+
+### 案例 2-6（單親媽媽不哺乳餓死親生嬰兒案）
+- **事實**：單親媽媽甲為了甩掉拖油瓶乙再嫁豪門，故意用不哺乳的方式讓乙活活餓死。
+- **問題導引**：甲以消極不作為該當殺人罪的殺人行為，但文義上殺人行為兼含作為與不作為，乃**不純正不作為犯**。
+- **五位一體裁判定錨**：
+  - 甲具備生母之民法親權保護者保證地位。
+  - 消極不餵奶餓死嬰兒，與持刀砍殺在非難性上具有等價性。
+  - 成立刑法第 271 條第 1 項殺人既遂罪（不純正不作為犯）。
+
+---
+
+## 三、【作者叮嚀】純正作為犯的概念（教材第 3-12 頁）
+- **定義**：當行為人是作為，且法條文義限於用作為方式成立的犯罪類型，也可以依樣畫葫蘆地稱「純正作為犯」。
+- **典型例證**：比如通姦罪（§ 239）實很難想像怎麼用不作為的方式成立。
+- **備考指引**：純正作為犯的概念鮮少提及，知道一下即可。
+
+---
+
+## 四、等價條款與基本要素微調法則（教材第 3-13 頁）
+
+### (一) 為惡 vs 不行善與等價條款（刑法 § 15 Ⅰ）
+- **人性本質**：積極作為的殺人（＝為惡）與消極不作為的殺人（＝不行善）都適用 § 271。但好逸惡勞是人之本性，處罰積極為惡理直氣壯，處罰消極不行善則難以義正辭嚴。
+- **等價齊觀要求**：若要想用同一條文處罰消極不作為，就必須建構其與積極行為間的等同性。
+- **公式**：
+  不純正不作為犯 ＝「不作為」＋「由保證地位所建構的作為義務」
+- **可罰性基礎**：當行為人有作為義務卻不為法所期待之作為時，始具備可罰性基礎。
+
+### (二) 基本要素之微調法則
+1. **行為主體** ➔ 轉變成「**保證人（＝人＋保證地位）**」
+2. **構成要件行為** ➔ 轉變成「**有作為可能性卻不為法所期待之作為**」
+3. **其他要素** ➔ 依舊相同（因果關係、結果歸責、構成要件故意等）。
+`;
+  } else if (currentView === 'part1-ch2-sec1') {
+    fileName = "第一篇第二章第一節_3-7_3-11頁_基本要素_主體行為結果歸責全節筆記.md";
+    mdContent = `# 第一篇 第二章 第一節 基本要素——主體、行為、結果歸責（教材第 3-7 ～ 3-11 頁 全節精華整理）
+
+## 一、第二章開章導論與犯罪類型本質
+- **犯罪類型**：由構成要件切入思考並加以分類的種種形態，描繪出「單一具體犯罪」的典型不法內涵與基礎特徵。
+- **體系結構**：基本要素（主體、行為、結果歸責）＋ 變體要素。
+
+---
+
+## 二、行為主體（自然人適格 vs 法人責任）
+- **原則**：只有自然人才是適格之行為主體。法人無意志自由，無法給予非難，無犯罪能力。
+- **附屬刑法例外處罰形式（99台上1789決）**：
+  1. **兩罰責任**：同時處罰負責人與法人。
+  2. **代罰責任（轉嫁責任）**：僅處罰負責人，將法人責任轉嫁由負責人承擔。
+
+---
+
+## 三、構成要件行為
+實現構成要件的方式或手段。
+
+### (一) 定式犯罪 vs 不定式犯罪
+- **定式犯罪**：行為方式被立法者嚴格限定。典型如詐欺罪（§339）之「施用詐術」。若被害人非因詐術陷於錯誤，行為不該當。
+- **不定式犯罪**：立法者未限定行為方式。典型如殺人罪（§271），開槍、下毒、按鍵關閉維生系統皆可。
+
+### (二) 狀態犯 vs 繼續犯（【表1】重要對比）
+- **狀態犯**：單純創設不法狀態。既遂與終了必然同時！
+  - **案例 2-1（持刀砍三十刀斷頸案）**：
+    - 殺人罪為典型狀態犯。
+    - 既遂與終了同在斷頸死亡之時點。
+    - 犯罪參與至遲須在死亡終了前加入。
+    - 追訴權時效自死亡終了（既遂）時起算。
+- **繼續犯**：創設不法狀態＋維持不法狀態。既遂與終了不必然在同一個時點！
+  - **案例 2-2（私行拘禁二十年案）**：
+    - 私行拘禁罪（§302）為典型繼續犯；略誘罪（§241）、持有危險物罪（§186）、參與結社罪（§154）亦同。
+    - 關入之際即既遂，但行為持續維持20年，釋放時始告終了。
+    - 犯罪參與至遲得於20年終了釋放前加入（承繼共同正犯）。
+    - 追訴權時效自20年終了釋放時起算（防免訴之荒謬）。
+    - 期間法律變更適用行為時法，非「行為後」，排除 § 2 從舊從輕。
+    - 美國拘禁偷渡回台，因一部在境內，依 § 4 享有完整管轄權。
+
+### (三) 行為客體（對比保護法益）
+- **行為客體**：構成要件行為所攻擊的具體對象（人、住宅、建築物）。
+- **保護法益**：法律所保護之抽象利益（生命、公共危險）。
+- **【作者叮嚀】客體必須表彰保護法益**：
+  - 妨害公務罪（§135Ⅰ）以「公務員」為客體表彰公務順利。私人拖吊業者屬行政輔助人，非公務員，持木棍威嚇不成立妨害公務罪。
+- **案例 2-3（上鎖日記本案 - 客體與法益失契）**：
+  - § 315 客體為「他人封緘之文書」。
+  - 文書須具備穩固、保證與證明功能（社會重要性內容）。
+  - 日記本僅為私密「文件」而非「文書」，罪刑法定文義解釋甲不成立犯罪。此為客體無法表彰法益之縫隙，只能修法解決。
+- **案例 2-4（【誹韓案】侮辱誹謗死者罪目的性限縮）**：
+  - § 312 保護法益為「遺族對先祖的虔敬感情」。
+  - 韓愈第39代孫距今千年，遺族感情已然平淡，無保護必要性。
+  - 客體「已死之人」應依保護法益作目的性限縮（如瑞士法30年、日本法六親等），甲不成立本罪。
+
+### (四) 行為情狀
+行為當下的背景事實。極少數犯罪具備（如 § 356 損害債權罪「將受強制執行之際」、§ 234 公然猥褻罪「公然」）。
+
+---
+
+## 四、構成要件結果歸責與【解題提示】
+- **結果歸責**：可以和行為分開觀察的損害事實（如殺人罪死亡結果）。
+- **行為要素與結果要素不可混淆**：
+  - 竊盜罪「竊取」＝未經允許＋破壞原持有＋建立新持有。「建立新持有」是行為要素，不可劃為結果要素造成重複評價！
+- **做菜調味料比喻**：
+  - 並非每罪都要用上全部要素！清爽健身菜（舉動犯如偽證、重婚）不需結果；佛跳牆（結果犯如殺人）始需結果。切莫畫蛇添足審查法律所無之要素！
+
+> 📢 **柴柴教授金句**：法人無責自然人，定式不定式分明！狀態犯終了即既遂，繼續犯終了始起算！客體表彰法益在，調味料足莫添亂！
+`;
+  } else if (currentView === 'part1-ch1') {
+    fileName = "第一篇第一章_3-1_3-5頁_刑法意義的行為全章完結筆記.md";
+    mdContent = `# 第一篇 第一章 刑法意義的行為（教材第 3-1 ～ 3-5 頁 全章完結精華整理）
+
+## 一、三階論的前提檢驗與行為階層三大功能
+通說採取的三階論以「TB ➔ R ➔ S」為內容，但還必須通過一個前提階層的檢驗——刑法意義的行為。該階層肩負三大功能：
+1. **過濾功能**：剔除無討論實益的非刑法上行為（排除非刑法上意義的行為）。
+2. **分類功能**：行為形式的初步分類（先行區分作為與不作為，以利後續討論）。
+3. **確認功能**：確定討論時點（特定所欲討論的行為，才不會有所失焦或評價不足）。
+
+---
+
+## 二、過濾功能（教材第 3-1 頁）
+- **核心定義（社會行為論）**：指「出於意思所主宰支配的人類行止，且此行止必須引致外界發生具有刑法重要性之後果」。
+- **核心要素有二**：
+  1. 內在須有【人類意思主宰支配的可能性】。
+  2. 外在具有【社會重要性】。
+- **五大非刑法上行為（排除態樣）**：
+  ① 反射動作
+  ② 直接（＝絕對）強制
+  ③ 睡眠或無意識之行止
+  ④ 因病抽搐
+  ⑤ 欠缺行動可能性之靜止
+
+---
+
+## 三、分類功能：操作風險理論（教材第 3-1 ～ 3-2 頁）
+行為可分「作為」或「不作為」，學理提出【風險理論】作為更縝密的判準：
+- **作為**：創造風險或加速風險。
+- **不作為**：不排除既存風險。
+
+### 經典案例檢驗（1-1 ～ 1-3）：
+- **案例 1-1（救生繩索案）**：
+  - (一) 鬆手讓仇人摔死 ➔ 創造一個使乙摔落死亡的風險 ➔ **作為**。
+  - (二) 未抓到繩索前收回繩索 ➔ 未創造風險，最多是不排除既存風險 ➔ **不作為**。
+- **案例 1-2（蛇毒血清案）**：
+  - 龜殼花咬傷注射黑寡婦解毒劑 ➔ 並未排除乙本身既存的龜殼花風險 ➔ **不作為**。
+  - 若注射黑寡婦催化劑 ➔ 更加速風險，評價上是**作為**。
+- **案例 1-3（泳池打昏救生員案）**：
+  - 甲打昏救生員丙之行為，對乙的溺死而言是不排除既存風險 ➔ **不作為**。
+  - 同一打昏救生員行為，對丙的受傷而言是創造風險的**作為**！
+  - 💡 **核心法則**：作為與不作為必須「扣緊討論對象」，方能清晰判斷。
+
+---
+
+## 四、確認功能：特定討論時點（教材第 3-3 ～ 3-4 頁）
+確認哪個動作是所欲討論的行為，這在一個案例中具備多重行為方式時更顯實益。
+- **案例 1-4（染菌皮革案）**：工廠主人未消毒皮革是「不作為」（未排除既存風險）；交付皮革給女工是「作為」（創造風險）。
+- **案例 1-5（夜間未開燈開車案）**：駕車行為是創造風險的「作為」；未開頭燈之行為是不排除既存風險的「不作為」。
+- **案例 1-6（故意推人落湖案）**：推乙之行為是創造風險的「作為」；不救助乙是不排除既存風險的「不作為」。
+- **案例 1-7（過失推人落湖案）**：過失推乙為「作為」；不救助為「不作為」，結論同上。
+
+---
+
+## 五、【作者叮嚀】與【解題提示】（教材第 3-4 ～ 3-5 頁）
+- **判斷犯罪成立的時點永遠不會只有一個！** 當有多數時點的成罪可能性時，每個時點都必須詳細檢驗。
+- **犯罪理論 vs 競合理論**：切莫本末倒置地認為既然競合會吸收為一罪何必討論不作為。這種偏見會招來「混淆犯罪理論與競合理論」的批評。
+- **行為階層思考順序**：
+  【確認】找出所欲討論的行為時點 ➔ 【過濾】排除非刑法意義的行為 ➔ 【分類】區分作為與不作為以利後續構成要件討論。
+
+---
+
+## 六、案例 1-8 【醫師隱瞞審要案】壓軸大案示範（教材第 3-5 頁）
+甲醫師面對罹患惡性淋巴癌的妹夫乙，隱瞞切片報告並告知為良性瘤，致乙延誤就醫身亡：
+1. **時點一：甲沒有為丙診療** ➔ 對丙而言乃未排除既存風險 ➔ **不作為**。
+2. **時點二：甲攔截診療報告** ➔ 對丙而言乃未排除既存風險 ➔ **不作為**。
+3. **時點三：甲不對丙告知真正的診療結果** ➔ 積極虛構良性並慫恿出國，對丙而言乃創造延誤就醫風險 ➔ **作為**。
+
+> 📢 **柴柴教授金句**：三階之前先過濾，行為非行五態除！作為創造加速險，不作為任風險延！時點多元慎認定，思考順序定該當！
+`;
+  } else if (currentView === 'part1') {
+    fileName = "第一篇_本篇導讀_刑法意義的行為與犯罪論罪類型.md";
+    mdContent = `# 第一篇 刑法意義的行為與犯罪、論罪類型【本篇導讀】
+
+> 📖 **出處**：陳奕廷律師《刑法總則【圖說系列】》第一篇導讀
+
+## 📜 導讀原文
+
+「相信剛踏入刑法領域的初學者，一定曾經被眾多的「○○犯、□□犯」給搞得昏頭轉向，甚至已接觸刑法些許年的老手，也會在眾多類型的漩渦中感到迷惘，七葷八素不得其門進出。犯罪類型是對「單一具體犯罪」本身作分類，也就是按照特徵、內涵分門別類地歸納整理，繼而建構龐大的分析資料庫，例如殺人罪是一般犯、狀態犯、結果犯、實害犯。論罪類型則是就單一具體犯罪「該當形式」的分類，例如殺人罪的該當形式有故意既遂犯、未遂犯與過失犯。不過一頭栽入犯罪類型與論罪類型之前，我們先來談談開啟三階論的前提：刑法意義的行為。」
+
+## 💡 犬系導師重點提點
+1. **犯罪類型**：針對單一具體犯罪本身作分類（特徵、內涵歸納整理，例如殺人罪是一般犯、狀態犯、結果犯、實害犯）。
+2. **論罪類型**：就單一具體犯罪「該當形式」的分類（例如殺人罪的該當形式有故意既遂犯、未遂犯與過失犯）。
+3. **開啟三階論的前提**：在進入構成要件該當性、違法性、罪責之前，必須先確立是「刑法意義的行為」！
+
+> 📢 **柴柴教授金句**：犯罪類型分特徵，論罪類型定該當！開啟三階前置點，刑法行為先確明！
+`;
+  } else if (currentView === 'part0-ch3-sec5') {
+    fileName = "第零篇第三章第五節_2-37_2-38頁_保安處分全節完結筆記.md";
+    mdContent = `# 第零篇 第三章 第五節 保安處分（教材第 2-37 ～ 2-38 頁 全節完結精華整理）
+
+## 一、雙軌制裁體系與特別預防目的
+- **雙軌制裁體系**：刑罰（以責任為基礎・應報與一般預防）與保安處分（以社會危險性為基礎・特別預防與社會防衛）。
+- **拘束人身自由 vs 非拘束人身自由**：
+  - 拘束人身自由保安處分：與刑罰等同視之，嚴格適用罪刑法定原則與從舊從輕原則（§ 1 但書、§ 2 Ⅰ）。
+  - 非拘束人身自由保安處分：從新原則（§ 2 Ⅱ 適用裁判時法）。
+- **制度待改善之處**：現行法雖增列實質要件，惟認定程序與專業鑑定人規範付之闕如。
+
+## 二、拘束人身自由的保安處分
+1. **感化教育（§ 86）**：未滿 18 歲少年，施以感化矯正惡性；少事法競合應可刪除說。
+2. **監護（§ 87）**：心神障礙或心智欠缺致無/限制責任能力人之治療保護；排除毒癮、藥癮、酒癮；111 年修法增設分層延長審查機制。
+3. **禁戒（§ 88、§ 89）**：施毒或酗酒成癮犯罪人戒除其癮之處分。
+4. **強制工作（§ 90）**：針對遊手好閒且有犯罪習慣；作者重磅痛批「將懶惰遊蕩當作病徵立論荒謬」；大法官釋字第 812 號宣判違憲全面失效！
+5. **強制治療（§ 91、§ 91-1）**：生理傳染病（刑前）vs 性犯罪妨害風化（刑後評估再犯危險顯著降低）；不定期刑效果與違憲之虞（釋字第 799 號、112年憲判字第9號宣示定期限與正當程序）。
+
+## 三、非拘束人身自由的保安處分
+1. **保護管束（§ 92、§ 93）**：委託指定機構或個人保護約束；得作為其他保安處分之替代手段。
+2. **驅逐出境（§ 95）**：受有期徒刑以上宣告之外國人，刑畢或赦免後強制出境；限不具本國籍外國人；學說主張由行政法規撤銷居留權即可之刪除說。
+
+> 📢 **柴柴教授金句**：雙軌制裁防危險，拘束自由等同刑！從舊從輕法定守，強制工作已失效！
+`;
+  } else if (currentView === 'part0-ch3-sec4') {
     fileName = "第零篇第三章第四節_2-33_2-37頁_刑罰的執行兼談執行刑全節完結筆記.md";
     mdContent = `# 第零篇 第三章 第四節 刑罰的執行——兼談執行刑（教材第 2-33 ～ 2-37 頁 全節完結精華整理）
 
@@ -629,8 +970,50 @@ const VIEW_CONFIG = {
   'part0-ch3-sec4': {
     paneId: 'viewPart0Ch3Sec4', tocId: 'tocNavPart0Ch3Sec4',
     tag: '第零篇', sub: '第四節 內文',
-    title: '🚪 第零篇・第三章 第四節 刑罰的執行——兼談執行刑（教材第 2-33～2-37 頁 全節完結）',
+    title: '🚪 第零篇・第三章 第四節 刑罰的執行——兼談執行刑（教材第 2-33～2-37 頁）',
     tab: '第四節 刑罰的執行 | 刑法總則【圖說系列】'
+  },
+  'part0-ch3-sec5': {
+    paneId: 'viewPart0Ch3Sec5', tocId: 'tocNavPart0Ch3Sec5',
+    tag: '第零篇', sub: '第五節 內文',
+    title: '🛡️ 第零篇・第三章 第五節 保安處分（教材第 2-37～2-38 頁 全節完結）',
+    tab: '第五節 保安處分 | 刑法總則【圖說系列】'
+  },
+  'part1': {
+    paneId: 'viewPart1',
+    tag: '第一篇', sub: '本篇導讀',
+    title: '⚖️ 第一篇 刑法意義的行為與犯罪、論罪類型・本篇導讀',
+    tab: '第一篇 刑法意義的行為與犯罪、論罪類型 | 刑法總則【圖說系列】'
+  },
+  'part1-ch1': {
+    paneId: 'viewPart1Chapter1', tocId: 'tocNavPart1Chapter1',
+    tag: '第一篇', sub: '第一章 內文',
+    title: '📘 第一篇・第一章 刑法意義的行為（教材第 3-1～3-5 頁 全章完結）',
+    tab: '第一章 刑法意義的行為 | 刑法總則【圖說系列】'
+  },
+  'part1-ch2-sec1': {
+    paneId: 'viewPart1Ch2Sec1', tocId: 'tocNavPart1Ch2Sec1',
+    tag: '第一篇', sub: '第二章 第一節',
+    title: '📘 第一篇・第二章 第一節 基本要素——主體、行為、結果歸責（教材第 3-7～3-11 頁）',
+    tab: '第一節 基本要素 | 刑法總則【圖說系列】'
+  },
+  'part1-ch2-sec2': {
+    paneId: 'viewPart1Ch2Sec2', tocId: 'tocNavPart1Ch2Sec2',
+    tag: '第一篇', sub: '第二章 第二節',
+    title: '📘 第一篇・第二章 第二節 變體要素——兼論純正與不純正不作為犯（教材第 3-12～3-13 頁）',
+    tab: '第二節 變體要素 | 刑法總則【圖說系列】'
+  },
+  'part1-ch2-sec3': {
+    paneId: 'viewPart1Ch2Sec3', tocId: 'tocNavPart1Ch2Sec3',
+    tag: '第一篇', sub: '第二章 第三節',
+    title: '📘 第一篇・第二章 第三節 行為犯與結果犯（教材第 3-14～3-17 頁）',
+    tab: '第三節 行為犯與結果犯 | 刑法總則【圖說系列】'
+  },
+  'part1-ch2-sec4': {
+    paneId: 'viewPart1Ch2Sec4', tocId: 'tocNavPart1Ch2Sec4',
+    tag: '第一篇', sub: '第二章 第四節',
+    title: '📘 第一篇・第二章 第四節 一般犯與身分犯（教材第 3-17～3-18 頁）',
+    tab: '第四節 一般犯與身分犯 | 刑法總則【圖說系列】'
   }
 };
 
@@ -639,6 +1022,10 @@ const NAV_STYLE_MAP = {
     active: "bg-amber-100/90 dark:bg-amber-950/70 text-amber-900 dark:text-amber-200 border-amber-300 dark:border-amber-700/80 font-bold shadow-xs",
     inactive: "bg-amber-50/50 dark:bg-amber-950/30 hover:bg-amber-100/80 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-300 border-amber-200/60 dark:border-amber-900/40 font-semibold"
   },
+  amber: {
+    active: "bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border-amber-200/60 dark:border-amber-800/40 shadow-xs font-bold",
+    inactive: "bg-slate-50 dark:bg-slate-800/60 hover:bg-amber-50 dark:hover:bg-amber-950/60 text-slate-700 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 border-slate-200/60 dark:border-slate-800 hover:shadow-xs font-bold"
+  },
   blue: {
     active: "bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border-blue-200/60 dark:border-blue-800/40 shadow-xs font-bold",
     inactive: "bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 border-slate-200/60 dark:border-slate-800 hover:shadow-xs font-bold"
@@ -646,6 +1033,14 @@ const NAV_STYLE_MAP = {
   indigo: {
     active: "bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border-indigo-200/60 dark:border-indigo-800/40 shadow-xs font-bold",
     inactive: "bg-slate-50 dark:bg-slate-800/60 hover:bg-indigo-50 dark:hover:bg-indigo-950/60 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 border-slate-200/60 dark:border-slate-800 hover:shadow-xs font-bold"
+  },
+  purple: {
+    active: "bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border-purple-200/60 dark:border-purple-800/40 shadow-xs font-bold",
+    inactive: "bg-slate-50 dark:bg-slate-800/60 hover:bg-purple-50 dark:hover:bg-purple-950/60 text-slate-700 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 border-slate-200/60 dark:border-slate-800 hover:shadow-xs font-bold"
+  },
+  emerald: {
+    active: "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border-emerald-200/60 dark:border-emerald-800/40 shadow-xs font-bold",
+    inactive: "bg-slate-50 dark:bg-slate-800/60 hover:bg-emerald-50 dark:hover:bg-emerald-950/60 text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 border-slate-200/60 dark:border-slate-800 hover:shadow-xs font-bold"
   },
   rose: {
     active: "bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border-rose-200/60 dark:border-rose-800/40 shadow-xs font-bold",
@@ -669,7 +1064,15 @@ const NAV_BTN_REFS = [
   { key: 'part0-ch3-sec1', dt: 'navBtnPart0Ch3Sec1', mb: 'mNavBtnPart0Ch3Sec1', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
   { key: 'part0-ch3-sec2', dt: 'navBtnPart0Ch3Sec2', mb: 'mNavBtnPart0Ch3Sec2', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
   { key: 'part0-ch3-sec3', dt: 'navBtnPart0Ch3Sec3', mb: 'mNavBtnPart0Ch3Sec3', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
-  { key: 'part0-ch3-sec4', dt: 'navBtnPart0Ch3Sec4', mb: 'mNavBtnPart0Ch3Sec4', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' }
+  { key: 'part0-ch3-sec4', dt: 'navBtnPart0Ch3Sec4', mb: 'mNavBtnPart0Ch3Sec4', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part0-ch3-sec5', dt: 'navBtnPart0Ch3Sec5', mb: 'mNavBtnPart0Ch3Sec5', style: 'rose', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part1', dt: 'navBtnPart1', mb: 'mNavBtnPart1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
+  { key: 'part1-ch1', dt: 'navBtnPart1Ch1', mb: 'mNavBtnPart1Ch1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part1-ch2', dt: 'navBtnPart1Ch2', mb: 'mNavBtnPart1Ch2', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
+  { key: 'part1-ch2-sec1', dt: 'navBtnPart1Ch2Sec1', mb: 'mNavBtnPart1Ch2Sec1', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part1-ch2-sec2', dt: 'navBtnPart1Ch2Sec2', mb: 'mNavBtnPart1Ch2Sec2', style: 'purple', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part1-ch2-sec3', dt: 'navBtnPart1Ch2Sec3', mb: 'mNavBtnPart1Ch2Sec3', style: 'emerald', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part1-ch2-sec4', dt: 'navBtnPart1Ch2Sec4', mb: 'mNavBtnPart1Ch2Sec4', style: 'amber', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' }
 ];
 
 // 自動掛載外部視圖模組 (Zero-CORS 本機秒開相容)
@@ -754,6 +1157,54 @@ function mountExternalViews() {
       if (mountedEl) mountedEl.dataset.mounted = 'true';
     }
   }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart0Ch3Sec5']) {
+    const el = document.getElementById('viewPart0Ch3Sec5');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart0Ch3Sec5'];
+      const mountedEl = document.getElementById('viewPart0Ch3Sec5');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart1Chapter1']) {
+    const el = document.getElementById('viewPart1Chapter1');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart1Chapter1'];
+      const mountedEl = document.getElementById('viewPart1Chapter1');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart1Ch2Sec1']) {
+    const el = document.getElementById('viewPart1Ch2Sec1');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart1Ch2Sec1'];
+      const mountedEl = document.getElementById('viewPart1Ch2Sec1');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart1Ch2Sec2']) {
+    const el = document.getElementById('viewPart1Ch2Sec2');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart1Ch2Sec2'];
+      const mountedEl = document.getElementById('viewPart1Ch2Sec2');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart1Ch2Sec3']) {
+    const el = document.getElementById('viewPart1Ch2Sec3');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart1Ch2Sec3'];
+      const mountedEl = document.getElementById('viewPart1Ch2Sec3');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart1Ch2Sec4']) {
+    const el = document.getElementById('viewPart1Ch2Sec4');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart1Ch2Sec4'];
+      const mountedEl = document.getElementById('viewPart1Ch2Sec4');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
 }
 // 立即嘗試初次掛載
 mountExternalViews();
@@ -789,7 +1240,7 @@ function switchView(view) {
   if (mainContainer) {
     mainContainer.className = (hasToc ? "lg:col-span-6 xl:col-span-6" : "lg:col-span-9 xl:col-span-9") + " space-y-8 transition-all duration-300";
   }
-  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1', 'tocNavPart0Ch1Sec2', 'tocNavPart0Ch1Sec3', 'tocNavPart0Chapter2', 'tocNavPart0Ch2Sec1', 'tocNavPart0Ch2Sec2', 'tocNavPart0Chapter3', 'tocNavPart0Ch3Sec1', 'tocNavPart0Ch3Sec2', 'tocNavPart0Ch3Sec3', 'tocNavPart0Ch3Sec4'].forEach(id => {
+  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1', 'tocNavPart0Ch1Sec2', 'tocNavPart0Ch1Sec3', 'tocNavPart0Chapter2', 'tocNavPart0Ch2Sec1', 'tocNavPart0Ch2Sec2', 'tocNavPart0Chapter3', 'tocNavPart0Ch3Sec1', 'tocNavPart0Ch3Sec2', 'tocNavPart0Ch3Sec3', 'tocNavPart0Ch3Sec4', 'tocNavPart1Chapter1', 'tocNavPart1Ch2Sec1', 'tocNavPart1Ch2Sec2', 'tocNavPart1Ch2Sec3', 'tocNavPart1Ch2Sec4'].forEach(id => {
     const tocEl = document.getElementById(id);
     if (tocEl) tocEl.classList.toggle('hidden', id !== meta.tocId);
   });
@@ -906,6 +1357,14 @@ window.addEventListener('DOMContentLoaded', () => {
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 150);
       }
+    } else if (hash === '#part0-ch3-sec5' || hash === '#viewPart0Ch3Sec5' || hash.startsWith('#sec-p0ch3-sec5-')) {
+      switchView('part0-ch3-sec5');
+      if (hash.startsWith('#sec-p0ch3-sec5-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
     } else if (hash === '#part0-ch1' || hash === '#part0-chapter-1' || hash === '#viewPart0Chapter1' || hash.startsWith('#sec-p0c1-')) {
       switchView('part0-ch1');
       if (hash.startsWith('#sec-p0c1-')) {
@@ -914,6 +1373,42 @@ window.addEventListener('DOMContentLoaded', () => {
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 150);
       }
+    } else if (hash === '#part1-ch2-sec4' || hash === '#viewPart1Ch2Sec4' || hash.startsWith('#sec-p1ch2-sec4-')) {
+      switchView('part1-ch2-sec4');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part1-ch2-sec3' || hash === '#viewPart1Ch2Sec3' || hash.startsWith('#sec-p1ch2-sec3-') || hash === '#case-2-7' || hash === '#case-2-8' || hash === '#case-2-9') {
+      switchView('part1-ch2-sec3');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part1-ch2-sec2' || hash === '#viewPart1Ch2Sec2' || hash.startsWith('#sec-p1ch2-sec2-') || hash === '#case-2-5' || hash === '#case-2-6') {
+      switchView('part1-ch2-sec2');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part1-ch2-sec1' || hash === '#viewPart1Ch2Sec1' || hash.startsWith('#sec-p1ch2-sec1-') || hash.startsWith('#case-2-')) {
+      switchView('part1-ch2-sec1');
+      if (hash.startsWith('#sec-p1ch2-sec1-') || hash.startsWith('#case-2-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part1-ch1' || hash === '#viewPart1Chapter1' || hash.startsWith('#sec-p1c1-') || hash.startsWith('#case-1-')) {
+      switchView('part1-ch1');
+      if (hash.startsWith('#sec-p1c1-') || hash.startsWith('#case-1-')) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    } else if (hash === '#part1' || hash === '#viewPart1') {
+      switchView('part1');
     } else if (hash.startsWith('#sec-c2-')) {
       switchView('chapter2');
       setTimeout(() => {

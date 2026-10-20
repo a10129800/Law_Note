@@ -67,6 +67,10 @@ function copyQuote() {
     quote = "事前莫偷看後續，一般優越鎖定行！致生危險結果犯，足生適格行為防！";
   } else if (currentView === 'part1-ch2-sec4') {
     quote = "一般主體不設限，身分限制定有無！義務犯承專屬責，條文選擇定高低！";
+  } else if (currentView === 'part1-ch3') {
+    quote = "罪名先定犯罪類型，處罰該當看論罪！故意既遂為原則，過失未遂法有明！";
+  } else if (currentView === 'part1-ch3-sec1') {
+    quote = "標準同一不變形，先客後主最分明！組合四象判既遂，客主對稱免生爭！";
   }
   if (navigator.clipboard) {
     navigator.clipboard.writeText(quote).then(() => {
@@ -81,7 +85,68 @@ function copyQuote() {
 function exportMarkdown() {
   let mdContent = "";
   let fileName = "";
-  if (currentView === 'part1-ch2-sec4') {
+  if (currentView === 'part1-ch3-sec1') {
+    fileName = "第一篇第三章第一節_3-19_3-22頁_構成要件該當性的判斷原理全節筆記.md";
+    mdContent = `# 第一篇 第三章 第一節 構成要件該當性的判斷原理（教材第 3-19 ～ 3-22 頁 精華整理）
+
+## 一、構成要件該當性檢驗之三步驟（教材第 3-19 頁）
+立足於通說採取的三階論，構成要件階層分「客觀構成要件」與「主觀構成要件」兩部分，我們必須分別審查這兩部分是否符合所有構成要件要素，若然，則構成要件「該當」。這個判斷過程稱為「構成要件該當性的檢驗」，檢驗步驟有三：
+1. **步驟一**：確認所要探討的構成要件。➔ 找出所有的構成要件要素（找出標準）。
+2. **步驟二**：審查實際上「已發生的客觀事實」是否滿足所有構成要件要素。➔ 客觀構成要件該當性的檢驗。
+3. **步驟三**：審查行為人「行為時的主觀想法」是否滿足所有構成要件要素。➔ 主觀構成要件該當性的檢驗。
+
+---
+
+## 二、檢驗順序之核心原理（教材第 3-20 頁）
+1. **「標準同一性」**：
+   無論客觀或主觀構成要件，其該當的標準都是位於中間的條文，這個標準不會因為對照到客觀事實或主觀想法而有改變（標準從頭到尾不會變形）。
+2. **「先客觀後主觀」之審查順序**：
+   這其實沒有什麼理論上的必然，只跟答題效率有關。詳言之，既然客觀與主觀構成要件的判準完全相同，那答題時就沒必要重複書寫，鑑於客觀事實較主觀想法具體明確，雙方便對所有的構成要件詳加討論，因此選擇以客觀構成要件為審查的起頭。
+
+---
+
+## 三、該當判斷與術語替換（教材第 3-21 頁）
+- **客觀構成要件該當** ＝ 「既遂」；**客觀構成要件未該當** ＝ 「非既遂」。
+- **主觀構成要件該當** ＝ 「故意」；**主觀構成要件未該當** ＝ 「非故意」。
+
+### 四種排列組合體系：
+- **組合 Ⅰ【客觀該當 ＋ 主觀該當】** ➔ 可能成立故意既遂犯，乃刑法處罰的原則。
+- **組合 Ⅱ【客觀不該當 ＋ 主觀該當】** ➔ 不成立故意既遂犯，但可以審查是否成立未遂犯（客觀上有無著手），乃刑法處罰的例外。
+- **組合 Ⅲ【客觀該當 ＋ 主觀不該當】** ➔ 不成立故意既遂犯，但可以審查是否成立過失犯（主觀上有無預見可能性），乃刑法處罰的例外。
+- **組合 Ⅳ【客觀不該當 ＋ 主觀不該當】** ➔ 根本不成立犯罪。
+
+---
+
+## 四、實務案例研習
+
+### 案例 3-1（萬聖節傑森扮裝嚇人致死案）
+- **事實**：甲趁萬聖節將自己裝扮成殺人魔傑森並躲在宿舍房間內，想要等室友乙回來後嚇嚇乙。乙回房後受到過度驚嚇，引發心臟衰竭死亡。
+- **判斷**：甲客觀上並無殺人行為（客觀構成要件不該當而非既遂）；同時甲主觀上的想法與客觀事實相同（知道自己沒有殺人行為，僅有開玩笑嚇人意圖），故主觀構成要件不該當而非故意。
+- **歸屬**：落入【組合 Ⅳ：客觀不該當＋主觀不該當】，根本不成立故意殺人犯罪。
+
+### 案例 3-2（彩虹獵場射殺探照燈登山客案）
+- **事實**：甲在彩虹獵場合法狩獵時，見到有隻野狼在夜中眼睛閃閃發光，甲見狀旋即開槍獵殺，走近後才發現殺死的是一個戴著微型探照燈的登山客乙。
+- **判斷**：就殺人罪的法條而言，客觀上甲確實殺死一個人而該當，但甲主觀上卻不知道自己正在殺人（誤以為是野狼）而不該當。
+- **歸屬**：落入【組合 Ⅲ：客觀該當＋主觀不該當】（構成要件客體錯誤），阻卻殺人故意，不成立故意既遂犯，轉為審查過失致死罪。
+
+> 📢 **柴柴教授金句**：標準同一不變形，先客後主最分明！組合四象判既遂，客主對稱免生爭！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part1-ch3') {
+    fileName = "第一篇第三章_論罪類型開章筆記.md";
+    mdContent = `# 第一篇 第三章 論罪類型（開章前言與三大核心態樣筆記）
+
+## 一、論罪類型核心定義
+論罪類型就是單一具體犯罪可能被論處的態樣，諸如故意既遂犯、未遂犯與過失犯，雖說還有其他類型，但考題幾乎都圍繞在這三種打轉。以下先介紹構成要件該當性的判斷原理，再簡介各種論罪類型的結構。
+
+## 二、三大核心論罪類型
+1. 故意既遂犯（刑法 § 12 Ⅰ 原則）
+2. 未遂犯（刑法 § 25 特殊規定處罰）
+3. 過失犯（刑法 § 12 Ⅱ、§ 14 特別規定處罰）
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】】》`;
+  } else if (currentView === 'part1-ch2-sec4') {
     fileName = "第一篇第二章第四節_3-17_3-18頁_一般犯與身分犯全節筆記.md";
     mdContent = `# 第一篇 第二章 第四節 一般犯與身分犯（教材第 3-17 ～ 3-18 頁 全節精華整理）
 
@@ -1014,6 +1079,18 @@ const VIEW_CONFIG = {
     tag: '第一篇', sub: '第二章 第四節',
     title: '📘 第一篇・第二章 第四節 一般犯與身分犯（教材第 3-17～3-18 頁）',
     tab: '第四節 一般犯與身分犯 | 刑法總則【圖說系列】'
+  },
+  'part1-ch3': {
+    paneId: 'viewPart1Chapter3', tocId: 'tocNavPart1Chapter3',
+    tag: '第一篇', sub: '第三章 前言',
+    title: '📘 第一篇・第三章 論罪類型（開章前言與三大核心態樣）',
+    tab: '第三章 論罪類型 | 刑法總則【圖說系列】'
+  },
+  'part1-ch3-sec1': {
+    paneId: 'viewPart1Ch3Sec1', tocId: 'tocNavPart1Ch3Sec1',
+    tag: '第一篇', sub: '第三章 第一節',
+    title: '📘 第一篇・第三章 第一節 構成要件該當性的判斷原理（教材第 3-19～3-22 頁）',
+    tab: '第一節 構成要件該當性的判斷原理 | 刑法總則【圖說系列】'
   }
 };
 
@@ -1072,7 +1149,9 @@ const NAV_BTN_REFS = [
   { key: 'part1-ch2-sec1', dt: 'navBtnPart1Ch2Sec1', mb: 'mNavBtnPart1Ch2Sec1', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
   { key: 'part1-ch2-sec2', dt: 'navBtnPart1Ch2Sec2', mb: 'mNavBtnPart1Ch2Sec2', style: 'purple', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
   { key: 'part1-ch2-sec3', dt: 'navBtnPart1Ch2Sec3', mb: 'mNavBtnPart1Ch2Sec3', style: 'emerald', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
-  { key: 'part1-ch2-sec4', dt: 'navBtnPart1Ch2Sec4', mb: 'mNavBtnPart1Ch2Sec4', style: 'amber', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' }
+  { key: 'part1-ch2-sec4', dt: 'navBtnPart1Ch2Sec4', mb: 'mNavBtnPart1Ch2Sec4', style: 'amber', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part1-ch3', dt: 'navBtnPart1Ch3', mb: 'mNavBtnPart1Ch3', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
+  { key: 'part1-ch3-sec1', dt: 'navBtnPart1Ch3Sec1', mb: 'mNavBtnPart1Ch3Sec1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' }
 ];
 
 // 自動掛載外部視圖模組 (Zero-CORS 本機秒開相容)
@@ -1205,6 +1284,22 @@ function mountExternalViews() {
       if (mountedEl) mountedEl.dataset.mounted = 'true';
     }
   }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart1Chapter3']) {
+    const el = document.getElementById('viewPart1Chapter3');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart1Chapter3'];
+      const mountedEl = document.getElementById('viewPart1Chapter3');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart1Ch3Sec1']) {
+    const el = document.getElementById('viewPart1Ch3Sec1');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart1Ch3Sec1'];
+      const mountedEl = document.getElementById('viewPart1Ch3Sec1');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
 }
 // 立即嘗試初次掛載
 mountExternalViews();
@@ -1240,7 +1335,7 @@ function switchView(view) {
   if (mainContainer) {
     mainContainer.className = (hasToc ? "lg:col-span-6 xl:col-span-6" : "lg:col-span-9 xl:col-span-9") + " space-y-8 transition-all duration-300";
   }
-  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1', 'tocNavPart0Ch1Sec2', 'tocNavPart0Ch1Sec3', 'tocNavPart0Chapter2', 'tocNavPart0Ch2Sec1', 'tocNavPart0Ch2Sec2', 'tocNavPart0Chapter3', 'tocNavPart0Ch3Sec1', 'tocNavPart0Ch3Sec2', 'tocNavPart0Ch3Sec3', 'tocNavPart0Ch3Sec4', 'tocNavPart1Chapter1', 'tocNavPart1Ch2Sec1', 'tocNavPart1Ch2Sec2', 'tocNavPart1Ch2Sec3', 'tocNavPart1Ch2Sec4'].forEach(id => {
+  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1', 'tocNavPart0Ch1Sec2', 'tocNavPart0Ch1Sec3', 'tocNavPart0Chapter2', 'tocNavPart0Ch2Sec1', 'tocNavPart0Ch2Sec2', 'tocNavPart0Chapter3', 'tocNavPart0Ch3Sec1', 'tocNavPart0Ch3Sec2', 'tocNavPart0Ch3Sec3', 'tocNavPart0Ch3Sec4', 'tocNavPart1Chapter1', 'tocNavPart1Ch2Sec1', 'tocNavPart1Ch2Sec2', 'tocNavPart1Ch2Sec3', 'tocNavPart1Ch2Sec4', 'tocNavPart1Chapter3', 'tocNavPart1Ch3Sec1'].forEach(id => {
     const tocEl = document.getElementById(id);
     if (tocEl) tocEl.classList.toggle('hidden', id !== meta.tocId);
   });
@@ -1373,6 +1468,18 @@ window.addEventListener('DOMContentLoaded', () => {
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 150);
       }
+    } else if (hash === '#part1-ch3-sec1' || hash === '#viewPart1Ch3Sec1' || hash.startsWith('#sec-p1ch3-sec1-') || hash === '#case-3-1' || hash === '#case-3-2') {
+      switchView('part1-ch3-sec1');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part1-ch3' || hash === '#viewPart1Chapter3' || (hash.startsWith('#sec-p1ch3-') && !hash.startsWith('#sec-p1ch3-sec1-'))) {
+      switchView('part1-ch3');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
     } else if (hash === '#part1-ch2-sec4' || hash === '#viewPart1Ch2Sec4' || hash.startsWith('#sec-p1ch2-sec4-')) {
       switchView('part1-ch2-sec4');
       setTimeout(() => {

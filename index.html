@@ -46,6 +46,8 @@
   <script src="content/view-part1-ch2-sec2.js?v=20261019"></script>
   <script src="content/view-part1-ch2-sec3.js?v=20261019"></script>
   <script src="content/view-part1-ch2-sec4.js?v=20261019"></script>
+  <script src="content/view-part1-ch3.js?v=20261020"></script>
+  <script src="content/view-part1-ch3-sec1.js?v=20261020"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-[#0b0f19] dark:text-slate-200 min-h-screen transition-colors duration-200">
 
@@ -406,6 +408,29 @@
                       <span class="truncate">第四節 一般犯與身分犯</span>
                     </span>
                     <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-100/70 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 ml-auto">3-17~3-18</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 第三章 論罪類型 -->
+              <div class="space-y-1.5 pt-0.5">
+                <button id="navBtnPart1Ch3" onclick="switchView('part1-ch3')" class="w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 transition-all hover:shadow-xs text-left cursor-pointer">
+                  <span class="flex items-center gap-1.5 truncate">
+                    <span class="text-xs">📁</span>
+                    <span class="truncate">第三章 論罪類型</span>
+                  </span>
+                  <span class="shrink-0 text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100/80 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 ml-auto">前言</span>
+                </button>
+
+                <!-- 第 3 層：第三章所屬各子節 (向右縮排一層) -->
+                <div class="ml-3 pl-2 border-l-2 border-blue-300/60 dark:border-blue-800/60 space-y-1">
+                  <!-- 第一節 構成要件該當性的判斷原理 (第 3-19～3-22 頁) -->
+                  <button id="navBtnPart1Ch3Sec1" onclick="switchView('part1-ch3-sec1')" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 hover:bg-blue-50 dark:hover:bg-blue-950/60 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 transition-all hover:shadow-2xs text-left cursor-pointer">
+                    <span class="flex items-center gap-1.5 truncate">
+                      <span class="text-[11px]">👉</span>
+                      <span class="truncate">第一節 判斷原理</span>
+                    </span>
+                    <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-100/70 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 ml-auto">3-19~3-22</span>
                   </button>
                 </div>
               </div>
@@ -6617,6 +6642,12 @@
       <!-- ==================== VIEW 23: 第一篇 第二章 第四節 一般犯與身分犯 (教材第 3-17～3-18 頁) ==================== -->
       <div id="viewPart1Ch2Sec4" class="fade-enter hidden space-y-8"></div>
 
+      <!-- ==================== VIEW 24: 第一篇 第三章 論罪類型 (開章前言與體系總覽) ==================== -->
+      <div id="viewPart1Chapter3" class="fade-enter hidden space-y-8"></div>
+
+      <!-- ==================== VIEW 25: 第一篇 第三章 第一節 構成要件該當性判斷原理 (教材第 3-19～3-22 頁) ==================== -->
+      <div id="viewPart1Ch3Sec1" class="fade-enter hidden space-y-8"></div>
+
     </main>
 
     <!-- 右側目錄 (TOC Scrollspy 縮影) (預設在封面頁隱藏，進入內文時顯現) -->
@@ -7242,6 +7273,50 @@
           <a href="#sec-p1ch2-sec4-chart" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
             <span>📊</span>
             <span>【圖解】身分犯體系全貌</span>
+          </a>
+        </nav>
+
+        <!-- 第一篇 第三章 目錄大綱 (開章前言與體系總覽) -->
+        <nav id="tocNavPart1Chapter3" class="space-y-1 text-xs hidden font-serif">
+          <a href="#sec-p1ch3-preface" class="block py-2 px-3 rounded-lg text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>📖</span>
+            <span>一、論罪類型核心定義</span>
+          </a>
+          <a href="#sec-p1ch3-three-types" class="block py-2 px-3 rounded-lg text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>📊</span>
+            <span>二、三大核心論罪架構圖</span>
+          </a>
+          <a href="#sec-p1ch3-roadmap" class="block py-2 px-3 rounded-lg text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium flex items-center gap-1.5">
+            <span>🗺️</span>
+            <span>三、第三章後續研讀路徑</span>
+          </a>
+          <a href="#sec-p1ch3-mentors" class="block py-2 px-3 rounded-lg text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🐾</span>
+            <span>四、犬系四大天王法學客廳</span>
+          </a>
+        </nav>
+
+        <!-- 第一篇 第三章 第一節 目錄大綱 (教材第 3-19～3-22 頁) -->
+        <nav id="tocNavPart1Ch3Sec1" class="space-y-1 text-xs hidden font-serif">
+          <a href="#sec-p1ch3-sec1-three-steps" class="block py-2 px-3 rounded-lg text-blue-700 dark:text-blue-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🛡️</span>
+            <span>一、三大檢驗步驟 (3-19)</span>
+          </a>
+          <a href="#sec-p1ch3-sec1-framework" class="block py-2 px-3 rounded-lg text-indigo-700 dark:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>🗺️</span>
+            <span>二、檢驗順序架構圖 (3-20)</span>
+          </a>
+          <a href="#sec-p1ch3-sec1-find-standards" class="block py-2 px-3 rounded-lg text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 rounded-lg transition-all font-bold flex items-center gap-1.5">
+            <span>⚖️</span>
+            <span>三、確立標準與四大組合 (3-20~3-21)</span>
+          </a>
+          <a href="#case-3-1" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 3-1 萬聖節傑森案 (3-21~3-22)</span>
+          </a>
+          <a href="#case-3-2" class="block py-1.5 px-3 pl-6 rounded-lg text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all font-medium text-[11px] flex items-center gap-1">
+            <span>•</span>
+            <span>案例 3-2 射殺探照燈登山客 (3-22)</span>
           </a>
         </nav>
       </div>
@@ -8446,6 +8521,20 @@
                 <button id="mNavBtnPart1Ch2Sec4" onclick="switchView('part1-ch2-sec4'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
                   <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">👉</span><span class="truncate">第四節 一般犯與身分犯</span></span>
                   <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-100/70 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 ml-auto">3-17~3-18</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 第三章 論罪類型 -->
+            <div class="space-y-1.5 pt-0.5">
+              <button id="mNavBtnPart1Ch3" onclick="switchView('part1-ch3'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 font-bold flex items-center justify-between border border-slate-200/60 dark:border-slate-800 text-left transition-all">
+                <span class="flex items-center gap-1.5 truncate"><span class="text-xs">📁</span><span class="truncate">第三章 論罪類型</span></span>
+                <span class="shrink-0 text-[10px] font-mono px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 ml-auto">前言</span>
+              </button>
+              <div class="ml-3 pl-2 border-l-2 border-blue-300/60 dark:border-blue-800/60 space-y-1">
+                <button id="mNavBtnPart1Ch3Sec1" onclick="switchView('part1-ch3-sec1'); closeMobileNav();" class="w-full px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300 font-medium text-xs flex items-center justify-between border border-slate-200/60 dark:border-slate-800/60 text-left transition-all">
+                  <span class="flex items-center gap-1.5 truncate"><span class="text-[11px]">👉</span><span class="truncate">第一節 判斷原理</span></span>
+                  <span class="shrink-0 text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-100/70 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 ml-auto">3-19~3-22</span>
                 </button>
               </div>
             </div>

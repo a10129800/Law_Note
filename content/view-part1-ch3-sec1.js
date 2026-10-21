@@ -643,8 +643,8 @@ window.APP_VIEWS['viewPart1Ch3Sec1'] = window.APP_VIEWS['part1Ch3Sec1'] = window
             <button onclick="switchView('part1-ch3')" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 font-bold text-xs flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 cursor-pointer">
               <span>← 返回第三章總覽</span>
             </button>
-            <button onclick="alert('恭喜您！已精熟第一節構成要件該當性判斷原理，第二節內容待後續教材頁面解鎖中！')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm cursor-pointer">
-              <span>第一節完結 🎉</span>
+            <button onclick="switchView('part1-ch3-sec2')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm cursor-pointer">
+              <span>進入 第二節 各種論罪類型簡介 →</span>
             </button>
           </div>
 

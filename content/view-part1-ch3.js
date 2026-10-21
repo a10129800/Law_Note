@@ -315,20 +315,25 @@ window.APP_VIEWS['viewPart1Chapter3'] = window.APP_VIEWS['viewPart1Ch3'] = windo
                 </div>
               </div>
 
-              <!-- 單元進度卡片 2：各種論罪類型的結構 -->
-              <div class="p-5 rounded-2xl border-2 border-dashed border-indigo-300 dark:border-indigo-800 bg-indigo-50/30 dark:bg-indigo-950/20 space-y-2">
+              <!-- 單元進度卡片 2：各種論罪類型簡介 -->
+              <div class="p-5 rounded-2xl border-2 border-blue-200 dark:border-blue-800 bg-blue-50/40 dark:bg-blue-950/20 space-y-2">
                 <div class="flex items-center justify-between">
                   <div class="flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
-                    <span class="font-black text-sm text-indigo-900 dark:text-indigo-300">第二部分 • 各種論罪類型的結構詳解</span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span class="font-black text-sm text-blue-950 dark:text-blue-100">第二節 • 各種論罪類型簡介</span>
                   </div>
-                  <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300">
-                    即將增補 (COMING SOON)
+                  <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200">
+                    教材第 3-22 ～ 3-27 頁 全節完結
                   </span>
                 </div>
-                <p class="text-xs text-slate-600 dark:text-slate-400 font-serif">
-                  故意既遂犯、未遂犯（障礙未遂、中止未遂、不能未遂）與過失犯（注意義務、預見可能性）之具體三階審查階層結構與爭點案例。
+                <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+                  掌握故意既遂犯（作為犯與不作為犯變體）、未遂犯（主觀不超出客觀不法）與過失犯（客觀不超出主觀不法）三大論罪結構圖解、案例 3-3 ～ 3-6、作者叮嚀與解題三大特定標題公式！
                 </p>
+                <div class="pt-1">
+                  <button onclick="switchView('part1-ch3-sec2')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
+                    <span>🚀 開始研讀 第二節 各種論罪類型簡介 →</span>
+                  </button>
+                </div>
               </div>
             </div>
           </section>
@@ -427,8 +432,8 @@ window.APP_VIEWS['viewPart1Chapter3'] = window.APP_VIEWS['viewPart1Ch3'] = windo
             <button onclick="switchView('part1-ch2-sec4')" class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 font-bold text-xs flex items-center gap-1.5 border border-slate-200 dark:border-slate-700 cursor-pointer">
               <span>← 上一節：第二章 第四節 一般犯與身分犯</span>
             </button>
-            <button onclick="alert('第三章開章前言收錄完畢！第一節 構成要件該當性判斷原理 待後續教材頁面解鎖中！')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm cursor-pointer">
-              <span>下一節：敬請期待 🎉</span>
+            <button onclick="switchView('part1-ch3-sec1')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm cursor-pointer">
+              <span>進入 第一節 構成要件該當性判斷原理 →</span>
             </button>
           </div>
 

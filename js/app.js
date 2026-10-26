@@ -3,21 +3,44 @@
 // 遵循 AGENTS.md 行為憲法：Zero-CORS 本機秒開、資料驅動極簡路由、犬系導師交互
 // =========================================================================
 
-// 1. 深色模式切換
-function toggleDarkMode() {
+// 1. 深色模式切換與持久化 (P3)
+function applyTheme(theme) {
   const html = document.documentElement;
   const themeIcon = document.getElementById('themeIcon');
   const themeText = document.getElementById('themeText');
-  if (html.classList.contains('dark')) {
-    html.classList.remove('dark');
-    if (themeIcon) themeIcon.textContent = '🌙';
-    if (themeText) themeText.textContent = '深色模式';
-  } else {
+  if (theme === 'dark') {
     html.classList.add('dark');
     if (themeIcon) themeIcon.textContent = '☀️';
     if (themeText) themeText.textContent = '淺色模式';
+  } else {
+    html.classList.remove('dark');
+    if (themeIcon) themeIcon.textContent = '🌙';
+    if (themeText) themeText.textContent = '深色模式';
   }
 }
+
+function toggleDarkMode() {
+  const isDark = document.documentElement.classList.contains('dark');
+  const nextTheme = isDark ? 'light' : 'dark';
+  applyTheme(nextTheme);
+  try {
+    localStorage.setItem('lawNoteTheme', nextTheme);
+  } catch (e) {
+    // 若 localStorage 被安全性設定禁用，確保頁面不中斷
+  }
+}
+
+// 頁面載入時讀取 localStorage 持久保存之主題偏好
+(function initTheme() {
+  try {
+    const savedTheme = localStorage.getItem('lawNoteTheme');
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    }
+  } catch (e) {
+    // 忽略讀取例外，維持預設樣式
+  }
+})();
 
 // 2. 高清大圖燈箱彈窗
 function openLightbox() {

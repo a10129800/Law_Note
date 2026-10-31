@@ -1384,9 +1384,316 @@ window.SEARCH_DATABASE = [
     anchor: 'sec-p0ch3-sec4-limitation',
     page: 'P. 2-37',
     desc: '狀態犯自犯罪成立起算 vs 繼續犯自行為終了起算；罹於追訴時效為不起訴處分或免訴判決；罹於行刑權時效行刑權消滅不得再執行。'
+  },
+  // 第三章 第一節 構成要件故意 (Part 2 Ch 3 Sec 1)
+  {
+    id: 'case-3-1',
+    title: '案例 3-1 直接故意 vs 間接故意（紅燈撞仇人乙與闖紅燈撞流浪漢丁案）',
+    category: 'case',
+    categoryLabel: '案例',
+    keywords: ['案例3-1', '直接故意', '間接故意', '未必故意', '容任故意', '13條', '§13', '4-30頁'],
+    view: 'part2-ch3-sec1',
+    anchor: 'case-3-1-direct-indirect-intent',
+    page: 'P. 4-30',
+    desc: '甲明知開車撞乙有意為之具直接故意；丙預見闖紅燈撞丁不違背本意具間接故意。'
+  },
+  {
+    id: 'case-3-2',
+    title: '案例 3-2 砂糖案（客觀未既遂毋庸對應原則審查）',
+    category: 'case',
+    categoryLabel: '案例',
+    keywords: ['案例3-2', '砂糖案', '對應原則', '不能未遂', '26條', '§26', '重大無知', '4-31頁'],
+    view: 'part2-ch3-sec1',
+    anchor: 'case-3-2-sugar-case',
+    page: 'P. 4-31',
+    desc: '甲以為砂糖有劇毒在茶中下糖企圖毒殺乙。客觀未既遂毋庸對應原則審查，甲具殺人故意但屬不能未遂不罰。'
+  },
+  {
+    id: 'case-3-3',
+    title: '案例 3-3 爆頭變中心臟案（因果歷程偏離與無關緊要的不一致）',
+    category: 'case',
+    categoryLabel: '案例',
+    keywords: ['案例3-3', '因果歷程錯誤', '因果歷程偏離', '對應原則', '命中心臟', '4-32頁'],
+    view: 'part2-ch3-sec1',
+    anchor: 'case-3-3-head-heart',
+    page: 'P. 4-32',
+    desc: '甲開槍欲爆乙頭顱結果命中乙心臟致死。射擊要害致死屬規範目的預設結果，命中部位落差為無關緊要不一致，成立殺人既遂罪。'
+  },
+  {
+    id: 'case-3-4',
+    title: '案例 3-4 橋墩案（推落橋溺殺撞擊橋墩死亡案）',
+    category: 'case',
+    categoryLabel: '案例',
+    keywords: ['案例3-4', '橋墩案', '因果歷程偏離', '推人下橋', '撞擊橋墩', '4-32頁'],
+    view: 'part2-ch3-sec1',
+    anchor: 'case-3-4-bridge-pier',
+    page: 'P. 4-32',
+    desc: '甲推乙落河溺殺，乙撞擊橋墩死亡。跌死與溺死雖不一致但同屬推人下橋危險之實現，為無關緊要不一致，成立殺人既遂罪。'
+  },
+  {
+    id: 'case-3-5',
+    title: '案例 3-5 擇一故意（一發子彈殺乙丙案與射戊損花瓶案）',
+    category: 'case',
+    categoryLabel: '案例',
+    keywords: ['案例3-5', '擇一故意', '一發子彈', '想像競合', '55條', '§55', '未遂犯', '4-33頁'],
+    view: 'part2-ch3-sec1',
+    anchor: 'case-3-5-alternative-intent',
+    page: 'P. 4-33',
+    desc: '認識到只能實現其一但均具故意且著手。甲對乙殺人既遂、對丙殺人未遂，§ 55 想像競合從一重處斷。'
+  },
+  {
+    id: 'case-3-6',
+    title: '案例 3-6 累積故意（丟擲手榴彈炸乙丙案）',
+    category: 'case',
+    categoryLabel: '案例',
+    keywords: ['案例3-6', '累積故意', '手榴彈', '多數法益', '想像競合', '55條', '§55', '4-34頁'],
+    view: 'part2-ch3-sec1',
+    anchor: 'case-3-6-cumulative-intent',
+    page: 'P. 4-34',
+    desc: '認識到均可實現且均具故意並著手。甲對乙、丙各成立殺人既遂罪，本於單一投擲行為依 § 55 想像競合從一重處斷。'
+  },
+  {
+    id: 'concept-p2ch3-three-requirements',
+    title: '🧠 構成要件故意的三大要求（結構・時點・內容）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['構成要件故意', '三大要求', '意欲要素必要說', '同時性原則', '對應原則', '事前故意', '事後故意', '4-29頁'],
+    view: 'part2-ch3-sec1',
+    anchor: 'sec-p2ch3sec1-structural',
+    page: 'P. 4-29',
+    desc: '故意之三大要求：結構上（認知＋意欲）、時點上（同時性原則，排除事前與事後故意）、內容上（對應原則概略對應）。'
+  },
+  // 第三章 第二節 特殊主觀構成要件——構成要件意圖 (Part 2 Ch 3 Sec 2)
+  {
+    id: 'concept-p2ch3s2-intention',
+    title: '🧠 特殊主觀構成要件——構成要件意圖（意圖犯／被截斷的結果犯）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['構成要件意圖', '意圖犯', '被截斷的結果犯', '法益保護前置化', '特殊主觀構成要件', '4-35頁'],
+    view: 'part2-ch3-sec2',
+    anchor: 'sec-p2ch3sec2-intro',
+    page: 'P. 4-35',
+    desc: '超出客觀構成要件之內在想法，立法者將法益保護功能前置化，毋待法益終局侵害即予論罪，學說稱「被截斷的結果犯」。'
+  },
+  {
+    id: 'concept-p2ch3s2-four-intentions',
+    title: '📜 分則四大著名意圖（所有意圖、散布於眾意圖、行使意圖、供人觀覽意圖）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['所有意圖', '散布於眾意圖', '行使意圖', '供人觀覽意圖', '使用竊盜', '320條', '310條', '195條', '234條', '4-35頁'],
+    view: 'part2-ch3-sec2',
+    anchor: 'sec-p2ch3sec2-four-intentions',
+    page: 'P. 4-35',
+    desc: '所有意圖（§ 320 竊盜）、散布於眾意圖（§ 310 誹謗，不以客觀散布為限）、行使意圖（§ 195 偽造貨幣）、供人觀覽意圖（§ 234 公然猥褻）。'
+  },
+  {
+    id: 'concept-p2ch3s2-tendency-expression',
+    title: '🎯 傾向犯 vs 表現犯（表意犯）——特殊主觀構成要件之體系展開',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['傾向犯', '表現犯', '表意犯', '強制性交', '公然侮辱', '221條', '309條', '4-36頁'],
+    view: 'part2-ch3-sec2',
+    anchor: 'sec-p2ch3sec2-tendency-expression',
+    page: 'P. 4-36',
+    desc: '傾向犯專指行為必須帶有特殊傾向（如強制性交之性慾滿足）；表現犯專指行為本身必須具備特定意思表示（如公然侮辱之毀損名譽意向）。'
+  },
+  {
+    id: 'concept-p2ch3s2-exam-formula',
+    title: '📝 【解題提示】「不定式犯罪」故意既遂犯構成要件該當性審查示範版型',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['不定式犯罪', '示範版型', '國考作答模板', '殺人罪版型', '客觀製造實現風險', '4-36頁'],
+    view: 'part2-ch3-sec2',
+    anchor: 'sec-p2ch3sec2-exam-formula',
+    page: 'P. 4-36',
+    desc: '國考示範版型：客觀上行為製造不受容許風險、不可想像不存在地實現法規範所欲避免之結果，主觀上明知前述事實仍有意為之具故意，構成要件該當。'
+  },
+  {
+    id: 'art-15',
+    title: '刑法第 15 條（不純正不作為犯與等價條款）',
+    category: 'article',
+    categoryLabel: '法條',
+    keywords: ['15條', '§15', '不作為犯', '不純正不作為犯', '保證人地位', '等價性', '得減輕其刑', '危險前行為', '防止義務', '4-37頁'],
+    view: 'part2-ch4',
+    anchor: 'sec-p2ch4-objective',
+    page: 'P. 4-37',
+    desc: '對於一定結果之發生，法律上有防止之義務，能防止而不防止者，與因積極行為發生結果者同。因自己行為致有發生一定結果之危險者，負防止其發生之義務。'
+  },
+  {
+    id: 'concept-p2ch4-structure',
+    title: '📊 不純正不作為犯的構成要件審查全貌流程圖',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['不純正不作為犯', '審查結構', '保證人地位', '保護者保證', '監督者保證', '作為可能性', '假設因果關係', '4-37頁'],
+    view: 'part2-ch4',
+    anchor: 'sec-p2ch4-structure-diagram',
+    page: 'P. 4-37',
+    desc: '客觀構成要件包含行為主體（保證人地位）、行為情狀（不為期待行為＋作為可能性）、結果、因果關係（假設因果關係說）；主觀構成要件為不作為故意。'
+  },
+  {
+    id: 'concept-p2ch4-protector-guarantor',
+    title: '🛡️ 保護者保證人地位四大類型（密切生活關係、保護功能、共同體、自願承擔）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['保護者保證', '保證人地位', '密切生活關係', '危險共同體', '事實上承擔', '登山共同體', '案例4-1', '案例4-2', '案例4-3', '4-38頁'],
+    view: 'part2-ch4',
+    anchor: 'sec-p2ch4-protector-guarantor',
+    page: 'P. 4-38',
+    desc: '保護特定法益不被危險侵害：(1)密切的生活關係；(2)自願承擔保護義務（事實上承擔）；(3)危險共同體（如登山互信）；(4)公務員或特定法定義務。'
+  },
+  {
+    id: 'concept-p2ch4-supervisor-guarantor',
+    title: '🔍 監督者保證人地位四大類型（監督他人、管領危險物、危險前行為、場所主人）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['監督者保證', '監督特定危險源', '管領危險物', '危險前行為', '監督他人行為', '案例4-4', '案例4-5', '案例4-6', '4-40頁'],
+    view: 'part2-ch4',
+    anchor: 'sec-p2ch4-supervisor-guarantor',
+    page: 'P. 4-40',
+    desc: '監督特定危險源不侵害他人法益：(1)監督他人行為；(2)管領危險物；(3)危險前行為（刑法第15條第2項）；(4)場所管領人義務。'
+  },
+  {
+    id: 'concept-p2ch4-prior-conduct-exceptions',
+    title: '⚠️ 危險前行為保證人地位之三大例外限制（正當防衛、信賴原則、緊急避難）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['危險前行為', '三大例外', '正當防衛無保證義務', '信賴原則', '緊急避難保證責任', '案例4-6', '4-41頁'],
+    view: 'part2-ch4',
+    anchor: 'sec-p2ch4-prior-conduct-exceptions',
+    page: 'P. 4-41',
+    desc: '危險前行為之限縮：合法正當防衛不生保證義務；恪遵交通規則受信賴原則保護不生義務；緊急避難避難者原則上對受害者仍負有救護之危險前行為保證人地位。'
+  },
+  {
+    id: 'concept-p2ch4-conduct-possibility',
+    title: '🌊 客觀行為情狀：作為可能性與個案能力檢驗',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['作為可能性', '個案能力', '旱鴨子救人', '案例4-7', '期待可能性', '4-42頁'],
+    view: 'part2-ch4',
+    anchor: 'sec-p2ch4-conduct-possibility',
+    page: 'P. 4-42',
+    desc: '行為人客觀上必須具有為法律期待行為之能力。若行為人自身為旱鴨子不會游泳，客觀上欠缺跳水救人之作為可能性，不該當不作為犯之客觀構成要件。'
+  },
+  {
+    id: 'concept-p2ch4-causation-hypothesis',
+    title: '⚖️ 假設因果關係說（不作為犯因果與客觀歸責）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['假設因果關係', '不可想像其不存在', '八成概率', '高機率避免', '不作為因果', '4-42頁'],
+    view: 'part2-ch4',
+    anchor: 'sec-p2ch4-causation',
+    page: 'P. 4-42',
+    desc: '若加上行為人之期待作為，以近乎確定或八成以上機率結果即不致發生者，即可認定不作為與結果間具有因果關係。'
+  },
+  {
+    id: 'concept-p2ch4-exam-formula',
+    title: '📝 【解題提示】不純正不作為犯國考作答示範版型',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['不純正不作為犯版型', '國考作答模板', '示範版型', '15條', '保證人地位審查', '4-43頁'],
+    view: 'part2-ch4',
+    anchor: 'sec-p2ch4-exam-formula',
+    page: 'P. 4-43',
+    desc: '不純正不作為犯三段論審查模板：確認保證人地位（保護者／監督者）➔ 不為期待作為＋具備作為可能性 ➔ 假設因果關係 ➔ 不作為故意 ➔ 15條第2項減刑考量。'
+  },
+  {
+    id: 'concept-p2ch4-sp1-huang',
+    title: '🔬 專題研究：黃榮堅老師對於「保證地位」的特殊理解（作為義務不法要素、保證地位罪責要素）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['黃榮堅', '保證地位', '特殊理解', '不法要素', '罪責要素', '期待可能性', '廣義危險前行為', '專題一', '4-44頁'],
+    view: 'part2-ch4-special1',
+    anchor: 'sec-p2ch4-sp1-core',
+    page: 'P. 4-44',
+    desc: '黃榮堅老師認為：作為與不作為不可能等價看待；作為義務乃不法要素（人人皆有救助義務），保證地位則是罪責要素（期待可能性考量）。'
+  },
+  {
+    id: 'case-4-9-lake-drowning-item',
+    title: '🌊 案例 4-9 湖邊溺水救助案（通說 vs 黃榮堅老師見解對比）',
+    category: 'case',
+    categoryLabel: '案例實戰',
+    keywords: ['案例4-9', '湖邊溺水', '甲乙丙丁', '游泳健將', '百歲人瑞', '期待可能性', '通說對比', '4-44頁', '4-45頁'],
+    view: 'part2-ch4-special1',
+    anchor: 'case-4-9-lake-drowning',
+    page: 'P. 4-44',
+    desc: '甲推乙落水不救成立殺人罪；丁無作為可能性客觀不該當；丙為游泳健將：通說認無保證地位客觀不該當，黃老師認構成要件該當但因欠缺危險前行為無期待可能性而阻卻罪責。'
+  },
+  {
+    id: 'concept-p2ch4-sp2-intentional',
+    title: '🔬 專題研究：故意的不法前行為所建構的作為義務（通說盲點 vs 蔡聖偉老師競合理論）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['故意不法前行為', '作為義務', '保證地位', '蔡聖偉', '競合理論', '通說沒必要', '水果刀刺腹', '專題二', '4-46頁', '4-47頁'],
+    view: 'part2-ch4-special2',
+    anchor: 'sec-p2ch4-sp2-general',
+    page: 'P. 4-46',
+    desc: '通說認為故意不法前行為不建構作為義務；蔡聖偉老師指出若不承認將導致教唆犯無法處罰、清醒不救無罪及防衛逼供不得主張之三大盲點，應承認作為義務並以競合理論解決。'
+  },
+  {
+    id: 'case-4-10-dissuade-item',
+    title: '🔪 案例 4-10 砍殺倒地悔悟欲叫救護車 • 第三人極力勸阻案（教唆犯從屬性爭議）',
+    category: 'case',
+    categoryLabel: '案例實戰',
+    keywords: ['案例4-10', '勸阻救助', '教唆犯從屬性', '故意前行為', '法條競合', '甲乙丙', '4-46頁', '4-47頁'],
+    view: 'part2-ch4-special2',
+    anchor: 'case-4-10-dissuade',
+    page: 'P. 4-46',
+    desc: '甲砍殺乙後心生悔意欲叫救護車，第三人丙極力勸阻致乙死亡。通說認甲故意砍殺無作為義務故丙不成立教唆；有力說認甲成立作為不作為法條競合，丙成立不作為殺人罪教唆犯。'
+  },
+  {
+    id: 'case-4-11-incapacity-item',
+    title: '🧠 案例 4-11 無過咎自陷無責任能力砍殺 • 清醒後故意不救案（責任斷層不作為）',
+    category: 'case',
+    categoryLabel: '案例實戰',
+    keywords: ['案例4-11', '無責任能力', '清醒不救', '故意前行為', '失血過多', '不作為殺人', '4-46頁', '4-47頁'],
+    view: 'part2-ch4-special2',
+    anchor: 'case-4-11-incapacity',
+    page: 'P. 4-46',
+    desc: '甲無過咎陷入無責任能力狀態砍殺乙，清醒後故意不救致乙死亡。前行為欠缺罪責不罰，但清醒後負有排除危險義務，後續不作為成立不作為殺人罪。'
+  },
+  {
+    id: 'case-4-12-time-bomb-item',
+    title: '✈️ 案例 4-12 客機安裝定時炸彈同歸於盡 • 乘客暴力逼供防衛案（排除危險義務與正當防衛）',
+    category: 'case',
+    categoryLabel: '案例實戰',
+    keywords: ['案例4-12', '定時炸彈', '客機乘客', '逼供拆彈', '正當防衛', '排除危險義務', '4-47頁'],
+    view: 'part2-ch4-special2',
+    anchor: 'case-4-12-time-bomb',
+    page: 'P. 4-47',
+    desc: '甲於機上裝定時炸彈，乘客起飛後逼迫甲說出位置解除設定。甲負有排除危險之作為義務，乘客使用必要手段逼迫履行，得主張刑法第23條正當防衛阻卻違法。'
+  }
+,
+  {
+    id: 'concept-part3-preface',
+    title: '📖 第三篇導讀：未遂犯的構成要件該當性（主觀不法大於客觀不法）',
+    category: 'concept',
+    categoryLabel: '篇章導讀',
+    keywords: ['第三篇', '第三篇前言', '第三篇導讀', '未遂犯', '未遂犯構成要件', '主觀不法大於客觀不法', '448頁', '449頁'],
+    view: 'part3',
+    anchor: 'viewPart3',
+    page: 'P. 448～449',
+    desc: '第三篇前言：未遂犯是一種主觀不法大於客觀不法的論罪類型，亦即主觀構成要件該當而有故意，客觀構成要件卻僅達著手。'
+  },
+  {
+    id: 'concept-part3-screening-tip',
+    title: '🔍 未遂犯的審查提示與前審查階層（組合Ⅱ：客觀不該當＋主觀該當）',
+    category: 'concept',
+    categoryLabel: '核心概念',
+    keywords: ['未遂犯審查提示', '前審查階層', '蔡聖偉', '組合Ⅱ', '組合Ⅳ', '先客後主', '先主後客', '448頁'],
+    view: 'part3',
+    anchor: 'viewPart3',
+    page: 'P. 448',
+    desc: '當構成要件呈現組合Ⅱ【客觀不該當＋主觀該當】時便是未遂犯的審查提示。先排除完全不成立犯罪的組合Ⅳ，才能終局開啟未遂犯審查。'
+  },
+  {
+    id: 'statute-part3-article-25-2',
+    title: '⚖️ 刑法第 25 條第 2 項：未遂犯之處罰以分則特別規定者為限（罪刑法定原則）',
+    category: 'statute',
+    categoryLabel: '法條規範',
+    keywords: ['25條2項', '§25Ⅱ', '未遂處罰例外', '特別規定', '罪刑法定原則', '449頁'],
+    view: 'part3',
+    anchor: 'viewPart3',
+    page: 'P. 449',
+    desc: '未遂犯身為刑事處罰的例外，必須以刑法分則特別規定處罰者為限才能論處（§ 25 Ⅱ），這是罪刑法定原則的基本要求。'
   }
 ];
-
-
-
-

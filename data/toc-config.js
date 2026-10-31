@@ -270,5 +270,118 @@ window.TOC_CONFIG = {
       { id: 'sec-exceptions-casestudy', label: '五、案例 2-3～2-4 阻卻例外排除' },
       { id: 'sec-summary-system', label: '六、全章總結與其他刑罰要件' }
     ]
+  },
+  'part2-ch3-sec1': {
+    badge: '教材第 4-29 ～ 4-34 頁 (全節完結)',
+    title: '📌 第三章 第一節 構成要件故意 清單',
+    items: [
+      { id: 'sec-p2ch3sec1-intro', label: '📖 本章核心導讀：主觀構成要件本質' },
+      { id: 'sec-p2ch3sec1-structural', label: '一、結構上的要求——意欲要素必要說' },
+      { id: 'case-3-1-direct-indirect-intent', label: '　├ 案例 3-1 直接故意 vs 間接故意' },
+      { id: 'sec-p2ch3sec1-temporal', label: '二、時點上的要求——同時性原則' },
+      { id: 'sec-p2ch3sec1-correspondence', label: '三、內容上的要求——對應原則' },
+      { id: 'case-3-2-sugar-case', label: '　├ 案例 3-2 砂糖案（客觀未既遂）' },
+      { id: 'case-3-3-head-heart', label: '　├ 案例 3-3 爆頭變中心臟案' },
+      { id: 'case-3-4-bridge-pier', label: '　├ 案例 3-4 橋墩案（溺殺撞橋墩）' },
+      { id: 'sec-p2ch3sec1-mindmap', label: '📊 構成要件故意三大要求流程圖' },
+      { id: 'sec-p2ch3sec1-intent-types', label: '四、多數行為客體——擇一故意與累積故意' },
+      { id: 'case-3-5-alternative-intent', label: '　├ 案例 3-5 擇一故意（一彈殺乙丙／花瓶）' },
+      { id: 'case-3-6-cumulative-intent', label: '　└ 案例 3-6 累積故意（手榴彈炸乙丙）' },
+      { action: "switchView('part2-ch3-sec2')", label: '👉 下一單元：第二節 構成要件意圖 →' },
+      { action: "switchView('part2-ch2-special2')", label: '← 返回上一單元：第二章 專題研究二' },
+      { action: "switchView('part2')", label: '📖 返回第二篇導讀' },
+      { action: "switchView('home')", label: '🏠 回到書籍主頁' }
+    ]
+  },
+  'part2-ch3-sec2': {
+    badge: '教材第 4-34 ～ 4-36 頁 (全節完結・全章完結)',
+    title: '📌 第三章 第二節 構成要件意圖 清單',
+    items: [
+      { id: 'sec-p2ch3sec2-intro', label: '📖 本節核心導讀：意圖本質與被截斷結果犯' },
+      { id: 'sec-p2ch3sec2-diagram', label: '📊 體系流程圖：意圖犯的結構' },
+      { id: 'sec-p2ch3sec2-four-intentions', label: '一、分則著名四大構成要件意圖' },
+      { id: 'case-theater-intention', label: '　├ 劇院研習：使用竊盜 vs 不法所有意圖' },
+      { id: 'sec-p2ch3sec2-tendency-expression', label: '二、【作者叮嚀】傾向犯 vs 表現犯' },
+      { id: 'sec-p2ch3sec2-exam-formula', label: '三、【解題提示】不定式犯罪審查示範版型' },
+      { action: "switchView('part2-ch4')", label: '👉 下一單元：第四章 不純正不作為犯 →' },
+      { action: "switchView('part2-ch3-sec1')", label: '← 返回第一節 構成要件故意' },
+      { action: "switchView('part2')", label: '📖 返回第二篇導讀' },
+      { action: "switchView('home')", label: '🏠 回到書籍主頁' }
+    ]
+  },
+  'part2-ch4': {
+    badge: '教材第 4-37 ～ 4-43 頁 (全章完結)',
+    title: '📌 第四章 不純正不作為犯 清單',
+    items: [
+      { id: 'sec-p2ch4-intro', label: '📖 本章前言與原書圖解：不純正不作為犯結構' },
+      { id: 'sec-p2ch4-structure-diagram', label: '📊 體系思維導圖：構成要件審查全貌' },
+      { id: 'sec-p2ch4-objective', label: '一、客觀構成要件：行為主體與等價條款' },
+      { id: 'sec-p2ch4-protector-guarantor', label: '　├ (一) 保護者保證（四大類型詳解）' },
+      { id: 'case-4-1-close-relatives', label: '　│　├ 案例 4-1 夫妻同居義務與救助義務' },
+      { id: 'case-4-2-protective-function', label: '　│　├ 案例 4-2 保母棄嬰案（事實上承擔）' },
+      { id: 'case-4-3-hazard-community', label: '　│　└ 案例 4-3 登山危險共同體案（五位一體劇院）' },
+      { id: 'sec-p2ch4-supervisor-guarantor', label: '　├ (二) 監督者保證（四大類型詳解）' },
+      { id: 'case-4-4-supervise-others', label: '　│　├ 案例 4-4 監護人未管束幼兒案' },
+      { id: 'case-4-5-supervise-risk', label: '　│　├ 案例 4-5 狼犬飼主不作為案' },
+      { id: 'case-4-6-prior-conduct', label: '　│　└ 案例 4-6 危險前行為（肇事逃逸）' },
+      { id: 'sec-p2ch4-prior-conduct-exceptions', label: '　├ (三) 危險前行為之三大例外（正當防衛、信賴原則、緊急避難）' },
+      { id: 'sec-p2ch4-conduct-possibility', label: '二、客觀行為情狀：不為期待行為與作為可能性' },
+      { id: 'case-4-7-possibility', label: '　├ 案例 4-7 旱鴨子救人案（作為可能性欠缺）' },
+      { id: 'sec-p2ch4-causation', label: '三、結果與因果關係：假設因果關係說（八成概率）' },
+      { id: 'sec-p2ch4-subjective', label: '四、主觀構成要件：不作為故意（認識＋容任）' },
+      { id: 'case-4-8-subjective', label: '　└ 案例 4-8 誤認自己無義務之主觀故意' },
+      { id: 'sec-p2ch4-legal-effects', label: '五、法律效果：刑法第 15 條第 2 項得減輕其刑' },
+      { id: 'sec-p2ch4-exam-formula', label: '六、【解題提示】不純正不作為犯國考示範版型' },
+      { action: "switchView('part2-ch4-special1')", label: '👉 下一單元：專題研究 黃榮堅老師對保證地位特殊理解 →' },
+      { action: "switchView('part2-ch3-sec2')", label: '← 返回第三章第二節 構成要件意圖' },
+      { action: "switchView('part2')", label: '📖 返回第二篇導讀' },
+      { action: "switchView('home')", label: '🏠 回到書籍主頁' }
+    ]
+  },
+  'part2-ch4-special1': {
+    badge: '教材第 4-44 ～ 4-45 頁 (全篇完結)',
+    title: '📌 專題研究 保證地位特殊理解 清單',
+    items: [
+      { id: 'sec-p2ch4-sp1-core', label: '一、黃榮堅老師核心根本想法：不作為與作為不等價' },
+      { id: 'sec-p2ch4-sp1-compare-table', label: '二、體系對比矩陣：通說 vs 黃榮堅老師見解' },
+      { id: 'case-4-9-lake-drowning', label: '三、實例演練：案例 4-9 湖邊溺水救助案' },
+      { id: 'case-4-9-lake-drowning', label: '　├ (一) 依據通說見解（甲、丙、丁評價）' },
+      { id: 'case-4-9-lake-drowning', label: '　└ (二) 依據黃榮堅老師見解（期待可能性罪責要素）' },
+      { action: "switchView('part2-ch4-special2')", label: '👉 下一單元：專題研究 故意不法前行為建構作為義務 →' },
+      { action: "switchView('part2-ch4')", label: '← 返回第四章 不純正不作為犯正文' },
+      { action: "switchView('part2')", label: '📖 返回第二篇導讀' },
+      { action: "switchView('home')", label: '🏠 回到書籍主頁' }
+    ]
+  },
+  'part2-ch4-special2': {
+    badge: '教材第 4-46 ～ 4-47 頁 (全篇完結)',
+    title: '📌 專題研究 故意不法前行為義務 清單',
+    items: [
+      { id: 'sec-p2ch4-sp2-general', label: '一、通說見解：僅過失不法前行為建構義務' },
+      { id: 'sec-p2ch4-sp2-cases', label: '　├ 核心案例集群（案例 4-10、4-11、4-12）' },
+      { id: 'case-4-10-dissuade', label: '　│　├ 案例 4-10 勸阻救助教唆爭議' },
+      { id: 'case-4-11-incapacity', label: '　│　├ 案例 4-11 自陷無責任能力清醒不救' },
+      { id: 'case-4-12-time-bomb', label: '　│　└ 案例 4-12 客機定時炸彈逼供防衛' },
+      { id: 'sec-p2ch4-sp2-reject', label: '二、不承認故意不法前行為之評價困境' },
+      { id: 'sec-p2ch4-sp2-admit', label: '三、承認故意不法前行為作為義務與競合理論' },
+      { id: 'sec-p2ch4-sp2-theater', label: '四、五位一體法學劇院實戰演繹' },
+      { action: "switchView('part3')", label: '👉 前往下一篇：第三篇 本篇導讀 (未遂犯構成要件) →' },
+      { action: "switchView('part2-ch4-special1')", label: '← 返回專題一 保證地位特殊理解' },
+      { action: "switchView('part2-ch4')", label: '← 返回第四章 不純正不作為犯正文' },
+      { action: "switchView('part2')", label: '📖 返回第二篇導讀' },
+      { action: "switchView('home')", label: '🏠 回到書籍主頁' }
+    ]
+  },
+  'part3': {
+    badge: '第三篇導讀',
+    title: '📌 第三篇 導航清單',
+    items: [
+      { action: "switchView('home')", label: '🏠 書籍主頁 (首頁看板)' },
+      { action: "switchView('part3')", label: '📖 本篇導讀：未遂犯的構成要件該當性 (第 448～449 頁)' },
+      { action: "switchView('part2-ch4-special2')", label: '← 返回第二篇第四章 專題研究二' },
+      { action: "switchView('part2')", label: '📖 返回第二篇導讀' }
+    ]
   }
 };
+
+

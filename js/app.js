@@ -173,6 +173,230 @@ function exportMarkdown() {
 
 —— 整理自陳奕廷律師《刑法總則【圖說系列】》
 `;
+  } else if (currentView === 'part2-ch2-sec2') {
+    fileName = "第二篇第二章第二節_4-13_4-19頁_構成要件結果歸責全節筆記.md";
+    mdContent = `# 第二篇 第二章 第二節 構成要件結果歸責（教材第 4-13 ～ 4-19 頁 全節精華整理）
+
+## 前言：風險實現與事後說觀察時點（教材第 4-13 頁）
+- **核心課題**：行為人朝實現該罪方向製造不容許風險（構成要件行為）後，探討「此不容許風險有無實現？」。
+- **時點選擇**：關注已發生之客觀結果，不同於行為階層之事前說，結果歸責只能採取【事後說】。
+- **審查兩大階梯**：
+  1. 壹、事實因果審查（條件理論／等價理論）
+  2. 貳、規範目的審查（客觀歸責核心過濾機制）
+
+---
+
+## 壹、事實因果審查：條件理論（等價理論）（教材第 4-13 ～ 4-16 頁）
+- **核心公式**：「若無前行為，即無後結果者，則前行為即為後結果之條件。」（－Ｐ → －Ｑ）。
+- **等價本質**：所有造成結果不可想像其不存在之條件，因果力一律等價平等。
+- **基本型態案例**：
+  - **案例 2-8【醫院案＝間接因果關係】**：甲開槍射傷乙，乙送醫因醫師丙醫療過失死亡。若無甲開槍，乙毋須送醫亦不致因醫療過失死亡，具備事實因果關係！
+  - **案例 2-9【累積因果關係】**：甲、乙互不相謀各自下微量毒，單獨不足致死但累積發作致丙死亡。若無甲或無乙丙均不致死，甲、乙皆具備事實因果關係！
+
+### 條件理論三大規則（教材第 4-14 ～ 4-15 頁）
+1. **規則一：「未發生的假設結果」不納入討論範圍**
+   - 案例 2-10【假設因果關係】（墜機案）：甲砍死乙，乙原訂搭乘班機事後墜毀全數罹難。墜機屬未發生之假設事實，不影響甲砍殺之因果關係！
+2. **規則二：被討論的結果係「實際發生的具體結果」**
+   - 案例 2-11【超越因果關係】（下毒槍殺案）：甲下毒後毒性未發作，丙衝入開槍打死乙。甲之下毒被丙之槍擊完全超越，甲與乙死亡無因果關係（甲殺人未遂，丙殺人既遂）！
+3. **規則三：「擇一因果關係」是條件理論的唯一例外**
+   - 案例 2-12【擇一因果關係】（足量下毒案）：甲、乙互不相謀各自下足量 2 公克毒藥（致死量 1 公克）。若套用公式將兩免責任，故例外建立：數個互不相謀之行為各自均足以導致結果發生時，各該行為均為結果之條件！
+- **綜合實戰案例 2-13【南投夫婦毒殺案】（教材第 4-16 頁）**：
+  - (一) 催芽劑案：下毒後因嘔吐未死，數日後肉毒桿菌中毒身亡，下毒因果被肉毒桿菌超越，甲僅論殺人未遂。
+  - (二) 肉毒桿菌案：微量毒素與特殊體質結合引發急性死亡，屬累積因果＋特殊體質，具事實因果關係。
+
+---
+
+## 貳、規範目的審查（教材第 4-16 ～ 4-19 頁）
+- **概念核心**：行為人違反之禁制規範，目的究竟在防範何種結果發生？
+- **比較公式**：【規範目的所預設的結果】 vs 【案例中實際發生的結果】
+  - 相同 ➔ 結果可歸責（實現風險）。
+  - 相異 ➔ 結果不可歸責（排除歸責）。
+- **三大審查步驟與案例**：
+  1. **步驟一：審查有無發生風險失效？**
+     - 案例 2-14【闖紅燈續行500公尺案】：闖紅燈危險於安然通過路口後失效，續行500公尺撞人不可歸責於闖紅燈行為。
+     - 案例 2-15【車禍斷腿拐杖瑕疵跌倒案】：三個月後拐杖斷裂摔死之後發損害，脫離原車禍避險規範範圍，不可歸責。
+     - 【作者叮嚀】：脫離險境判斷（傷者送醫生命跡象穩定即脫離險境，嗣後醫院火災不歸責加害者）與共犯參與脫離。
+  2. **步驟二：審查有無發生風險變種？**
+     - 案例 2-16【違規超車受驚心臟病發案】：超車規範在防擦撞翻覆，非防受驚嚇引發心臟病發，屬風險變種異常因果，不可歸責。
+  3. **步驟三：審查有無規範的特殊考量？**
+     - 案例 2-17【雙機車夜行未開車頭燈案】：開大燈在為自己照明與使他人發現，無課予後車替前車照明之保護他人義務，後車乙不成立過失致死罪！
+
+> 📢 **柴柴教授金句**：事實因果條件驗，擇一例外記心間！規範目的防失效，變種特殊不可歸！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part2-ch2-special1') {
+    fileName = "第二篇第二章專題研究一_4-21_4-24頁_被害人與第三人介入構成要件該當判斷全篇筆記.md";
+    mdContent = `# 第二篇 第二章 專題研究一 被害人介入型與第三人介入型的構成要件該當判斷（教材第 4-21 ～ 4-24 頁 全篇完結精華整理）
+
+## 前言：居間自主行為之定性（教材第 4-21 頁）
+- **核心課題**：透過被害人或第三人居間自主行為引發法益侵害結果，本質仍在於檢驗「是否製造實現該罪不容許之風險」或「結果可否歸責」。
+- **理論對應**：被害人介入型（自我負責原則）；第三人介入型（回溯禁止原則）。
+- **利益平衡**：若全面禁絕生活流通，將過度限制人民之行為自由。
+
+---
+
+## 壹、被害人介入型——被害人自我負責（教材第 4-21 ～ 4-23 頁）
+- **核心準則**：受讓者具理性決定能力者，由受讓者（＝被害人）自我負責。
+- **限制自由之正當性（例外）**：被害人縱有理性決定能力，若未認識重要情狀，而行為人掌握「優越事實」時，限制行為人自由取得正當性基礎。
+- **類型一：自我侵害行為**
+  - **案例 2-18【雜貨店賣水果刀割腕案】**：
+    - 一般情狀：一般人無法探知自殘傾向，賣刀屬中性交易，甲不該當加工自殺罪行為。
+    - 知悉重度憂鬱情狀：甲掌握優越事實，乙欠缺自我防護能力，限制自由具正當性，甲該當加工自殺罪構成要件行為。
+- **類型二：自我危險行為**
+  - **案例 2-19【藥師未叮嚀服藥禁劇烈運動案】**：
+    - 藥師對藥物副作用有專業認知（優越事實），交付藥物未予告知，製造不容許風險，該當過失致死罪。
+    - 對比：毒蟲明知危險仍吸毒過量暴斃，毒蟲具理性決定能力，應自我負責。
+  - **案例 2-20【放火燒破廟消防員罹難案】**：
+    - 消防隊員依自由意志選擇從業，受專業訓練並享相關福利，本應承擔「典型職業風險」。
+    - 依規範目的特殊考量，乙之死亡非放火罪或殺人罪預設結果，阻卻客觀結果歸責！（警察飛車追捕車禍身亡結論亦同）。
+
+---
+
+## 貳、第三人介入型——第三人自我負責（教材第 4-23 ～ 4-24 頁）
+- **核心準則**：受讓者具理性決定能力者，由受讓者（＝第三人）自我負責。
+- **製造不容許風險之三大例外**：
+  1. **第三人缺乏理性決定能力**：
+     - **案例 2-21【烤肉起火裝置交七歲幼童案】**：七歲幼童無理性決定能力，甲製造不容許之失火風險，該當構成要件行為。
+  2. **行為本身在促使第三人犯罪**：
+     - **案例 2-22【雜貨店賣西瓜刀砍死仇人案】**：一般情狀賣刀不該當行為；若已知乙欲殺丙且大吼叫囂，賣刀屬促使犯罪，限制自由具正當性，該當殺人罪幫助犯。
+  3. **行為人負有監督者的保證義務**：
+     - **案例 2-23【警察執勤配槍遺忘車內仇殺案】**：警察對配槍負有監督保證義務，疏於保管製造不容許風險；防槍枝濫用正是規範預設結果，該當過失致死罪結果歸責。
+- **第三人介入進階：醫療錯誤診治（教材第 4-24 頁）**
+  - **案例 2-24【下毒送醫急救醫療失誤案】**：
+    - ㈠ 醫師錯誤診治以【不作為】呈現（未打解毒劑僅給腸胃藥）：甲製造之毒殺風險未失效且未變種，甲客觀構成要件該當（殺人既遂）！
+    - ㈡ 醫師錯誤診治以【作為】呈現（誤將劇毒當解毒劑注入）：轉變成「醫生誤注低毒」之極罕見風險變種，未實現甲之風險，阻卻甲之結果歸責，甲僅成立殺人未遂！
+
+> 📢 **邊牧首席審判長金句**：居間自主誰負責，理性決定莫相苛！優越監督促使罪，醫療作為變種推！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part2-ch2-special2') {
+    fileName = "第二篇第二章專題研究二_4-25_4-27頁_客觀構成要件審查極度例外合法替代行為全篇筆記.md";
+    mdContent = `# 第二篇 第二章 專題研究二 客觀構成要件審查極度例外——合法替代行為（教材第 4-25 ～ 4-27 頁 全篇完結精華整理）
+
+## 前言：合法替代行為定義與法理基礎（教材第 4-25 頁）
+- **核心課題**：行為人「事實上」雖滿足構成要件行為與結果歸責，但「假設」行為人沒有構成要件行為時，相同的結果歸責卻依舊會發生。
+- **法理基礎（平等原則）**：基於「等者等之、不等者不等之」的禁止差別對待法理，不論行為人有無構成要件行為，結果歸責均完全相同，故「評價上」應類同無構成要件行為，客觀構成要件不該當。
+- **【作者叮嚀】真實流程 vs 評價上**：合法替代行為在真實流程中仍然該當構成要件行為，僅是「評價上」等同無構成要件行為，千萬不可誤會為自始不該當構成要件行為。
+
+---
+
+## 案例研習與假設因果檢驗
+
+### 案例 2-25【皮革加工案】（教材第 4-25 頁）
+- **案情**：工廠主人甲違反規定交付未消毒皮革給女工乙製筆，乙染菌身亡。鑑定報告指出，縱使甲經消毒程序，依當時科技水準確定無法殺死該細菌，乙之死亡仍無從避免。
+- **解析**：甲雖事實上導致乙染菌身亡，但假設甲履行消毒程序，死亡結果依舊發生。基於平等原則，評價上客觀構成要件不該當！
+
+### 案例 2-26【醫療手術疏失案】（教材第 4-26 頁）
+- **案情**：醫師甲為乙動腎臟移植手術漏未止血，乙失血過多死亡。驗屍發現乙天生患有血小板凝固不全，即使甲有止血措施，乙仍會失血過多死亡。
+- **解析**：甲漏未止血違反醫療常規，但依驗屍報告假設甲採取止血措施，死亡結果依舊會發生。基於平等原則，評價上客觀構成要件不該當！
+
+### 案例 2-27【單車騎士案】（假設流程發生不明）（教材第 4-27 頁）
+- **案情**：駕駛人甲違規超車未保持安全間距，單車騎士乙晃動捲入輪下死亡。鑑定指出乙飲酒在先，縱使甲保持合法間距，乙亦「有可能」因過度搖晃而命喪輪下。
+- **兩大學說爭鋒**：
+  1. **㈠ 罪疑唯輕說（通說）**：
+     - 當無法確認乙的死亡結果會否實現，應依罪疑唯輕原則作有利甲之認定（認定死亡依舊會發生）。
+     - 基於平等原則，評價上客觀構成要件不該當！
+  2. **㈡ 風險升高說（少數說）**：
+     - 罪疑唯輕原則僅適用在「事實流程發生不明」，若為「假設流程發生不明」則無適用餘地。
+     - 此情形不考慮合法替代行為，客觀構成要件該當。
+
+> 📢 **柴柴法學教授金句**：守法亦死非我愆，平等原則免苛連！假設不明罪疑輕，風險升高少數言！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part2-ch3-sec1') {
+    fileName = "第二篇第三章第一節_4-29_4-34頁_構成要件故意全節完結筆記.md";
+    mdContent = `# 第二篇 第三章 主觀構成要件該當性・第一節 一般主觀構成要件——構成要件故意（教材第 4-29 ～ 4-34 頁 全節完結精華整理）
+
+## 前言：主觀構成要件該當性之本質（教材第 4-29 頁）
+- **核心定義**：審查行為人行為時的主觀想法是否與作為判準的法條構成要件要素相符合，若然則有故意，反之則非故意。
+- **標準同一性**：主觀構成要件的組成內容與客觀構成要件完全相同（特殊主觀構成要件要素除外）。
+- **三大法定要求**：構成要件故意至少要具備結構上、時點上以及內容上的三大要求，否則主觀構成要件不該當。
+
+---
+
+## 壹、結構上的要求——意欲要素必要說（教材第 4-29 ～ 4-30 頁）
+- **通說基本要素**：故意具備兩個基本要素：
+  1. **認知**：對構成犯罪之事實有所預見。
+  2. **意欲**：有意實現構成犯罪之事實。
+- **【作者叮嚀】意欲要素不必說（黃榮堅老師見解）**：
+  - 以認知作為故意的單一結構，但認知對象除「構成犯罪事實＋普通社會意義」外，還必須認知到超出條文外的「法益侵害」，稱作「實害故意」。
+- **刑法第 13 條故意型態**：
+  - **§ 13 Ⅰ 直接故意**：明知並有意使其發生（認知＋積極意欲）。
+  - **§ 13 Ⅱ 間接故意（未必故意、容任故意）**：預見其發生而其發生並不違背其本意（認知＋消極意欲）。
+- **案例 3-1【直接故意 vs 間接故意】**：
+  - 甲加足馬力撞死仇人乙 $\\rightarrow$ 直接故意。
+  - 丙闖紅燈心想「撞到流浪漢丁不用在意」加速撞死丁 $\\rightarrow$ 間接故意。
+
+---
+
+## 貳、時點上的要求——同時性原則（教材第 4-30 ～ 4-31 頁）
+- **核心定義**：行為人在行為時必須認識犯罪事實發生的可能性，犯罪事實與行為人之認識必須在同一個時點上。
+- **排除類型**：
+  1. **事前故意**：著手前已產生之故意（例如放火殺人途中開車過失撞死仇人） $\\rightarrow$ 非故意！
+  2. **事後故意**：著手後始萌生之故意（例如意外撞死行人下車察看發現是仇人而心生暗喜） $\\rightarrow$ 非故意！
+- **【解題提示】**：事前與事後故意均非故意，至多成立過失致死罪！
+
+---
+
+## 參、內容上的要求——對應原則（教材第 4-31 ～ 4-33 頁）
+- **核心定義**：自始主觀想法與嗣後客觀既遂事實概略對應，排除某些無關緊要的不一致。
+- **適用前提**：必然在客觀構成要件該當（＝既遂）時方有審查必要；客觀未該當者毋庸審查對應原則！
+- **經典案例演練**：
+  - **案例 3-2【砂糖案】**：客觀未既遂，毋庸對應原則審查，甲添加砂糖有殺人故意，但手段無危險屬不能未遂（§ 26 不罰）。
+  - **案例 3-3【爆頭變中心臟案】**：射擊要害致死為常態因果歷程，命中心臟屬無關緊要的不一致，成立殺人既遂罪！
+  - **案例 3-4【橋墩案】**：推人下橋致撞擊橋墩死亡，同屬無關緊要的不一致，成立殺人既遂罪！
+- **【作者叮嚀】近期反省學說**：蔡聖偉老師等學者主張，建構故意的時點在行為人著手當下，只要行為當下吻合構成要件就是故意，嗣後客觀落差與故意無關。
+
+---
+
+## 肆、多數行為客體之故意型態——擇一故意與累積故意（教材第 4-33 ～ 4-34 頁）
+- **擇一故意**：
+  - 主觀認識到只能實現其中之一，但不確定是哪一個。
+  - **案例 3-5**：一發子彈朝乙丙開槍擊斃乙 $\\rightarrow$ 對乙殺人既遂、對丙殺人未遂，§ 55 想像競合從一重處斷。
+- **累積故意**：
+  - 主觀認識到均可實現。
+  - **案例 3-6**：手榴彈炸死乙丙 $\\rightarrow$ 對乙、丙各成立殺人既遂，§ 55 想像競合從一重處斷。
+- **【深度辨析】結果變更之量刑限度**：若擇一故意一槍打死兩人，因主觀不法程度較累積故意低，量刑不宜超出累積故意之刑度。
+
+> 📢 **邊牧首席審判長金句**：故意三求時點清，對應概略莫過苛！擇一累積想像合，罪刑相稱法槌定！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
+  } else if (currentView === 'part2-ch3-sec2') {
+    fileName = "第二篇第三章第二節_4-34_4-36頁_構成要件意圖全節完結筆記.md";
+    mdContent = `# 第二篇 第三章 主觀構成要件該當性・第二節 特殊主觀構成要件——構成要件意圖（教材第 4-34 ～ 4-36 頁 全節完結・全章完結精華整理）
+
+## 前言：意圖之核心本質與法益保護前置化（教材第 4-34 ～ 4-35 頁）
+- **核心定義**：超出客觀構成要件的不對稱內在想法，需要附加意圖才能成立之犯罪稱「意圖犯」。
+- **法益保護功能前置化**：行為人內心產生「終局侵害法益」之遠程目標而遂行與侵害尚有距離之行為時，即發動刑法保護。
+- **學說定性**：意圖犯又稱為<span class="underline decoration-red-500 decoration-2 underline-offset-4 font-bold">「被截斷的結果犯」</span>（客觀上毋庸實現該意圖結果即成立既遂犯）。
+
+---
+
+## 壹、分則著名四大構成要件意圖（教材第 4-35 ～ 4-36 頁）
+1. **所有意圖（§ 320 竊盜罪）**：以所有人之自居的心理狀態（排他排除意思＋永續利用意思；排除使用竊盜）。
+2. **散布於眾意圖（§ 310 誹謗罪）**：分散傳布於不特定人或多數人之目的（不以客觀上實際達到眾所周知為限）。
+3. **行使意圖（§ 195 偽造貨幣罪）**：將偽造之貨幣在交易市場流通之想法（顯現高度法益危險）。
+4. **供人觀覽意圖（§ 234 公然猥褻罪）**：主觀上欲被他人觀覽以限縮處罰範圍（學者認宜修正為騷擾他人意圖）。
+
+---
+
+## 貳、【作者叮嚀】特殊主觀構成要件之全貌（教材第 4-36 頁）
+- **傾向犯（Tendenzdelikte）**：行為必須帶有特定內在心理傾向（如強制性交罪之「性慾滿足傾向」，藉此排除醫療內診或傷害）。
+- **表現犯／表意犯（Ausdrucksdelikte）**：行為本身必須具備特定意思表示（如公然侮辱罪必須帶有「名譽毀損意向」，藉此排除嬉笑戲謔）。
+
+---
+
+## 參、【解題提示】「不定式犯罪」國考審查示範版型（教材第 4-36 頁）
+> 「客觀上甲持刀砍殺乙乃製造不受容許風險的殺人行為，該行為不可想像不存在地實現法規範所欲避免的失血過多死亡結果，主觀上甲明知前述事實卻仍有意為之而具備殺人故意，構成要件該當。」
+
+> 📢 **柴柴法學教授金句**：意圖超出客觀面，被截結果走在前！所有散布供行使，版型俐落卷上顯！
+
+—— 整理自陳奕廷律師《刑法總則【圖說系列】》
+`;
   } else if (currentView === 'part2-ch1') {
     fileName = "第二篇第一章_4-1_4-5頁_構成要件該當性的發展歷史全章完結筆記.md";
     mdContent = `# 第二篇 第一章 構成要件該當性的發展歷史（＝犯罪審查的發展歷史）（教材第 4-1 ～ 4-5 頁 精華整理）
@@ -1308,6 +1532,60 @@ const VIEW_CONFIG = {
     title: '📘 第二篇・第二章 第一節 構成要件行為（教材第 4-7～4-12 頁 全節完結）',
     tab: '第一節 構成要件行為 | 刑法總則【圖說系列】'
   },
+  'part2-ch2-sec2': {
+    paneId: 'viewPart2Ch2Sec2', tocId: 'tocNavPart2Ch2Sec2',
+    tag: '第二篇', sub: '第二章 第二節',
+    title: '📘 第二篇・第二章 第二節 構成要件結果歸責（教材第 4-13～4-19 頁 全節完結）',
+    tab: '第二節 構成要件結果歸責 | 刑法總則【圖說系列】'
+  },
+  'part2-ch2-special1': {
+    paneId: 'viewPart2Ch2Special1', tocId: 'tocNavPart2Ch2Special1',
+    tag: '第二篇', sub: '第二章 專題研究一',
+    title: '🔬 第二篇・第二章 專題研究一 被害人介入型與第三人介入型的構成要件該當判斷（教材第 4-21～4-24 頁 全篇完結）',
+    tab: '專題研究一 被害人與第三人介入 | 刑法總則【圖說系列】'
+  },
+  'part2-ch2-special2': {
+    paneId: 'viewPart2Ch2Special2', tocId: 'tocNavPart2Ch2Special2',
+    tag: '第二篇', sub: '第二章 專題研究二',
+    title: '🔬 第二篇・第二章 專題研究二 客觀構成要件審查極度例外——合法替代行為（教材第 4-25～4-27 頁 全篇完結）',
+    tab: '專題研究二 合法替代行為 | 刑法總則【圖說系列】'
+  },
+  'part2-ch3-sec1': {
+    paneId: 'viewPart2Ch3Sec1', tocId: 'tocNavPart2Ch3Sec1',
+    tag: '第二篇', sub: '第三章 第一節',
+    title: '📘 第二篇・第三章 第一節 一般主觀構成要件——構成要件故意（教材第 4-29～4-34 頁 全節完結）',
+    tab: '第一節 一般主觀構成要件——構成要件故意 | 刑法總則【圖說系列】'
+  },
+  'part2-ch3-sec2': {
+    paneId: 'viewPart2Ch3Sec2', tocId: 'tocNavPart2Ch3Sec2',
+    tag: '第二篇', sub: '第三章 第二節',
+    title: '📘 第二篇・第三章 第二節 特殊主觀構成要件——構成要件意圖（教材第 4-34～4-36 頁 全節完結・全章完結）',
+    tab: '第二節 特殊主觀構成要件——構成要件意圖 | 刑法總則【圖說系列】'
+  },
+  'part2-ch4': {
+    paneId: 'viewPart2Chapter4', tocId: 'tocNavPart2Ch4',
+    tag: '第二篇', sub: '第四章 不純正不作為犯',
+    title: '📘 第二篇・第四章 不純正不作為犯的構成要件該當性（教材第 4-37～4-43 頁）',
+    tab: '第四章 不純正不作為犯 | 刑法總則【圖說系列】'
+  },
+  'part2-ch4-special1': {
+    paneId: 'viewPart2Ch4Special1', tocId: 'tocNavPart2Ch4Special1',
+    tag: '第二篇', sub: '第四章 專題研究一',
+    title: '🔬 第二篇・第四章 專題研究一 黃榮堅老師對於「保證地位」的特殊理解（教材第 4-44～4-45 頁）',
+    tab: '專題研究一 黃榮堅老師對保證地位特殊理解 | 刑法總則【圖說系列】'
+  },
+  'part3': {
+    paneId: 'viewPart3',
+    tag: '第三篇', sub: '本篇導讀',
+    title: '🎯 第三篇 未遂犯的構成要件該當性・本篇導讀（教材第 448～449 頁）',
+    tab: '第三篇 未遂犯的構成要件該當性 | 刑法總則【圖說系列】'
+  },
+  'part2-ch4-special2': {
+    paneId: 'viewPart2Ch4Special2', tocId: 'tocNavPart2Ch4Special2',
+    tag: '第二篇', sub: '第四章 專題研究二',
+    title: '🔬 第二篇・第四章 專題研究二 故意的不法前行為所建構的作為義務（教材第 4-46～4-47 頁 全篇完結）',
+    tab: '專題研究二 故意不法前行為作為義務 | 刑法總則【圖說系列】'
+  },
   'part1-ch1': {
     paneId: 'viewPart1Chapter1', tocId: 'tocNavPart1Chapter1',
     tag: '第一篇', sub: '第一章 內文',
@@ -1420,7 +1698,16 @@ const NAV_BTN_REFS = [
   { key: 'part2', dt: 'navBtnPart2', mb: 'mNavBtnPart2', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
   { key: 'part2-ch1', dt: 'navBtnPart2Ch1', mb: 'mNavBtnPart2Ch1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
   { key: 'part2-ch2', dt: 'navBtnPart2Ch2', mb: 'mNavBtnPart2Ch2', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' },
-  { key: 'part2-ch2-sec1', dt: 'navBtnPart2Ch2Sec1', mb: 'mNavBtnPart2Ch2Sec1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' }
+  { key: 'part2-ch2-sec1', dt: 'navBtnPart2Ch2Sec1', mb: 'mNavBtnPart2Ch2Sec1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part2-ch2-sec2', dt: 'navBtnPart2Ch2Sec2', mb: 'mNavBtnPart2Ch2Sec2', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part2-ch2-special1', dt: 'navBtnPart2Ch2Special1', mb: 'mNavBtnPart2Ch2Special1', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part2-ch2-special2', dt: 'navBtnPart2Ch2Special2', mb: 'mNavBtnPart2Ch2Special2', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part2-ch3-sec1', dt: 'navBtnPart2Ch3Sec1', mb: 'mNavBtnPart2Ch3Sec1', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part2-ch3-sec2', dt: 'navBtnPart2Ch3Sec2', mb: 'mNavBtnPart2Ch3Sec2', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part2-ch4', dt: 'navBtnPart2Ch4', mb: 'mNavBtnPart2Ch4', style: 'blue', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part2-ch4-special1', dt: 'navBtnPart2Ch4Special1', mb: 'mNavBtnPart2Ch4Special1', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part2-ch4-special2', dt: 'navBtnPart2Ch4Special2', mb: 'mNavBtnPart2Ch4Special2', style: 'indigo', base: 'w-full px-2.5 py-1.5 rounded-lg flex items-center justify-between border transition-all text-left text-xs cursor-pointer' },
+  { key: 'part3', dt: 'navBtnPart3', mb: 'mNavBtnPart3', style: 'purple', base: 'w-full px-2.5 py-1.5 rounded-xl flex items-center justify-between border transition-all text-left cursor-pointer' }
 ];
 
 // 自動掛載外部視圖模組 (Zero-CORS 本機秒開相容)
@@ -1601,6 +1888,78 @@ function mountExternalViews() {
       if (mountedEl) mountedEl.dataset.mounted = 'true';
     }
   }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart2Ch2Sec2']) {
+    const el = document.getElementById('viewPart2Ch2Sec2');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart2Ch2Sec2'];
+      const mountedEl = document.getElementById('viewPart2Ch2Sec2');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart2Ch2Special1']) {
+    const el = document.getElementById('viewPart2Ch2Special1');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart2Ch2Special1'];
+      const mountedEl = document.getElementById('viewPart2Ch2Special1');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart2Ch2Special2']) {
+    const el = document.getElementById('viewPart2Ch2Special2');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart2Ch2Special2'];
+      const mountedEl = document.getElementById('viewPart2Ch2Special2');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart2Ch3Sec1']) {
+    const el = document.getElementById('viewPart2Ch3Sec1');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart2Ch3Sec1'];
+      const mountedEl = document.getElementById('viewPart2Ch3Sec1');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart2Ch3Sec2']) {
+    const el = document.getElementById('viewPart2Ch3Sec2');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart2Ch3Sec2'];
+      const mountedEl = document.getElementById('viewPart2Ch3Sec2');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart2Chapter4']) {
+    const el = document.getElementById('viewPart2Chapter4');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart2Chapter4'];
+      const mountedEl = document.getElementById('viewPart2Chapter4');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart2Ch4Special1']) {
+    const el = document.getElementById('viewPart2Ch4Special1');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart2Ch4Special1'];
+      const mountedEl = document.getElementById('viewPart2Ch4Special1');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart2Ch4Special2']) {
+    const el = document.getElementById('viewPart2Ch4Special2');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart2Ch4Special2'];
+      const mountedEl = document.getElementById('viewPart2Ch4Special2');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
+  if (window.APP_VIEWS && window.APP_VIEWS['viewPart3']) {
+    const el = document.getElementById('viewPart3');
+    if (el && !el.dataset.mounted) {
+      el.outerHTML = window.APP_VIEWS['viewPart3'];
+      const mountedEl = document.getElementById('viewPart3');
+      if (mountedEl) mountedEl.dataset.mounted = 'true';
+    }
+  }
 }
 // 立即嘗試初次掛載
 mountExternalViews();
@@ -1636,7 +1995,7 @@ function switchView(view) {
   if (mainContainer) {
     mainContainer.className = (hasToc ? "lg:col-span-6 xl:col-span-6" : "lg:col-span-9 xl:col-span-9") + " space-y-8 transition-all duration-300";
   }
-  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1', 'tocNavPart0Ch1Sec2', 'tocNavPart0Ch1Sec3', 'tocNavPart0Chapter2', 'tocNavPart0Ch2Sec1', 'tocNavPart0Ch2Sec2', 'tocNavPart0Chapter3', 'tocNavPart0Ch3Sec1', 'tocNavPart0Ch3Sec2', 'tocNavPart0Ch3Sec3', 'tocNavPart0Ch3Sec4', 'tocNavPart0Ch3Sec5', 'tocNavPart1Chapter1', 'tocNavPart1Ch2Sec1', 'tocNavPart1Ch2Sec2', 'tocNavPart1Ch2Sec3', 'tocNavPart1Ch2Sec4', 'tocNavPart1Chapter3', 'tocNavPart1Ch3Sec1', 'tocNavPart1Ch3Sec2', 'tocNavPart2Ch1', 'tocNavPart2Ch2Sec1'].forEach(id => {
+  ['tocNavChapter1', 'tocNavChapter2', 'tocNavPart0Ch1Sec1', 'tocNavPart0Ch1Sec2', 'tocNavPart0Ch1Sec3', 'tocNavPart0Chapter2', 'tocNavPart0Ch2Sec1', 'tocNavPart0Ch2Sec2', 'tocNavPart0Chapter3', 'tocNavPart0Ch3Sec1', 'tocNavPart0Ch3Sec2', 'tocNavPart0Ch3Sec3', 'tocNavPart0Ch3Sec4', 'tocNavPart0Ch3Sec5', 'tocNavPart1Chapter1', 'tocNavPart1Ch2Sec1', 'tocNavPart1Ch2Sec2', 'tocNavPart1Ch2Sec3', 'tocNavPart1Ch2Sec4', 'tocNavPart1Chapter3', 'tocNavPart1Ch3Sec1', 'tocNavPart1Ch3Sec2', 'tocNavPart2Ch1', 'tocNavPart2Ch2Sec1', 'tocNavPart2Ch2Sec2', 'tocNavPart2Ch2Special1', 'tocNavPart2Ch2Special2', 'tocNavPart2Ch3Sec1', 'tocNavPart2Ch3Sec2', 'tocNavPart2Ch4', 'tocNavPart2Ch4Special1', 'tocNavPart2Ch4Special2'].forEach(id => {
     const tocEl = document.getElementById(id);
     if (tocEl) tocEl.classList.toggle('hidden', id !== meta.tocId);
   });
@@ -1827,6 +2186,56 @@ window.addEventListener('DOMContentLoaded', () => {
         const el = document.querySelector(hash);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 150);
+    } else if (hash === '#part2-ch2-sec2' || hash === '#viewPart2Ch2Sec2' || hash.startsWith('#sec-p2ch2s2-') || hash === '#case-2-8-hospital' || hash === '#case-2-9-cumulative' || hash === '#case-2-10-hypothetical' || hash === '#case-2-11-superseding' || hash === '#case-2-12-alternative' || hash === '#case-2-13-nantou' || hash === '#case-2-14-redlight' || hash === '#case-2-15-crutch' || hash === '#case-2-16-overtaking' || hash === '#case-2-17-headlight') {
+      switchView('part2-ch2-sec2');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part2-ch2-special1' || hash === '#viewPart2Ch2Special1' || hash.startsWith('#sec-special1-') || hash === '#case-2-18-self-harm' || hash === '#case-2-19-self-danger' || hash === '#case-2-20-firefighter' || hash === '#case-2-21-toddler-fire' || hash === '#case-2-22-watermelon-knife' || hash === '#case-2-23-police-gun' || hash === '#case-2-24-medical-malpractice') {
+      switchView('part2-ch2-special1');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part2-ch2-special2' || hash === '#viewPart2Ch2Special2' || hash.startsWith('#sec-special2-') || hash === '#case-2-25-leather' || hash === '#case-2-26-medical-surgery' || hash === '#case-2-27-cyclist') {
+      switchView('part2-ch2-special2');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part2-ch3-sec1' || hash === '#viewPart2Ch3Sec1' || hash.startsWith('#sec-p2ch3sec1-') || hash.startsWith('#case-3-')) {
+      switchView('part2-ch3-sec1');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part2-ch3-sec2' || hash === '#viewPart2Ch3Sec2' || hash.startsWith('#sec-p2ch3sec2-') || hash === '#case-theater-intention') {
+      switchView('part2-ch3-sec2');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part2-ch4-special2' || hash === '#viewPart2Ch4Special2' || hash.startsWith('#sec-p2ch4-sp2-') || hash === '#case-4-10-dissuade' || hash === '#case-4-11-incapacity' || hash === '#case-4-12-time-bomb' || hash === '#case-4-10' || hash === '#case-4-11' || hash === '#case-4-12') {
+      switchView('part2-ch4-special2');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part2-ch4-special1' || hash === '#viewPart2Ch4Special1' || hash.startsWith('#sec-p2ch4-sp1-') || hash === '#case-4-9-lake-drowning') {
+      switchView('part2-ch4-special1');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part2-ch4' || hash === '#viewPart2Chapter4' || hash.startsWith('#sec-p2ch4-') || hash.startsWith('#case-4-')) {
+      switchView('part2-ch4');
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else if (hash === '#part2-ch3' || hash === '#viewPart2Chapter3') {
+      switchView('part2-ch3-sec1');
     } else if (hash === '#part2-ch2' || hash === '#viewPart2Chapter2') {
       switchView('part2-ch2-sec1');
     } else if (hash === '#part2-ch1' || hash === '#viewPart2Chapter1' || hash.startsWith('#sec-p2ch1-') || hash === '#case-birth' || hash === '#case-rollover') {
@@ -1835,6 +2244,8 @@ window.addEventListener('DOMContentLoaded', () => {
         const el = document.querySelector(hash);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 150);
+    } else if (hash === '#part3' || hash === '#viewPart3') {
+      switchView('part3');
     } else if (hash === '#part2' || hash === '#viewPart2') {
       switchView('part2');
     } else if (hash === '#part1' || hash === '#viewPart1') {

@@ -561,6 +561,9 @@ window.APP_VIEWS['viewPart2Ch2Sec1'] = `
       <button onclick="switchView('part2')" class="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 font-bold text-xs flex items-center gap-1.5 transition-all shadow-xs cursor-pointer">
         <span>第二篇導讀</span>
       </button>
+      <button onclick="switchView('part2-ch2-sec2')" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-xs cursor-pointer">
+        <span>下一單元：第二節 構成要件結果歸責 →</span>
+      </button>
     </div>
   </div>
 
